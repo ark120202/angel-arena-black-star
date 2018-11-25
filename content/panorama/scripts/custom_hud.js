@@ -199,6 +199,8 @@ function HookPanoramaPanels() {
 			// https://dota2.gamepedia.com/Attack_speed#Attack_speed_representation
 			var attackSpeedTooltip = Entities.GetAttackSpeed(_unit) * 100 * (1.7 / attackRate);
 			DOTAHUDDamageArmorTooltip.SetDialogVariableInt('base_attack_speed', Math.round(attackSpeedTooltip));
+			if (custom_entity_value.IdealArmor != null)
+				DOTAHUDDamageArmorTooltip.SetDialogVariable('agility_armor', custom_entity_value.IdealArmor.toFixed(1));
 
 			if (custom_entity_value.AttributeStrengthGain != null)
 				DOTAHUDDamageArmorTooltip.SetDialogVariable('strength_per_level', custom_entity_value.AttributeStrengthGain.toFixed(1));
