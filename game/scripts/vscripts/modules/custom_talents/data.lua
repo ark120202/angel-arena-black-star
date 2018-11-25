@@ -196,20 +196,6 @@ CUSTOM_TALENTS_DATA = {
 			},
 		}
 	},
-	talent_movespeed_limit = {
-		icon = "talents/movespeed",
-		cost = 3,
-		group = 6,
-		max_level = 3,
-		special_values = {
-			movespeed_limit = {575, 600, 625}
-		},
-		effect = {
-			modifiers = {
-				modifier_talent_movespeed_limit = "movespeed_limit",
-			},
-		}
-	},
 	talent_health = {
 		icon = "talents/health",
 		cost = 3,

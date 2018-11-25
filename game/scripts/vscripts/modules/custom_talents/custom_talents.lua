@@ -11,7 +11,6 @@ local modifiers = {
 	"movespeed_pct",
 	"lifesteal",
 	"creep_gold",
-	"movespeed_limit",
 	"health",
 	"health_regen",
 	"armor",
