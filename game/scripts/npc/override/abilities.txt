@@ -13750,17 +13750,44 @@
 	}
 	"lone_druid_spirit_bear"
 	{
-		"MaxLevel"	"4"
-		"AbilityCastPoint"				"0.5 0.45 0.4 0.35"
-		"AbilityCooldown"				"90 80 70 60"
+		"MaxLevel"	"7"
+		"AbilityCastPoint"				"0.5 0.45 0.4 0.35 0.3 0.25 0.2"
+		"AbilityCooldown"				"100 90 80 70 60 50 40"
 		"AbilityManaCost"				"75"
 
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bear_hp"					"1500 2000 2500 3000 3500 4000 4500"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bear_regen_tooltip"	"4 5 6 7 8 9 10"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bear_bat"					"1.85 1.75 1.65 1.55 1.45 1.35 1.25"
+				"LinkedSpecialBonus"	"special_bonus_unique_lone_druid_10"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bear_armor"				"3 4 5 6 7 8 9"
+				"LinkedSpecialBonus"	"special_bonus_unique_lone_druid_2"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"backlash_damage"			"10.0"
+			}
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"1.0"
+				"cooldown_scepter"			"40.0"
 			}
 		}
 	}
