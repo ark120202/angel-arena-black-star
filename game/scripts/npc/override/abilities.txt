@@ -3938,7 +3938,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fade_delay"			"0.7"
+				"fade_delay"			"1.5"
 			}
 		}
 	}
@@ -4016,7 +4016,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"epicenter_pulses"	"6 7 8 9 10 11 12"
+				"epicenter_pulses"	"4 5 6 7 8 9 10"
 				"LinkedSpecialBonus"	"special_bonus_unique_sand_king"
 			}
 
@@ -4047,7 +4047,7 @@
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "2.0"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 
@@ -8569,7 +8569,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"550 625 700 775 850 925 1000"
 		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.35 0.3"
-		"AbilityCooldown"	"30 28 26 24 22 20 15"
+		"AbilityCooldown"	"35 30 28 26 24 22 20"
 		"AbilityManaCost"	"150 160 170 180 190 200 210"
 		"AbilityDuration"	"5"
 		"AbilitySpecial"
@@ -8648,7 +8648,7 @@
 		"MaxLevel"	"7"
 		"AbilityCastRange"	"2000 2000 2000 2000 2000 2250 2500"
 		"AbilityCastPoint"	"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
-		"AbilityCooldown"	"40"
+		"AbilityCooldown"	"70"
 		"AbilityManaCost"	"100"
 		"AbilitySpecial"
 		{
@@ -8667,7 +8667,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"armor_per_second"	"0.75 1 1.25 1.5 1.75 2.25 2.5"
+				"armor_per_second"	"0.25 0.5 0.75 1 1.25 1.5 1.75"
 				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_4"
 			}
 
@@ -10252,7 +10252,7 @@
 			"04"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"count"	"1 2 3 4 5 6 7"
+				"count"	"0 0 1 1 2 2 2"
 			}
 
 			"05"
@@ -15469,7 +15469,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"7"
+				"damage"					"4"
 			}
 			"03"
 			{
@@ -22229,6 +22229,29 @@
 				"debuff_delay"			"4"
 			}
 		}
+	}
+	"pangolier_lucky_shot"
+	{
+		"MaxLevel"						"7"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance_pct"			"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1 1 1 2 3 4 5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"			"40"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
 	"pangolier_gyroshell"
