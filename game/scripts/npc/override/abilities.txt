@@ -22203,33 +22203,6 @@
 		}
 	}
 
-	"pangolier_heartpiercer"
-	{
-		"MaxLevel"						"7"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"1"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_pct"				"-20 -25 -30 -35 -40 -45 -50"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"debuff_delay"			"4"
-			}
-		}
-	}
 	"pangolier_lucky_shot"
 	{
 		"MaxLevel"						"7"
