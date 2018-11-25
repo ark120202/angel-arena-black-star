@@ -26,13 +26,18 @@ if IsServer() then
 		local attacker = keys.attacker
 		if attacker ~= self:GetParent() then return end
 		local ability = self:GetAbility()
+		local target = keys.target
 
-		ApplyDamage({
-			victim = keys.target,
-			attacker = attacker,
-			damage = keys.original_damage * ability:GetSpecialValueFor("attack_damage_to_pure_pct") * 0.01,
-			damage_type = ability:GetAbilityDamageType(),
-			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-		})
+		if attacker:FindAllModifiersByName(self:GetName())[1] ~= self then return end
+
+		if IsModifierStrongest(attacker, self:GetName(), MODIFIER_PROC_PRIORITY.pure_damage) then
+			ApplyDamage({
+				victim = target,
+				attacker = attacker,
+				damage = keys.original_damage * ability:GetSpecialValueFor("attack_damage_to_pure_pct") * 0.01,
+				damage_type = ability:GetAbilityDamageType(),
+				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+			})
+		end
 	end
 end

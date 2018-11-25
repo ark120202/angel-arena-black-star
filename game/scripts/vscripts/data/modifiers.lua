@@ -132,5 +132,9 @@ MODIFIER_PROC_PRIORITY = {
 		modifier_item_desolator4_arena = 3,
 		modifier_item_desolator5_arena = 4,
 		modifier_item_desolator6_arena = 5,
-	}
+	},
+	pure_damage = {
+		modifier_item_piercing_blade = 1,
+		modifier_item_soulcutter = 2,
+	},
 }
