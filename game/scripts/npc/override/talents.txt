@@ -110,17 +110,6 @@
 			}
 		}
 	}
-	"special_bonus_unique_luna_3"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"100"
-			}
-		}
-	}
 	"special_bonus_unique_nyx_2"
 	{
 		"AbilitySpecial"
@@ -264,17 +253,6 @@
 			}
 		}
 	}
-	"special_bonus_unique_storm_spirit_5"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"300"
-			}
-		}
-	}
 	"special_bonus_unique_tidehunter"
 	{
 		"AbilitySpecial"
@@ -338,17 +316,6 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"value"				"0.5"
-			}
-		}
-	}
-	"special_bonus_unique_tiny_2"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"6"
 			}
 		}
 	}
@@ -580,17 +547,6 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"value"				"16"
-			}
-		}
-	}
-	"special_bonus_unique_tusk"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"350"
 			}
 		}
 	}
@@ -965,17 +921,6 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"value"				"22000"
-			}
-		}
-	}
-	"special_bonus_unique_lone_druid_6"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"120"
 			}
 		}
 	}

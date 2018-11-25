@@ -1139,9 +1139,6 @@ NATIVE_TALENTS = {
 	special_bonus_unique_lone_druid_4 = {
 		group = 9,
 	},
-	special_bonus_unique_lone_druid_6 = {
-		group = 8,
-	},
 	special_bonus_unique_lone_druid_7 = {
 		group = 12,
 	},
