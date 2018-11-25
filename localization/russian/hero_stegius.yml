@@ -30,9 +30,9 @@ DOTA_Tooltip_modifier_stegius_brightness_of_desolate_effect_Description: Бро�
 DOTA_Tooltip_modifier_stegius_brightness_of_desolate_damage_Description: Урон увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%
 DOTA_Tooltip_modifier_stegius_brightness_of_desolate_steal_buff_Description: 'Скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%'
 
-DOTA_Tooltip_ability_stegius_desolating_touch_Description: С каждой атакой Stegius уменьшает броню. Этот эффект суммируется. У каждого эффекта отдельная длительность. Боссам броня снижается лишь с определенным шансом. Иллюзии Stegius так же уменьшают броню.
+DOTA_Tooltip_ability_stegius_desolating_touch_Description: С каждой атакой Stegius уменьшает броню. Этот эффект суммируется. У каждого эффекта отдельная длительность. Боссы имеют ограничение на снижение брони. Иллюзии Stegius так же уменьшают броню.
 DOTA_Tooltip_ability_stegius_desolating_touch_Lore: Хозяин Смерти разрушит любые доспехи, чтобы добраться до твоей души...
 DOTA_Tooltip_ability_stegius_desolating_touch_armor_per_hit: 'СНИЖЕНИЕ БРОНИ:'
-DOTA_Tooltip_ability_stegius_desolating_touch_boss_armor_reduction_chance_pct: '%ШАНС СНИЗИТЬ БРОНЮ БОССАМ:'
+DOTA_Tooltip_ability_stegius_desolating_touch_boss_max_armor: 'МАКС. СНИЗИЖЕНИЕ БРОНИ БОССАМ:'
 DOTA_Tooltip_ability_stegius_desolating_touch_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_modifier_stegius_desolating_touch_debuff_Description: Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
