@@ -5795,7 +5795,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"20"
+				"attack_damage_to_pure_pct"	"10"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
