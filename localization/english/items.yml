@@ -640,27 +640,20 @@ DOTA_Tooltip_ability_item_titanium_bar_active_bonus_strength: 'AVATAR BONUS STRE
 DOTA_Tooltip_ability_item_titanium_bar_active_bonus_attackspeed: 'AVATAR BONUS ATTACKSPEED:'
 DOTA_Tooltip_modifier_item_titanium_bar_active: Titanium Bar
 DOTA_Tooltip_modifier_item_titanium_bar_active_Description: 'Spell Immune, 100% resistant to magic damage type, all incoming damage is reduced by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%, strength increased by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+
 DOTA_Tooltip_ability_item_vermillion_robe: Vermillion Robe
-DOTA_Tooltip_ability_item_vermillion_robe_Description: |-
-  <h1>Active: True Flame</h1> Deal half the caster's current health as damage to itself, then, after %damage_delay% seconds, deals damage in an area around the caster, based on the difference between max and current health.
-  <h1>Passive: Vermillion Dust</h1> Gain increasing bonuses based on missing HP.
+DOTA_Tooltip_ability_item_vermillion_robe_Description: '<h1>Passive: Vermillion Dust</h1> Increases movement speed by %dust_move_speed_pct%%%, mana regeneration by %dust_mana_regen%%% and attack damage by %dust_damage%%% for each missing percent of health.'
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_health: +$health
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_armor: +$armor
-DOTA_Tooltip_ability_item_vermillion_robe_bonus_movement: +$move_speed
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_movement_speed_pct: '%+$move_speed'
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_magical_damage_resistance_pct: '%+$spell_resist'
-DOTA_Tooltip_ability_item_vermillion_robe_hp_as_damage_pct: '%CURRENT HEALTH AS SELF DAMAGE:'
-DOTA_Tooltip_ability_item_vermillion_robe_damage_radius: 'DAMAGE RADIUS:'
-DOTA_Tooltip_ability_item_vermillion_robe_damage_delay: 'DAMAGE DELAY:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_mana_regen: 'MANA REGEN PER HP PERCENT:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_bonus_movement_speed: 'MOVE SPEED PER HP PERCENT:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_damage: 'DAMAGE PER HP PERCENT:'
 DOTA_Tooltip_modifier_item_vermillion_robe_delay: Vermillion Robe True Flame Delay
 DOTA_Tooltip_modifier_item_vermillion_robe_delay_Description: Will deal AoE damage when buff ends.
 DOTA_Tooltip_modifier_item_vermillion_robe_dust: Vermillion Dust
-DOTA_Tooltip_modifier_item_vermillion_robe_dust_Description: 'Mana regeneration increased by %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.'
+DOTA_Tooltip_modifier_item_vermillion_robe_dust_Description: 'Mana regeneration increased by %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.'
 
 DOTA_Tooltip_ability_item_soul_of_titan: Soul of Titan
 DOTA_Tooltip_ability_item_soul_of_titan_Description: |-
