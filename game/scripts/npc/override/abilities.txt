@@ -15469,7 +15469,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"4"
+				"damage"					"0"
 			}
 			"03"
 			{
