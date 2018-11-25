@@ -1237,7 +1237,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"25"
+				"bonus_health_regen"	"16"
 			}
 			"07"
 			{
@@ -1247,7 +1247,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"broken_movement_speed"	"75"
+				"broken_movement_speed"	"20"
 			}
 		}
 	}
