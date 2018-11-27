@@ -63,7 +63,7 @@ function OnAttackLanded(keys)
 		ParticleManager:CreateParticle("particles/arena/generic_gameplay/generic_manasteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	end
 
-	if not caster:FindModifierByName(keys.modifier_cooldown) then
+	if not caster:HasModifier(keys.modifier_cooldown) then
 		ParticleManager:CreateParticle("particles/generic_gameplay/generic_purge.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 		caster:EmitSound("DOTA_Item.DiffusalBlade.Activate")
 		if target:IsSummoned() then
