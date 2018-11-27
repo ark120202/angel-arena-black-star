@@ -236,11 +236,12 @@ DOTA_Tooltip_ability_item_titanium_fruit_Description: '<h1>Use: Avatar</h1> Gran
 DOTA_Tooltip_ability_item_titanium_fruit_duration: 'DURATION:'
 DOTA_Tooltip_modifier_item_titanium_fruit: Titanium Fruit
 DOTA_Tooltip_modifier_item_titanium_fruit_Description: Spell Immune and 100% resistant to magic damage type.
+
 DOTA_Tooltip_ability_item_diffusal_style: Diffusal Style
 DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   <h1>Active: Mirror Image</h1> Creates %images_count% images of your hero that last %illusion_duration% seconds. Images deal %illusion_damage_percent_outgoing_tooltip%%% damage and take %illusion_damage_percent_incoming_tooltip%%% damage.
   <h1>Passive: Manabreak</h1> Each attack burns %feedback_mana_burn% mana from the target, and deals %damage_per_burn_pct%%% of burned mana as pure damage. Also gives you %feedback_mana_drain_pct%%% of burned mana.
-  <h1>Passive: Purge</h1> Each attack has a %purge_chance_pct%%% chance to remove buffs from the target, root it for %purge_root_duration% seconds and slow it for %purge_slow_duration% seconds.
+  <h1>Passive: Purge</h1> Attacking an enemy unit removes buffs from the target, roots it for %purge_root_duration% seconds and slows it for %purge_slow_duration% seconds. Triggers only once per %purge_cooldown% seconds.
 DOTA_Tooltip_ability_item_diffusal_style_Note0: Has a 0.1 second cast time during which you are invulnerable.
 DOTA_Tooltip_ability_item_diffusal_style_Note1: Many effects are removed upon using Manta.
 DOTA_Tooltip_ability_item_diffusal_style_Note2: '{lc:item_yasha_note}'
@@ -254,6 +255,9 @@ DOTA_Tooltip_modifier_item_diffusal_style_root: Diffusal Style Purge Rooted
 DOTA_Tooltip_modifier_item_diffusal_style_root_Description: You can't move.
 DOTA_Tooltip_modifier_item_diffusal_style_slow: Diffusal Style Purge
 DOTA_Tooltip_modifier_item_diffusal_style_slow_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
+DOTA_Tooltip_modifier_item_diffusal_style_purge_cooldown: Diffusal Style Purge Cooldown
+DOTA_Tooltip_modifier_item_diffusal_style_purge_cooldown_Description: Purge is temporary disabled.
+
 DOTA_Tooltip_ability_item_dagon_arena: Dagon
 DOTA_Tooltip_ability_item_dagon_arena_Description: '<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit.'
 DOTA_Tooltip_ability_item_dagon_arena_damage: 'BURST DAMAGE:'
