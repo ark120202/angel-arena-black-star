@@ -36,7 +36,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-10"
+				"corruption_armor"		"-15"
 			}
 			"03"
 			{
@@ -136,7 +136,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-19"
+				"corruption_armor"		"-24"
 			}
 			"03"
 			{
@@ -222,6 +222,7 @@
 		"ItemShopTags"					"damage;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"desolator 4"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_EARTH"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		// Special
@@ -236,7 +237,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-31"
+				"corruption_armor"		"-40"
 			}
 			"03"
 			{
@@ -348,6 +349,7 @@
 		"ItemShopTags"					"damage;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"frozen desolator 5"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_ICE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		// Special
@@ -377,7 +379,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-45"
+				"corruption_armor"		"-55"
 			}
 			"06"
 			{
@@ -510,6 +512,7 @@
 		"ItemShopTags"					"damage;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"ultimate desolator 6"
+		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_LIGHT"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		// Special
@@ -549,7 +552,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-70"
+				"corruption_armor"		"-90"
 			}
 			"08"
 			{

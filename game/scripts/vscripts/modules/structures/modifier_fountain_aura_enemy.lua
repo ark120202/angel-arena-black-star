@@ -41,20 +41,12 @@ if IsServer() then
 		end)
 	end
 
-	local centralBossKilled = false
-	Events:Register("bosses/kill/central", "modifier_fountain_aura_enemy", function ()
-		centralBossKilled = true
-	end)
-	Events:Register("bosses/respawn/central", "modifier_fountain_aura_enemy", function ()
-		centralBossKilled = false
-	end)
-
 	function modifier_fountain_aura_enemy:OnIntervalThink()
 		local parent = self:GetParent()
 
 		self:CreateFountainPFX()
 
-		if not centralBossKilled then
+		if Bosses:IsAlive("cursed_zeld") then
 			parent:TrueKill()
 		else
 			ApplyDamage({

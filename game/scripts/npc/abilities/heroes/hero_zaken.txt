@@ -13,8 +13,9 @@
 		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityChannelTime"			"%duration"
-		"AbilityDamage"					"300 400 500 600 700 800 900"
 		"AbilityCooldown"				"30 26 24 20 16 15 12"
+		
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
 
 		"AbilitySpecial"
 		{
@@ -32,6 +33,13 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"max_health_damage_pct"	"0.5 1.0 1.5 2.0 2.5 3.0 3.5"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"300 400 500 600 700 800 900"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
 
@@ -90,7 +98,7 @@
 					{
 						"ScriptFile"	"kv.lua"
 						"Function"		"PercentDamage"
-						"Damage"			"%AbilityDamage"
+						"Damage"			"%damage"
 						"MaxHealthPercent"	"%max_health_damage_pct"
 						"multiplier"		"%damage_interval"
 					}

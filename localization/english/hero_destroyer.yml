@@ -8,6 +8,8 @@ DOTA_Tooltip_ability_destroyer_armor_crush_Lore: Despite the size, the Collum of
 DOTA_Tooltip_ability_destroyer_armor_crush_damage: 'DAMAGE:'
 DOTA_Tooltip_ability_destroyer_armor_crush_armor_reduction: 'ARMOR REDUCTION:'
 DOTA_Tooltip_ability_destroyer_armor_crush_duration: 'DURATION:'
+DOTA_Tooltip_modifier_destroyer_armor_crush: Armor Crush
+DOTA_Tooltip_modifier_destroyer_armor_crush_Description: Stunned, armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 
 DOTA_Tooltip_ability_destroyer_seal_of_limit: Seal of Limit
 DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: Destroyer imposes the seal of Ash Lagor upon himself, limiting his maximum health to %max_health_pct%%%, while at the same time increasing the speed of movement, attack speed, armor, magic damage resistance and health regeneration.
@@ -27,25 +29,22 @@ DOTA_Tooltip_ability_destroyer_body_reconstruction_Description: 'Destroyer rebui
 DOTA_Tooltip_ability_destroyer_body_reconstruction_Lore: Creatures from the Kronshak race are immortal in their way and have a unique ability to update their life cycle.
 
 DOTA_Tooltip_ability_destroyer_frenzy: Frenzy
-DOTA_Tooltip_ability_destroyer_frenzy_Description: 'The Spirit of the Destroyer becomes stronger from wounds, increasing damage, armor and movement speed, based on current health.'
+DOTA_Tooltip_ability_destroyer_frenzy_Description: 'The Spirit of the Destroyer becomes stronger from wounds, increasing damage and armor, based on current health.'
 DOTA_Tooltip_ability_destroyer_frenzy_Lore: The more bloody and harder the battle, the stronger the spirit of Kronshak.
 DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl1: |-
   %Level 1
   • HEALTH TO TRIGGER:
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl1: '%• BONUS DAMAGE:'
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl1: '%• BONUS ARMOR:'
-DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl1: '• MAX MOVEMENT SPEED:'
 DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl2: |-
   %Level 2
   • HEALTH TO TRIGGER:
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl2: '%• BONUS DAMAGE:'
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl2: '%• BONUS ARMOR:'
-DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl2: '• MAX MOVEMENT SPEED:'
 DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl3: |-
   %Level 3
   • HEALTH TO TRIGGER:
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl3: '%• BONUS DAMAGE:'
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl3: '%• BONUS ARMOR:'
-DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl3: '• MAX MOVEMENT SPEED:'
 DOTA_Tooltip_modifier_destroyer_frenzy: Frenzy
-DOTA_Tooltip_modifier_destroyer_frenzy_Description: Movement speed is limited to %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%, damage is increased by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%, armor is increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
+DOTA_Tooltip_modifier_destroyer_frenzy_Description: Damage is increased by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%, armor is increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.

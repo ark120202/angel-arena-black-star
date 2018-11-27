@@ -1,26 +1,41 @@
 function ArenaZoneOnStartTouch(trigger)
+	local activator = trigger.activator
+	if not IsValidEntity(activator) then return end
+
 	if Duel:IsDuelOngoing() then
-		HEROES_ON_DUEL[trigger.activator] = true
+		HEROES_ON_DUEL[activator] = true
+		return
 	end
+
+	local caller = trigger.caller
+	local origin = caller:GetAbsOrigin()
+	local min = origin + ExpandVector(caller:GetBoundingMins(), 96)
+	local max = origin + ExpandVector(caller:GetBoundingMaxs(), 96)
+	local clamped = VectorOnBoxPerimeter(activator:GetAbsOrigin(), min, max)
+	FindClearSpaceForUnit(activator, clamped, true)
 end
 
 function ArenaZoneOnEndTouch(trigger)
 	local activator = trigger.activator
+	if not IsValidEntity(activator) then return end
 	HEROES_ON_DUEL[activator] = nil
 
-	if not IsValidEntity(activator) then return end
 	if not activator.OnDuel then return end
-	if activator.IsWukongsSummon and activator:IsWukongsSummon() then return end
+	if activator:IsWukongsSummon() then return end
 
-	Timers:CreateTimer(function()
+	Timers:NextTick(function()
 		if not IsValidEntity(activator) then return end
 		if not Duel:IsDuelOngoing() then return end
 
 		-- Teleports are also triggering OnEndTouch event
 		if HEROES_ON_DUEL[activator] then return end
 
-		local position = Entities:FindByName(nil, "target_mark_arena_team" .. activator:GetTeamNumber()):GetAbsOrigin()
-		activator:Teleport(position)
+		local caller = trigger.caller
+		local origin = caller:GetAbsOrigin()
+		local min = origin + ExpandVector(caller:GetBoundingMins(), -96)
+		local max = origin + ExpandVector(caller:GetBoundingMaxs(), -96)
+		local clamped = VectorOnBoxPerimeter(activator:GetAbsOrigin(), min, max)
+		activator:Teleport(clamped)
 	end)
 end
 
@@ -30,6 +45,7 @@ local OUT_OF_GAME_UNITS = {
 	npc_dummy_unit = true,
 	npc_dota_looping_sound = true,
 	npc_dota_invisible_vision_source = true,
+	npc_dota_wisp_spirit = true,
 }
 function FountainOnStartTouch(trigger, team)
 	local unit = trigger.activator
@@ -55,20 +71,24 @@ function Fountain7OnStartTouch(trigger)
 	FountainOnStartTouch(trigger, DOTA_TEAM_CUSTOM_2)
 end
 
+function FountainOnEndTouch(trigger)
+	local activator = trigger.activator
+	if activator then
+		activator:RemoveModifierByName("modifier_fountain_aura_arena")
+		activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	end
+end
+
 -- TODO remove these team numbers
 function Fountain2OnEndTouch(trigger)
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	FountainOnEndTouch(trigger)
 end
 function Fountain3OnEndTouch(trigger)
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	FountainOnEndTouch(trigger)
 end
 function Fountain6OnEndTouch(trigger)
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	FountainOnEndTouch(trigger)
 end
 function Fountain7OnEndTouch(trigger)
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_arena")
-	trigger.activator:RemoveModifierByName("modifier_fountain_aura_enemy")
+	FountainOnEndTouch(trigger)
 end

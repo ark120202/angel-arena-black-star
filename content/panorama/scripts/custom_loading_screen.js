@@ -20,14 +20,24 @@ function FillTips() {
 	}
 }
 
+function shuffle(a) {
+	var j, x, i;
+	for (i = a.length; i; i--) {
+		j = Math.floor(Math.random() * i);
+		x = a[i - 1];
+		a[i - 1] = a[j];
+		a[j] = x;
+	}
+}
+
 function NextTip() {
 	if (ShuffledTipList.length === 0) {
-		ShuffledTipList = JSON.parse(JSON.stringify(TipList));
+		ShuffledTipList = TipList.slice();
 		shuffle(ShuffledTipList);
 	}
-	var shifted = ShuffledTipList.shift();
+	var tip = ShuffledTipList.shift();
 
-	$('#TipLabel').text = shifted.text;
+	$('#TipLabel').text = tip.text;
 }
 
 function Snippet_OptionVoting(voteName, voteData) {
@@ -76,9 +86,9 @@ function Snippet_OptionVoting_Recalculate(votePanel, voteData) {
 
 	var total = 0;
 	//var leadingKey;
-	for (var pid in voteData.votes) {
+	for (var playerId in voteData.votes) {
 		total += 1;
-		var vote = voteData.votes[pid];
+		var vote = voteData.votes[playerId];
 		amount[vote] += 1;
 		/*if (leadingKey == null || amount[vote] > voteData.votes[leadingKey]) {
 			leadingKey = vote

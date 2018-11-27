@@ -7,18 +7,27 @@ modifier_arena_hero = class({
 
 function modifier_arena_hero:DeclareFunctions()
 	return {
-		MODIFIER_EVENT_ON_ATTACK_START,
 		MODIFIER_EVENT_ON_ABILITY_EXECUTED,
 		MODIFIER_PROPERTY_REFLECT_SPELL,
 		MODIFIER_PROPERTY_ABSORB_SPELL,
 		MODIFIER_EVENT_ON_DEATH,
 		MODIFIER_PROPERTY_ABILITY_LAYOUT,
-		MODIFIER_EVENT_ON_RESPAWN
+		MODIFIER_EVENT_ON_RESPAWN,
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
 	}
 end
 
 function modifier_arena_hero:GetModifierAbilityLayout()
 	return self.VisibleAbilitiesCount or self:GetSharedKey("VisibleAbilitiesCount") or 4
+end
+
+function modifier_arena_hero:GetModifierPhysicalArmorBonus()
+	return self.armorDifference or self:GetSharedKey("armorDifference") or 0
+end
+
+function modifier_arena_hero:GetModifierMagicalResistanceDirectModification()
+	return self.resistanceDifference or self:GetSharedKey("resistanceDifference") or 0
 end
 
 if IsServer() then
@@ -51,6 +60,7 @@ if IsServer() then
 				parent:ModifyAgility((parent.CustomGain_Agility - parent:GetKeyValue("AttributeAgilityGain", nil, true)) * diff)
 			end
 		end
+
 		local VisibleAbilitiesCount = 0
 		for i = 0, parent:GetAbilityCount() - 1 do
 			local ability = parent:GetAbilityByIndex(i)
@@ -58,10 +68,50 @@ if IsServer() then
 				VisibleAbilitiesCount = VisibleAbilitiesCount + 1
 			end
 		end
-
 		if self.VisibleAbilitiesCount ~= VisibleAbilitiesCount then
 			self.VisibleAbilitiesCount = VisibleAbilitiesCount
 			self:SetSharedKey("VisibleAbilitiesCount", VisibleAbilitiesCount)
+		end
+
+		local isStrengthHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH
+		local function calculateResistanceFromStrength(str) return str * (isStrengthHero and 0.1 or 0.08) * 0.01 end
+		local strength = parent:GetStrength()
+		local strengthResistance = calculateResistanceFromStrength(strength)
+		if strengthResistance == 1 then
+			if not self.strengthBorrowed then
+				self.strengthBorrowed = true
+				parent:ModifyStrength(-1)
+				strength = strength - 1
+			else
+				self.strengthBorrowed = false
+				parent:ModifyStrength(1)
+				strength = strength + 1
+			end
+			strengthResistance = calculateResistanceFromStrength(strength)
+		elseif self.strengthBorrowed and calculateResistanceFromStrength(strength + 1) ~= 1 then
+			self.strengthBorrowed = false
+			parent:ModifyStrength(1)
+		end
+
+		local baseFactor = 100 - parent:GetBaseMagicalResistanceValue()
+		local resistanceDifference = baseFactor / (strengthResistance - 1) + baseFactor
+		if self.resistanceDifference ~= resistanceDifference then
+			self.resistanceDifference = resistanceDifference
+			self:SetSharedKey("resistanceDifference", resistanceDifference)
+		end
+
+		local isAgilityHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY
+		local agilityArmor = parent:GetAgility() * (isAgilityHero and 0.2 or 0.16)
+		local idealArmor = parent:GetAgility() * (isAgilityHero and 0.125 or 0.1)
+		if self.idealArmor ~= idealArmor then
+			self.idealArmor = idealArmor
+			parent:SetNetworkableEntityInfo("IdealArmor", idealArmor)
+		end
+
+		local armorDifference = idealArmor - agilityArmor
+		if self.armorDifference ~= armorDifference then
+			self.armorDifference = armorDifference
+			self:SetSharedKey("armorDifference", armorDifference)
 		end
 	end
 
@@ -92,6 +142,10 @@ if IsServer() then
 		end
 		if k.unit == parent then
 			parent:RemoveNoDraw()
+
+			if parent:IsIllusion() then
+				parent:ClearNetworkableEntityInfo()
+			end
 		end
 	end
 
@@ -99,23 +153,10 @@ if IsServer() then
 		-- TODO: Check if still required
 		if k.unit == self:GetParent() and k.unit:GetUnitName() == "npc_dota_hero_crystal_maiden" then
 			k.unit:AddNoDraw()
-			Timers:CreateTimer(0.03, function()
-				k.unit:RemoveNoDraw()
-			end)
+			Timers:NextTick(function() k.unit:RemoveNoDraw() end)
 		end
 	end
 
-	function modifier_arena_hero:OnAttackStart(keys)
-		local parent = self:GetParent()
-		if keys.attacker == parent and keys.target:IsCustomRune() then
-			parent:Stop()
-			ExecuteOrderFromTable({
-				UnitIndex = parent:GetEntityIndex(),
-				OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
-				Position = parent:GetAbsOrigin(),
-			})
-		end
-	end
 	function modifier_arena_hero:OnAbilityExecuted(keys)
 		if self:GetParent() == keys.unit then
 			local ability_cast = keys.ability
@@ -144,10 +185,11 @@ if IsServer() then
 		local originalAbility = keys.ability
 		self.absorb_without_check = false
 		if originalAbility:GetCaster():GetTeam() == parent:GetTeam() then return end
+		if SPELL_REFLECT_IGNORED_ABILITIES[originalAbility:GetAbilityName()] then return end
 
 		local item_lotus_sphere = FindItemInInventoryByName(parent, "item_lotus_sphere", false, false, true)
 
-		if not self.absorb_without_check and item_lotus_sphere and parent:HasModifier("modifier_item_lotus_sphere") and PreformAbilityPrecastActions(parent, item_lotus_sphere) then
+		if not self.absorb_without_check and item_lotus_sphere and parent:HasModifier("modifier_item_lotus_sphere") and item_lotus_sphere:PerformPrecastActions() then
 			ParticleManager:SetParticleControlEnt(ParticleManager:CreateParticle("particles/arena/items_fx/lotus_sphere.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent), 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
 			parent:EmitSound("Item.LotusOrb.Activate")
 			self.absorb_without_check = true

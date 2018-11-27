@@ -23,8 +23,8 @@ function HeroSelection:PreformRandomForNotPickedUnits()
 	end
 end
 
-function HeroSelection:GetSelectedHeroName(playerID)
-	local status = HeroSelection:GetPlayerStatus(playerID)
+function HeroSelection:GetSelectedHeroName(playerId)
+	local status = HeroSelection:GetPlayerStatus(playerId)
 	if status and status.status == "picked" then
 		return status.hero
 	end
@@ -69,9 +69,12 @@ function HeroSelection:ExtractHeroStats(heroTable)
 	}
 	attributes.damage_min = attributes.damage_min + attributes["attribute_base_" .. attributes.attribute_primary]
 	attributes.damage_max = attributes.damage_max + attributes["attribute_base_" .. attributes.attribute_primary]
-	--TODO: Get hero's unique growth
-	local armorForFirstLevel = Attributes:GetTotalPropValue(attributes["attribute_base_1"], "armor")
-	attributes.armor = attributes.armor + math.round(armorForFirstLevel)
+
+	local armorForFirstLevel = CalculateBaseArmor({
+		agility = heroTable.AttributeBaseAgility,
+		isPrimary = heroTable.AttributePrimary == "DOTA_ATTRIBUTE_AGILITY",
+	})
+	attributes.armor = attributes.armor + armorForFirstLevel
 	return attributes
 end
 
@@ -113,13 +116,21 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 			unit:SetBaseDamageMax(value)
 		elseif key == "AttackRate" then
 			unit:SetBaseAttackTime(value)
+			unit:SetNetworkableEntityInfo("AttackRate", value)
 		elseif key == "AttackAcquisitionRange" then
 			unit:SetAcquisitionRange(value)
 		elseif key == "ProjectileModel" then
 			unit:SetRangedProjectileName(value)
 		elseif key == "AttributePrimary" then
-			Timers:CreateTimer(0.1, function()
+			Timers:CreateTimer(2/30, function()
 				unit:SetPrimaryAttribute(_G[value])
+				unit:CalculateStatBonus()
+
+				local illusionParent = unit:GetIllusionParent()
+				if IsValidEntity(illusionParent) then
+					unit:SetHealth(illusionParent:GetHealth())
+					unit:SetMana(illusionParent:GetMana())
+				end
 			end)
 		elseif key == "AttributeBaseStrength" then
 			unit:SetBaseStrength(value)
@@ -190,16 +201,16 @@ function HeroSelection:InitializeHeroClass(unit, classTable)
 	end
 end
 
-function HeroSelection:ForceChangePlayerHeroMenu(playerID)
-	PlayerResource:ModifyPlayerStat(playerID, "ChangedHeroAmount", 1)
-	HeroSelection:ChangeHero(playerID, FORCE_PICKED_HERO, true, 0, nil, function(hero)
+function HeroSelection:ForceChangePlayerHeroMenu(playerId)
+	PlayerResource:ModifyPlayerStat(playerId, "ChangedHeroAmount", 1)
+	HeroSelection:ChangeHero(playerId, FORCE_PICKED_HERO, true, 0, nil, function(hero)
 		hero:AddNoDraw()
-		FindClearSpaceForUnit(hero, FindFountain(PlayerResource:GetTeam(playerID)):GetAbsOrigin(), true)
+		FindClearSpaceForUnit(hero, FindFountain(PlayerResource:GetTeam(playerId)):GetAbsOrigin(), true)
 		hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
 		hero.ForcedHeroChange = true
 		Timers:CreateTimer(function()
-			local player = PlayerResource:GetPlayer(playerID)
-			if not IsPlayerAbandoned(playerID) and player and IsValidEntity(hero) and not hero.ChangingHeroProcessRunning then
+			local player = PlayerResource:GetPlayer(playerId)
+			if not PlayerResource:IsPlayerAbandoned(playerId) and player and IsValidEntity(hero) and not hero.ChangingHeroProcessRunning then
 				CustomGameEventManager:Send_ServerToPlayer(player, "metamorphosis_elixir_show_menu", {forced = true})
 				return 0.5
 			end
@@ -323,4 +334,9 @@ function HeroSelection:IsHeroPickAvaliable(hero)
 		not HeroSelection:IsHeroDisabledInRanked() and
 		not HeroSelection:IsHeroUnreleased() and
 		HeroSelection:VerifyHeroGroup(hero)
+end
+
+function HeroSelection:GetLinkedHeroNames(hero)
+	local linked = GetKeyValue(hero, "LinkedHero")
+	return linked and string.split(linked, " | ") or {}
 end

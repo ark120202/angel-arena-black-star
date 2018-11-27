@@ -14,9 +14,7 @@ local requirements = {
 	"libraries/playertables",
 	"libraries/containers",
 	-- "libraries/pathgraph",
-	"libraries/selection",
 	"libraries/worldpanels",
-	"libraries/PopupNumbers",
 	"libraries/statcollection/init",
 	--------------------------------------------------
 	"data/constants",
@@ -124,9 +122,9 @@ function GameMode:OnHeroSelectionEnd()
 	Weather:Init()
 
 	Timers:CreateTimer(10, function()
-		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-			if PlayerResource:IsValidPlayerID(playerID) and not PlayerResource:IsFakeClient(playerID) and GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
-				local heroName = HeroSelection:GetSelectedHeroName(playerID) or ""
+		for playerId = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+			if PlayerResource:IsValidPlayerID(playerId) and not PlayerResource:IsFakeClient(playerId) and GetConnectionState(playerId) == DOTA_CONNECTION_STATE_CONNECTED then
+				local heroName = HeroSelection:GetSelectedHeroName(playerId) or ""
 				if heroName == "" or heroName == FORCE_PICKED_HERO then
 					GameMode:BreakGame("arena_end_screen_error_broken")
 					return
@@ -137,7 +135,7 @@ function GameMode:OnHeroSelectionEnd()
 end
 
 function GameMode:OnHeroInGame(hero)
-	Timers:CreateTimer(function()
+	Timers:NextTick(function()
 		if IsValidEntity(hero) and hero:IsTrueHero() then
 			Teams:RecalculateKillWeight(hero:GetTeam())
 			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
@@ -160,7 +158,7 @@ function GameMode:OnGameInProgress()
 end
 
 function GameMode:PrecacheUnitQueueed(name)
-	if not table.contains(RANDOM_OMG_PRECACHED_HEROES, name) then
+	if not table.includes(RANDOM_OMG_PRECACHED_HEROES, name) then
 		if not IS_PRECACHE_PROCESS_RUNNING then
 			IS_PRECACHE_PROCESS_RUNNING = true
 			table.insert(RANDOM_OMG_PRECACHED_HEROES, name)

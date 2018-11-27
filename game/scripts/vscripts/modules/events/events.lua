@@ -1,6 +1,10 @@
 Events = Events or class({})
 Events.Callbacks = Events.Callbacks or {}
-Events.Registered = Events.Registered or {}
+
+for _, v in ipairs(Events.Registered or {}) do
+	Events:Off(v.event, v.id)
+end
+Events.Registered = {}
 
 function Events:Emit(...)
 	local args = {...}
@@ -26,12 +30,11 @@ function Events:Once(event, callback)
 	return #Events.Callbacks[event]
 end
 
-function Events:Register(event, listener, callback)
-	local uniqueName = event .. "_" ..listener
+function Events:Off(event, id)
+	Events.Callbacks[event][id] = nil
+end
 
-	-- Remove registered callback if it was found
-	local registeredIndex = Events.Registered[uniqueName]
-	if registeredIndex then Events.Callbacks[event][registeredIndex] = nil end
-
-	Events.Registered[uniqueName] = self:On(event, callback)
+function Events:Register(event, callback)
+	local id = self:On(event, callback)
+	table.insert(Events.Registered, { event = event, id = id })
 end

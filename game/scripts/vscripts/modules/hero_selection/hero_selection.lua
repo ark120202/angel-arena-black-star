@@ -34,7 +34,7 @@ ModuleRequire(..., "hero_replacer")
 ModuleRequire(..., "client_actions")
 ModuleLinkLuaModifier(..., "modifier_hero_selection_transformation")
 
-Events:Register("activate", "hero_selection", function ()
+Events:Register("activate", function ()
 	GameRules:SetHeroSelectionTime(-1)
 	local preTime = HERO_SELECTION_PICK_TIME + HERO_SELECTION_STRATEGY_TIME + 3.75 + Options:GetValue("PreGameTime")
 	if Options:GetValue("BanningPhaseBannedPercentage") > 0 then
@@ -75,9 +75,7 @@ function HeroSelection:PrepareTables()
 			local heroTable = GetHeroTableByName(name)
 			local tabIndex = heroTable.base_hero and 2 or 1
 			local heroData = {
-				model = heroTable.base_hero or name,
-				custom_scene_camera = heroTable.SceneCamera,
-				custom_scene_image = heroTable.SceneImage,
+				useCustomScene = heroTable.UseCustomScene == 1,
 				attributes = HeroSelection:ExtractHeroStats(heroTable),
 				tabIndex = tabIndex
 			}
@@ -163,7 +161,7 @@ function HeroSelection:StartStateHeroPick()
 	--Banning
 	local notBanned = {}
 	for hero in pairs(PlayerTables:GetAllTableValuesForReadOnly("hero_selection_banning_phase")) do
-		if not table.contains(notBanned, hero) then
+		if not table.includes(notBanned, hero) then
 			table.insert(notBanned, hero)
 		end
 	end
@@ -257,7 +255,7 @@ function HeroSelection:StartStateInGame(toPrecache)
 				for team,_v in pairs(PlayerTables:GetAllTableValues("hero_selection")) do
 					for plyId,v in pairs(_v) do
 						if not PlayerResource:IsPlayerAbandoned(plyId) then
-							HeroSelection:SelectHero(plyId, tostring(v.hero), nil, true)
+							HeroSelection:SelectHero(plyId, tostring(v.hero), nil, nil, true)
 						end
 					end
 				end

@@ -10,7 +10,6 @@
 		"ItemCost"						"4500"
 		"ItemShopTags"					"str;stat;shard"
 		"ItemQuality"					"uncommon"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"ItemStackable"					"1"
@@ -54,7 +53,6 @@
 		"ItemCost"						"15000"
 		"ItemShopTags"					"str;stat;shard"
 		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"ItemStackable"					"1"
@@ -98,7 +96,6 @@
 		"ItemCost"						"30000"
 		"ItemShopTags"					"str;stat;shard"
 		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"ItemStackable"					"1"
@@ -142,7 +139,6 @@
 		"ItemCost"						"150000"
 		"ItemShopTags"					"str;stat;shard"
 		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"ItemStackable"					"1"
@@ -186,7 +182,6 @@
 		"ItemCost"						"4500"
 		"ItemShopTags"					"agi;stat;shard"
 		"ItemQuality"					"uncommon"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"ItemStackable"					"1"
@@ -230,7 +225,6 @@
 		"ItemCost"						"15000"
 		"ItemShopTags"					"agi;stat;shard"
 		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"ItemStackable"					"1"
@@ -274,7 +268,6 @@
 		"ItemCost"						"30000"
 		"ItemShopTags"					"agi;stat;shard"
 		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"ItemStackable"					"1"
@@ -318,7 +311,6 @@
 		"ItemCost"						"150000"
 		"ItemShopTags"					"agi;stat;shard"
 		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"ItemStackable"					"1"
@@ -362,7 +354,6 @@
 		"ItemCost"						"4500"
 		"ItemShopTags"					"int;stat;shard"
 		"ItemQuality"					"uncommon"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"ItemStackable"					"1"
@@ -406,7 +397,6 @@
 		"ItemCost"						"15000"
 		"ItemShopTags"					"int;stat;shard"
 		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"ItemStackable"					"1"
@@ -450,7 +440,6 @@
 		"ItemCost"						"30000"
 		"ItemShopTags"					"int;stat;shard"
 		"ItemQuality"					"rare"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"ItemStackable"					"1"
@@ -494,7 +483,6 @@
 		"ItemCost"						"150000"
 		"ItemShopTags"					"int;stat;shard"
 		"ItemQuality"					"legendary"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 
 		"ItemStackable"					"1"
@@ -535,7 +523,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_level"
-		"ItemCost"						"900"
+		"ItemCost"						"1200"
 		"ItemShopTags"					"experience;level;shard"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -609,7 +597,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"item_arena/shard_level"
-		"ItemCost"						"9000"
+		"ItemCost"						"12000"
 		"ItemShopTags"					"experience;level;shard"
 		"ItemQuality"					"rare"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"

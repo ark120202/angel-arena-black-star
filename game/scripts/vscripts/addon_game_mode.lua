@@ -84,15 +84,15 @@ function Precache(context)
 		"models/heroes/earthshaker/totem.vmdl",
 		-- Neutrals
 		"models/heroes/centaur/centaur.vmdl",
-		"models/custom/umbrella_rainbow.vmdl",
 	}
 	local units = {
-		"npc_arena_boss_central",
 		"npc_arena_boss_l1_v1",
 		"npc_arena_boss_l1_v2",
 		"npc_arena_boss_l2_v1",
 		"npc_arena_boss_l2_v2",
 		"npc_arena_boss_freya",
+		"npc_arena_boss_zaken",
+		"npc_arena_boss_cursed_zeld",
 		"npc_arena_healer",
 
 		"npc_arena_boss_kel_thuzad_ghost",

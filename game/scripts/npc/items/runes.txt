@@ -1,0 +1,87 @@
+"DOTAAbilities"
+{
+	"item_custom_rune_tripledamage"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_doubledamage01.vmdl"
+		"Effect"						""
+		"ItemPurchasable"				"0"
+	}
+	"item_custom_rune_haste"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_haste01.vmdl"
+		"Effect"						""
+		"ItemPurchasable"				"0"
+	}
+	"item_custom_rune_illusion"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_illusion01.vmdl"
+		"Effect"						""
+		"ItemPurchasable"				"0"
+	}
+	"item_custom_rune_invisibility"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_invisibility01.vmdl"
+		"Effect"						""
+		"ItemPurchasable"				"0"
+	}
+	"item_custom_rune_regeneration"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_regeneration01.vmdl"
+		"Effect"						""
+		"ItemPurchasable"				"0"
+	}
+	"item_custom_rune_bounty"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_goldxp.vmdl"
+		"Effect"						""
+		"ItemPurchasable"				"0"
+	}
+	"item_custom_rune_arcane"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_arcane.vmdl"
+		"Effect"						""
+		"ItemPurchasable"				"0"
+	}
+	"item_custom_rune_flame"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_illusion01.vmdl"
+		"Effect"						""
+		"ItemPurchasable"				"0"
+	}
+	"item_custom_rune_vibration"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_invisibility01.vmdl"
+		"Effect"						""
+		"ItemPurchasable"				"0"
+	}
+	"item_custom_rune_acceleration"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/rune_goldxp.vmdl"
+		"Effect"						""
+		"ItemPurchasable"				"0"
+	}
+	"item_custom_rune_soul_steal"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/heart001.vmdl"
+		"Effect"						""
+		"ItemPurchasable"				"0"
+	}
+	"item_custom_rune_spikes"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/heart001.vmdl"
+		"Effect"						""
+		"ItemPurchasable"				"0"
+	}
+}

@@ -1,5 +1,3 @@
-npc_arena_rune: Руна
-
 DOTA_Tooltip_modifier_arena_rune_tripledamage: Тройной урон
 DOTA_Tooltip_modifier_arena_rune_haste: Ускорение
 DOTA_Tooltip_modifier_arena_rune_invisibility: Невидимость
@@ -21,7 +19,7 @@ custom_runes_rune_0_text: Дает дополнительные золото и 
 custom_runes_rune_1_title: Тройной урон
 custom_runes_rune_1_text: Увеличивает базовый урон на 200%
 custom_runes_rune_2_title: Ускорение
-custom_runes_rune_2_text: Увеличивает скорость передвижения до 750
+custom_runes_rune_2_text: Увеличивает скорость передвижения до 625
 custom_runes_rune_3_title: Иллюзия
 custom_runes_rune_3_text: 'Создает 2 иллюзии вашего героя, наносящие 35% урона и получающие 200% урона. Иллюзии пропадут через 75 секунд'
 custom_runes_rune_4_title: Невидимость

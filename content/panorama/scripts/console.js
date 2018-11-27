@@ -67,10 +67,10 @@ Console.prototype.onDragEnd = function() {
 };
 
 Console.prototype.updateHeroes = function() {
-	var lines = _.map(Game.GetAllPlayerIDs(), function(pid) {
-		var team = Players.GetTeam(pid);
+	var lines = _.map(Game.GetAllPlayerIDs(), function(playerId) {
+		var team = Players.GetTeam(playerId);
 		var line = '';
-		line += pid + ': ' + $.Localize(GetPlayerHeroName(pid)) + ' - ' + Players.GetPlayerName(pid);
+		line += playerId + ': ' + $.Localize(GetPlayerHeroName(playerId)) + ' - ' + Players.GetPlayerName(playerId);
 		return line;
 	});
 

@@ -13,52 +13,47 @@ end
 
 function CustomAbilities:OnAbilityBuy(PlayerID, abilityname)
 	local hero = PlayerResource:GetSelectedHeroEntity(PlayerID)
+	if not hero then return end
 	local abilityInfo = CustomAbilities:GetAbilityListInfo(abilityname)
-	if not abilityInfo then
-		return
-	end
-	local cost = abilityInfo.cost
-	local banned_with =  abilityInfo.banned_with
-	for _,v in ipairs(banned_with) do
-		if hero:HasAbility(v) then
-			return
+	if not abilityInfo then return end
+
+	local function Buy()
+		local cost = abilityInfo.cost
+		if not IsValidEntity(hero) or hero:GetAbilityPoints() < cost then return end
+		for _,v in ipairs(abilityInfo.banned_with) do
+			if hero:HasAbility(v) then return end
 		end
-	end
-	if hero and cost and hero:GetAbilityPoints() >= cost then
-		local function Buy()
-			if IsValidEntity(hero) and hero:GetAbilityPoints() >= cost then
-				local abilityh = hero:FindAbilityByName(abilityname)
-				if abilityh and not abilityh:IsHidden() then
-					if abilityh:GetLevel() < abilityh:GetMaxLevel() then
-						hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
-						abilityh:SetLevel(abilityh:GetLevel() + 1)
+
+		local abilityh = hero:FindAbilityByName(abilityname)
+		if abilityh and not abilityh:IsHidden() then
+			if abilityh:GetLevel() < abilityh:GetMaxLevel() then
+				hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
+				abilityh:SetLevel(abilityh:GetLevel() + 1)
+			end
+		elseif hero:HasAbility("ability_empty") then
+			if abilityh and abilityh:IsHidden() then
+				RemoveAbilityWithModifiers(hero, abilityh)
+			end
+			hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
+			hero:RemoveAbility("ability_empty")
+			GameMode:PrecacheUnitQueueed(abilityInfo.hero)
+			local a, linked = hero:AddNewAbility(abilityname)
+			a:SetLevel(1)
+			if linked then
+				for _,v in ipairs(linked) do
+					if v:GetAbilityName() == "phoenix_launch_fire_spirit" then
+						v:SetLevel(1)
 					end
-				elseif hero:HasAbility("ability_empty") then
-					if abilityh and abilityh:IsHidden() then
-						RemoveAbilityWithModifiers(hero, abilityh)
-					end
-					hero:SetAbilityPoints(hero:GetAbilityPoints() - cost)
-					hero:RemoveAbility("ability_empty")
-					GameMode:PrecacheUnitQueueed(abilityInfo.hero)
-					local a, linked = hero:AddNewAbility(abilityname)
-					a:SetLevel(1)
-					if linked then
-						for _,v in ipairs(linked) do
-							if v:GetAbilityName() == "phoenix_launch_fire_spirit" then
-								v:SetLevel(1)
-							end
-						end
-					end
-					hero:CalculateStatBonus()
-					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(PlayerID), "dota_ability_changed", {})
 				end
 			end
+			hero:CalculateStatBonus()
+			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(PlayerID), "dota_ability_changed", {})
 		end
-		if hero:HasAbility(abilityname) then
-			Buy()
-		else
-			PrecacheItemByNameAsync(abilityname, Buy)
-		end
+	end
+	if hero:HasAbility(abilityname) then
+		Buy()
+	else
+		PrecacheItemByNameAsync(abilityname, Buy)
 	end
 end
 
@@ -78,6 +73,10 @@ function CustomAbilities:OnAbilitySell(data)
 				for _,v in ipairs(link) do
 					hero:RemoveAbility(v)
 				end
+			end
+			if data.ability == "puck_illusory_orb" then
+				local etherealJaunt = hero:FindAbilityByName("puck_ethereal_jaunt")
+				if etherealJaunt then etherealJaunt:SetActivated(false) end
 			end
 			hero:AddAbility("ability_empty")
 		end

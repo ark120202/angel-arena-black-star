@@ -43,9 +43,9 @@ if IsServer() then
 		local radius = ability:GetSpecialValueFor("singularity_radius")
 
 		if (
-			PreformAbilityPrecastActions(caster, ability) and
 			usedAbility:GetCooldown(usedAbility:GetLevel()) >= ability:GetSpecialValueFor("min_ability_cooldown") and
-			usedAbility:GetManaCost(usedAbility:GetLevel()) ~= 0
+			usedAbility:GetManaCost(usedAbility:GetLevel()) ~= 0 and
+			ability:PerformPrecastActions()
 		) then
 			for _,v in ipairs(FindUnitsInRadius(team, pos, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)) do
 				local enemyPos = v:GetAbsOrigin()
@@ -132,22 +132,10 @@ modifier_item_unstable_quasar_slow = class({
 })
 
 function modifier_item_unstable_quasar_slow:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_MOVESPEED_MAX,
-		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
-		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
-	}
+	return { MODIFIER_PROPERTY_MOVESPEED_LIMIT }
 end
 
 function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Limit()
-	return self:GetAbility():GetSpecialValueFor("slow_speed")
-end
-
-function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Max()
-	return self:GetAbility():GetSpecialValueFor("slow_speed")
-end
-
-function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Absolute()
 	return self:GetAbility():GetSpecialValueFor("slow_speed")
 end
 
@@ -161,9 +149,15 @@ function modifier_item_unstable_quasar_aura:GetModifierMagicalResistanceBonus()
 	return -self:GetAbility():GetSpecialValueFor("aura_resist_debuff_pct")
 end
 
-function modifier_item_unstable_quasar_aura:CheckState()
-	return {
-		[MODIFIER_STATE_INVISIBLE] = false,
-	}
-end
+if IsServer() then
+	function modifier_item_unstable_quasar_aura:OnCreated()
+		local owner = self:GetParent()
+		local caster = self:GetCaster()
+		local ability = self:GetAbility()
+		self.truesight = owner:AddNewModifier(caster, ability, "modifier_truesight", nil)
+	end
 
+	function modifier_item_unstable_quasar_aura:OnDestroy()
+		if not self.truesight:IsNull() then self.truesight:Destroy() end
+	end
+end

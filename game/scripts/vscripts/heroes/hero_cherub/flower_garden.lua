@@ -69,9 +69,7 @@ function ChooseFlower(keys)
 			if unit:IsAlive() then
 				unit:ForceKill(false)
 			end
-			Timers:CreateTimer(function()
-				UTIL_Remove(unit)
-			end)
+			Timers:NextTick(function() UTIL_Remove(unit) end)
 		end
 	end
 

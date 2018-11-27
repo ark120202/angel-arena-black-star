@@ -7,6 +7,7 @@ DOTA_Tooltip_ability_destroyer_armor_crush_Lore: Не смотря на разм
 DOTA_Tooltip_ability_destroyer_armor_crush_damage: 'УРОН:'
 DOTA_Tooltip_ability_destroyer_armor_crush_armor_reduction: 'СНИЖЕНИЕ БРОНИ:'
 DOTA_Tooltip_ability_destroyer_armor_crush_duration: 'ДЛИТЕЛЬНОСТЬ:'
+DOTA_Tooltip_modifier_destroyer_armor_crush_Description: Оглушен, броня уменьшена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 
 DOTA_Tooltip_ability_destroyer_seal_of_limit: Seal of Limit
 DOTA_Tooltip_ability_destroyer_seal_of_limit_Description: 'Разрушитель накладывает печать Аш-Лагора на себя, ограничивая своё максимальное здоровье до %max_health_pct%%%, в то же время увеличивая скорость передвижения, скорость атаки, броню, сопротивление магическому урону и регенерацию здоровья.'
@@ -25,25 +26,21 @@ DOTA_Tooltip_ability_destroyer_body_reconstruction_Description: 'Разруши�
 DOTA_Tooltip_ability_destroyer_body_reconstruction_Lore: Существа из рассы Кроншака по-своему бесмертны и обладают уникальной способностью обновить свой жизненный цикл.
 
 DOTA_Tooltip_ability_destroyer_frenzy: Frenzy
-DOTA_Tooltip_ability_destroyer_frenzy_Description: 'Дух Разрушителя крепчает от ранений, увеличивая урон, броню и скорость передвижения, основываясь на текущем здоровье.'
+DOTA_Tooltip_ability_destroyer_frenzy_Description: 'Дух Разрушителя крепчает от ранений, увеличивая урон и броню, основываясь на текущем здоровье.'
 DOTA_Tooltip_ability_destroyer_frenzy_Lore: Чем кровопролитнее и тяжелее битва, тем сильнее дух Кроншака.
 DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl1: |-
   %Level 1
   • HEALTH TO TRIGGER:
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl1: '%• ДОПОЛНИТЕЛЬНЫЙ УРОН:'
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl1: '%• БОНУСНАЯ БРОНЯ:'
-DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl1: '• МАКСИМАЛЬНАЯ СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl2: |-
   %Level 2
   • HEALTH TO TRIGGER:
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl2: '%• ДОПОЛНИТЕЛЬНЫЙ УРОН:'
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl2: '%• БОНУСНАЯ БРОНЯ:'
-DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl2: '• МАКСИМАЛЬНАЯ СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_destroyer_frenzy_hp_mark_pct_lvl3: |-
   %Level 3
   • HEALTH TO TRIGGER:
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_damage_pct_lvl3: '%• ДОПОЛНИТЕЛЬНЫЙ УРОН:'
 DOTA_Tooltip_ability_destroyer_frenzy_bonus_armor_pct_lvl3: '%• БОНУСНАЯ БРОНЯ:'
-DOTA_Tooltip_ability_destroyer_frenzy_max_speed_lvl3: '• МАКСИМАЛЬНАЯ СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:'
-DOTA_Tooltip_modifier_destroyer_frenzy_Description: Максимальная скорость передвижения равна %dMODIFIER_PROPERTY_MOVESPEED_LIMIT%, урон увеличен на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%, броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
-
+DOTA_Tooltip_modifier_destroyer_frenzy_Description: Урон увеличен на %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%, броня увеличена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.

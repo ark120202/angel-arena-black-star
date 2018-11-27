@@ -141,7 +141,7 @@ end
 function Spawner:OnCreepDeath(unit)
 	Spawner.Creeps[unit.SSpawner] = Spawner.Creeps[unit.SSpawner] - 1
 	if unit.SpawnerType == "jungle" and Spawner.Creeps[unit.SSpawner] == 0 then
-		Timers:CreateTimer(0.5, function()
+		Timers:CreateTimer(0.2 + unit.SLevel * 0.008, function()
 			Spawner:SpawnJungleStacks(unit.SSpawner, unit.SpawnerIndex, unit.SpawnerType)
 		end)
 	end
@@ -183,28 +183,26 @@ function Spawner:SpawnJungleStacks(entid, SpawnerType, sName)
 end
 
 function Spawner:UpgradeJungleCreep(unit, cycle, spawnerIndex)
-	local modelScale = 1 + (0.0015 * cycle)
-	if cycle > 1 then
-		unit:CreatureLevelUp(cycle - 1)
-	end
+	if cycle > 1 then unit:CreatureLevelUp(cycle - 1) end
 
-	unit:SetDeathXP(unit:GetDeathXP() * cycle)
-	unit:SetMinimumGoldBounty(unit:GetMinimumGoldBounty() * cycle)
-	unit:SetMaximumGoldBounty(unit:GetMaximumGoldBounty() * cycle)
-	unit:SetMaxHealth(unit:GetMaxHealth() * cycle)
-	unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * cycle)
-	unit:SetHealth(unit:GetMaxHealth() * cycle)
-	unit:SetBaseDamageMin(unit:GetBaseDamageMin() * cycle)
-	unit:SetBaseDamageMax(unit:GetBaseDamageMax() * cycle)
-	unit:SetBaseMoveSpeed(unit:GetBaseMoveSpeed() + 10 * cycle)
-	unit:SetPhysicalArmorBaseValue(unit:GetPhysicalArmorBaseValue() * cycle)
+	local multiplier = 0.5 + cycle * 0.5
+	unit:SetDeathXP(unit:GetDeathXP() * multiplier)
+	unit:SetMinimumGoldBounty(unit:GetMinimumGoldBounty() * (0.75 + cycle * 0.25))
+	unit:SetMaximumGoldBounty(unit:GetMaximumGoldBounty() * (0.75 + cycle * 0.25))
+	unit:SetMaxHealth(unit:GetMaxHealth() * multiplier)
+	unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * multiplier)
+	unit:SetHealth(unit:GetMaxHealth() * multiplier)
+	unit:SetBaseDamageMin(unit:GetBaseDamageMin() * multiplier)
+	unit:SetBaseDamageMax(unit:GetBaseDamageMax() * multiplier)
+	unit:SetBaseMoveSpeed(unit:GetBaseMoveSpeed() + 1 * multiplier)
+	unit:SetPhysicalArmorBaseValue(unit:GetPhysicalArmorBaseValue() * multiplier)
 	unit:AddNewModifier(unit, nil, "modifier_neutral_upgrade_attackspeed", {})
 	local modifier = unit:FindModifierByNameAndCaster("modifier_neutral_upgrade_attackspeed", unit)
 	if modifier then
-		modifier:SetStackCount(cycle)
+		modifier:SetStackCount(math.round(multiplier))
 	end
 
-	unit:SetModelScale(modelScale)
+	unit:SetModelScale(1 + 0.0015 * cycle)
 	local model = table.nearestOrLowerKey(SPAWNER_SETTINGS.jungle.SpawnTypes[spawnerIndex][1], cycle)
 	if model then
 		unit:SetModel(model)

@@ -21,7 +21,7 @@ function DynamicWearables:GetDefaultItemsForHero(heroName)
 	local items = {}
 
 	for name, wearable in pairs(CUSTOM_WEARABLES) do
-		if wearable.default and table.contains(wearable.heroes or {}, heroName) then
+		if wearable.default and table.includes(wearable.heroes or {}, heroName) then
 			items[wearable.slot] = name
 		end
 	end
@@ -30,7 +30,7 @@ function DynamicWearables:GetDefaultItemsForHero(heroName)
 end
 
 function DynamicWearables:AutoEquip(unit)
-	local playerID = unit:GetPlayerID()
+	local playerId = unit:GetPlayerID()
 	local heroName = unit:GetFullName()
 	local equippedItems = DynamicWearables:GetDefaultItemsForHero(heroName)
 
@@ -191,9 +191,9 @@ function ParticleManager:CreateParticle(particle_name, attachment, unit, caster,
 	return particle
 end
 
-function DynamicWearables:HasWearable(playerID, name)
-	if PLAYER_DATA[playerID].Inventory then
-		return table.contains(PLAYER_DATA[playerID].Inventory, name)
+function DynamicWearables:HasWearable(playerId, name)
+	if PLAYER_DATA[playerId].Inventory then
+		return table.includes(PLAYER_DATA[playerId].Inventory, name)
 	end
 	return false
 end

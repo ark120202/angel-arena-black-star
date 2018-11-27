@@ -5,9 +5,6 @@ Variables:
   item_yasha_note: Yasha-based movement speed bonuses from multiple items do not stack.
   item_kaya_note: Multiple instances of this item do not stack.
 
-DOTA_Tooltip_ability_item_casino_coin: Casino Coin
-DOTA_Tooltip_ability_item_casino_coin_Description: Can be used to play slotmachine or to pay for various services
-
 DOTA_Tooltip_ability_item_shard_level: Level Up Shard
 DOTA_Tooltip_ability_item_shard_level_Description: '<h1>Active: Consume</h1> Consumes shard and level up''s your hero by 1.'
 
@@ -57,10 +54,11 @@ DOTA_Tooltip_ability_item_shard_attackspeed_bonus_attackspeed: +$attack
 
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
 DOTA_Tooltip_ability_item_lucifers_claw_Description: |-
-  <h1>Active: Unwilling Ritual</h1> Targets non-hero enemy unit. The target gets sacrificed for a Doomling. Doomling possesses the abilities of the sacrificed unit and and adds it's health, damage and mana to Doomling's stats. By default doomling has %doomling_health% health, %doomling_mana% mana, %doomling_damage_min%-%doomling_damage_max% damage, %doomling_health_regen% health regeneration, %doomling_mana_regen% mana regeneration. Bounty won't be granted for the target unit. Units killed by Doomling won't grant gold to hero.
+  <h1>Active: Unwilling Ritual</h1> Targets non-hero enemy unit. The target gets sacrificed for a Doomling. Doomling possesses the abilities of the sacrificed unit and and adds it's health, damage and mana to Doomling's stats. By default doomling has %doomling_health% health, %doomling_mana% mana, %doomling_damage_min%-%doomling_damage_max% damage, %doomling_health_regen% health regeneration, %doomling_mana_regen% mana regeneration. Normal XP and gold bounty is granted for the target unit.
   <h1>Passive: Quell</h1>Increases attack damage against non-hero units by %damage_bonus% for melee heroes, and %damage_bonus_ranged% for ranged.
 DOTA_Tooltip_ability_item_lucifers_claw_Note0: The Doomling is summoned Creep-Hero with unlimited duration. It therefore can be targeted by some more spells.
 DOTA_Tooltip_ability_item_lucifers_claw_Note1: Has a 4 second cooldown on Trees.
+DOTA_Tooltip_ability_item_lucifers_claw_Note2: Can't be used on Jungle Bears.
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_all: +$all
 
@@ -644,36 +642,29 @@ DOTA_Tooltip_ability_item_titanium_bar_active_bonus_strength: 'AVATAR BONUS STRE
 DOTA_Tooltip_ability_item_titanium_bar_active_bonus_attackspeed: 'AVATAR BONUS ATTACKSPEED:'
 DOTA_Tooltip_modifier_item_titanium_bar_active: Titanium Bar
 DOTA_Tooltip_modifier_item_titanium_bar_active_Description: 'Spell Immune, 100% resistant to magic damage type, all incoming damage is reduced by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%, strength increased by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
+
 DOTA_Tooltip_ability_item_vermillion_robe: Vermillion Robe
-DOTA_Tooltip_ability_item_vermillion_robe_Description: |-
-  <h1>Active: True Flame</h1> Deal half the caster's current health as damage to itself, then, after %damage_delay% seconds, deals damage in an area around the caster, based on the difference between max and current health.
-  <h1>Passive: Vermillion Dust</h1> Gain increasing bonuses based on missing HP.
+DOTA_Tooltip_ability_item_vermillion_robe_Description: '<h1>Passive: Vermillion Dust</h1> Increases movement speed by %dust_move_speed_pct%%%, mana regeneration by %dust_mana_regen%%% and attack damage by %dust_damage%%% for each missing percent of health.'
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_health: +$health
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_armor: +$armor
-DOTA_Tooltip_ability_item_vermillion_robe_bonus_movement: +$move_speed
+DOTA_Tooltip_ability_item_vermillion_robe_bonus_movement_speed_pct: '%+$move_speed'
 DOTA_Tooltip_ability_item_vermillion_robe_bonus_magical_damage_resistance_pct: '%+$spell_resist'
-DOTA_Tooltip_ability_item_vermillion_robe_hp_as_damage_pct: '%CURRENT HEALTH AS SELF DAMAGE:'
-DOTA_Tooltip_ability_item_vermillion_robe_damage_radius: 'DAMAGE RADIUS:'
-DOTA_Tooltip_ability_item_vermillion_robe_damage_delay: 'DAMAGE DELAY:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_mana_regen: 'MANA REGEN PER HP PERCENT:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_bonus_movement_speed: 'MOVE SPEED PER HP PERCENT:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_damage: 'DAMAGE PER HP PERCENT:'
 DOTA_Tooltip_modifier_item_vermillion_robe_delay: Vermillion Robe True Flame Delay
 DOTA_Tooltip_modifier_item_vermillion_robe_delay_Description: Will deal AoE damage when buff ends.
 DOTA_Tooltip_modifier_item_vermillion_robe_dust: Vermillion Dust
-DOTA_Tooltip_modifier_item_vermillion_robe_dust_Description: 'Mana regeneration increased by %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.'
+DOTA_Tooltip_modifier_item_vermillion_robe_dust_Description: 'Mana regeneration increased by %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.'
+
 DOTA_Tooltip_ability_item_soul_of_titan: Soul of Titan
 DOTA_Tooltip_ability_item_soul_of_titan_Description: |-
-  <h1>Passive: Elder Aura</h1> Decreases armor of nearby enemies.
+  <h1>Passive: Elder Aura</h1> Reduces armor by %armor_reduction% of enemies in a %radius% radius.
 
   This item is dropped by bosses and you can't buy it in the shop.
-DOTA_Tooltip_ability_item_soul_of_titan_armor_reduction: 'ARMOR REDUCTION:'
-DOTA_Tooltip_ability_item_soul_of_titan_radius: 'RADIUS:'
-DOTA_Tooltip_modifier_item_soul_of_titan_effect: Soul of Titan Armor Reduction
+DOTA_Tooltip_modifier_item_soul_of_titan_effect: Elder Aura
 DOTA_Tooltip_modifier_item_soul_of_titan_effect_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
+
 DOTA_Tooltip_ability_item_dark_flow: Dark Flow
 DOTA_Tooltip_ability_item_dark_flow_Description: '<h1>Passive: Armor Flow</h1> Each attack reduces target''s armor.'
 DOTA_Tooltip_ability_item_dark_flow_bonus_damage: +$damage
@@ -1035,21 +1026,19 @@ DOTA_Tooltip_ability_item_dark_blade: Dark Blade
 DOTA_Tooltip_ability_item_dark_blade_Description: This item is dropped by bosses and you can't buy it in the shop.
 DOTA_Tooltip_ability_item_dark_blade_bonus_damage: +$damage
 
-DOTA_Tooltip_ability_item_haganemushi: Haganemushi
-DOTA_Tooltip_ability_item_haganemushi_Description: |-
-  <h1>Passive: Metal-Eater</h1> With each attack that legendary sword decreases enemy armor and attack damage. This effect is permanent, not purgable and not works on bosses.
-  <h1>Active: Shadow Walk</h1> Makes you invisible until the duration ends, or until you attack or cast a spell. While Shadow Walk is active, you move %windwalk_movement_speed_pct%%% faster and can move through units. If attacking to end the invisibility, you gain %windwalk_bonus_damage% bonus damage on that attack. Lasts %windwalk_duration% seconds.
+DOTA_Tooltip_ability_item_soulcutter: Soulcutter
+DOTA_Tooltip_ability_item_soulcutter_bonus_damage: +$damage
+DOTA_Tooltip_ability_item_soulcutter_bonus_attack_speed: +$attack
+DOTA_Tooltip_ability_item_soulcutter_Description: |-
+  <h1>Passive: Soul Corruption</h1> With each attack it corrups enemy armor, decreasing it by %armor_per_hit_pct%%% for %duration% seconds.
   <h1>Passive: Soul Piercing</h1> %attack_damage_to_pure_pct%%% of your attack damage will deal pure damage, instead of physical.
-  <h1>Passive: Elder Aura</h1> Decreases armor of nearby enemies.
-DOTA_Tooltip_ability_item_haganemushi_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_haganemushi_bonus_attack_speed: +$attack
-DOTA_Tooltip_ability_item_haganemushi_damage_per_hit: 'DAMAGE DECREASE:'
-DOTA_Tooltip_ability_item_haganemushi_armor_per_hit: 'ARMOR DECREASE:'
-DOTA_Tooltip_ability_item_haganemushi_attack_damage_to_pure_pct: '%PURE ATTACK DAMAGE:'
-DOTA_Tooltip_ability_item_haganemushi_aura_armor_reduction: 'AURA ARMOR REDUCTION:'
-DOTA_Tooltip_ability_item_haganemushi_aura_radius: 'AURA RADIUS:'
-DOTA_Tooltip_ability_item_haganemushi_windwalk_duration: 'SHADOW WALK DURATION:'
-DOTA_Tooltip_ability_item_haganemushi_windwalk_bonus_damage: 'SHADOW WALK DAMAGE:'
+  <h1>Passive: Elder Aura</h1> Reduces armor by %aura_armor_reduction% of enemies in a %aura_radius% radius.
+DOTA_Tooltip_ability_item_soulcutter_Note0: Metal-Eater not affects bosses
+DOTA_Tooltip_modifier_item_soulcutter_stack: Soulcutter
+DOTA_Tooltip_modifier_item_soulcutter_stack_Description: Armor reduced by %dMODIFIER_PROPERTY_TOOLTIP%%% (%fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%).
+DOTA_Tooltip_modifier_item_soulcutter_aura_effect: Elder Aura
+DOTA_Tooltip_modifier_item_soulcutter_aura_effect_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
+
 DOTA_Tooltip_modifier_item_haganemushi_aura_effect: Haganemushi's Armor Reduction
 DOTA_Tooltip_modifier_item_haganemushi_aura_effect_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_modifier_item_haganemushi_stack: Haganemushi
@@ -1563,21 +1552,3 @@ DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: +Day Vision
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +Night Vision
 DOTA_Tooltip_ability_item_unstable_quasar_spell_amp_pct: '%+$spell_amp'
 DOTA_Tooltip_ability_item_unstable_quasar_Lore: Only sages can completely seize the singularity.
-
-DOTA_Tooltip_ability_item_golden_arrow: Golden Arrow
-DOTA_Tooltip_ability_item_golden_arrow_Description: >-
-  <h1>Active: Golden Life</h1> Gives you %gold_per_stack% gold. If you have more
-  than %attributes_per_stack% of each attribute, this ability will decrease them
-  by %attributes_per_stack%. Otherwise, deals %damage_per_stack% damage to your
-  hero.
-
-
-  All values of this ability would be increased by 100% with each use. Each use
-  also increases it's cooldown by %cooldown_per_stack%, starting from
-  %cooldown_base%.
-DOTA_Tooltip_ability_item_golden_arrow_Note0: >-
-  You won't be able to use this ability, if the active ability should damage
-  you, Golden Arrow can't be used nearby the fountain.
-DOTA_Tooltip_ability_item_golden_arrow_bonus_damage: +$damage
-DOTA_Tooltip_ability_item_golden_arrow_bonus_speed: +$move_speed
-DOTA_Tooltip_modifier_item_golden_arrow_counter: Golden Arrow Multiplier

@@ -90,38 +90,6 @@
 		"VisionNighttimeRange"	"0"
 	}
 
-	"npc_arena_rune"
-	{
-		// General
-		//
-		"BaseClass"		"npc_dota_base_additive"
-		"Model"			"models/development/invisiblebox.vmdl"
-
-		// Abilities
-		//----------------------------------------------------------------
-
-		"Ability1"	"arena_custom_rune"
-		"Ability2"	""
-		"Ability3"	""
-		"Ability4"	""
-
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"	"DOTA_UNIT_CAP_NO_ATTACK"
-
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"	"DOTA_HULL_SIZE_SMALL"
-		"RingRadius"				"0"
-
-		"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_GROUND"
-
-		"StatusHealth"			"1"
-
-		"VisionDaytimeRange"	"0"
-		"VisionNighttimeRange"	"0"
-	}
-
 	"npc_dummy_flying"
 	{
 		// General

@@ -43,8 +43,8 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 	end
 	local goldChange = Kills:GetGoldForKill(killedUnit)
 	Gold:ModifyGold(killedUnit, -goldChange)
+	local isDeny = false
 	if killerEntity and killerEntity:IsControllableByAnyPlayer() then
-		local isDeny = false
 		if killerEntity.GetPlayerID or killerEntity.GetPlayerOwnerID then
 			if killerEntity == killedUnit then
 				Kills:CreateKillTooltip(killedPlayerID, killedPlayerID)
@@ -70,7 +70,7 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 			local hadGold = {killerPlayerID}
 			for _,v in ipairs(assists) do
 				if v ~= killerEntity and v and v:IsMainHero() then
-					if not table.contains(hadGold) then
+					if not table.includes(hadGold) then
 						Kills:_GiveKillGold(v, killedUnit, assistGold)
 						table.insert(hadGold, v:GetPlayerID())
 					end
@@ -79,20 +79,18 @@ function Kills:OnEntityKilled(killedPlayer, killerPlayer)
 		end
 	else
 		local assistGold = goldChange * 0.6
-		for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1  do
-			if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:GetTeam(playerID) ~= killedUnit:GetTeamNumber() then
-				local player = PlayerResource:GetPlayer(playerID)
+		for playerId = 0, DOTA_MAX_TEAM_PLAYERS-1  do
+			if PlayerResource:IsValidPlayerID(playerId) and PlayerResource:GetTeam(playerId) ~= killedUnit:GetTeamNumber() then
+				local player = PlayerResource:GetPlayer(playerId)
 				if player and player:GetAssignedHero() then
 					SendOverheadEventMessage(player, OVERHEAD_ALERT_GOLD, player:GetAssignedHero(), assistGold, player)
 				end
-				Gold:ModifyGold(playerID, assistGold)
+				Gold:ModifyGold(playerId, assistGold)
 			end
 		end
 		Kills:CreateKillTooltip(nil, killedPlayerID, goldChange)
 	end
-	if killedUnit.BloodstoneDeny then
-		killedUnit.BloodstoneDeny = nil
-	else
+	if not isDeny then
 		local streak = Kills:GetKillStreak(killedPlayerID)
 		if streak > 1 then
 			CustomGameEventManager:Send_ServerToAllClients("create_custom_toast", {

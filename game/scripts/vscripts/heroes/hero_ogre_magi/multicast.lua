@@ -81,13 +81,11 @@ function modifier_multicast_lua:OnAbilityExecuted(keys)
 			"ogre_magi_unrefined_fireblast"
 		}
 		if ability_cast and not ability_cast:IsItem() and not ability_cast:IsToggle() then
-			if table.contains(ogre_abilities, ability_cast:GetName()) then
+			if table.includes(ogre_abilities, ability_cast:GetName()) then
 				local mc = caster:AddAbility("ogre_magi_multicast")
 				mc:SetHidden(true)
 				mc:SetLevel(ability:GetLevel())
-				Timers:CreateTimer(0.01, function()
-					caster:RemoveAbility("ogre_magi_multicast")
-				end)
+				Timers:NextTick(function() caster:RemoveAbility("ogre_magi_multicast") end)
 			else
 				local multicast
 				local pct_4 = ability:GetSpecialValueFor("multicast_4_times")

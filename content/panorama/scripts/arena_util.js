@@ -4,6 +4,7 @@
 var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
 var _ = GameUI.CustomUIConfig()._;
 var Options = GameUI.CustomUIConfig().Options;
+var RegisterKeyBind = GameUI.CustomUIConfig().RegisterKeyBind;
 
 var console = {
 	log: function() {
@@ -43,10 +44,6 @@ var RUNES_COLOR_MAP = {
 	11: 'B35F5F',
 };
 
-String.prototype.encodeHTML = function() {
-	return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
-};
-
 String.prototype.endsWith = function(suffix) {
 	return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
@@ -79,10 +76,6 @@ function GetDataFromServer(path, params, resolve, reject) {
 			if (reject) reject(e);
 		}
 	});
-}
-
-function MongoObjectIDToDate(objectId) {
-	return new Date(parseInt(objectId.substring(0, 8), 16) * 1000);
 }
 
 function IsHeroName(str) {
@@ -144,8 +137,8 @@ function GetPlayerHeroName(playerId) {
 	return '';
 }
 
-function GetPlayerGold(iPlayerID) {
-	return +PlayerTables.GetTableValue('gold', iPlayerID);
+function GetPlayerGold(playerId) {
+	return +PlayerTables.GetTableValue('gold', playerId);
 }
 
 function dynamicSort(property) {
@@ -167,7 +160,7 @@ function GetItemCountInInventory(nEntityIndex, itemName, bStash) {
 		endPoint = 14;
 	for (var i = endPoint; i >= 0; i--) {
 		var item = Entities.GetItemInSlot(nEntityIndex, i);
-		if (Abilities.GetAbilityName(item) === itemName)
+		if (Abilities.GetAbilityName(item) === itemName && Items.GetPurchaser(item) === nEntityIndex)
 			counter = counter + 1;
 	}
 	return counter;
@@ -228,14 +221,6 @@ function DynamicSubscribeNTListener(table, callback, OnConnectedCallback) {
 	}
 }
 
-function getRandomArbitrary(min, max) {
-	return Math.random() * (max - min) + min;
-}
-
-function getRandomInt(min, max) {
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 function GetDotaHud() {
 	var p = $.GetContextPanel();
 	while (true) {
@@ -245,14 +230,6 @@ function GetDotaHud() {
 		else
 			p = parent;
 	}
-}
-
-function GetSteamID(pid, type) {
-	var playerInfo = Game.GetPlayerInfo(pid);
-	if (!playerInfo) return 0;
-	var steamID64 = playerInfo.player_steamid,
-		steamID32 = String(Number(steamID64.substring(3)) - 61197960265728);
-	return type === 64 ? steamID64 : steamID32;
 }
 
 function _DynamicMinimapSubscribe(minimapPanel, OnConnectedCallback) {
@@ -293,23 +270,10 @@ function secondsToMS(seconds, bTwoChars) {
 	return minutes + ':' + seconds;
 }
 
-function escapeRegExp(string) {
-	return String(string).replace(/[()]/g, function(s) {
-		return '\\' + s;
-	});
-}
-
 function AddStyle(panel, table) {
 	for (var k in table) {
 		panel.style[k] = table[k];
 	}
-}
-
-function AddJSClass(panel, classname) {
-	if (JSStyleMap[classname] != null)
-		AddStyle(panel, JSStyleMap[classname]);
-	else
-		$.Msg('[AddJSClass] Critical error - style map has no ' + classname + ' class');
 }
 
 function FindDotaHudElement(id) {
@@ -321,19 +285,6 @@ function GetHEXPlayerColor(playerId) {
 	return playerColor == null ? '#000000' : ('#' + playerColor.substring(6, 8) + playerColor.substring(4, 6) + playerColor.substring(2, 4) + playerColor.substring(0, 2));
 }
 
-function hexToRgb(hex) {
-	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-	return result ? {
-		r: parseInt(result[1], 16),
-		g: parseInt(result[2], 16),
-		b: parseInt(result[3], 16)
-	} : null;
-}
-
-function rgbToHex(r, g, b) {
-	return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-}
-
 function shadeColor2(color, percent) {
 	var f = parseInt(color.slice(1), 16),
 		t = percent < 0 ? 0 : 255,
@@ -342,16 +293,6 @@ function shadeColor2(color, percent) {
 		G = f >> 8 & 0x00FF,
 		B = f & 0x0000FF;
 	return '#' + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
-}
-
-function shuffle(a) {
-	var j, x, i;
-	for (i = a.length; i; i--) {
-		j = Math.floor(Math.random() * i);
-		x = a[i - 1];
-		a[i - 1] = a[j];
-		a[j] = x;
-	}
 }
 
 function FormatGold(value) {
@@ -372,12 +313,6 @@ function SortPanelChildren(panel, sortFunc, compareFunc) {
 		}
 	});
 };
-
-function JoinUrlParams(params) {
-	return params == null ? '' : '?' + Object.keys(params).map(function(key) {
-	    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
-	}).join('&');
-}
 
 function GetTeamInfo(team) {
 	var t = PlayerTables.GetTableValue('teams', team) || {};

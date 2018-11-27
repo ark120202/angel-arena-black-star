@@ -112,16 +112,16 @@ function ProcessTable(newTable, oldTable, changes, dels) {
 }
 
 function SendPID() {
-	var pid = Players.GetLocalPlayer();
-	var spec = Players.IsSpectator(pid);
-	//$.Msg(pid, ' -- ', spec);
-	if (pid == -1 && !spec) {
+	var playerId = Players.GetLocalPlayer();
+	var spec = Players.IsSpectator(playerId);
+	//$.Msg(playerId, ' -- ', spec);
+	if (playerId == -1 && !spec) {
 		$.Schedule(1 / 30, SendPID);
 		return;
 	}
 
 	GameEvents.SendCustomGameEventToServer("PlayerTables_Connected", {
-		pid: pid
+		pid: playerId
 	});
 }
 

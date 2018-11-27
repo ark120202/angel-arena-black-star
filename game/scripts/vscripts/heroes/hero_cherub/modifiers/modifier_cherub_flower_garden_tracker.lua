@@ -27,9 +27,7 @@ if IsServer() then
 				if not PLAYER_DATA[keys.unit:GetPlayerOwnerID()].Cherub_Flower_Garden[ability_name] then PLAYER_DATA[keys.unit:GetPlayerOwnerID()].Cherub_Flower_Garden[ability_name] = {} end
 				table.removeByValue(PLAYER_DATA[keys.unit:GetPlayerOwnerID()].Cherub_Flower_Garden[ability_name], keys.unit)
 			end
-			Timers:CreateTimer(function()
-				UTIL_Remove(keys.unit)
-			end)
+			Timers:NextTick(function() UTIL_Remove(keys.unit) end)
 		end
 	end
 

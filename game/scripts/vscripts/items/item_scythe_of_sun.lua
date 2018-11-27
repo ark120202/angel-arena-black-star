@@ -114,9 +114,7 @@ end
 function modifier_item_scythe_of_sun_hex:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_MODEL_CHANGE,
-		MODIFIER_PROPERTY_MOVESPEED_MAX, -- MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE
 		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
-		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
 	}
 end
 
@@ -124,14 +122,6 @@ function modifier_item_scythe_of_sun_hex:GetModifierModelChange()
 	return "models/items/hex/sheep_hex/sheep_hex_gold.vmdl"
 end
 
-function modifier_item_scythe_of_sun_hex:GetModifierMoveSpeed_Max()
-	return self:GetAbility():GetSpecialValueFor("hex_movement_speed")
-end
-
 function modifier_item_scythe_of_sun_hex:GetModifierMoveSpeed_Limit()
-	return self:GetAbility():GetSpecialValueFor("hex_movement_speed")
-end
-
-function modifier_item_scythe_of_sun_hex:GetModifierMoveSpeed_Absolute()
 	return self:GetAbility():GetSpecialValueFor("hex_movement_speed")
 end

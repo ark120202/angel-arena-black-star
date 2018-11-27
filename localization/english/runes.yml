@@ -1,5 +1,3 @@
-npc_arena_rune: Rune
-
 DOTA_Tooltip_modifier_arena_rune_tripledamage: Triple Damage
 DOTA_Tooltip_modifier_arena_rune_haste: Haste
 DOTA_Tooltip_modifier_arena_rune_invisibility: Invisible
@@ -27,7 +25,7 @@ custom_runes_rune_0_text: Grants bonus Gold and XP.
 custom_runes_rune_1_title: Triple Damage
 custom_runes_rune_1_text: Increases base damage by 200%
 custom_runes_rune_2_title: Haste
-custom_runes_rune_2_text: Increases movement speed to 750
+custom_runes_rune_2_text: Increases movement speed to 625
 custom_runes_rune_3_title: Illusion
 custom_runes_rune_3_text: Conjures 2 illusions of your hero which deal 35% damage and take 200% damage. Illusions last 75 seconds.
 custom_runes_rune_4_title: Invisibility

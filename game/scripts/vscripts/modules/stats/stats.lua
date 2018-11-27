@@ -1,7 +1,7 @@
 StatsClient = StatsClient or class({})
 ModuleRequire(..., "data")
 
-Events:Register("activate", "stats", function ()
+Events:Register("activate", function ()
 	PlayerTables:CreateTable("stats_client", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("stats_team_rating", {}, AllPlayersInterval)
 	CustomGameEventManager:RegisterListener("stats_client_add_guide", Dynamic_Wrap(StatsClient, "AddGuide"))
@@ -14,26 +14,26 @@ function StatsClient:FetchPreGameData()
 		players = {},
 	}
 	for i = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-		if PlayerResource:IsValidPlayerID(i) and not IsPlayerAbandoned(i) then
+		if PlayerResource:IsValidPlayerID(i) and not PlayerResource:IsPlayerAbandoned(i) then
 			data.players[i] = PlayerResource:GetRealSteamID(i)
 		end
 	end
 
 	StatsClient:Send("fetchPreGameMatchData", data, function(response)
-		for pid, data in pairs(response) do
-			pid = tonumber(pid)
+		for playerId, data in pairs(response) do
+			playerId = tonumber(playerId)
 
-			PLAYER_DATA[pid].serverData = data
-			PLAYER_DATA[pid].Inventory = data.inventory or {}
+			PLAYER_DATA[playerId].serverData = data
+			PLAYER_DATA[playerId].Inventory = data.inventory or {}
 			local isBanned = Options:IsEquals("EnableBans") and data.isBanned == true
-			PLAYER_DATA[pid].isBanned = isBanned
+			PLAYER_DATA[playerId].isBanned = isBanned
 
 			local clientData = table.deepcopy(data)
 			clientData.TBDRating = nil
-			PlayerTables:SetTableValue("stats_client", pid, clientData)
+			PlayerTables:SetTableValue("stats_client", playerId, clientData)
 
 			if isBanned then
-				PlayerResource:MakePlayerAbandoned(pid)
+				PlayerResource:MakePlayerAbandoned(playerId)
 			end
 		end
 	end, math.huge)
@@ -42,9 +42,9 @@ end
 function StatsClient:CalculateAverageRating()
 	local teamRatings = {}
 
-	for pid, data in pairs(PLAYER_DATA) do
-		local team = PlayerResource:GetTeam(pid)
-		if data.serverData and not PlayerResource:IsBanned(pid) then
+	for playerId, data in pairs(PLAYER_DATA) do
+		local team = PlayerResource:GetTeam(playerId)
+		if data.serverData and not PlayerResource:IsBanned(playerId) then
 			teamRatings[team] = teamRatings[team] or {}
 			table.insert(teamRatings[team], data.serverData.Rating or (2500 + (data.serverData.TBDRating or 0)))
 		end
@@ -87,6 +87,7 @@ function StatsClient:OnGameEnd(winner)
 		local data = {
 			version = ARENA_VERSION,
 			matchID = matchID,
+			mapName = GetMapName(),
 			players = {},
 			killGoal = KILLS_TO_END_GAME_FOR_TEAM,
 			teamsInfo = {},
@@ -111,7 +112,7 @@ function StatsClient:OnGameEnd(winner)
 			if PlayerResource:IsValidPlayerID(i) then
 				local hero = PlayerResource:GetSelectedHeroEntity(i)
 				local playerInfo = {
-					abandoned = IsPlayerAbandoned(i),
+					abandoned = PlayerResource:IsPlayerAbandoned(i),
 					steamid = PlayerResource:GetRealSteamID(i),
 
 					heroDamage = PlayerResource:GetPlayerStat(i, "heroDamage"),
@@ -164,10 +165,10 @@ function StatsClient:OnGameEnd(winner)
 				local err = response.error and ("Server error: " .. response.error) or "Unknown server error"
 				PlayerTables:CreateTable("stats_game_result", { error = err }, AllPlayersInterval)
 			else
-				for pid, receivedData in pairs(response.players) do
-					pid = tonumber(pid)
-					local sentData = data.players[pid]
-					clientData.players[pid] = {
+				for playerId, receivedData in pairs(response.players) do
+					playerId = tonumber(playerId)
+					local sentData = data.players[playerId]
+					clientData.players[playerId] = {
 						hero = sentData.heroName,
 						heroDamage = sentData.heroDamage,
 						bossDamage = sentData.bossDamage,
@@ -208,9 +209,9 @@ end
 
 --Guides
 function StatsClient:AddGuide(data)
-	local playerID = data.PlayerID
-	local hero = HeroSelection:GetSelectedHeroName(playerID)
-	local steamID = PlayerResource:GetRealSteamID(playerID)
+	local playerId = data.PlayerID
+	local hero = HeroSelection:GetSelectedHeroName(playerId)
+	local steamID = PlayerResource:GetRealSteamID(playerId)
 	if #data.title < 4 or #data.description < 4 then
 		return
 	end
@@ -245,9 +246,9 @@ function StatsClient:AddGuide(data)
 		version = ARENA_VERSION,
 	}, function(response)
 		if response.insertedId then
-			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "stats_client_add_guide_success", {insertedId = response.insertedId})
+			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerId), "stats_client_add_guide_success", {insertedId = response.insertedId})
 		else
-			Containers:DisplayError(playerID, response.error)
+			Containers:DisplayError(playerId, response.error)
 		end
 	end)
 end

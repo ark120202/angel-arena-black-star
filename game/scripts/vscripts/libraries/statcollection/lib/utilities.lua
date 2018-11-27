@@ -13,9 +13,9 @@ STAT_UTILITIES_VERSION = "0.2"
 -- Number of times roshan was killed
 function GetRoshanKills()
     local total_rosh_kills = 0
-    for playerID = 0, DOTA_MAX_PLAYERS do
-        if PlayerResource:IsValidPlayerID(playerID) then
-            local roshan_kills_player = PlayerResource:GetRoshanKills(playerID)
+    for playerId = 0, DOTA_MAX_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerId) then
+            local roshan_kills_player = PlayerResource:GetRoshanKills(playerId)
             total_rosh_kills = total_rosh_kills + roshan_kills_player
         end
     end
@@ -29,8 +29,8 @@ end
 
 -- Hero name without its npc_dota_hero prefix.
 -- If you would like to send custom hero names you should use a different function instead
-function GetHeroName(playerID)
-    local heroName = PlayerResource:GetSelectedHeroName(playerID)
+function GetHeroName(playerId)
+    local heroName = PlayerResource:GetSelectedHeroName(playerId)
     heroName = string.gsub(heroName, "npc_dota_hero_", "") --Cuts the npc_dota_hero_ prefix
 
     return heroName

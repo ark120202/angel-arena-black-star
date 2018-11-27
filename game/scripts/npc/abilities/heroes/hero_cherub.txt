@@ -299,9 +299,10 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 
-		"AbilityCooldown"				"5 4.5 4 3.5 3 2.5 2"
+		"AbilityCooldown"				"10 9 8 7 6 5 4"
 		"AbilityManaCost"				"60 80 100 120 140 160 180"
 		"AbilityDamage"					"100 175 250 325 400 475 550"
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
 
 		"AbilitySpecial"
 		{
@@ -328,12 +329,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spore_health"			"350 550 750 950 1050 2000 2500"
+				"spore_health"			"100 200 300 500 700 1000 1500"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spore_movespeed"		"340 370 400 430 460 490 520"
+				"spore_movespeed"		"200 220 250 280 300 320 350"
 			}
 			"07"
 			{
@@ -343,7 +344,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spore_bounty_gold"		"100 150 200 300 450 600 800"
+				"spore_bounty_gold"		"200 330 400 450 500 650 800"
 			}
 			"09"
 			{
@@ -452,6 +453,7 @@
 
 		"AbilityChannelTime"			"0.5"
 		"HasScepterUpgrade"				"1"
+		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
 
 		"AbilitySpecial"
 		{
@@ -522,7 +524,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"35 65 95 125 150 175 200"
+				"damage"			"10 20 40 60 80 100 140"
 			}
 			"03"
 			{
@@ -563,7 +565,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"35 65 95 125 150 175 200"
+				"damage"			"10 20 40 60 80 100 140"
 			}
 			"03"
 			{
@@ -610,7 +612,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"50 100 150 200 250 300 350"
+				"damage"			"20 40 60 80 100 140 220"
 			}
 			"03"
 			{
@@ -651,7 +653,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"50 100 150 200 250 300 350"
+				"damage"			"20 40 60 80 100 140 220"
 			}
 			"03"
 			{
@@ -698,7 +700,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"heal_amount"		"10 20 30 40 50 60 70"
+				"heal_amount"		"10 15 20 25 30 35 40"
 			}
 			"03"
 			{
@@ -744,7 +746,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"heal_amount"		"10 20 30 40 50 60 70"
+				"heal_amount"		"10 15 20 25 30 35 40"
 			}
 			"03"
 			{
@@ -892,7 +894,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attackspeed"	"80 120 160 200 240 280 320"
+				"bonus_attackspeed"	"40 60 80 100 120 140 160"
 			}
 			"03"
 			{
@@ -928,7 +930,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_attackspeed"	"80 120 160 200 240 280 320"
+				"bonus_attackspeed"	"40 60 80 100 120 140 160"
 			}
 			"03"
 			{

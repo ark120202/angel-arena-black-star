@@ -29,12 +29,12 @@ modifier_sai_release_of_forge = class({
 
 function modifier_sai_release_of_forge:DeclareFunctions()
 	return {
+		MODIFIER_EVENT_ON_ATTACK_LANDED,
 		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
 		MODIFIER_PROPERTY_DISABLE_HEALING,
 		MODIFIER_PROPERTY_MIN_HEALTH,
 		MODIFIER_PROPERTY_MODEL_CHANGE,
 		MODIFIER_PROPERTY_MODEL_SCALE,
-		MODIFIER_EVENT_ON_ATTACK_LANDED,
 	}
 end
 
@@ -59,6 +59,20 @@ function modifier_sai_release_of_forge:GetAuraSearchFlags()
 end
 
 if IsServer() then
+	function modifier_sai_release_of_forge:OnAttackLanded(keys)
+		local attacker = keys.attacker
+		if attacker ~= self:GetParent() then return end
+		local ability = self:GetAbility()
+		ApplyDamage({
+			victim = keys.target,
+			attacker = attacker,
+			damage = keys.original_damage * ability:GetSpecialValueFor("pure_damage_pct") * 0.01,
+			damage_type = ability:GetAbilityDamageType(),
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+			ability = ability
+		})
+	end
+
 	function modifier_sai_release_of_forge:OnDestroy()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()

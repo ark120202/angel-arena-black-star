@@ -65,13 +65,13 @@ function UpdateBossItemVote(id, data) {
 			itempanel.FindChildTraverse('BossDropPlayersRow').RemoveAndDeleteChildren();
 			//var localPlayerPickedTotalScore = 0;
 			itempanel.SetHasClass('LocalPlayerSelected', entry.votes[localPlayerId] === 1);
-			_.each(entry.votes, function(voteval, pid) {
+			_.each(entry.votes, function(voteval, playerId) {
 				if (voteval === 1) {
-					pid = Number(pid);
+					playerId = Number(playerId);
 					var img = $.CreatePanel('Image', itempanel.FindChildTraverse('BossDropPlayersRow'), '');
-					img.SetImage(TransformTextureToPath(GetPlayerHeroName(pid), 'icon'));
+					img.SetImage(TransformTextureToPath(GetPlayerHeroName(playerId), 'icon'));
 					img.SetPanelEvent('onmouseover', function() {
-						$.DispatchEvent('DOTAShowTextTooltip', img, Players.GetPlayerName(pid));
+						$.DispatchEvent('DOTAShowTextTooltip', img, Players.GetPlayerName(playerId));
 					});
 					img.SetPanelEvent('onmouseout', function() {
 						$.DispatchEvent('DOTAHideTextTooltip');

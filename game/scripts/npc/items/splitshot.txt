@@ -79,17 +79,17 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_strength"				"50"
+				"bonus_strength"				"40"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"50"
+				"bonus_agility"					"40"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_intellect"				"50"
+				"bonus_intellect"				"40"
 			}
 			"05"
 			{
@@ -144,7 +144,7 @@
 			"15"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"split_damage_pct"				"50"
+				"split_damage_pct"				"60"
 			}
 			"16"
 			{
