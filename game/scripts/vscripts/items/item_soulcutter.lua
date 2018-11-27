@@ -51,7 +51,7 @@ if IsServer() then
 			})
 		end
 
-		if target:IsBoss() then return end
+		if attacker:IsIllusion() or target:IsBoss() then return end
 
 		ParticleManager:CreateParticle("particles/arena/items_fx/dark_flow_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 		target:AddNewModifier(
