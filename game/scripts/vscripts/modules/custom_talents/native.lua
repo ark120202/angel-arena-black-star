@@ -1,4 +1,5 @@
 local nativeTalents = {}
+local skippedTalents = {}
 
 local npc_heroes = LoadKeyValues("scripts/npc/npc_heroes.txt")
 local npc_abilities = LoadKeyValues("scripts/npc/npc_abilities.txt")
@@ -9,16 +10,19 @@ local function addTalent(talentName, heroName)
 	local newValues = GetAbilitySpecial(talentName)
 
 	if NATIVE_TALENTS[talentName] ~= nil then
-		if NATIVE_TALENTS[talentName] == false then return end
-		nativeTalents[talentName] = table.merge({
-			cost = 1,
-			group = 1,
-			icon = heroName,
-			requirement = heroName,
-			original_values = originalValues,
-			special_values = newValues,
-			effect = { abilities = talentName }
-		}, NATIVE_TALENTS[talentName])
+		if NATIVE_TALENTS[talentName] == false then
+			skippedTalents[talentName] = true
+		else
+			nativeTalents[talentName] = table.merge({
+				cost = 1,
+				group = 1,
+				icon = heroName,
+				requirement = heroName,
+				original_values = originalValues,
+				special_values = newValues,
+				effect = { abilities = talentName }
+			}, NATIVE_TALENTS[talentName])
+		end
 	else
 		print(talentName .. ": native talent is not defined in NATIVE_TALENTS")
 	end
@@ -39,7 +43,7 @@ for heroName, heroData in pairs(npc_heroes) do
 end
 
 for name, override in pairs(NATIVE_TALENTS) do
-	if not nativeTalents[name] then
+	if not nativeTalents[name] and not skippedTalents[name] then
 		print(name .. ": presents in NATIVE_TALENTS but isn't a valid talent")
 	end
 end
