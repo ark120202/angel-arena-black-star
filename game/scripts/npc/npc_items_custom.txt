@@ -1749,6 +1749,7 @@
 			{
 				"Duration"			"%purge_cooldown"
 				"IsDebuff"			"1"
+				"IsPurgable"		"0"
 			}
 		}
 	}
