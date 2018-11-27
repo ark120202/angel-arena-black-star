@@ -490,7 +490,7 @@
 	"npc_dota_hero_broodmother"
 	{
 		"override_hero"	"npc_dota_hero_broodmother"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_bounty_hunter"
@@ -990,7 +990,7 @@
 	"npc_dota_hero_faceless_void"
 	{
 		"override_hero"	"npc_dota_hero_faceless_void"
-		"AttackRate"	"1.3"
+		"AttackRate"	"1.5"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_LIGHT"	"30"
