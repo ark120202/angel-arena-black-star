@@ -233,9 +233,6 @@ function HeroSelection:StartStateInGame(toPrecache)
 		if PLAYER_DATA[i].adsClicked then
 			Gold:ModifyGold(i, ADS_CLICKED_BONUS_GOLD)
 		end
-		if PLAYER_DATA[i].adsClickedLoading then
-			Gold:ModifyGold(i, ADS_CLICKED_BONUS_GOLD)
-		end
 	end
 	--If for some reason even after that time heroes weren't precached
 	Timers:CreateTimer({

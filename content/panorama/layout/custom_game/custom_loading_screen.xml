@@ -127,7 +127,6 @@
 		<Panel id="afterload_panel" hittest="true">
 			<Panel hittest="false" id="GCColumn" >
 				<!-- <Panel id="LocalPlayerData" /> -->
-				<Image id="AdsBanner" onactivate="OnAdsClicked()" />
 				<Panel id="TopPlayers">
 					<Label id="TopPlayersTitle" text="#ranked_top_players" />
 					<Panel class="Spinner" />

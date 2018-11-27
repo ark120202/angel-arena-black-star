@@ -64,9 +64,5 @@ function GameMode:SetHelpDisabled(data)
 end
 
 function GameMode:OnAdsClicked(data)
-	local playerId = data.PlayerID
-	local key = data.source == "loading_screen" and "adsClickedLoading" or "adsClicked"
-	if not PLAYER_DATA[playerId][key] then
-		PLAYER_DATA[playerId][key] = true
-	end
+	PLAYER_DATA[data.PlayerID].adsClicked = true
 end
