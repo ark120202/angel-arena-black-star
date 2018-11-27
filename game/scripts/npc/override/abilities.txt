@@ -15692,28 +15692,31 @@
 		"AbilityCooldown"	"12.0 11.5 11.0 10.5 10.0 9.5 9.0"
 		"AbilityManaCost"	"130"
 		"AbilityCastRange"	"800"
-		"AbilityDamage"		"40 60 80 100 120 140 160"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"radius"	"240"
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"240"
 			}
-
 			"02"
 			{
-				"var_type"	"FIELD_INTEGER"
-				"strikes"	"4"
-				"LinkedSpecialBonus"	"special_bonus_unique_disruptor"
+				"var_type"					"FIELD_INTEGER"
+				"strikes"					"4"
+				"LinkedSpecialBonus"		"special_bonus_unique_disruptor"
 			}
-
 			"03"
 			{
-				"var_type"	"FIELD_FLOAT"
-				"strike_interval"	"2.0"
+				"var_type"					"FIELD_FLOAT"
+				"strike_interval"			"2.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"strike_damage"				"40 60 80 100 120 140 160"
+				"LinkedSpecialBonus"		"special_bonus_unique_disruptor_3"
 			}
 			"99"
 			{
