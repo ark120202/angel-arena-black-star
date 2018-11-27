@@ -426,7 +426,7 @@ function PanoramaShop:BuyItem(playerId, unit, itemName)
 		return
 	end
 
-	if unit:IsIllusion() or not unit:HasInventory() then
+	if unit:IsIllusion() or unit:IsTempestDouble() or not unit:HasInventory() then
 		unit = hero
 	end
 	local isInShop = unit:HasModifier("modifier_fountain_aura_arena")
