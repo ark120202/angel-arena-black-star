@@ -3168,7 +3168,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"skeleton_duration"			"90"
+				"skeleton_duration"			"10"
 			}
 			"04"
 			{
