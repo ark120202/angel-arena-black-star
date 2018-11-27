@@ -196,20 +196,6 @@ CUSTOM_TALENTS_DATA = {
 			},
 		}
 	},
-	talent_movespeed_limit = {
-		icon = "talents/movespeed",
-		cost = 3,
-		group = 6,
-		max_level = 3,
-		special_values = {
-			movespeed_limit = {575, 600, 625}
-		},
-		effect = {
-			modifiers = {
-				modifier_talent_movespeed_limit = "movespeed_limit",
-			},
-		}
-	},
 	talent_health = {
 		icon = "talents/health",
 		cost = 3,
@@ -1153,9 +1139,6 @@ NATIVE_TALENTS = {
 	special_bonus_unique_lone_druid_4 = {
 		group = 9,
 	},
-	special_bonus_unique_lone_druid_6 = {
-		group = 8,
-	},
 	special_bonus_unique_lone_druid_7 = {
 		group = 12,
 	},
@@ -1164,6 +1147,9 @@ NATIVE_TALENTS = {
 	},
 	special_bonus_unique_lone_druid_9 = {
 		group = 11,
+	},
+	special_bonus_unique_lone_druid_10 = {
+		group = 10,
 	},
 	special_bonus_unique_techies = {
 		group = 8,

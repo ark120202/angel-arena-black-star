@@ -30,8 +30,6 @@ custom_talents_talent_attack_damage: Урон
 custom_talents_talent_attack_damage_description: '+{damage} к урону'
 custom_talents_talent_evasion: Уклонение
 custom_talents_talent_evasion_description: '+{%evasion%} к уклонению'
-custom_talents_talent_movespeed_limit: Макс. скорость передвижения
-custom_talents_talent_movespeed_limit_description: 'Увеличивает максимальную скорость передвижения до {movespeed_limit}'
 custom_talents_talent_health: Здоровье
 custom_talents_talent_health_description: '+{health} к здоровью'
 custom_talents_talent_mana: Мана

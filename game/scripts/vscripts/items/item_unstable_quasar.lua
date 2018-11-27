@@ -132,22 +132,10 @@ modifier_item_unstable_quasar_slow = class({
 })
 
 function modifier_item_unstable_quasar_slow:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_MOVESPEED_MAX,
-		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
-		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
-	}
+	return { MODIFIER_PROPERTY_MOVESPEED_LIMIT }
 end
 
 function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Limit()
-	return self:GetAbility():GetSpecialValueFor("slow_speed")
-end
-
-function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Max()
-	return self:GetAbility():GetSpecialValueFor("slow_speed")
-end
-
-function modifier_item_unstable_quasar_slow:GetModifierMoveSpeed_Absolute()
 	return self:GetAbility():GetSpecialValueFor("slow_speed")
 end
 

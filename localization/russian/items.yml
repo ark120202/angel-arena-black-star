@@ -183,11 +183,11 @@ DOTA_Tooltip_ability_item_titanium_fruit_Description: '<h1>Использова�
 DOTA_Tooltip_ability_item_titanium_fruit_duration: 'ДЛИТЕЛЬНОСТЬ:'
 DOTA_Tooltip_modifier_item_titanium_fruit: Titanium Fruit
 DOTA_Tooltip_modifier_item_titanium_fruit_Description: Вы невосприимчивы к магическим заклинаниям.
-DOTA_Tooltip_ability_item_diffusal_style: Diffusal Style
+
 DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   <h1>Активируемая: Mirror Image</h1> Создает %images_count% зеркальных копии вашего героя, которые существуют %illusion_duration% сек. Иллюзии наносят %illusion_damage_percent_outgoing_tooltip%%% урона и получают %illusion_damage_percent_incoming_tooltip%%% урона.
   <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему %damage_per_burn_pct%%% сожженной маны в виде чистого урона. Также восстанавливает вам %feedback_mana_drain_pct%%% маны от сожженной маны противника.
-  <h1>Пассивная: Purge</h1> Каждая атака имеет %purge_chance_pct%%% шанс снять положительные эффекты, приковать к земле на %purge_root_duration% сек. и замедлить противника на %purge_slow_duration% секунд.
+  <h1>Пассивная: Purge</h1> Атакуя врага снимает с него положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет на %purge_slow_duration% секунд. Эффект срабатывает раз в %purge_cooldown% секунд.
 DOTA_Tooltip_ability_item_diffusal_style_Note0: 'Тратит 0,1 секунды на произношение заклинания, во время которого вы неуязвимы.'
 DOTA_Tooltip_ability_item_diffusal_style_Note1: Использование снимает многие эффекты.
 DOTA_Tooltip_ability_item_diffusal_style_bonus_attack_range: +к радиусу атаки
@@ -197,6 +197,8 @@ DOTA_Tooltip_modifier_item_diffusal_style_root: Прикован от Diffusal S
 DOTA_Tooltip_modifier_item_diffusal_style_root_Description: Прикован к земле.
 DOTA_Tooltip_modifier_item_diffusal_style_slow: Очищение от Diffusal Style
 DOTA_Tooltip_modifier_item_diffusal_style_slow_Description: Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.
+DOTA_Tooltip_modifier_item_diffusal_style_purge_cooldown_Description: Purge временно не может быть использован.
+
 DOTA_Tooltip_ability_item_dagon_arena: Dagon
 DOTA_Tooltip_ability_item_dagon_arena_Description: '<h1>Активируемая: Energy Burst</h1> Выпускает мощный всплеск энергии, наносящий урон выбранному вражескому юниту.'
 DOTA_Tooltip_ability_item_dagon_arena_damage: 'МГНОВЕННЫЙ УРОН:'
@@ -489,20 +491,10 @@ DOTA_Tooltip_ability_item_titanium_bar_active_bonus_strength: 'ДОП. СИЛА:
 DOTA_Tooltip_ability_item_titanium_bar_active_bonus_attackspeed: 'ДОП. СКОРОСТЬ АТАКИ:'
 DOTA_Tooltip_modifier_item_titanium_bar_active: Titanium Bar
 DOTA_Tooltip_modifier_item_titanium_bar_active_Description: 'Невосприимчив к заклинаниям, имеет полное сопротивление магическому урону, весь получаемый урон уменьшен на %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%, сила увеличена на %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, скорость атаки увеличена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
-DOTA_Tooltip_ability_item_vermillion_robe: Vermillion Robe
-DOTA_Tooltip_ability_item_vermillion_robe_Description: |-
-  <h1>Активируемая: True Flame</h1> Наносит половинный урон заклинателю как урон по себе, затем, после %damage_delay% секунд, наносит урон по площади вокруг заклинателя, основываясь на разнице максимального и текущего здоровья.
-  <h1>Пассивная: Vermillion Dust</h1> Добавляет бонусы основываясь на отсутствующем здоровье.
-DOTA_Tooltip_ability_item_vermillion_robe_hp_as_damage_pct: '%ТЕКУЩЕЕ ЗДОРОВЬЕ В УРОН ПО СЕБЕ:'
-DOTA_Tooltip_ability_item_vermillion_robe_damage_radius: 'РАДИУС УРОНА:'
-DOTA_Tooltip_ability_item_vermillion_robe_damage_delay: 'ЗАДЕРЖКА ПЕРЕД УРОНОМ:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_mana_regen: 'РЕГЕНЕРАЦИЯ МАНЫ ЗА ПРОЦЕНТ:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_bonus_movement_speed: 'СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ЗА ПРОЦЕНТ:'
-DOTA_Tooltip_ability_item_vermillion_robe_dust_damage: 'УРОН ЗА ПРОЦЕНТ:'
-DOTA_Tooltip_modifier_item_vermillion_robe_delay: True Flame Delay от Vermillion Robe
+
+DOTA_Tooltip_ability_item_vermillion_robe_Description: '<h1>Пассивная: Vermillion Dust</h1> Увеличивает скорость передвижения на %dust_move_speed_pct%%%, регенерацию маны на %dust_mana_regen%%% и урон на %dust_damage%%% за каждый процент отсутствующего здоровья.'
 DOTA_Tooltip_modifier_item_vermillion_robe_delay_Description: 'Когда закончится, нанесёт урон по площади.'
-DOTA_Tooltip_modifier_item_vermillion_robe_dust: Vermillion Dust
-DOTA_Tooltip_modifier_item_vermillion_robe_dust_Description: 'Регенерация маны увеличена на %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, скорость передвидения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%, урон увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.'
+DOTA_Tooltip_modifier_item_vermillion_robe_dust_Description: 'Регенерация маны увеличена на %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, скорость передвидения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, урон увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%.'
 
 DOTA_Tooltip_ability_item_soul_of_titan_Description: |-
   <h1>Пассивная: Elder Aura</h1> Снижает броню на %armor_reduction% всем противников в радиусе %radius%.

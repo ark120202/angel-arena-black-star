@@ -16,7 +16,7 @@
 		"AbilityManaCost"				"110 120 130 140 150 160 170"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		
+
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
 
 		"precache"
@@ -346,7 +346,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"boss_armor_reduction_chance_pct"	"5 10 15"
+				"boss_max_armor"	"10 20 30"
 			}
 			"03"
 			{

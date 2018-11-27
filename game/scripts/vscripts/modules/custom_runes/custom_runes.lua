@@ -99,6 +99,9 @@ function CustomRunes:CreateRune(position, runeType)
 	entity.RuneType = runeType
 	local container = CreateItemOnPositionSync(position, entity)
 	container:SetAbsOrigin(position)
+	if settings.particle then
+		ParticleManager:CreateParticle(settings.particle, PATTACH_ABSORIGIN_FOLLOW, container)
+	end
 	if settings.color then
 		container:SetRenderColor(unpack(settings.color))
 	end

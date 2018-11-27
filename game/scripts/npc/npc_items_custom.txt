@@ -1624,23 +1624,23 @@
 			}
 			"21"
 			{
-				"var_type"											"FIELD_INTEGER"
-				"purge_chance_pct"									"10"
-			}
-			"22"
-			{
 				"var_type"											"FIELD_FLOAT"
 				"purge_slow_duration"								"4"
 			}
-			"23"
+			"22"
 			{
 				"var_type"											"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"							"-100"
 			}
-			"24"
+			"23"
 			{
 				"var_type"											"FIELD_INTEGER"
 				"damage_per_burn_pct"								"50"
+			}
+			"24"
+			{
+				"var_type"											"FIELD_INTEGER"
+				"purge_cooldown"									"10"
 			}
 		}
 
@@ -1714,6 +1714,7 @@
 						"damage_per_burn_pct"				"%damage_per_burn_pct"
 						"modifier_root"	"modifier_item_diffusal_style_root"
 						"modifier_slow"	"modifier_item_diffusal_style_slow"
+						"modifier_cooldown"	"modifier_item_diffusal_style_purge_cooldown"
 					}
 				}
 			}
@@ -1742,6 +1743,13 @@
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct"
 				}
+			}
+
+			"modifier_item_diffusal_style_purge_cooldown"
+			{
+				"Duration"			"%purge_cooldown"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
 			}
 		}
 	}
@@ -3561,22 +3569,15 @@
 		"ItemResult"					"item_vermillion_robe"
 		"ItemRequirements"
 		{
-			"01"						"item_soul_booster;item_soul_ring;item_tranquil_boots;item_cloak"
+			"01"						"item_soul_booster;item_pers;item_tranquil_boots;item_cloak"
 		}
 	}
 
 	"item_vermillion_robe"
 	{
-		"BaseClass"             		"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_arena/vermillion_robe"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"20"
-		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
 		{
@@ -3593,12 +3594,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3"
+				"bonus_mana_regen"		"6"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"18"
+				"bonus_health_regen"	"24"
 			}
 			"05"
 			{
@@ -3608,7 +3609,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"60"
+				"bonus_movement_speed_pct"	"28"
 			}
 			"07"
 			{
@@ -3618,46 +3619,19 @@
 			}
 			"08"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_as_damage_pct"		"50"
-				"CalculateSpellDamageTooltip"	"0"
+				"var_type"				"FIELD_FLOAT"
+				"dust_mana_regen"		"0.4"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_radius"			"300"
-				"CalculateSpellDamageTooltip"	"0"
+				"dust_move_speed_pct"	"1"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_delay"			"1.5"
+				"dust_damage"			"3"
 				"CalculateSpellDamageTooltip"	"0"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dust_mana_regen"		"0.4"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dust_move_speed"		"1"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dust_damage"			"3.0"
-				"CalculateSpellDamageTooltip"	"0"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/item_vermillion_robe.lua"
-				"Function"		"TrueFlame"
 			}
 		}
 
@@ -3675,7 +3649,7 @@
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_movement_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_movement_speed_pct"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_damage_resistance_pct"
 				}
 
@@ -3698,21 +3672,7 @@
 					}
 				}
 			}
-			"modifier_item_vermillion_robe_delay"
-			{
-				"IsDebuff"			"1"
-				"IsPurgable"		"0"
-				"Duration"			"%damage_delay"
 
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_vermillion_robe.lua"
-						"Function"		"TrueFlameDamage"
-					}
-				}
-			}
 			"modifier_item_vermillion_robe_dust"
 			{
 				"Passive"			"0"
@@ -3723,7 +3683,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%dust_mana_regen"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%dust_move_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%dust_move_speed_pct"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dust_damage"
 				}
 			}

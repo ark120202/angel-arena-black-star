@@ -134,6 +134,9 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	centaur_return = true,
 	huskar_life_break = true,
 	item_spirit_helix = true,
+	bloodseeker_rupture = true,
+	centaur_double_edge = true,
+	shadow_demon_soul_catcher = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {
