@@ -56,8 +56,8 @@ function UpdatePanoramaHUD() {
 	var sw = Game.GetScreenWidth();
 	var sh = Game.GetScreenHeight();
 	var minimap = FindDotaHudElement('minimap_block');
-	$('#DynamicMinimapRoot').style.height = ((minimap.actuallayoutheight + 16) / sh * 100) + '%';
-	$('#DynamicMinimapRoot').style.width = ((minimap.actuallayoutwidth + 16) / sw * 100) + '%';
+	$('#DynamicMinimapRoot').style.height = ((minimap.actuallayoutheight + minimap.contentheight - minimap.actuallayoutheight) / sh * 100) + '%';
+	$('#DynamicMinimapRoot').style.width = ((minimap.actuallayoutwidth + minimap.contentwidth - minimap.actuallayoutwidth) / sw * 100) + '%';
 	var pcs = FindDotaHudElement('PortraitContainer').GetPositionWithinWindow();
 	if (pcs != null && !isNaN(pcs.x) && !isNaN(pcs.y))
 		CustomModifiersList.style.position = (pcs.x / sw * 100) + '% ' + (pcs.y / sh * 100) + '% 0';
