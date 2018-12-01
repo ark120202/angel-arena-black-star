@@ -47,6 +47,7 @@ function OnAttackLanded(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
+	if caster:IsIllusion() then return end
 	if not target:IsMagicImmune() and not target:IsInvulnerable() then
 		local manaburn = keys.feedback_mana_burn
 		local manadrain = manaburn * keys.feedback_mana_drain_pct * 0.01

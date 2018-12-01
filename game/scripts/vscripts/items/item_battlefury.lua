@@ -62,7 +62,7 @@ end
 if IsServer() then
 	function modifier_item_battlefury_arena:OnAttackLanded(keys)
 		local attacker = keys.attacker
-		if attacker == self:GetParent() --[[and not attacker:IsMuted()]] then
+		if attacker == self:GetParent() and not attacker:IsIllusion() then
 			local ability = self:GetAbility()
 			local target = keys.target
 			if target:IsRealCreep() then

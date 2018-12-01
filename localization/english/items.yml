@@ -152,12 +152,12 @@ DOTA_Tooltip_ability_item_manta_arena_illusion_damage_percent_incoming_tooltip: 
 DOTA_Tooltip_ability_item_diffusal_blade_arena: Diffusal Blade I
 DOTA_Tooltip_ability_item_diffusal_blade_arena_Description: |-
   <h1>Active: Purge</h1> If cast on an enemy, removes buffs from the target, roots it for %purge_root_duration% seconds and slows it for %purge_slow_duration% seconds. If cast on an ally, Purge removes most debuffs.
-  <h1>Passive: Manabreak</h1> Each attack burns %feedback_mana_burn% mana from the target, and deals percent of burned mana as pure damage. Burns less mana on illusions. Also gives you some part of burned mana.
+  <h1>Passive: Manabreak</h1> Each attack burns %feedback_mana_burn% mana from the target, and deals percent of burned mana as pure damage. Also gives you some part of burned mana.
 
   Upgradable.
+DOTA_Tooltip_ability_item_diffusal_blade_arena_Note0: Not works on illusions
 DOTA_Tooltip_ability_item_diffusal_blade_arena_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_diffusal_blade_arena_bonus_intellect: +$int
-DOTA_Tooltip_ability_item_diffusal_blade_arena_feedback_mana_burn_illusion_pct: '%ILLUSION MANA BURN:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_feedback_mana_drain_pct: '%MANA DRAIN:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_damage_per_burn_pct: '%MANA BURN TO DAMAGE:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_cast_range_tooltip: 'PURGE CAST RANGE:'
@@ -169,46 +169,46 @@ DOTA_Tooltip_modifier_item_diffusal_blade_arena_slow_Description: Movement speed
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2: Diffusal Blade II
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_Description: |-
   <h1>Active: Purge</h1> If cast on an enemy, removes buffs from the target, roots it for %purge_root_duration% seconds and slows it for %purge_slow_duration% seconds. If cast on an ally, Purge removes most debuffs.
-  <h1>Passive: Manabreak</h1> Each attack burns %feedback_mana_burn% mana from the target, and deals percent of burned mana as pure damage. Burns less mana on illusions. Also gives you some part of burned mana.
+  <h1>Passive: Manabreak</h1> Each attack burns %feedback_mana_burn% mana from the target, and deals percent of burned mana as pure damage. Also gives you some part of burned mana.
 
   Upgradable.
+DOTA_Tooltip_ability_item_diffusal_blade_arena_2_Note0: Not works on illusions
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_bonus_intellect: +$int
-DOTA_Tooltip_ability_item_diffusal_blade_arena_2_feedback_mana_burn_illusion_pct: '%ILLUSION MANA BURN:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_feedback_mana_drain_pct: '%MANA DRAIN:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_damage_per_burn_pct: '%MANA BURN TO DAMAGE:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_cast_range_tooltip: 'PURGE CAST RANGE:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3: Diffusal Blade III
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_Description: |-
   <h1>Active: Purge</h1> If cast on an enemy, removes buffs from the target, roots it for %purge_root_duration% seconds and slows it for %purge_slow_duration% seconds. If cast on an ally, Purge removes most debuffs.
-  <h1>Passive: Manabreak</h1> Each attack burns %feedback_mana_burn% mana from the target, and deals percent of burned mana as pure damage. Burns less mana on illusions. Also gives you some part of burned mana.
+  <h1>Passive: Manabreak</h1> Each attack burns %feedback_mana_burn% mana from the target, and deals percent of burned mana as pure damage. Also gives you some part of burned mana.
 
   Upgradable.
+DOTA_Tooltip_ability_item_diffusal_blade_arena_3_Note0: Not works on illusions
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_bonus_intellect: +$int
-DOTA_Tooltip_ability_item_diffusal_blade_arena_3_feedback_mana_burn_illusion_pct: '%ILLUSION MANA BURN:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_feedback_mana_drain_pct: '%MANA DRAIN:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_damage_per_burn_pct: '%MANA BURN TO DAMAGE:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_cast_range_tooltip: 'PURGE CAST RANGE:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4: Diffusal Blade IV
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_Description: |-
   <h1>Active: Purge</h1> If cast on an enemy, removes buffs from the target, roots it for %purge_root_duration% seconds and slows it for %purge_slow_duration% seconds. If cast on an ally, Purge removes most debuffs.
-  <h1>Passive: Manabreak</h1> Each attack burns %feedback_mana_burn% mana from the target, and deals percent of burned mana as pure damage. Burns less mana on illusions. Also gives you some part of burned mana.
+  <h1>Passive: Manabreak</h1> Each attack burns %feedback_mana_burn% mana from the target, and deals percent of burned mana as pure damage. Also gives you some part of burned mana.
 
   Upgradable.
+DOTA_Tooltip_ability_item_diffusal_blade_arena_4_Note0: Not works on illusions
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_bonus_intellect: +$int
-DOTA_Tooltip_ability_item_diffusal_blade_arena_4_feedback_mana_burn_illusion_pct: '%ILLUSION MANA BURN:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_feedback_mana_drain_pct: '%MANA DRAIN:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_damage_per_burn_pct: '%MANA BURN TO DAMAGE:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_cast_range_tooltip: 'PURGE CAST RANGE:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5: Diffusal Blade V
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_Description: |-
   <h1>Active: Purge</h1> If cast on an enemy, removes buffs from the target, roots it for %purge_root_duration% seconds and slows it for %purge_slow_duration% seconds. If cast on an ally, Purge removes most debuffs.
-  <h1>Passive: Manabreak</h1> Each attack burns %feedback_mana_burn% mana from the target, and deals percent of burned mana as pure damage. Burns less mana on illusions. Also gives you some part of burned mana.
+  <h1>Passive: Manabreak</h1> Each attack burns %feedback_mana_burn% mana from the target, and deals percent of burned mana as pure damage. Also gives you some part of burned mana.
+DOTA_Tooltip_ability_item_diffusal_blade_arena_5_Note0: Not works on illusions
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_bonus_intellect: +$int
-DOTA_Tooltip_ability_item_diffusal_blade_arena_5_feedback_mana_burn_illusion_pct: '%ILLUSION MANA BURN:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_feedback_mana_drain_pct: '%MANA DRAIN:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_damage_per_burn_pct: '%MANA BURN TO DAMAGE:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_cast_range_tooltip: 'PURGE CAST RANGE:'
@@ -244,7 +244,8 @@ DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   <h1>Passive: Purge</h1> Attacking an enemy unit removes buffs from the target, roots it for %purge_root_duration% seconds and slows it for %purge_slow_duration% seconds. Triggers only once per %purge_cooldown% seconds.
 DOTA_Tooltip_ability_item_diffusal_style_Note0: Has a 0.1 second cast time during which you are invulnerable.
 DOTA_Tooltip_ability_item_diffusal_style_Note1: Many effects are removed upon using Manta.
-DOTA_Tooltip_ability_item_diffusal_style_Note2: '{lc:item_yasha_note}'
+DOTA_Tooltip_ability_item_diffusal_style_Note2: Not works on illusions
+DOTA_Tooltip_ability_item_diffusal_style_Note3: '{lc:item_yasha_note}'
 DOTA_Tooltip_ability_item_diffusal_style_bonus_strength: +$str
 DOTA_Tooltip_ability_item_diffusal_style_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_diffusal_style_bonus_intellect: +$int
@@ -468,6 +469,8 @@ DOTA_Tooltip_ability_item_team_changer_Description: |-
 
 DOTA_Tooltip_ability_item_skadi_arena: Eye of Skadi
 DOTA_Tooltip_ability_item_skadi_arena_Description: '<h1>Passive: Cold Attack</h1> Each attack slows the movement and attack speed of the target for %cold_duration% seconds.'
+DOTA_Tooltip_ability_item_skadi_arena_Note0: Cold Attack not slows bosses
+DOTA_Tooltip_ability_item_skadi_arena_Note1: Not works on illusions
 DOTA_Tooltip_ability_item_skadi_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_arena_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_arena_bonus_mana: +$mana
@@ -477,6 +480,8 @@ DOTA_Tooltip_modifier_item_skadi_arena_cold_attack: Eye of Skadi Cold Attack
 DOTA_Tooltip_modifier_item_skadi_arena_cold_attack_Description: 'Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 DOTA_Tooltip_ability_item_skadi_2: Eye of Skadi X2
 DOTA_Tooltip_ability_item_skadi_2_Description: '<h1>Passive: Cold Attack</h1> Each attack slows the movement and attack speed of the target for %cold_duration% seconds.'
+DOTA_Tooltip_ability_item_skadi_2_Note0: Cold Attack not slows bosses
+DOTA_Tooltip_ability_item_skadi_2_Note1: Not works on illusions
 DOTA_Tooltip_ability_item_skadi_2_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_2_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_2_bonus_mana: +$mana
@@ -484,6 +489,8 @@ DOTA_Tooltip_ability_item_skadi_2_cold_movement_speed_pct: '%COLD MOVE SLOW:'
 DOTA_Tooltip_ability_item_skadi_2_cold_attack_speed: 'COLD ATTACK SLOW:'
 DOTA_Tooltip_ability_item_skadi_4: Eye of Skadi X4
 DOTA_Tooltip_ability_item_skadi_4_Description: '<h1>Passive: Cold Attack</h1> Each attack slows the movement and attack speed of the target for %cold_duration% seconds.'
+DOTA_Tooltip_ability_item_skadi_4_Note0: Cold Attack not slows bosses
+DOTA_Tooltip_ability_item_skadi_4_Note1: Not works on illusions
 DOTA_Tooltip_ability_item_skadi_4_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_4_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_4_bonus_mana: +$mana
@@ -491,18 +498,17 @@ DOTA_Tooltip_ability_item_skadi_4_cold_movement_speed_pct: '%COLD MOVE SLOW:'
 DOTA_Tooltip_ability_item_skadi_4_cold_attack_speed: 'COLD ATTACK SLOW:'
 DOTA_Tooltip_ability_item_skadi_8: Eye of Skadi X8
 DOTA_Tooltip_ability_item_skadi_8_Description: '<h1>Passive: Cold Attack</h1> Each attack slows the movement and attack speed of the target for %cold_duration% seconds.'
+DOTA_Tooltip_ability_item_skadi_8_Note0: Cold Attack not slows bosses
+DOTA_Tooltip_ability_item_skadi_8_Note1: Not works on illusions
 DOTA_Tooltip_ability_item_skadi_8_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_skadi_8_bonus_health: +$health
 DOTA_Tooltip_ability_item_skadi_8_bonus_mana: +$mana
 DOTA_Tooltip_ability_item_skadi_8_cold_movement_speed_pct: '%COLD MOVE SLOW:'
 DOTA_Tooltip_ability_item_skadi_8_cold_attack_speed: 'COLD ATTACK SLOW:'
-DOTA_Tooltip_ability_item_skadi_arena_Note0: Cold Attack not slows bosses
-DOTA_Tooltip_ability_item_skadi_2_Note0: Cold Attack not slows bosses
-DOTA_Tooltip_ability_item_skadi_4_Note0: Cold Attack not slows bosses
-DOTA_Tooltip_ability_item_skadi_8_Note0: Cold Attack not slows bosses
 
 DOTA_Tooltip_ability_item_radiance_arena: Radiance
 DOTA_Tooltip_ability_item_radiance_arena_Description: '<h1>Active: Toggle Burn</h1> When active, scorches nearby enemies for %aura_damage_per_second% damage per second, reduces their movement speed by %move_speed_slow_pct%%%, attack speed by %attack_speed_slow% and blinds them, causing them to miss %blind_pct%%% of their attacks.'
+DOTA_Tooltip_ability_item_radiance_arena_Note0: Not works on illusions
 DOTA_Tooltip_ability_item_radiance_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_radiance_arena_aura_damage_per_second: 'BURN DAMAGE PER SECOND:'
 DOTA_Tooltip_ability_item_radiance_arena_blind_pct: '%BURN MISS CHANCE:'
@@ -513,6 +519,7 @@ DOTA_Tooltip_modifier_item_radiance_lua_effect: Burn Damage
 DOTA_Tooltip_modifier_item_radiance_lua_effect_Description: 'Taking burn damage, movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, missing %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% of attacks.'
 DOTA_Tooltip_ability_item_radiance_2: Radiance
 DOTA_Tooltip_ability_item_radiance_2_Description: '<h1>Active: Toggle Burn</h1> When active, scorches nearby enemies for %aura_damage_per_second% damage per second, reduces their movement speed by %move_speed_slow_pct%%%, attack speed by %attack_speed_slow% and blinds them, causing them to miss %blind_pct%%% of their attacks.'
+DOTA_Tooltip_ability_item_radiance_2_Note0: Not works on illusions
 DOTA_Tooltip_ability_item_radiance_2_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_radiance_2_aura_damage_per_second: 'BURN DAMAGE PER SECOND:'
 DOTA_Tooltip_ability_item_radiance_2_blind_pct: '%BURN MISS CHANCE:'
@@ -521,6 +528,7 @@ DOTA_Tooltip_ability_item_radiance_2_move_speed_slow_pct: '%BURN MOVE SPEED:'
 DOTA_Tooltip_ability_item_radiance_2_attack_speed_slow: 'BURN ATTACK SPEED:'
 DOTA_Tooltip_ability_item_radiance_3: Radiance
 DOTA_Tooltip_ability_item_radiance_3_Description: '<h1>Active: Toggle Burn</h1> When active, scorches nearby enemies for %aura_damage_per_second% damage per second, reduces their movement speed by %move_speed_slow_pct%%%, attack speed by %attack_speed_slow% and blinds them, causing them to miss %blind_pct%%% of their attacks.'
+DOTA_Tooltip_ability_item_radiance_3_Note0: Not works on illusions
 DOTA_Tooltip_ability_item_radiance_3_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_radiance_3_aura_damage_per_second: 'BURN DAMAGE PER SECOND:'
 DOTA_Tooltip_ability_item_radiance_3_blind_pct: '%BURN MISS CHANCE:'
@@ -529,6 +537,7 @@ DOTA_Tooltip_ability_item_radiance_3_move_speed_slow_pct: '%BURN MOVE SPEED:'
 DOTA_Tooltip_ability_item_radiance_3_attack_speed_slow: 'BURN ATTACK SPEED:'
 DOTA_Tooltip_ability_item_radiance_frozen: Frozen Radiance
 DOTA_Tooltip_ability_item_radiance_frozen_Description: '<h1>Active: Toggle Burn</h1> When active, scorches nearby enemies for %aura_damage_per_second% damage per second, reduces their movement speed by %cold_movement_speed_pct%%%, attack speed by %cold_attack_speed% and blinds them, causing them to miss %blind_pct%%% of their attacks.'
+DOTA_Tooltip_ability_item_radiance_frozen_Note0: Not works on illusions
 DOTA_Tooltip_ability_item_radiance_frozen_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_radiance_frozen_bonus_health: +$health
 DOTA_Tooltip_ability_item_radiance_frozen_bonus_mana: +$mana
@@ -1313,6 +1322,7 @@ DOTA_Tooltip_ability_item_quelling_fury_Description: |-
 DOTA_Tooltip_ability_item_quelling_fury_Note0: Cleave damage is reduced by armor type but not by armor value.
 DOTA_Tooltip_ability_item_quelling_fury_Note1: Cleave damage goes through spell immunity.
 DOTA_Tooltip_ability_item_quelling_fury_Note2: 'If multiple sources of Cleave are present, each Cleave''s damage is applied separately.'
+DOTA_Tooltip_ability_item_quelling_fury_Note3: Not works on illusions
 DOTA_Tooltip_ability_item_quelling_fury_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_quelling_fury_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_quelling_fury_bonus_mana_regen: +$mana_regen
@@ -1328,6 +1338,7 @@ DOTA_Tooltip_ability_item_battlefury_arena_Description: |-
 DOTA_Tooltip_ability_item_battlefury_arena_Note0: Cleave damage is reduced by armor type but not by armor value.
 DOTA_Tooltip_ability_item_battlefury_arena_Note1: Cleave damage goes through spell immunity.
 DOTA_Tooltip_ability_item_battlefury_arena_Note2: 'If multiple sources of Cleave are present, each Cleave''s damage is applied separately.'
+DOTA_Tooltip_ability_item_battlefury_arena_Note3: Not works on illusions
 DOTA_Tooltip_ability_item_battlefury_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_battlefury_arena_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_battlefury_arena_bonus_mana_regen: +$mana_regen
@@ -1344,8 +1355,9 @@ DOTA_Tooltip_ability_item_elemental_fury_Description: |-
 DOTA_Tooltip_ability_item_elemental_fury_Note0: Cleave damage is reduced by armor type but not by armor value.
 DOTA_Tooltip_ability_item_elemental_fury_Note1: Cleave damage goes through spell immunity.
 DOTA_Tooltip_ability_item_elemental_fury_Note2: If multiple sources of Cleave are present, each Cleave's damage is applied separately.
-DOTA_Tooltip_ability_item_elemental_fury_Note3: '{lc:item_yasha_note}'
-DOTA_Tooltip_ability_item_elemental_fury_Note4: '{lc:item_kaya_note}'
+DOTA_Tooltip_ability_item_elemental_fury_Note3: Not works on illusions
+DOTA_Tooltip_ability_item_elemental_fury_Note4: '{lc:item_yasha_note}'
+DOTA_Tooltip_ability_item_elemental_fury_Note5: '{lc:item_kaya_note}'
 DOTA_Tooltip_ability_item_elemental_fury_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_elemental_fury_bonus_strength: +$str
 DOTA_Tooltip_ability_item_elemental_fury_bonus_agility: +$agi

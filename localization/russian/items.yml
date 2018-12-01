@@ -113,10 +113,10 @@ DOTA_Tooltip_ability_item_manta_arena_illusion_damage_percent_incoming_tooltip: 
 DOTA_Tooltip_ability_item_diffusal_blade_arena: Diffusal Blade I
 DOTA_Tooltip_ability_item_diffusal_blade_arena_Description: |-
   <h1>Активируемая: Purge</h1> Снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
-  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
+  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Также восстанавливает вам ману в процентах от сожженной маны противника.
 
   Можно улучшить.
-DOTA_Tooltip_ability_item_diffusal_blade_arena_feedback_mana_burn_illusion_pct: '%СЖИГАЕТ НА ИЛЛЮЗИЯХ:'
+DOTA_Tooltip_ability_item_diffusal_blade_arena_Note0: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_diffusal_blade_arena_feedback_mana_drain_pct: '%ВОССТАНОВЛЕНИЕ МАНЫ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_damage_per_burn_pct: '%СОЖЖЕННАЯ МАНА В УРОН:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_cast_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
@@ -127,38 +127,38 @@ DOTA_Tooltip_modifier_item_diffusal_blade_arena_slow_Description: Скорост
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2: Diffusal Blade II
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_Description: |-
   <h1>Активируемая: Purge</h1> Снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
-  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
+  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Также восстанавливает вам ману в процентах от сожженной маны противника.
 
   Можно улучшить.
-DOTA_Tooltip_ability_item_diffusal_blade_arena_2_feedback_mana_burn_illusion_pct: '%СЖИГАЕТ НА ИЛЛЮЗИЯХ:'
+DOTA_Tooltip_ability_item_diffusal_blade_arena_2_Note0: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_feedback_mana_drain_pct: '%ВОССТАНОВЛЕНИЕ МАНЫ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_damage_per_burn_pct: '%СОЖЖЕННАЯ МАНА В УРОН:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_2_cast_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3: Diffusal Blade III
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_Description: |-
   <h1>Активируемая: Purge</h1> Снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
-  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
+  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Также восстанавливает вам ману в процентах от сожженной маны противника.
 
   Можно улучшить.
-DOTA_Tooltip_ability_item_diffusal_blade_arena_3_feedback_mana_burn_illusion_pct: '%СЖИГАЕТ НА ИЛЛЮЗИЯХ:'
+DOTA_Tooltip_ability_item_diffusal_blade_arena_3_Note0: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_feedback_mana_drain_pct: '%ВОССТАНОВЛЕНИЕ МАНЫ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_damage_per_burn_pct: '%СОЖЖЕННАЯ МАНА В УРОН:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_3_cast_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4: Diffusal Blade IV
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_Description: |-
   <h1>Активируемая: Purge</h1> Снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
-  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
+  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Также восстанавливает вам ману в процентах от сожженной маны противника.
 
   Можно улучшить.
-DOTA_Tooltip_ability_item_diffusal_blade_arena_4_feedback_mana_burn_illusion_pct: '%СЖИГАЕТ НА ИЛЛЮЗИЯХ:'
+DOTA_Tooltip_ability_item_diffusal_blade_arena_4_Note0: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_feedback_mana_drain_pct: '%ВОССТАНОВЛЕНИЕ МАНЫ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_damage_per_burn_pct: '%СОЖЖЕННАЯ МАНА В УРОН:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_4_cast_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5: Diffusal Blade V
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_Description: |-
   <h1>Активируемая: Purge</h1> Снимает положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет противника на %purge_slow_duration% сек. или снимает отрицательные эффекты с союзника.
-  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Иллюзии сжигают по меньше маны за атаку. Также восстанавливает вам ману в процентах от сожженной маны противника.
-DOTA_Tooltip_ability_item_diffusal_blade_arena_5_feedback_mana_burn_illusion_pct: '%СЖИГАЕТ НА ИЛЛЮЗИЯХ:'
+  <h1>Пассивная: Manabreak</h1> Каждая ваша атака сжигает %feedback_mana_burn% маны врага и наносит ему чистый урон в процентах от сожженной маны. Также восстанавливает вам ману в процентах от сожженной маны противника.
+DOTA_Tooltip_ability_item_diffusal_blade_arena_5_Note0: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_feedback_mana_drain_pct: '%ВОССТАНОВЛЕНИЕ МАНЫ:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_damage_per_burn_pct: '%СОЖЖЕННАЯ МАНА В УРОН:'
 DOTA_Tooltip_ability_item_diffusal_blade_arena_5_cast_range_tooltip: 'ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:'
@@ -190,6 +190,7 @@ DOTA_Tooltip_ability_item_diffusal_style_Description: |-
   <h1>Пассивная: Purge</h1> Атакуя врага снимает с него положительные эффекты, приковывает к земле на %purge_root_duration% сек. и замедляет на %purge_slow_duration% секунд. Эффект срабатывает раз в %purge_cooldown% секунд.
 DOTA_Tooltip_ability_item_diffusal_style_Note0: 'Тратит 0,1 секунды на произношение заклинания, во время которого вы неуязвимы.'
 DOTA_Tooltip_ability_item_diffusal_style_Note1: Использование снимает многие эффекты.
+DOTA_Tooltip_ability_item_diffusal_style_Note2: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_diffusal_style_bonus_attack_range: +к радиусу атаки
 DOTA_Tooltip_ability_item_diffusal_style_bonus_attack_speed_buff: 'СКОРОСТЬ АТАКИ FAST ATTACK:'
 DOTA_Tooltip_ability_item_diffusal_style_movement_speed_percent_bonus_buff: '%СКОРОСТЬ ПЕРЕДВИЖЕНИЯ FAST ATTACK:'
@@ -355,29 +356,34 @@ DOTA_Tooltip_ability_item_team_changer_Description: |-
 
 DOTA_Tooltip_ability_item_skadi_arena: Eye of Skadi
 DOTA_Tooltip_ability_item_skadi_arena_Description: '<h1>Пассивная: Cold Attack</h1> Каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
+DOTA_Tooltip_ability_item_skadi_arena_Note0: Cold Attack не замедляет боссов
+DOTA_Tooltip_ability_item_skadi_arena_Note1: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_skadi_arena_cold_movement_speed_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_skadi_arena_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_modifier_item_skadi_arena_cold_attack: Eye of Skadi Cold Attack
 DOTA_Tooltip_modifier_item_skadi_arena_cold_attack_Description: 'Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.'
 DOTA_Tooltip_ability_item_skadi_2: Eye of Skadi X2
+DOTA_Tooltip_ability_item_skadi_2_Note0: Cold Attack не замедляет боссов
+DOTA_Tooltip_ability_item_skadi_2_Note1: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_skadi_2_Description: '<h1>Пассивная: Cold Attack</h1> Каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
 DOTA_Tooltip_ability_item_skadi_2_cold_movement_speed_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_skadi_2_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_ability_item_skadi_4: Eye of Skadi X4
+DOTA_Tooltip_ability_item_skadi_4_Note0: Cold Attack не замедляет боссов
+DOTA_Tooltip_ability_item_skadi_4_Note1: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_skadi_4_Description: '<h1>Пассивная: Cold Attack</h1> Каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
 DOTA_Tooltip_ability_item_skadi_4_cold_movement_speed_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_skadi_4_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_ability_item_skadi_8: Eye of Skadi X8
 DOTA_Tooltip_ability_item_skadi_8_Description: '<h1>Пассивная: Cold Attack</h1> Каждая атака замедляет скорость передвижения и атаки цели на %cold_duration% секунд.'
+DOTA_Tooltip_ability_item_skadi_8_Note0: Cold Attack не замедляет боссов
+DOTA_Tooltip_ability_item_skadi_8_Note1: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_skadi_8_cold_movement_speed_pct: '%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:'
 DOTA_Tooltip_ability_item_skadi_8_cold_attack_speed: 'ЗАМЕДЛЕНИЕ АТАКИ:'
-DOTA_Tooltip_ability_item_skadi_arena_Note0: Cold Attack не замедляет боссов
-DOTA_Tooltip_ability_item_skadi_2_Note0: Cold Attack не замедляет боссов
-DOTA_Tooltip_ability_item_skadi_4_Note0: Cold Attack не замедляет боссов
-DOTA_Tooltip_ability_item_skadi_8_Note0: Cold Attack не замедляет боссов
 
 DOTA_Tooltip_ability_item_radiance_arena: Radiance
 DOTA_Tooltip_ability_item_radiance_arena_Description: '<h1>Активируемая: Toggle Burn</h1> Когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %move_speed_slow_pct%%%, скорость атаки на %attack_speed_slow% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
+DOTA_Tooltip_ability_item_radiance_arena_Note0: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_radiance_arena_aura_damage_per_second: 'ПЕРИОДИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_radiance_arena_blind_pct: '%ШАНС ПРОМАХА:'
 DOTA_Tooltip_ability_item_radiance_arena_aura_radius: 'РАДИУС:'
@@ -387,6 +393,7 @@ DOTA_Tooltip_modifier_item_radiance_lua_effect: Burn Damage
 DOTA_Tooltip_modifier_item_radiance_lua_effect_Description: 'Получает урон, скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% и промахивается в %dMODIFIER_PROPERTY_MISS_PERCENTAGE%%% случаев.'
 DOTA_Tooltip_ability_item_radiance_2: Radiance
 DOTA_Tooltip_ability_item_radiance_2_Description: '<h1>Активируемая: Toggle Burn</h1> Когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %move_speed_slow_pct%%%, скорость атаки на %attack_speed_slow% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
+DOTA_Tooltip_ability_item_radiance_2_Note0: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_radiance_2_aura_damage_per_second: 'ПЕРИОДИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_radiance_2_blind_pct: '%ШАНС ПРОМАХА:'
 DOTA_Tooltip_ability_item_radiance_2_aura_radius: 'РАДИУС:'
@@ -394,6 +401,7 @@ DOTA_Tooltip_ability_item_radiance_2_move_speed_slow_pct: '%ЗАМЕДЛЕНИЕ
 DOTA_Tooltip_ability_item_radiance_2_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_ability_item_radiance_3: Radiance
 DOTA_Tooltip_ability_item_radiance_3_Description: '<h1>Активируемая: Toggle Burn</h1> Когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %move_speed_slow_pct%%%, скорость атаки на %attack_speed_slow% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
+DOTA_Tooltip_ability_item_radiance_3_Note0: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_radiance_3_aura_damage_per_second: 'ПЕРИОДИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_radiance_3_blind_pct: '%ШАНС ПРОМАХА:'
 DOTA_Tooltip_ability_item_radiance_3_aura_radius: 'РАДИУС:'
@@ -401,6 +409,7 @@ DOTA_Tooltip_ability_item_radiance_3_move_speed_slow_pct: '%ЗАМЕДЛЕНИЕ
 DOTA_Tooltip_ability_item_radiance_3_attack_speed_slow: 'ЗАМЕДЛЕНИЕ АТАКИ:'
 DOTA_Tooltip_ability_item_radiance_frozen: Frozen Radiance
 DOTA_Tooltip_ability_item_radiance_frozen_Description: '<h1>Активируемая: Toggle Burn</h1> Когда включено, каждую секунду наносит %aura_damage_per_second% урона противникам, понижает их скорость передвижения на %cold_movement_speed_pct%%%, скорость атаки на %cold_attack_speed% и ослепляет их, вынуждая промахиваться в %blind_pct%%% случаев.'
+DOTA_Tooltip_ability_item_radiance_frozen_Note0: Не работает на иллюзиях
 DOTA_Tooltip_ability_item_radiance_frozen_aura_damage_per_second: 'ПЕРИОДИЧЕСКИЙ УРОН:'
 DOTA_Tooltip_ability_item_radiance_frozen_blind_pct: '%ШАНС ПРОМАХА:'
 DOTA_Tooltip_ability_item_radiance_frozen_aura_radius: 'РАДИУС:'
