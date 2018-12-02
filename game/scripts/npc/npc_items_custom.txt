@@ -4906,22 +4906,22 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attackspeed"		"65"
+				"bonus_attackspeed"		"45"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"kill_xp"				"35"
+				"kill_xp"				"20"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"20"
+				"kill_gold"				"15"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_pct"			"30"
+				"lifesteal_pct"			"20"
 			}
 			"06"
 			{
