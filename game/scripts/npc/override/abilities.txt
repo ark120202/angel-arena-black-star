@@ -288,7 +288,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"duration"		"8"
+				"duration"		"4"
 			}
 		}
 	}
@@ -703,7 +703,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"chance"	"10 12 15 18 20 22 25"
+				"chance"	"1 2 3 4 4 4 5"
 			}
 			"02"
 			{
@@ -8576,7 +8576,7 @@
 		"AbilityCastPoint"	"0.4 0.4 0.4 0.4 0.4 0.35 0.3"
 		"AbilityCooldown"	"35 30 28 26 24 22 20"
 		"AbilityManaCost"	"150 160 170 180 190 200 210"
-		"AbilityDuration"	"5"
+		"AbilityDuration"	"3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -8672,7 +8672,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"armor_per_second"	"0.25 0.5 0.75 1 1.25 1.5 1.75"
+				"armor_per_second"	"0.25 0.5 0.75 1 1 1 1"
 				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_4"
 			}
 
