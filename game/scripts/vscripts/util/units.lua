@@ -218,7 +218,3 @@ function CDOTA_BaseNPC_Hero:GetAttribute(attribute)
 		return self:GetIntellect()
 	end
 end
-
-function CDOTA_BaseNPC_Hero:GetRealPhysicalArmorBaseValue()
-	return self:GetKeyValue("ArmorPhysical") + self.idealArmor
-end

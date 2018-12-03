@@ -7,7 +7,7 @@ end
 function ApplyStacks(keys)
 	local target = keys.target
 	local ability = keys.ability
-	local stacks = target:GetRealPhysicalArmorBaseValue() * ability:GetAbilitySpecial("armor_cut_pct") * 0.01
+	local stacks = target:GetPhysicalArmorBaseValue() * ability:GetAbilitySpecial("armor_cut_pct") * 0.01
 	if target.GetAgility then
 		stacks = stacks + (CalculateBaseArmor(target) * ability:GetAbilitySpecial("armor_cut_pct") * 0.01)
 	end

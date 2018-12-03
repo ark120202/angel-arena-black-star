@@ -5,7 +5,7 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local health = self:GetSpecialValueFor("clone_health")
 		local modelScale = self:GetSpecialValueFor("clone_model_scale")
-		local armor = caster:GetRealPhysicalArmorBaseValue()
+		local armor = caster:GetPhysicalArmorBaseValue()
 		local damageMultiplier = self:GetSpecialValueFor("clone_damage_pct") * 0.01
 		local damageMin = caster:GetBaseDamageMin() * damageMultiplier
 		local damageMax = caster:GetBaseDamageMax() * damageMultiplier
