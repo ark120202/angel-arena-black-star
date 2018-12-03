@@ -26,10 +26,6 @@ function modifier_arena_hero:GetModifierPhysicalArmorBonus()
 	return self.armorDifference or self:GetSharedKey("armorDifference") or 0
 end
 
-function modifier_arena_hero:GetModifierMagicalResistanceDirectModification()
-	return self.resistanceDifference or self:GetSharedKey("resistanceDifference") or 0
-end
-
 if IsServer() then
 	modifier_arena_hero.HeroLevel = 1
 	function modifier_arena_hero:OnCreated()
@@ -102,16 +98,16 @@ if IsServer() then
 
 		local isAgilityHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY
 		local agilityArmor = parent:GetAgility() * (isAgilityHero and 0.2 or 0.16)
-		local idealArmor = parent:GetAgility() * (isAgilityHero and 0.125 or 0.1)
+		local idealArmor = CalculateBaseArmor(parent)
 		if self.idealArmor ~= idealArmor then
 			self.idealArmor = idealArmor
 			parent:SetNetworkableEntityInfo("IdealArmor", idealArmor)
 		end
 
 		local armorDifference = idealArmor - agilityArmor
-		if self.armorDifference ~= armorDifference then
-			self.armorDifference = armorDifference
-			self:SetSharedKey("armorDifference", armorDifference)
+		if parent.armorDifference ~= armorDifference then
+			parent.armorDifference = armorDifference
+			parent:SetPhysicalArmorBaseValue(parent:GetKeyValue("ArmorPhysical") + armorDifference)
 		end
 	end
 

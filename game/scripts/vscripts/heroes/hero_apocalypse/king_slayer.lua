@@ -3,7 +3,7 @@ function ApplyDisarmor(keys)
 	local target = keys.target
 	local ability = keys.ability
 	local disarmor = ability:GetLevelSpecialValueFor("armor_reduction_pct", ability:GetLevel() - 1) * 0.01
-	local stacks = target:GetPhysicalArmorBaseValue() * disarmor
+	local stacks = target:GetRealPhysicalArmorBaseValue() * disarmor
 	if target.GetAgility then
 		stacks = stacks + CalculateBaseArmor(target) * disarmor
 	end

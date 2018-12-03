@@ -557,5 +557,5 @@ function CalculateBaseArmor(arg)
 		isPrimary = arg:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY
 	end
 
-	return agility * (isPrimary and 0.20 or 0.16)
+	return agility * (isPrimary and 0.125 or 0.1)
 end
