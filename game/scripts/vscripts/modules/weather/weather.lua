@@ -14,12 +14,6 @@ Weather = Weather or class({
 	endTime = -1
 })
 
-for _,v in pairs(WEATHER_EFFECTS) do
-	if v.dummyModifier then
-		ModuleLinkLuaModifier(..., v.dummyModifier, "modifiers/" .. v.dummyModifier)
-	end
-end
-
 function Weather:Init()
 	Weather:Start(Weather:SelectRandomRecipient())
 	Timers:CreateTimer(1/30, Dynamic_Wrap(Weather, "Think"))

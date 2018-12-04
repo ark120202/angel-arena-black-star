@@ -64,7 +64,6 @@ WEATHER_EFFECTS = {
 		recipients = {"rain", "snow"},
 
 		particles = {"particles/arena/weather/sunlight.vpcf"},
-		dummyModifier = "modifier_weather_sunny",
 	},
 	rain = {
 		minDuration = 120,
@@ -75,7 +74,6 @@ WEATHER_EFFECTS = {
 		sounds = {
 			{"Arena.Weather.Rain.Ambient"}
 		},
-		dummyModifier = "modifier_weather_rain",
 	},
 	storm = {
 		minDuration = 120,
@@ -89,7 +87,6 @@ WEATHER_EFFECTS = {
 			{"Arena.Weather.Rain.Ambient"},
 			{"lightning.thunder"}
 		},
-		dummyModifier = "modifier_weather_rain",
 		Think = function()
 			CreateLightningBlot(GetGroundPosition(Vector(RandomInt(-MAP_LENGTH, MAP_LENGTH), RandomInt(-MAP_LENGTH, MAP_LENGTH), 0), nil))
 		end,
@@ -104,7 +101,6 @@ WEATHER_EFFECTS = {
 			{"Arena.Weather.Snow.Ambient"},
 			{"Arena.Weather.Snow.Gust", 3},
 		},
-		dummyModifier = "modifier_weather_snow",
 	},
 	blizzard = {
 		minDuration = 60,
@@ -122,7 +118,6 @@ WEATHER_EFFECTS = {
 			{"Arena.Weather.Snow.Gust", 1},
 			{"Arena.Weather.Snow.Gust", 5},
 		},
-		dummyModifier = "modifier_weather_snow",
 		Think = function()
 			if RollPercentage(40) then
 				CreateCrystalNova(GetGroundPosition(Vector(RandomInt(-MAP_LENGTH, MAP_LENGTH), RandomInt(-MAP_LENGTH, MAP_LENGTH), 0), nil))
