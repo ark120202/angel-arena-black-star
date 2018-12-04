@@ -23,8 +23,17 @@ if IsServer() then
 		local position = caster:GetAbsOrigin() + caster:GetForwardVector() * self:GetSpecialValueFor("forward_offset")
 		local radius = self:GetSpecialValueFor("aoe_radius")
 		local force = self:GetSpecialValueFor("push_velocity")
-		CreateExplosion(position, radius, radius, force, force, teamNumber, teamFilter, typeFilter, flagFilter)
-		for _,v in ipairs(FindUnitsInRadius(teamNumber, position, nil, radius, teamFilter, typeFilter, flagFilter, FIND_ANY_ORDER , false)) do
+		for _,v in ipairs(FindUnitsInRadius(teamNumber, position, nil, radius, teamFilter, typeFilter, flagFilter, FIND_ANY_ORDER, false)) do
+			v:AddNewModifier(caster, self, "modifier_knockback", {
+				center_x = position.x,
+				center_y = position.y,
+				center_z = position.z,
+				duration = force / 1000,
+				knockback_duration = force / 1000,
+				knockback_distance = force / 2,
+				knockback_height = force / 50,
+			})
+
 			ApplyDamage({
 				victim = v,
 				attacker = caster,

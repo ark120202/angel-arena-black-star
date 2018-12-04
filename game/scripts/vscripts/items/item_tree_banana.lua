@@ -46,7 +46,6 @@ if IsServer() then
 
 	function modifier_item_tree_banana_thinker:SlideUnit(unit)
 		local parent = self:GetParent()
-		if not IsPhysicsUnit(unit) then Physics:Unit(unit) end
 		local center = unit:GetAbsOrigin() + -unit:GetForwardVector()
 		local duration = self:GetSpecialValueFor("slide_duration")
 		unit:RemoveModifierByName("modifier_knockback")

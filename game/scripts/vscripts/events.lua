@@ -41,8 +41,6 @@ function GameMode:OnNPCSpawned(keys)
 		local illusionParent = npc:GetIllusionParent()
 		if illusionParent then Illusions:_copyEverything(illusionParent, npc) end
 
-		Physics:Unit(npc)
-		npc:SetAutoUnstuck(true)
 		DynamicWearables:AutoEquip(npc)
 		if npc.ModelOverride then
 			npc:SetModel(npc.ModelOverride)

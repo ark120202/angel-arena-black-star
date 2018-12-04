@@ -372,25 +372,6 @@ function GetHeroTableByName(name)
 	return output
 end
 
-function CreateExplosion(position, minRadius, fullRdius, minForce, fullForce, teamNumber, teamFilter, typeFilter, flagFilter)
-	for _,v in ipairs(FindUnitsInRadius(teamNumber, position, nil, fullRdius, teamFilter, typeFilter, flagFilter, FIND_CLOSEST, false)) do
-		if IsPhysicsUnit(v) then
-			local force = 0
-			local len = (position - v:GetAbsOrigin()):Length2D()
-			if len < minRadius then
-				force = fullForce
-			elseif len <= fullRdius then
-				local forceNotFullLen = fullRdius - minRadius
-				local forceMid = fullForce - minForce
-				local forceLevel = (fullRdius - len)/forceNotFullLen
-				force = minForce + (forceMid*forceLevel)
-			end
-			local velocity = (v:GetAbsOrigin() - position):Normalized() * force
-			v:AddPhysicsVelocity(velocity)
-		end
-	end
-end
-
 function IsInBox(point, point1, point2)
 	return point.x > point1.x and point.y > point1.y and point.x < point2.x and point.y < point2.y
 end

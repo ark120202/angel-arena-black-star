@@ -6,7 +6,6 @@ GAMEMODE_INITIALIZATION_STATUS = {}
 local requirements = {
 	"libraries/keyvalues",
 	"libraries/timers",
-	"libraries/physics",
 	"libraries/projectiles",
 	"libraries/notifications",
 	"libraries/animations",
