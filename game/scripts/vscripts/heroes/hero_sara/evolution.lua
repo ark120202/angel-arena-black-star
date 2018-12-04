@@ -35,7 +35,7 @@ function modifier_sara_evolution:GetModifierExtraHealthBonus()
 end
 
 function modifier_sara_evolution:GetModifierPhysicalArmorBonus()
-	return self.ArmorReduction
+	return self.armorReduction
 end
 if IsServer() then
 	modifier_sara_evolution.think_interval = 1/30
@@ -129,13 +129,15 @@ if IsServer() then
 		if parent:IsAlive() then
 			parent:CalculateHealthReduction()
 		end
-		self.ArmorReduction = self:GetAbility():GetSpecialValueFor("armor_reduction_pct") * self:GetParent():GetPhysicalArmorValue() * 0.01
+		self.armorReduction = ability:GetSpecialValueFor("armor_reduction_pct") * (parent:GetPhysicalArmorValue() - (self.armorReduction or 0)) * 0.01
 	end
 else
 	function modifier_sara_evolution:OnCreated()
 		self:StartIntervalThink(0.1)
 	end
 	function modifier_sara_evolution:OnIntervalThink()
-		self.ArmorReduction = self:GetAbility():GetSpecialValueFor("armor_reduction_pct") * self:GetParent():GetPhysicalArmorValue() * 0.01
+		local parent = self:GetParent()
+		local ability = self:GetAbility()
+		self.armorReduction = ability:GetSpecialValueFor("armor_reduction_pct") * (parent:GetPhysicalArmorValue() - (self.armorReduction or 0)) * 0.01
 	end
 end
