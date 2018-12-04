@@ -120,7 +120,7 @@ function GameMode:OnHeroSelectionEnd()
 	PanoramaShop:StartItemStocks()
 	Duel:CreateGlobalTimer()
 	Weather:Init()
-	GameRules:GetGameModeEntity():SetPauseEnabled(true)
+	GameRules:GetGameModeEntity():SetPauseEnabled(Options:IsEquals("EnablePauses"))
 
 	Timers:CreateTimer(10, function()
 		for playerId = 0, DOTA_MAX_TEAM_PLAYERS - 1 do

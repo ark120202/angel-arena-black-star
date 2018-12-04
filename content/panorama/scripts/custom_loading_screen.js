@@ -70,7 +70,7 @@ function Snippet_OptionVoting(voteName, voteData) {
 		})(voteName, variant));
 
 		var label = $.CreatePanel('Label', button, '');
-		label.text = typeof variant === 'string' ? $.Localize('option_voting_' + voteName + '_' + variant) : typeof variant === 'boolean' ? $.Localize(variant ? 'option_yes' : 'option_no') : variant;
+		label.text = typeof variant === 'string' ? $.Localize('option_voting_' + voteName + '_' + variant) : variant;
 
 		var votedataLabel = $.CreatePanel('Label', button, 'vote_data_variant_' + tIndex);
 		votedataLabel.text = '{s:votes}';

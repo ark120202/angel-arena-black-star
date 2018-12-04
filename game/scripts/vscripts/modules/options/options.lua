@@ -127,6 +127,12 @@ function Options:LoadDefaultValues()
 			Options:SetValue("KillLimit", math.round(value))
 		end
 	})
+	Options:SetPreGameVoting("disable_pauses", {"yes", "no"}, "no", {
+		calculationFunction = ">",
+		callback = function(value)
+			Options:SetValue("EnablePauses", value == "no")
+		end
+	})
 end
 
 function Options:LoadMapValues()

@@ -80,10 +80,10 @@ boss_loot_vote_inactive: Оставленные предметы
 boss_loot_vote_hero_duel_delayed: Смена героя запланирована после дуэли
 boss_loot_vote_hero: 'Сменить героя на '
 
-option_yes: Да
-option_no: Нет
-
 option_voting_kill_limit: 'Кол-во убийств:'
+option_voting_disable_pauses: 'Отключить паузы:'
+option_voting_disable_pauses_yes: Да
+option_voting_disable_pauses_no: Нет
 option_voting_custom_abilities: 'Режим выбора способностей:'
 
 arena_end_screen_score: 'СЧЕТ: '

@@ -82,10 +82,10 @@ boss_loot_vote_inactive: Untaken items
 boss_loot_vote_hero_duel_delayed: Hero change is scheduled after duel
 boss_loot_vote_hero: 'Change hero to '
 
-option_yes: 'Yes'
-option_no: 'No'
-
 option_voting_kill_limit: 'Kill Limit:'
+option_voting_disable_pauses: 'Disable Pauses:'
+option_voting_disable_pauses_yes: Yes
+option_voting_disable_pauses_no: No
 option_voting_custom_abilities: 'Custom Abilities Mode:'
 option_voting_custom_abilities_random_omg: Random OMG
 option_voting_custom_abilities_ability_shop: Ability Shop
