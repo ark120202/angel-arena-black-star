@@ -70,6 +70,7 @@ function GameMode:InitGameMode()
 
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
+	GameRules:GetGameModeEntity():SetPauseEnabled(IsInToolsMode())
 	Events:Emit("activate")
 
 	PlayerTables:CreateTable("arena", {}, AllPlayersInterval)
@@ -119,6 +120,7 @@ function GameMode:OnHeroSelectionEnd()
 	PanoramaShop:StartItemStocks()
 	Duel:CreateGlobalTimer()
 	Weather:Init()
+	GameRules:GetGameModeEntity():SetPauseEnabled(true)
 
 	Timers:CreateTimer(10, function()
 		for playerId = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
