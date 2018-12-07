@@ -13,7 +13,6 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_EVENT_ON_DEATH,
 		MODIFIER_PROPERTY_ABILITY_LAYOUT,
 		MODIFIER_EVENT_ON_RESPAWN,
-		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
 	}
 end
@@ -22,8 +21,8 @@ function modifier_arena_hero:GetModifierAbilityLayout()
 	return self.VisibleAbilitiesCount or self:GetSharedKey("VisibleAbilitiesCount") or 4
 end
 
-function modifier_arena_hero:GetModifierPhysicalArmorBonus()
-	return self.armorDifference or self:GetSharedKey("armorDifference") or 0
+function modifier_arena_hero:GetModifierMagicalResistanceDirectModification()
+	return self.resistanceDifference or self:GetSharedKey("resistanceDifference") or 0
 end
 
 if IsServer() then
