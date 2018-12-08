@@ -521,9 +521,6 @@ NATIVE_TALENTS = {
 	special_bonus_unique_luna_2 = {
 		group = 7,
 	},
-	special_bonus_unique_luna_3 = {
-		group = 6,
-	},
 	special_bonus_unique_luna_5 = {
 		group = 8,
 	},
