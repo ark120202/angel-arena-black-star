@@ -987,9 +987,7 @@ NATIVE_TALENTS = {
 	special_bonus_unique_shadow_demon_7 = {
 		group = 8,
 	},
-	special_bonus_unique_slardar = {
-		group = 8,
-	},
+	special_bonus_unique_slardar = false,
 	special_bonus_unique_slardar_2 = {
 		group = 9,
 	},
@@ -1706,10 +1704,10 @@ NATIVE_TALENTS = {
 		group = 14,
 	},
 	special_bonus_unique_invoker_9 = {
-		group = 9,
+		group = 10,
 	},
 	special_bonus_unique_invoker_8 = {
-		group = 10,
+		group = 9,
 	},
 	special_bonus_unique_gyrocopter_1 = false,
 	special_bonus_unique_gyrocopter_3 = {
