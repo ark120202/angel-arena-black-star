@@ -185,9 +185,11 @@ function GameMode:GameModeThink()
 			if hero then
 				hero:SetNetworkableEntityInfo("unit_name", hero:GetFullName())
 				MeepoFixes:ShareItems(hero)
-				local position = hero:GetAbsOrigin()
-				if not IsInBox(position, mapMin, mapMax) then
-					FindClearSpaceForUnit(hero, VectorOnBoxPerimeter(position, mapClampMin, mapClampMax), true)
+				for _, v in ipairs(hero:GetFullName() == "npc_dota_hero_meepo" and MeepoFixes:FindMeepos(hero, true) or { hero }) do
+					local position = v:GetAbsOrigin()
+					if not IsInBox(position, mapMin, mapMax) then
+						FindClearSpaceForUnit(v, VectorOnBoxPerimeter(position, mapClampMin, mapClampMax), true)
+					end
 				end
 			end
 			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
