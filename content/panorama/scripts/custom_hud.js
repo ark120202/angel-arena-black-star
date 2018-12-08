@@ -208,8 +208,11 @@ function HookPanoramaPanels() {
 				DOTAHUDDamageArmorTooltip.SetDialogVariable('intelligence_per_level', custom_entity_value.AttributeIntelligenceGain.toFixed(1));
 
 			DOTAHUDDamageArmorTooltip.FindChildTraverse('StrengthDetails').text = $.Localize('#arena_hud_tooltip_details_strength', DOTAHUDDamageArmorTooltip);
+			DOTAHUDDamageArmorTooltip.FindChildTraverse('StrengthDetails').style.textOverflow = 'shrink';
 			DOTAHUDDamageArmorTooltip.FindChildTraverse('AgilityDetails').text = $.Localize('#arena_hud_tooltip_details_agility', DOTAHUDDamageArmorTooltip);
+			DOTAHUDDamageArmorTooltip.FindChildTraverse('AgilityDetails').style.textOverflow = 'shrink';
 			DOTAHUDDamageArmorTooltip.FindChildTraverse('IntelligenceDetails').text = $.Localize('#arena_hud_tooltip_details_intelligence', DOTAHUDDamageArmorTooltip);
+			DOTAHUDDamageArmorTooltip.FindChildTraverse('IntelligenceDetails').style.textOverflow = 'shrink';
 		}
 	});
 	stats_region.SetPanelEvent('onmouseout', function() {
