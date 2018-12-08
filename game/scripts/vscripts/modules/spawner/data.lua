@@ -142,7 +142,7 @@ SPAWNER_SETTINGS = {
 					[-1] = "npc_dota_neutral_medium_variant1",
 					[0] = "models/items/beastmaster/boar/fotw_wolf/fotw_wolf.vmdl",
 					[25] = "models/heroes/lycan/summon_wolves.vmdl",
-					[40] = "models/heroes/lycan/lycan_wolf.vmdl",
+					[40] = "models/items/lycan/wolves/blood_moon_hunter_wolves/blood_moon_hunter_wolves.vmdl",
 					[60] = "models/items/lycan/ultimate/thegreatcalamityti4/thegreatcalamityti4.vmdl",
 
 				}
