@@ -189,8 +189,6 @@ function HookPanoramaPanels() {
 		var custom_entity_value = GameUI.CustomUIConfig().custom_entity_values[_unit];
 		var DOTAHUDDamageArmorTooltip = FindDotaHudElement('DOTAHUDDamageArmorTooltip');
 		if (DOTAHUDDamageArmorTooltip != null && custom_entity_value != null) {
-			DOTAHUDDamageArmorTooltip.SetDialogVariable('strength_magic_resistance', '0.0');
-
 			var attackRate = custom_entity_value.AttackRate != null ? custom_entity_value.AttackRate : Entities.GetBaseAttackTime(_unit);
 			var batModifier = attackRate / Entities.GetBaseAttackTime(_unit);
 			var secondsPerAttack = Entities.GetSecondsPerAttack(_unit) * batModifier;
@@ -208,10 +206,8 @@ function HookPanoramaPanels() {
 				DOTAHUDDamageArmorTooltip.SetDialogVariable('agility_per_level', custom_entity_value.AttributeAgilityGain.toFixed(1));
 			if (custom_entity_value.AttributeIntelligenceGain != null)
 				DOTAHUDDamageArmorTooltip.SetDialogVariable('intelligence_per_level', custom_entity_value.AttributeIntelligenceGain.toFixed(1));
-			/*if (custom_entity_value.AttackRangeModify != null) {
-				var modify = Math.round(custom_entity_value.AttackRangeModify);
-				DOTAHUDDamageArmorTooltip.SetDialogVariable("bonus_attack_range", newChange);
-			}*/
+
+			DOTAHUDDamageArmorTooltip.FindChildTraverse('StrengthDetails').text = $.Localize('#arena_hud_tooltip_details_strength', DOTAHUDDamageArmorTooltip);
 		}
 	});
 	stats_region.SetPanelEvent('onmouseout', function() {

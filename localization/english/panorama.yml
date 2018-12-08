@@ -125,3 +125,5 @@ arena_setup_party_warning: |-
   Select unranked maps if you want to be in the same team.
 arena_setup_loading: Authorizing the match...
 arena_setup_safe_to_leave: This game is now safe to leave.
+
+arena_hud_tooltip_details_strength: = {d:strength_hp} HP and {s:strength_hp_regen}% HP Regen

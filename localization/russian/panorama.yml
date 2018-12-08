@@ -121,3 +121,5 @@ arena_setup_party_warning: |-
   Для игры в одной команде не выбирайте рейтинговые карты.
 arena_setup_loading: Авторизация матча...
 arena_setup_safe_to_leave: Теперь эту игру можно спокойно покинуть.
+
+arena_hud_tooltip_details_strength: = = {d:strength_hp} здоровья и +{s:strength_hp_regen}% к его восстановлению
