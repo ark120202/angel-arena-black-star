@@ -371,7 +371,7 @@
 	"npc_dota_hero_phantom_assassin"
 	{
 		"override_hero"	"npc_dota_hero_phantom_assassin"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_pugna"
@@ -870,6 +870,7 @@
 	{
 		"override_hero"	"npc_dota_hero_terrorblade"
 		"AttackRate"	"1.6"
+		"AttributeAgilityGain"	"2.5"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_LIGHT" "50"
@@ -1051,7 +1052,7 @@
 	"npc_dota_hero_phantom_lancer"
 	{
 		"override_hero"	"npc_dota_hero_phantom_lancer"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.9"
 	}
 
 	"npc_dota_hero_grimstroke"
