@@ -980,11 +980,13 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"blast_agility_multiplier"			"1.5"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"blast_damage_base"			"100"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"08"
 			{
