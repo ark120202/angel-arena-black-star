@@ -123,3 +123,5 @@ arena_setup_loading: Авторизация матча...
 arena_setup_safe_to_leave: Теперь эту игру можно спокойно покинуть.
 
 arena_hud_tooltip_details_strength: = = {d:strength_hp} здоровья и +{s:strength_hp_regen}% к его восстановлению
+arena_hud_tooltip_details_agility: = {d:agility_attack_speed} скорости атаки и +{s:agility_movement_speed}% к скорости передв.
+arena_hud_tooltip_details_intelligence: = {d:intelligence_mana} маны, +{s:intelligence_mana_regen}% к её восст., +{s:intelligence_spell_amp}% к урону сп. и {s:agility_armor} брони

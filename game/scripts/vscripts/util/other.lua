@@ -531,12 +531,12 @@ function VectorOnBoxPerimeter(vec, min, max)
 end
 
 function CalculateBaseArmor(arg)
-	local agility = arg.agility
+	local value = arg.value
 	local isPrimary = arg.isPrimary
 	if IsValidEntity(arg) then
-		agility = arg:GetAgility()
-		isPrimary = arg:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY
+		value = arg:GetIntellect()
+		isPrimary = arg:GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT
 	end
 
-	return agility * (isPrimary and 0.125 or 0.1)
+	return value * (isPrimary and 0.125 or 0.1)
 end
