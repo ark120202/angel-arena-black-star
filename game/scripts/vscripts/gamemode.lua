@@ -174,6 +174,10 @@ function GameMode:PrecacheUnitQueueed(name)
 	end
 end
 
+local mapMin = Vector(-MAP_LENGTH, -MAP_LENGTH)
+local mapClampMin = ExpandVector(mapMin, -MAP_BORDER)
+local mapMax = Vector(MAP_LENGTH, MAP_LENGTH)
+local mapClampMax = ExpandVector(mapMax, -MAP_BORDER)
 function GameMode:GameModeThink()
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) then
@@ -182,11 +186,8 @@ function GameMode:GameModeThink()
 				hero:SetNetworkableEntityInfo("unit_name", hero:GetFullName())
 				MeepoFixes:ShareItems(hero)
 				local position = hero:GetAbsOrigin()
-				if position.x > MAP_LENGTH or
-					position.x < -MAP_LENGTH or
-					position.y > MAP_LENGTH or
-					position.y < -MAP_LENGTH then
-					hero:TrueKill()
+				if not IsInBox(position, mapMin, mapMax) then
+					FindClearSpaceForUnit(hero, VectorOnBoxPerimeter(position, mapClampMin, mapClampMax), true)
 				end
 			end
 			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
