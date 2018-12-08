@@ -69,7 +69,7 @@
 		"npc_dota_hero_lycan"							"1"
 		"npc_dota_hero_lone_druid"						"1"
 		"npc_dota_hero_brewmaster"						"1"
-		"npc_dota_hero_phantom_lancer"					"1"
+		"npc_dota_hero_phantom_lancer"					"0"
 		"npc_dota_hero_treant"							"1"
 		"npc_dota_hero_phantom_assassin"				"1"
 		"npc_dota_hero_gyrocopter"						"1"
