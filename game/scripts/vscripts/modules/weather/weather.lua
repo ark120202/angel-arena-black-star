@@ -82,13 +82,13 @@ function Weather:Think()
 		weatherInfo.Think()
 	end
 	if weatherInfo.simulatesNight then
-		GameRules:BeginTemporaryNight(2/30)
+		GameRules:BeginTemporaryNight(0.4)
 	end
 
 	if now >= Weather.endTime then
 		Weather:Start(Weather:SelectRandomRecipient(Weather.current))
 	end
-	return 1/30
+	return 0.2
 end
 
 function Weather:GetPassedTime()

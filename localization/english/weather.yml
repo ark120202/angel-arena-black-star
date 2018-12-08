@@ -13,3 +13,5 @@ DOTA_Tooltip_modifier_weather_snow_aura_normal: Snow
 DOTA_Tooltip_modifier_weather_snow_aura_normal_Description: Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
 DOTA_Tooltip_modifier_weather_blizzard_debuff: Blizzard
 DOTA_Tooltip_modifier_weather_blizzard_debuff_Description: Cannot move or attack for %fMODIFIER_PROPERTY_TOOLTIP%s.
+DOTA_Tooltip_modifier_weather_storm_debuff: Storm
+DOTA_Tooltip_modifier_weather_storm_debuff_Description: Stunned.

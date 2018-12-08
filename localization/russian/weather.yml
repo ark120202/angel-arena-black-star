@@ -12,3 +12,5 @@ DOTA_Tooltip_modifier_weather_snow_aura_effect: Снег
 DOTA_Tooltip_modifier_weather_snow_aura_effect_Description: Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
 DOTA_Tooltip_modifier_weather_blizzard_debuff: Метель
 DOTA_Tooltip_modifier_weather_blizzard_debuff_Description: Не может ни двигаться, ни атаковать в течении %fMODIFIER_PROPERTY_TOOLTIP% сек.
+DOTA_Tooltip_modifier_weather_storm_debuff: Шторм
+DOTA_Tooltip_modifier_weather_storm_debuff_Description: Оглушен.
