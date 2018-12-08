@@ -102,17 +102,6 @@ Events:Register("activate", function ()
 	end
 end)
 
-Events:Register("AllPlayersLoaded", function ()
-	local playerId = 0
-	for team, data in pairsByKeys(Teams.Data) do
-		for i = 1, data.count do
-			PlayerResource:SetCustomTeamAssignment(playerId, team)
-			playerId = playerId + 1
-			if not PlayerResource:IsValidPlayerID(playerId) then return end
-		end
-	end
-end)
-
 function Teams:PostInitialize()
 	for team, data in pairsByKeys(Teams.Data) do
 		if data.enabled then
