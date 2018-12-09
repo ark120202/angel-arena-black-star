@@ -159,6 +159,53 @@ function CDOTA_BaseNPC:IsWukongsSummon()
 	)
 end
 
+function CDOTA_BaseNPC:SafeAddItem(item)
+	local stacks = item:StacksWithOtherOwners()
+	item:SetStacksWithOtherOwners(false)
+	self:AddItem(item)
+	if not item:IsNull() then
+		item:SetStacksWithOtherOwners(stacks)
+	end
+end
+
+function CDOTA_BaseNPC:CopyItemToSlot(item, slot, swap1, swap2)
+	local newItem = CopyItem(item)
+	newItem.suggested_slot = slot
+	if swap1 then
+		local purchaser = item:GetPurchaser()
+		local playerOwner = purchaser:GetPlayerOwner()
+		if playerOwner == swap1:GetPlayerOwner() then
+			purchaser = swap2
+		elseif playerOwner == swap2:GetPlayerOwner() then
+			purchaser = swap1
+		end
+		newItem:SetPurchaser(purchaser)
+	end
+	newItem.owner = newItem:GetPurchaser()
+	self:SafeAddItem(newItem)
+	newItem:SetPurchaser(nil)
+end
+
+function CDOTA_BaseNPC:MakeItemsUnstackable(firstSlot, lastSlot)
+	for i = firstSlot, lastSlot do
+		local item = self:GetItemInSlot(i)
+		if item then
+			item.owner = item:GetPurchaser()
+			item:SetPurchaser(nil)
+		end
+	end
+end
+
+function CDOTA_BaseNPC:RestoreOwners(firstSlot, lastSlot)
+	for i = firstSlot, lastSlot do
+		local item = self:GetItemInSlot(i)
+		if item and item.owner then
+			item:SetPurchaser(item.owner)
+			item.owner = nil
+		end
+	end
+end
+
 function CDOTA_BaseNPC:GetIllusionParent()
 	-- TODO: make a correct fix for standard illusions
 	if not self.isCustomIllusion then return end
@@ -167,7 +214,6 @@ function CDOTA_BaseNPC:GetIllusionParent()
 		return modifier_illusion:GetCaster()
 	end
 end
-
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	if self.OnDuel then return 1 end

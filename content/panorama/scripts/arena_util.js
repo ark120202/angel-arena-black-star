@@ -153,6 +153,31 @@ function dynamicSort(property) {
 	};
 }
 
+function ObjectIntIncrement (object, key) {
+	object[key] = isNaN(object[key]) ? 1 : object[key] + 1;
+}
+
+//Get a list of items in flagged units by inventory order (ent1 first slot, ent2 first slot, ent1 second slot, etc) and list of indexes of the last list ordered by item name)
+function GetItemsInFlaggedUnits (nEntityIndex, nflaggedEntities, bStash) {
+	var invItemList = [];
+	var endPoint = 8;
+	if (bStash)
+		endPoint = 14;
+	for (var key in nflaggedEntities) {
+		var entity = nflaggedEntities[key]
+		if (entity !== null) {
+			for (var i = endPoint; i >= 0; i--) {
+				var item = Entities.GetItemInSlot(entity, i);
+				if (Items.GetPurchaser(item) === nEntityIndex) {
+					var itemName = Abilities.GetAbilityName(item);
+					invItemList.push(itemName);
+				}
+			}
+		}
+	}
+	return invItemList;
+}
+
 function GetItemCountInInventory(nEntityIndex, itemName, bStash) {
 	var counter = 0;
 	var endPoint = 8;
