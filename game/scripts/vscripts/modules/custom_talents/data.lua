@@ -1248,9 +1248,7 @@ NATIVE_TALENTS = {
 	special_bonus_unique_centaur_3 = {
 		group = 8,
 	},
-	special_bonus_unique_centaur_4 = {
-		group = 7,
-	},
+	special_bonus_unique_centaur_4 = false,
 	special_bonus_unique_witch_doctor_1 = {
 		group = 9,
 	},
