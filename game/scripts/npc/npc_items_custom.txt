@@ -1497,7 +1497,7 @@
 		"ItemResult"					"item_diffusal_style"
 		"ItemRequirements"
 		{
-			"01"						"item_manta_arena;item_diffusal_blade_arena_5;item_orb_of_essences;item_moon_dust"
+			"01"						"item_manta_arena;item_diffusal_blade_arena_5;item_orb_of_essences;item_moon_dust;item_demons_paw"
 		}
 	}
 
@@ -4926,7 +4926,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_gold_as_damage_pct"	"0.2"
+				"active_gold_as_damage_pct"	"0.02"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"07"

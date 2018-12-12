@@ -1224,7 +1224,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
+				"damage_percent"		"1.5"
 			}
 			"07"
 			{
@@ -1350,7 +1350,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
+				"damage_percent"		"1.5"
 			}
 			"07"
 			{
@@ -1476,7 +1476,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
+				"damage_percent"		"1.5"
 			}
 			"07"
 			{
@@ -1602,7 +1602,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
+				"damage_percent"		"1.5"
 			}
 			"07"
 			{
@@ -1725,7 +1725,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"1.5 1.75 2.0 2.25 2.5"
+				"damage_percent"		"1.5"
 			}
 			"07"
 			{
