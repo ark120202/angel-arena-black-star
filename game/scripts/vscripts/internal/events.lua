@@ -59,11 +59,7 @@ function GameMode:_OnConnectFull(keys)
 		firstPlayerLoaded = true
 	end
 
-	local userID = keys.userid
-	-- TODO: is keys.index-1 player id?
-	local entIndex = keys.index+1
-	local ply = EntIndexToHScript(entIndex)
-	PLAYER_DATA[ply:GetPlayerID()].UserID = userID
+	PLAYER_DATA[keys.PlayerID].UserID = keys.userid
 
 	GameMode._reentrantCheck = true
 	GameMode:OnConnectFull(keys)
