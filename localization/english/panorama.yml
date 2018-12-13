@@ -102,12 +102,6 @@ abaddoned_panel_reason: Your hero was removed because you was disconnected for a
 abaddoned_panel_redistribution: All your items were sold and gold was redistributed among your allies
 abaddoned_panel_ranked: Your rating will be reduced highly
 
-banned_panel_title: You are banned
-banned_panel_reason: You are banned from playing Angel Arena Black Star as a result of excessive negative behavior
-banned_panel_description: Your hero is removed and your gold is redistributed among your allies. You are not allowed to use chat.
-banned_panel_ranked: Your rating won't be considered in the game result.
-banned_panel_unban: If you think it's a mistake, contact to
-
 ranked_top_players: Best Players
 ranked_top_more: Open Top 100...
 

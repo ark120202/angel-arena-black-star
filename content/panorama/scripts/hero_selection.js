@@ -369,10 +369,6 @@ function ShowHeroPreviewTab(tabID) {
 			for (var playerId in changesObject) {
 				Snippet_PlayerPanel(+playerId).SetDialogVariable('player_mmr', changesObject[playerId].Rating || 'TBD');
 			}
-
-			if (changesObject[localPlayerId] && changesObject[localPlayerId].isBanned) {
-				HeroSelectionEnd(true);
-			}
 		});
 		UpdateTimer();
 

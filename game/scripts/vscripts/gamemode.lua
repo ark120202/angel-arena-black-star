@@ -105,11 +105,13 @@ function GameMode:OnHeroSelectionStart()
 	Bosses:InitAllBosses()
 	CustomRunes:Init()
 	CustomTalents:Init()
-
 	Timers:CreateTimer(0.1, function()
 		for playerId, data in pairs(PLAYER_DATA) do
 			if PlayerResource:IsPlayerAbandoned(playerId) then
 				PlayerResource:RemoveAllUnits(playerId)
+			end
+			if PlayerResource:IsBanned(playerId) then
+				PlayerResource:KickPlayer(playerId)
 			end
 		end
 	end)

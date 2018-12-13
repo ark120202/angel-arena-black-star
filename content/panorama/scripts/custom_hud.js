@@ -377,13 +377,6 @@ function CreateHeroElements(id) {
 		if (changesObject[Game.GetLocalPlayerID()]) $.GetContextPanel().AddClass('LocalPlayerAbandoned');
 	});
 
-	DynamicSubscribePTListener('stats_client', function(tableName, changesObject) {
-		var localPlayerId = Game.GetLocalPlayerID();
-		if (changesObject[localPlayerId] && changesObject[localPlayerId].isBanned) {
-			$.GetContextPanel().AddClass('LocalPlayerBanned');
-		}
-	});
-
 	AutoUpdatePanoramaHUD();
 	GameEvents.Subscribe('entity_killed', OnDeath);
 	DynamicSubscribeNTListener('custom_entity_values', OnUpdateQueryUnit);

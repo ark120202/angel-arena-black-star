@@ -207,9 +207,9 @@ end
 
 -- This function is called once when the player fully connects and becomes "Ready" during Loading
 function GameMode:OnConnectFull(keys)
-	--[[local entIndex = keys.index+1
-	local ply = EntIndexToHScript(entIndex)
-	local playerId = ply:GetPlayerID()]]
+	if GameRules:State_Get() >= DOTA_GAMERULES_STATE_PRE_GAME and PlayerResource:IsBanned(keys.PlayerID) then
+		PlayerResource:KickPlayer(keys.PlayerID)
+	end
 end
 
 -- This function is called whenever an item is combined to create a new item
