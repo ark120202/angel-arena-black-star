@@ -1,7 +1,7 @@
 -- Binary Heap implementation copy-pasted from https://gist.github.com/starwing/1757443a1bd295653c39
--- BinaryHeap[1] always points to the element of greatest priority.
+-- BinaryHeap[1] always points to the element with the lowest "key" variable
 -- API
--- BinaryHeap(key) - Creates a new BinaryHeap with key
+-- BinaryHeap(key) - Creates a new BinaryHeap with key. The key is the name of the integer variable used to sort objects.
 -- BinaryHeap:Insert - Inserts an object into BinaryHeap
 -- BinaryHeap:Remove - Removes an object from BinaryHeap
 
