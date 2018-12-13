@@ -3579,26 +3579,30 @@
 	{
 		"MaxLevel"	"7"
 		"AbilityCooldown"	"34 31 28 25 22 19 16"
-		"AbilityDuration"	"8.0"
 		"AbilityManaCost"	"25"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"movespeed"			"4 6 8 10 12 14 16"
+				"movespeed"			"4 6 8 12 16 20 22"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"hp_shield"			"100 200 300 400 500 600 700"
+				"hp_shield"			"110 220 330 440 460 480 500"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"700"
+				"self_bonus"		"25"
 			}
 			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"700"
+			}
+			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"duration"			"10"
@@ -5744,7 +5748,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_multiplier"	"0.8 1.0 1.2 1.4 1.6 1.8 2.0"
+				"damage_multiplier"	"0.4 0.6 0.8 1.0 1.2 1.4 1.6"
 				"LinkedSpecialBonus"		"special_bonus_unique_riki_1"
 			}
 
@@ -10004,7 +10008,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maximum_attack_speed"			"220 260 300 340 380 420 500"
+				"maximum_attack_speed"			"40 60 80 100 120 140 160"
 			}
 			"02"
 			{
@@ -17517,7 +17521,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"strength_damage"				"40 60 80 100 120 140 160"
+				"strength_damage"				"10 20 30 40 50 60 70"
 				"LinkedSpecialBonus"			"special_bonus_unique_centaur_4"
 			}
 			"03"
@@ -19099,7 +19103,6 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"stomp_damage"					"70 100 130 160 200 260 300"
-				"LinkedSpecialBonus"			"special_bonus_unique_elder_titan_2"
 			}
 			"05"
 			{

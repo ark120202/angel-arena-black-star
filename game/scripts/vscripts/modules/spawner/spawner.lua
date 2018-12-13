@@ -186,9 +186,9 @@ function Spawner:UpgradeJungleCreep(unit, cycle, spawnerIndex)
 	if cycle > 1 then unit:CreatureLevelUp(cycle - 1) end
 
 	local multiplier = 0.5 + cycle * 0.5
-	unit:SetDeathXP(unit:GetDeathXP() * multiplier)
-	unit:SetMinimumGoldBounty(unit:GetMinimumGoldBounty() * (0.75 + cycle * 0.25))
-	unit:SetMaximumGoldBounty(unit:GetMaximumGoldBounty() * (0.75 + cycle * 0.25))
+	unit:SetDeathXP(unit:GetDeathXP() * (0.85 + cycle * 0.15))
+	unit:SetMinimumGoldBounty(unit:GetMinimumGoldBounty() * (0.85 + cycle * 0.15))
+	unit:SetMaximumGoldBounty(unit:GetMaximumGoldBounty() * (0.85 + cycle * 0.15))
 	unit:SetMaxHealth(unit:GetMaxHealth() * multiplier)
 	unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * multiplier)
 	unit:SetHealth(unit:GetMaxHealth() * multiplier)
