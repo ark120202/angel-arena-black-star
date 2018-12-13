@@ -216,7 +216,6 @@ function Timers:CreateTimer(name, args, context)
 		return
 	end
 
-
 	local now = GameRules:GetGameTime()
 	local timers = self.timers
 	local timerHeap = timers.gameTime
