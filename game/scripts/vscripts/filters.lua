@@ -135,16 +135,20 @@ function GameMode:DamageFilter(filterTable)
 	if IsValidEntity(attacker) then
 		if IsValidEntity(inflictor) and inflictor.GetAbilityName then
 			local inflictorname = inflictor:GetAbilityName()
-
-			if SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS[inflictorname] and attacker:IsHero() then
-				filterTable.damage = GetNotScaledDamage(filterTable.damage, attacker)
-			end
 			local damage_from_current_health_pct = inflictor:GetAbilitySpecial("damage_from_current_health_pct")
 			if victim and damage_from_current_health_pct then
 				if PERCENT_DAMAGE_MODIFIERS[inflictorname] then
 					damage_from_current_health_pct = damage_from_current_health_pct * PERCENT_DAMAGE_MODIFIERS[inflictorname]
 				end
 				filterTable.damage = filterTable.damage + (victim:GetHealth() * damage_from_current_health_pct * 0.01)
+			end
+
+			if IsValidEntity(inflictor.originalInflictor) then
+				inflictorname = inflictor.originalInflictor:GetAbilityName()
+			end
+
+			if SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS[inflictorname] and attacker:IsHero() then
+				filterTable.damage = GetNotScaledDamage(filterTable.damage, attacker)
 			end
 			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and victim:IsBoss() then
 				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
@@ -294,13 +298,13 @@ end
 
 function GameMode:ItemAddedToInventoryFilter(filterTable)
 	local item = EntIndexToHScript(filterTable.item_entindex_const)
-  
-	if item.RuneType then 
+
+	if item.RuneType then
 		local unit = EntIndexToHScript(filterTable.inventory_parent_entindex_const)
 		CustomRunes:PickUpRune(unit, item)
 		return false
 	end
-  
+
 	if item.suggestedSlot then
 		filterTable.suggested_slot = item.suggestedSlot
 		item.suggestedSlot = nil
