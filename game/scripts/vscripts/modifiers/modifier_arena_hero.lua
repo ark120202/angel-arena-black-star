@@ -14,6 +14,7 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_PROPERTY_ABILITY_LAYOUT,
 		MODIFIER_EVENT_ON_RESPAWN,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
+		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
 	}
 end
 
@@ -26,6 +27,12 @@ function modifier_arena_hero:GetModifierMagicalResistanceDirectModification()
 end
 
 if IsServer() then
+	function modifier_arena_hero:GetModifierPreAttack_CriticalStrike()
+		if RollPercentage(15) then
+			return self.agilityCriticalDamage
+		end
+	end
+
 	modifier_arena_hero.HeroLevel = 1
 	function modifier_arena_hero:OnCreated()
 		self:StartIntervalThink(0.2)
@@ -107,6 +114,13 @@ if IsServer() then
 		if parent.armorDifference ~= armorDifference then
 			parent.armorDifference = armorDifference
 			parent:SetPhysicalArmorBaseValue(parent:GetKeyValue("ArmorPhysical") + armorDifference)
+		end
+
+		local isAgilityHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY
+		local agilityCriticalDamage = 100 + parent:GetAgility() * (isAgilityHero and 0.125 or 0.1)
+		if self.agilityCriticalDamage ~= agilityCriticalDamage then
+			self.agilityCriticalDamage = agilityCriticalDamage
+			parent:SetNetworkableEntityInfo("AgilityCriticalDamage", agilityCriticalDamage)
 		end
 	end
 
