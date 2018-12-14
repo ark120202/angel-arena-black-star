@@ -11,7 +11,7 @@
 	{
 		"override_hero"			"npc_dota_hero_life_stealer"
 		"Ability2"				"life_stealer_feast_arena"
-		"AttackRate"			"2"
+		"AttackRate"			"2.6"
 	}
 
 	"npc_dota_hero_gyrocopter"
