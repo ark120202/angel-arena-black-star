@@ -23,9 +23,11 @@ function CDOTABaseAbility:PerformPrecastActions()
 end
 
 function CDOTABaseAbility:GetMulticastType()
+	local name = self:GetAbilityName()
+	if MULTICAST_ABILITIES[name] then return MULTICAST_ABILITIES[name] end
 	if self:IsToggle() then return MULTICAST_TYPE_NONE end
 	if self:HasBehavior(DOTA_ABILITY_BEHAVIOR_PASSIVE) then return MULTICAST_TYPE_NONE end
-	return MULTICAST_ABILITIES[self:GetAbilityName()] or MULTICAST_TYPE_DIFFERENT
+	return self:HasBehavior(DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and MULTICAST_TYPE_DIFFERENT or MULTICAST_TYPE_SAME
 end
 
 function CDOTABaseAbility:ClearFalseInnateModifiers()
