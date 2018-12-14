@@ -23,6 +23,7 @@ function CDOTABaseAbility:PerformPrecastActions()
 end
 
 function CDOTABaseAbility:GetMulticastType()
+	if self:IsToggle() then return MULTICAST_TYPE_NONE end
 	if self:HasBehavior(DOTA_ABILITY_BEHAVIOR_PASSIVE) then return MULTICAST_TYPE_NONE end
 	return MULTICAST_ABILITIES[self:GetAbilityName()] or MULTICAST_TYPE_DIFFERENT
 end

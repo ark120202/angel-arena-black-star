@@ -65,27 +65,11 @@ DOTA_Tooltip_modifier_boss_armor_no_invisibility: No Invisibility
 DOTA_Tooltip_modifier_boss_armor_no_invisibility_Description: Can't get invisible, because recently attacked a boss.
 
 DOTA_Tooltip_ability_ogre_magi_multicast_arena: Multicast
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_Description: >-
-  Enables Ogre Magi to cast his spells multiple times with each use, while also
-  granting his spells greater potency:
-
-  <font color="#EEF10D">Fireblast</font> has its cooldown decreased, its range
-  increased.
-
-  <font color="#DE8930">Ignite</font> hits enemies in an area, its range is
-  increased, and it may be cast onto random nearby enemies when used.
-
-  <font color="#E34F4F">Bloodlust</font> has its cooldown reduced, and may be
-  cast on random nearby allies when used.
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_Description: Enables Ogre Magi to cast his abilities and items multiple times with each use.
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_2_times: '%2X CAST CHANCE:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_3_times: '%3X CAST CHANCE:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_4_times: '%4X CAST CHANCE:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_fireblast_cooldown: 'FIREBLAST COOLDOWN REDUCTION:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_ignite_aoe: 'IGNITE RADIUS:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_ignite_cast_range: 'IGNITE CAST RANGE INCREASE:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_aoe: 'BLOODLUST RADIUS:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_bloodlust_cooldown: 'BLOODLUST COOLDOWN REDUCTION:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally: 'MULTICAST ALLY DURATION:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally_scepter: 'MULTICAST ALLY DURATION:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: >-
   Adds the Unrefined Fireblast ability. Multicast can be used on allies to give
   them chance to multicast for some time. Multicast chance on ultimates is
