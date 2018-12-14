@@ -59,17 +59,6 @@ require('libraries/binheap')
 		end
 	})
 
-
-	-- A timer using the old style to repeat every second starting 5 seconds ahead
-	Timers:CreateTimer("uniqueTimerString3", {
-		useOldStyle = true,
-		endTime = GameRules:GetGameTime() + 5,
-		callback = function()
-			print ("Hello. I'm running after 5 seconds and then every second thereafter.")
-			return GameRules:GetGameTime() + 1
-		end
-	})
-
 ]]
 
 
@@ -89,10 +78,10 @@ end
 
 function Timers:start()
 	Timers = self
-	self.timers = {realTime = BinaryHeap("endTime"), gameTime = BinaryHeap("endTime")}
+	self:InitializeTimers()
 	self.nextTickCallbacks = {}
 	
-	local ent = Entities:CreateByClassname("info_target") -- Entities:FindByClassname(nil, 'CWorld')
+	local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
 	ent:SetThink("Think", self, "timers", TIMERS_THINK)
 end
 
@@ -110,9 +99,8 @@ function Timers:Think()
 	local now = GameRules:GetGameTime()
 
 	-- Process timers
-	local timers = Timers.timers
-	self:ExecuteTimers(timers.realTime, Time())
-	self:ExecuteTimers(timers.gameTime, GameRules:GetGameTime())
+	self:ExecuteTimers(self.realTimeHeap, Time())
+	self:ExecuteTimers(self.gameTimeHeap, GameRules:GetGameTime())
 
 	return TIMERS_THINK
 end
@@ -123,8 +111,6 @@ function Timers:ExecuteTimers(timerList, now)
 	
 	--Timers are alr. sorted by end time upon insertion
 	local currentTimer = timerList[1]
-	
-	local bOldStyle = currentTimer.useOldStyle == true
 	
 	currentTimer.endTime = currentTimer.endTime or now
 	--Check if timer has finished
@@ -154,11 +140,7 @@ function Timers:ExecuteTimers(timerList, now)
 			if nextCall and not Timers.removeSelf then
 				-- Change its end time
 				
-				if bOldStyle then
-					currentTimer.endTime = currentTimer.endTime + nextCall - now
-				else
-					currentTimer.endTime = currentTimer.endTime + nextCall
-				end
+				currentTimer.endTime = currentTimer.endTime + nextCall
 				
 				timerList:Insert(currentTimer)
 			end
@@ -198,43 +180,38 @@ function Timers:HandleEventError(name, event, err)
 	end
 end
 
-function Timers:CreateTimer(name, args, context)
-	if type(name) == "function" then
-		if args ~= nil then
-			context = args
+function Timers:CreateTimer(arg1, arg2, context)
+	if type(arg1) == "function" then
+		if arg2 ~= nil then
+			context = arg2
 		end
-		args = {callback = name}
-		name = args --backwards compatibility
-	elseif type(name) == "table" then
-		args = name
-	elseif type(name) == "number" then
-		args = {endTime = name, callback = args}
-		name = args
+		arg2 = {callback = arg1}
+	elseif type(arg1) == "table" then
+		arg2 = arg1
+	elseif type(arg1) == "number" then
+		arg2 = {endTime = arg1, callback = arg2}
 	end
-	if not args.callback then
-		print("Invalid timer created: "..name)
+	if not arg2.callback then
+		print("Invalid timer created: "..arg1)
 		return
 	end
 
 	local now = GameRules:GetGameTime()
-	local timers = self.timers
-	local timerHeap = timers.gameTime
-	if args.useGameTime ~= nil and args.useGameTime == false then
+	local timerHeap = self.gameTimeHeap
+	if arg2.useGameTime ~= nil and arg2.useGameTime == false then
 		now = Time()
-		timerHeap = timers.realTime
+		timerHeap = self.realTimeHeap
 	end
 
-	if args.endTime == nil then
-		args.endTime = now
-	elseif args.useOldStyle == nil or args.useOldStyle == false then
-		args.endTime = now + args.endTime
+	if arg2.endTime == nil then
+		arg2.endTime = now
 	end
 
-	args.context = context
+	arg2.context = context
 
-	timerHeap:Insert(args)
+	timerHeap:Insert(arg2)
 
-	return name
+	return arg2
 end
 
 function Timers:NextTick(callback)
@@ -243,10 +220,9 @@ end
 
 function Timers:RemoveTimer(name)
 
-	local timers = self.timers
-	local timerHeap = timers.gameTime
+	local timerHeap = self.gameTimeHeap
 	if name.useGameTime ~= nil and name.useGameTime == false then
-		timerHeap = timers.realTime
+		timerHeap = timers.realTimeHeap
 	end
 	
 	timerHeap:Remove(name)
@@ -255,21 +231,10 @@ function Timers:RemoveTimer(name)
 	end
 end
 
---[[ unused function
-function Timers:RemoveTimers(killAll)
-	local timers = {realTime = BinaryHeap("endTime"), gameTime = BinaryHeap("endTime")}
-	Timers.removeSelf = true
-
-	if not killAll then
-		for k,v in pairs(Timers.timers) do
-			if v.persist then
-				timers[k] = v
-			end
-		end
-	end
-
-	Timers.timers = timers
-end]]--
+function Timers:InitializeTimers()
+	self.realTimeHeap = BinaryHeap("endTime")
+	self.gameTimeHeap = BinaryHeap("endTime")
+end
 
 if not Timers.timers then Timers:start() end
 
