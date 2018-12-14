@@ -205,6 +205,8 @@ function Timers:CreateTimer(arg1, arg2, context)
 
 	if arg2.endTime == nil then
 		arg2.endTime = now
+	else
+		arg2.endTime = now + arg2.endTime
 	end
 
 	arg2.context = context
