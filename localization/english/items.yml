@@ -1566,3 +1566,18 @@ DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: +Day Vision
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_night_vision: +Night Vision
 DOTA_Tooltip_ability_item_unstable_quasar_spell_amp_pct: '%+$spell_amp'
 DOTA_Tooltip_ability_item_unstable_quasar_Lore: Only sages can completely seize the singularity.
+
+DOTA_Tooltip_Ability_item_flask_arena: Healing Salve
+DOTA_Tooltip_ability_item_flask_arena_Description: >-
+  <h1>Use: Salve</h1> Grants %health_regen% health regeneration to the target
+  for %buff_duration% seconds.
+
+
+  If the unit is attacked by an enemy hero, tower, boss, or Jungle Bear, the
+  effect is lost.
+
+
+  Range: %tooltip_range%
+DOTA_Tooltip_ability_item_flask_arena_Lore: A magical salve that can quickly mend even the deepest of wounds.
+DOTA_Tooltip_modifier_item_flask_arena_healing: Healing Salve
+DOTA_Tooltip_modifier_item_flask_arena_healing_Description: Restoring health.

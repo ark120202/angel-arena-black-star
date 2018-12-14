@@ -8,7 +8,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_faerie_fire",
 			"item_enchanted_mango",
 			"item_tango_arena",
-			"item_flask",
+			"item_flask_arena",
 			"item_smoke_of_deceit",
 			"item_tpscroll",
 			"item_dust",

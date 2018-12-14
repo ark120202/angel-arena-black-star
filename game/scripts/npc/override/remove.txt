@@ -56,6 +56,7 @@
 	"item_rapier"					"REMOVE"
 	"item_kaya_and_sange"			"REMOVE"
 	"item_yasha_and_kaya"			"REMOVE"
+	"item_flask"					"REMOVE"
 
 	//"item_halloween_candy_corn"	"REMOVE"
 	//"item_mystery_hook"	"REMOVE"

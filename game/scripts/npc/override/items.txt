@@ -218,25 +218,6 @@
 			}
 		}
 	}
-	"item_flask"
-	{
-		"SecretShop"					"0"
-		"SideShop"						"0"
-		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"buff_duration"			"8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_regen"			"40"
-			}
-		}
-	}
 	"item_ward_observer"
 	{
 		"SecretShop"					"0"
