@@ -181,39 +181,40 @@ function Timers:HandleEventError(name, event, err)
 end
 
 function Timers:CreateTimer(arg1, arg2, context)
+	local timer
 	if type(arg1) == "function" then
 		if arg2 ~= nil then
 			context = arg2
 		end
-		arg2 = {callback = arg1}
+		timer = {callback = arg1}
 	elseif type(arg1) == "table" then
-		arg2 = arg1
+		timer = arg1
 	elseif type(arg1) == "number" then
-		arg2 = {endTime = arg1, callback = arg2}
+		timer = {endTime = arg1, callback = arg2}
 	end
-	if not arg2.callback then
-		print("Invalid timer created: "..arg1)
+	if not timer.callback then
+		print("Invalid timer created")
 		return
 	end
 
 	local now = GameRules:GetGameTime()
 	local timerHeap = self.gameTimeHeap
-	if arg2.useGameTime ~= nil and arg2.useGameTime == false then
+	if timer.useGameTime ~= nil and timer.useGameTime == false then
 		now = Time()
 		timerHeap = self.realTimeHeap
 	end
 
-	if arg2.endTime == nil then
-		arg2.endTime = now
+	if timer.endTime == nil then
+		timer.endTime = now
 	else
-		arg2.endTime = now + arg2.endTime
+		timer.endTime = now + timer.endTime
 	end
 
-	arg2.context = context
+	timer.context = context
 
-	timerHeap:Insert(arg2)
+	timerHeap:Insert(timer)
 
-	return arg2
+	return timer
 end
 
 function Timers:NextTick(callback)
