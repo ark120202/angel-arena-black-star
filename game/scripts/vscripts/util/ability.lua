@@ -22,6 +22,11 @@ function CDOTABaseAbility:PerformPrecastActions()
 	return false
 end
 
+function CDOTABaseAbility:GetMulticastType()
+	if self:HasBehavior(DOTA_ABILITY_BEHAVIOR_PASSIVE) then return MULTICAST_TYPE_NONE end
+	return MULTICAST_ABILITIES[self:GetAbilityName()] or MULTICAST_TYPE_DIFFERENT
+end
+
 function CDOTABaseAbility:ClearFalseInnateModifiers()
 	if self:GetKeyValue("HasInnateModifiers") ~= 1 then
 		for _,v in ipairs(self:GetCaster():FindAllModifiers()) do

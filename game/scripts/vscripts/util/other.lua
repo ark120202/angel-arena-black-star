@@ -50,26 +50,87 @@ function ReplaceAbilities(unit, oldAbility, newAbility, keepLevel, keepCooldown)
 end
 
 function PreformMulticast(caster, ability_cast, multicast, multicast_delay, target)
-	if ability_cast:IsMulticastable() then
+	local multicast_type = ability_cast:GetMulticastType()
+	if multicast_type ~= MULTICAST_TYPE_NONE then
 		local prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf', PATTACH_OVERHEAD_FOLLOW, caster)
-		ParticleManager:SetParticleControl(prt, 1, Vector(multicast, 0, 0))
-		prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast_b.vpcf', PATTACH_OVERHEAD_FOLLOW, caster:GetCursorCastTarget() or caster)
-		prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast_b.vpcf', PATTACH_OVERHEAD_FOLLOW, caster)
-		prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast_c.vpcf', PATTACH_OVERHEAD_FOLLOW, caster:GetCursorCastTarget() or caster)
-		ParticleManager:SetParticleControl(prt, 1, Vector(multicast, 0, 0))
-		CastMulticastedSpell(caster, ability_cast, target, multicast-1, multicast_delay)
+		local multicast_flag_data = GetMulticastFlags(caster, ability_cast, multicast_type)
+		if multicast_type == MULTICAST_TYPE_INSTANT then
+			Timers:NextTick(function()
+				ParticleManager:SetParticleControl(prt, 1, Vector(multicast, 0, 0))
+				ParticleManager:ReleaseParticleIndex(prt)
+				local multicast_casted_data = {}
+				for i=2,multicast do
+					CastMulticastedSpellInstantly(caster, ability_cast, target, multicast_flag_data, multicast_casted_data)
+				end
+			end)
+		else
+			CastMulticastedSpell(caster, ability_cast, target, multicast-1, multicast_type, multicast_flag_data, {}, multicast_delay, prt, 2)
+		end
 	end
 end
 
-function CastMulticastedSpell(caster, ability, target, multicasts, delay)
+function GetMulticastFlags(caster, ability, multicast_type)
+	local rv = {}
+	if multicast_type ~= MULTICAST_TYPE_SAME then
+		rv.cast_range = ability:GetCastRange(caster:GetOrigin(), caster)
+		local abilityTarget = ability:GetAbilityTargetTeam()
+		if abilityTarget == 0 then abilityTarget = DOTA_UNIT_TARGET_TEAM_ENEMY end
+		rv.abilityTarget = abilityTarget
+		local abilityTargetType = ability:GetAbilityTargetTeam()
+		if abilityTargetType == 0 then abilityTargetType = DOTA_UNIT_TARGET_ALL
+		elseif abilityTargetType == 2 and ability:HasBehavior(DOTA_ABILITY_BEHAVIOR_POINT) then abilityTargetType = 3 end
+		rv.abilityTargetType = abilityTargetType
+		rv.team = caster:GetTeam()
+		rv.targetFlags = ability:GetAbilityTargetFlags()
+	end
+	return rv
+end
+
+function CastMulticastedSpellInstantly(caster, ability, target, multicast_flag_data, multicast_casted_data)
+	local candidates = FindUnitsInRadius(multicast_flag_data.team, caster:GetOrigin(), nil, multicast_flag_data.cast_range, multicast_flag_data.abilityTarget, multicast_flag_data.abilityTargetType, multicast_flag_data.targetFlags, FIND_ANY_ORDER, false)
+	local Tier1 = {} --heroes
+	local Tier2 = {} --creeps and self
+	local Tier3 = {} --already casted
+	local Tier4 = {} --dead stuff
+	for k, v in pairs(candidates) do
+		if caster:CanEntityBeSeenByMyTeam(v) then
+			if multicast_casted_data[v] then
+				Tier3[#Tier3 + 1] = v
+			elseif not v:IsAlive() then
+				Tier4[#Tier4 + 1] = v
+			elseif v:IsHero() and v ~= caster then
+				Tier1[#Tier1 + 1] = v
+			else
+				Tier2[#Tier2 + 1] = v
+			end
+		end
+	end
+	local castTarget = Tier1[math.random(#Tier1)] or Tier2[math.random(#Tier2)] or Tier3[math.random(#Tier3)] or Tier4[math.random(#Tier4)] or target
+	multicast_casted_data[castTarget] = true
+	CastAdditionalAbility(caster, ability, castTarget)
+	return multicast_casted_data
+end
+
+function CastMulticastedSpell(caster, ability, target, multicasts, multicast_type, multicast_flag_data, multicast_casted_data, delay, prt, prtNumber)
 	if multicasts >= 1 then
 		Timers:CreateTimer(delay, function()
-			CastAdditionalAbility(caster, ability, target)
+			ParticleManager:DestroyParticle(prt, true)
+			ParticleManager:ReleaseParticleIndex(prt)
+			prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf', PATTACH_OVERHEAD_FOLLOW, caster)
+			ParticleManager:SetParticleControl(prt, 1, Vector(prtNumber, 0, 0))
+			if multicast_type == MULTICAST_TYPE_SAME then
+				CastAdditionalAbility(caster, ability, target)
+			else
+				multicast_casted_data = CastMulticastedSpellInstantly(caster, ability, target, multicast_flag_data, multicast_casted_data)
+			end
 			caster:EmitSound('Hero_OgreMagi.Fireblast.x'.. multicasts)
 			if multicasts >= 2 then
-				CastMulticastedSpell(caster, ability, target, multicasts - 1, delay)
+				CastMulticastedSpell(caster, ability, target, multicasts - 1, multicast_type, multicast_flag_data, multicast_casted_data, delay, prt, prtNumber + 1)
 			end
 		end)
+	else
+		ParticleManager:DestroyParticle(prt, false)
+		ParticleManager:ReleaseParticleIndex(prt)
 	end
 end
 
@@ -108,9 +169,14 @@ function CastAdditionalAbility(caster, ability, target)
 		if target and type(target) == "table" then
 			unit:SetCursorCastTarget(target)
 		end
-	elseif skill:HasBehavior(DOTA_ABILITY_BEHAVIOR_POINT) then
-		if target and target.x and target.y and target.z then
-			unit:SetCursorPosition(target)
+	end
+	if skill:HasBehavior(DOTA_ABILITY_BEHAVIOR_POINT) then
+		if target then
+			if target.x and target.y and target.z then
+				unit:SetCursorPosition(target)
+			elseif target.GetOrigin then
+				unit:SetCursorPosition(target:GetOrigin())
+			end
 		end
 	end
 	skill:OnSpellStart()
