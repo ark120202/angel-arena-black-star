@@ -224,7 +224,7 @@ function Timers:RemoveTimer(name)
 
 	local timerHeap = self.gameTimeHeap
 	if name.useGameTime ~= nil and name.useGameTime == false then
-		timerHeap = timers.realTimeHeap
+		timerHeap = self.realTimeHeap
 	end
 	
 	timerHeap:Remove(name)
