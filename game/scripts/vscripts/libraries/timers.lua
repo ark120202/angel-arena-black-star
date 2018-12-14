@@ -222,7 +222,6 @@ function Timers:NextTick(callback)
 end
 
 function Timers:RemoveTimer(name)
-
 	local timerHeap = self.gameTimeHeap
 	if name.useGameTime ~= nil and name.useGameTime == false then
 		timerHeap = self.realTimeHeap
