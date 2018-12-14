@@ -25,7 +25,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"ablaze_max_damage_per_second"	"110 140 170 200 230 260 290"
+				"ablaze_max_damage_per_second"	"20 30 40 70 100 150 200 220"
 			}
 			"04"
 			{
@@ -247,7 +247,7 @@
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.2 0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_DARK"
-		
+
 		"AbilitySpecial"
 		{
 			"01"

@@ -48,7 +48,7 @@
 		"ScriptFile"					"items/item_blade_mail.lua"
 		"AbilityTextureName"			"item_blade_mail"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"				"20 18 16"
+		"AbilityCooldown"				"40 35 30"
 		"AbilityManaCost"				"25 50 100"
 		"ItemShopTags"					"damage;armor;int;hard_to_tag"
 		"ItemQuality"					"epic"
@@ -79,7 +79,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reflected_damage_pct"	"100 110 120"
+				"reflected_damage_pct"	"80 90 100"
 			}
 			"05"
 			{
@@ -100,7 +100,7 @@
 		"ScriptFile"					"items/item_blade_mail.lua"
 		"AbilityTextureName"			"item_arena/blade_mail_2"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"				"20 18 16"
+		"AbilityCooldown"				"40 35 30"
 		"AbilityManaCost"				"25 50 100"
 		"ItemShopTags"					"damage;armor;int;hard_to_tag"
 		"ItemQuality"					"epic"
@@ -131,7 +131,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reflected_damage_pct"	"100 110 120"
+				"reflected_damage_pct"	"80 90 100"
 			}
 			"05"
 			{
@@ -152,7 +152,7 @@
 		"ScriptFile"					"items/item_blade_mail.lua"
 		"AbilityTextureName"			"item_arena/blade_mail_3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"				"20 18 16"
+		"AbilityCooldown"				"40 35 30"
 		"AbilityManaCost"				"25 50 100"
 		"ItemShopTags"					"damage;armor;int;hard_to_tag"
 		"ItemQuality"					"epic"
@@ -183,7 +183,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reflected_damage_pct"	"100 110 120"
+				"reflected_damage_pct"	"80 90 100"
 			}
 			"05"
 			{
@@ -219,7 +219,7 @@
 		"ScriptFile"					"items/item_sacred_blade_mail.lua"
 		"AbilityTextureName"			"item_arena/sacred_blade_mail"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"150"
 		"ItemShopTags"					"damage;armor;int;hard_to_tag"
 		"ItemQuality"					"epic"
@@ -262,12 +262,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reflected_damage_pct"	"150"
+				"reflected_damage_pct"	"100"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reduced_damage_pct"	"18"
+				"reduced_damage_pct"	"10"
 			}
 			"09"
 			{
@@ -277,7 +277,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"buff_chance"			"15"
+				"buff_chance"			"10"
 			}
 			"11"
 			{
@@ -287,7 +287,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_cooldown"			"6"
+				"buff_cooldown"			"12"
 			}
 		}
 	}
