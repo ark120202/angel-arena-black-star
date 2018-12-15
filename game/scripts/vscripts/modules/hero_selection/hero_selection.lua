@@ -73,8 +73,10 @@ function HeroSelection:PrepareTables()
 	for name, baseData in pairs(NPC_HEROES_CUSTOM) do
 		if baseData.Enabled ~= 0 then
 			local heroTable = GetHeroTableByName(name)
-			local tabIndex = heroTable.base_hero and 2 or 1
+			local base_hero = heroTable.base_hero
+			local tabIndex = base_hero and 2 or 1
 			local heroData = {
+				model = base_hero ~= "npc_dota_hero_arena_base" and base_hero or name,
 				useCustomScene = heroTable.UseCustomScene == 1,
 				attributes = HeroSelection:ExtractHeroStats(heroTable),
 				tabIndex = tabIndex
