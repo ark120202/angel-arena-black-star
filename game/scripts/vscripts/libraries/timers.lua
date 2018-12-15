@@ -77,12 +77,15 @@ if Timers == nil then
 end
 
 function Timers:start()
-	Timers = self
-	self:InitializeTimers()
-	self.nextTickCallbacks = {}
-	
-	local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
-	ent:SetThink("Think", self, "timers", TIMERS_THINK)
+	if not self.started then
+		self.started = true
+		Timers = self
+		self:InitializeTimers()
+		self.nextTickCallbacks = {}
+		
+		local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
+		ent:SetThink("Think", self, "timers", TIMERS_THINK)
+	end
 end
 
 function Timers:Think()
