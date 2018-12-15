@@ -268,7 +268,7 @@ end
 
 function GameMode:ModifyGoldFilter(filterTable)
 	local reason = filterTable.reason_const
-	if reason == DOTA_ModifyGold_Building or (reason >= DOTA_ModifyGold_HeroKill and reason_const <= DOTA_ModifyGold_CourierKill) then
+	if reason == DOTA_ModifyGold_Building or (reason >= DOTA_ModifyGold_HeroKill and reason <= DOTA_ModifyGold_CourierKill) then
 		filterTable.gold = 0
 		return false
 	end
