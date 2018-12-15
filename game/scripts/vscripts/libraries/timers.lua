@@ -81,7 +81,7 @@ function Timers:start()
 	Timers = self
 	self:InitializeTimers()
 	self.nextTickCallbacks = {}
-
+	
 	local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
 	ent:SetThink("Think", self, "timers", TIMERS_THINK)
 end
