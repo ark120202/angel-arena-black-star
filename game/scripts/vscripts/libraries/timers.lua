@@ -77,15 +77,13 @@ if Timers == nil then
 end
 
 function Timers:start()
-	if not self.started then
-		self.started = true
-		Timers = self
-		self:InitializeTimers()
-		self.nextTickCallbacks = {}
-		
-		local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
-		ent:SetThink("Think", self, "timers", TIMERS_THINK)
-	end
+	self.started = true
+	Timers = self
+	self:InitializeTimers()
+	self.nextTickCallbacks = {}
+
+	local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
+	ent:SetThink("Think", self, "timers", TIMERS_THINK)
 end
 
 function Timers:Think()
@@ -241,6 +239,6 @@ function Timers:InitializeTimers()
 	self.gameTimeHeap = BinaryHeap("endTime")
 end
 
-if not Timers.timers then Timers:start() end
+if not Timers.started then Timers:start() end
 
 GameRules.Timers = Timers
