@@ -221,10 +221,11 @@ function OnLocalPlayerPicked() {
 	var hype = $.Localize(heroName + '_hype');
 	$('#HeroPreviewOverview').text = hype !== heroName + '_hype' ? hype : '';
 
+	var model = localHeroData.model
 	var heroImageXML = '<DOTAScenePanel particleonly="false" ' +
 		(localHeroData.useCustomScene
-			? 'map="scenes/heroes" camera="' + heroName + '" />'
-			: 'allowrotation="true" unit="' + heroName + '" />');
+			? 'map="scenes/heroes" camera="' + model + '" />'
+			: 'allowrotation="true" unit="' + model + '" />');
 	var ScenePanel = $('#HeroPreviewScene');
 	ScenePanel.RemoveAndDeleteChildren();
 	ScenePanel.BCreateChildren(heroImageXML);
