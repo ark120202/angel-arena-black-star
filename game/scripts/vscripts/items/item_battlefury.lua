@@ -65,7 +65,9 @@ if IsServer() then
 		if attacker == self:GetParent() and not attacker:IsIllusion() then
 			local ability = self:GetAbility()
 			local target = keys.target
-			if target:IsRealCreep() then
+			local record = keys.record
+			local lastFuryRecord = attacker.lastFuryRecord
+			if target:IsRealCreep() and (not lastFuryRecord or record ~= lastFuryRecord) then
 				ApplyDamage({
 					attacker = attacker,
 					victim = target,
@@ -74,6 +76,7 @@ if IsServer() then
 					damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 					ability = ability
 				})
+				attacker.lastFuryRecord = record
 			end
 			if not attacker:IsRangedUnit() then
 				DoCleaveAttack(
