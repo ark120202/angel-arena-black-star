@@ -131,6 +131,8 @@ end
 
 function modifier_item_book_of_the_guardian_aura_baseclass:OnCreated()
 	self:GetParent():InsertItemPriority("book_of_the_guardian_aura", self, self:GetAbility():GetLevel())
+	self.level = self:GetAbility():GetLevel()
+	self.aura_attack_speed = self:GetAbility():GetSpecialValueFor("aura_attack_speed")
 end
 
 function modifier_item_book_of_the_guardian_aura_baseclass:OnDestroy()
@@ -138,11 +140,11 @@ function modifier_item_book_of_the_guardian_aura_baseclass:OnDestroy()
 end
 
 function modifier_item_book_of_the_guardian_aura_baseclass:IsHidden()
-	return self:GetParent():GetHighestPriorityItem("book_of_the_guardian_aura").priority ~= self:GetAbility():GetLevel()
+	return self:GetParent():GetHighestPriorityItem("book_of_the_guardian_aura").priority ~= self.level
 end
 
 function modifier_item_book_of_the_guardian_aura_baseclass:GetModifierAttackSpeedBonus_Constant()
-	return self:GetParent():GetHighestPriorityItem("book_of_the_guardian_aura").priority == self:GetAbility():GetLevel() and self:GetAbility():GetSpecialValueFor("aura_attack_speed") or 0
+	return self:GetParent():GetHighestPriorityItem("book_of_the_guardian_aura").priority == self.level and self.aura_attack_speed or 0
 end
 
 modifier_item_book_of_the_guardian_aura = class(modifier_item_book_of_the_guardian_aura_baseclass)
@@ -159,6 +161,10 @@ function modifier_item_book_of_the_guardian_blast:DeclareFunctions()
 	return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE}
 end
 
+function modifier_item_book_of_the_guardian_blast:OnCreated()
+	self.blast_movement_speed_pct = self:GetAbility():GetSpecialValueFor("blast_movement_speed_pct")
+end
+
 function modifier_item_book_of_the_guardian_blast:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor("blast_movement_speed_pct")
+	return self.blast_movement_speed_pct
 end
