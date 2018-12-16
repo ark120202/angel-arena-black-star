@@ -67,7 +67,8 @@ end
 LinkLuaModifier("modifier_item_soulcutter_aura_effect", "items/item_soulcutter.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_item_soulcutter_aura_effect = {
 	DeclareFunctions = function() return { MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS } end,
-	GetModifierPhysicalArmorBonus = function(self) return self:GetAbility():GetSpecialValueFor("aura_armor_reduction") end,
+	OnCreated = function(self) self.aura_armor_reduction = self:GetAbility():GetSpecialValueFor("aura_armor_reduction") end,
+	GetModifierPhysicalArmorBonus = function(self) return self.aura_armor_reduction end,
 }
 
 
@@ -84,13 +85,14 @@ modifier_item_soulcutter_stack = {
 }
 
 function modifier_item_soulcutter_stack:OnCreated()
+	self.armor_per_hit_pct = self:GetAbility():GetSpecialValueFor("armor_per_hit_pct")
 	self:StartIntervalThink(0.1)
 end
 
 function modifier_item_soulcutter_stack:OnIntervalThink()
 	self.armorReduction = (
-		self:GetStackCount() *
-		self:GetAbility():GetSpecialValueFor("armor_per_hit_pct") *
+		self:GetStackCount() * self.armor_per_hit_pct
+		 *
 		(self:GetParent():GetPhysicalArmorValue() - (self.armorReduction or 0)) *
 		0.01
 	)
