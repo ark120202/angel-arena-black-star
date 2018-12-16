@@ -61,10 +61,16 @@ function modifier_item_bottle_arena_heal:DeclareFunctions()
 	}
 end
 
+function modifier_item_bottle_arena_heal:OnCreated()
+	local ability = self:GetAbility()
+	self.health_restore = ability:GetSpecialValueFor("health_restore")
+	self.mana_restore = ability:GetSpecialValueFor("mana_restore")
+end
+
 function modifier_item_bottle_arena_heal:GetModifierConstantHealthRegen()
-	return self:GetAbility():GetSpecialValueFor("health_restore") / self:GetDuration()
+	return self.health_restore / self:GetDuration()
 end
 
 function modifier_item_bottle_arena_heal:GetModifierConstantManaRegen()
-	return self:GetAbility():GetSpecialValueFor("mana_restore") / self:GetDuration()
+	return self.mana_restore / self:GetDuration()
 end
