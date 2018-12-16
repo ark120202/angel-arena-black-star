@@ -134,29 +134,24 @@ function CastMulticastedSpell(caster, ability, target, multicasts, multicast_typ
 	end
 end
 
-function PrecacheDummyCasters(caster)
-	local dummyCasters = caster.dummyCasters
-	local dummy = CreateUnitByName("npc_dummy_caster", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
-	dummyCasters[#dummyCasters + 1] = dummy
-	dummy:SetControllableByPlayer(caster:GetPlayerID(), true)
-	dummy:AddNoDraw()
-	dummy:MakeIllusion()
-end
-
 function CastAdditionalAbility(caster, ability, target, delay)
 	local skill = ability
 	local unit = caster
 	local channelTime = ability:GetKeyValue("AbilityChannelTime") or 0
 	if channelTime > 0 then
 		if not caster.dummyCasters then
-			caster.dummyCasters = caster.dummyCasters or {}
-			caster.nextFreeDummyCaster = caster.nextFreeDummyCaster or 1
-			for i=0,8 do PrecacheDummyCasters(caster) end
+			caster.dummyCasters = {}
+			caster.nextFreeDummyCaster = 1
+			for i = 1, 8 do
+				local dummy = CreateUnitByName("npc_dummy_caster", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+				dummy:SetControllableByPlayer(caster:GetPlayerID(), true)
+				dummy:AddNoDraw()
+				dummy:MakeIllusion()
+				table.insert(caster.dummyCasters, dummy)
+			end
 		end
-		local dummy = caster.dummyCasters[caster.nextFreeDummyCaster]--CreateUnitByName("npc_dummy_unit", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
-		caster.nextFreeDummyCaster = caster.nextFreeDummyCaster + 1
-		if caster.nextFreeDummyCaster > #caster.dummyCasters then caster.nextFreeDummyCaster = 1 end
-		--TODO сделать чтобы дамаг от скилла умножался от инты.
+		local dummy = caster.dummyCasters[caster.nextFreeDummyCaster]
+		caster.nextFreeDummyCaster = (caster.nextFreeDummyCaster + 1) % #caster.dummyCasters
 		for i = 0, DOTA_ITEM_SLOT_9 do
 			local citem = caster:GetItemInSlot(i)
 			if citem then
@@ -196,24 +191,24 @@ function CastAdditionalAbility(caster, ability, target, delay)
 	end
 	skill:OnSpellStart()
 	if channelTime > 0 then
-		local AbilityLastEndTime = ability.lastEndTime
-		if ability:IsChanneling() and (not AbilityLastEndTime or AbilityLastEndTime < GameRules:GetGameTime() - delay) then
+		local abilityLastEndTime = ability.lastEndTime
+		if ability:IsChanneling() and (not abilityLastEndTime or abilityLastEndTime < GameRules:GetGameTime() - delay) then
 			local index = #ability.EndChannelListeners + 1
-			ability.EndChannelListeners[index] = function(bInterrupted)
+			ability.EndChannelListeners[index] = function(interrupted)
 				ability.EndChannelListeners[index] = nil
-				EndAdditionalAbilityChannel(caster, unit, skill, bInterrupted, delay)
+				EndAdditionalAbilityChannel(caster, unit, skill, interrupted, delay)
 			end
 		else
-			EndAdditionalAbilityChannel(caster, unit, skill, ability.channelFailed, delay - GameRules:GetGameTime() + AbilityLastEndTime)
+			EndAdditionalAbilityChannel(caster, unit, skill, ability.channelFailed, delay - GameRules:GetGameTime() + abilityLastEndTime)
 		end
 	end
 end
 
-function EndAdditionalAbilityChannel(caster, unit, skill, bInterrupted, delay)
+function EndAdditionalAbilityChannel(caster, unit, skill, interrupted, delay)
 	Timers:CreateTimer(delay or 0, function()
 		FindClearSpaceForUnit(unit, caster:GetOrigin() - caster:GetForwardVector(), false)
-		skill:EndChannel(bInterrupted)
-		skill:OnChannelFinish(bInterrupted)
+		skill:EndChannel(interrupted)
+		skill:OnChannelFinish(interrupted)
 	end)
 end
 
