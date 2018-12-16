@@ -118,10 +118,14 @@ function modifier_item_scythe_of_sun_hex:DeclareFunctions()
 	}
 end
 
+function modifier_item_scythe_of_sun_hex:OnCreated()
+	self.hex_movement_speed = self:GetAbility():GetSpecialValueFor("hex_movement_speed")
+end
+
 function modifier_item_scythe_of_sun_hex:GetModifierModelChange()
 	return "models/items/hex/sheep_hex/sheep_hex_gold.vmdl"
 end
 
 function modifier_item_scythe_of_sun_hex:GetModifierMoveSpeed_Limit()
-	return self:GetAbility():GetSpecialValueFor("hex_movement_speed")
+	return self.hex_movement_speed
 end
