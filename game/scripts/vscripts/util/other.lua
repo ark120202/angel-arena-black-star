@@ -279,6 +279,7 @@ end
 function RemoveAllOwnedUnits(playerId)
 	local player = PlayerResource:GetPlayer(playerId)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
+	RemoveDummyCasters(hero)
 	local courier = FindCourier(PlayerResource:GetTeam(playerId))
 	for _,v in ipairs(FindAllOwnedUnits(player or playerId)) do
 		if v ~= hero and v ~= courier then
@@ -287,14 +288,11 @@ function RemoveAllOwnedUnits(playerId)
 			RemoveDummyCasters(v)
 			UTIL_Remove(v)
 		end
-		RemoveDummyCasters(hero)
 	end
 end
 
 function RemoveDummyCasters(unit)
-	if unit.dummyCasters then
-		for _, dummyCaster in pairs(unit.dummyCasters) do UTIL_Remove(dummyCaster) end
-	end
+	for _, dummyCaster in pairs(unit.dummyCasters or {}) do UTIL_Remove(dummyCaster) end
 end
 
 function GetTeamPlayerCount(iTeam)
