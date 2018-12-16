@@ -11,7 +11,7 @@ if IsServer() then
 		local target = self:GetCursorTarget()
 		if not target:TriggerSpellAbsorb(self) then
 			target:TriggerSpellReflect(self)
-			target:EmitSound("DOTA_Item.Orchid.Activate")
+			target:EmitSound("DOTA_Item.Bloodthorn.Activate")
 			target:AddNewModifier(self:GetCaster(), self, "modifier_item_bloodthorn_arena_silence", {duration = self:GetSpecialValueFor("silence_duration")})
 		end
 	end
@@ -67,6 +67,14 @@ modifier_item_bloodthorn_arena_silence = class({
 	GetEffectName =       function() return "particles/items2_fx/orchid.vpcf" end,
 })
 
+function modifier_item_bloodthorn_arena_silence:OnCreated()
+	local ability = self:GetAbility()
+	self.target_crit_multiplier_pct = ability:GetSpecialValueFor("target_crit_multiplier_pct")
+	self.silence_damage_pct = ability:GetSpecialValueFor("silence_damage_pct")
+	self.ability_damage_type = ability:GetAbilityDamageType()
+	self.target_crit_multiplier_pct = ability:GetSpecialValueFor("target_crit_multiplier_pct")
+end
+
 function modifier_item_bloodthorn_arena_silence:CheckState()
 	return {
 		[MODIFIER_STATE_SILENCED] = true,
@@ -83,7 +91,7 @@ function modifier_item_bloodthorn_arena_silence:DeclareFunctions()
 	}
 end
 function modifier_item_bloodthorn_arena_silence:OnTooltip()
-	return self:GetAbility():GetSpecialValueFor("target_crit_multiplier_pct")
+	return self.target_crit_multiplier_pct
 end
 
 if IsServer() then
@@ -98,24 +106,22 @@ if IsServer() then
 	function modifier_item_bloodthorn_arena_silence:OnAttackStart(keys)
 		local parent = self:GetParent()
 		if parent == keys.target then
-			local ability = self:GetAbility()
-			keys.attacker:AddNewModifier(parent, self:GetAbility(), "modifier_item_bloodthorn_arena_crit", {duration = 1.5})
+			keys.attacker:AddNewModifier(parent, self:GetAbility(), "modifier_item_bloodthorn_arena_crit", {duration = 1.5, target_crit_multiplier_pct = self.target_crit_multiplier_pct})
 		end
 	end
 
 	function modifier_item_bloodthorn_arena_silence:OnDestroy()
-		local ability = self:GetAbility()
 		local parent = self:GetParent()
-		local damage = (self.damage or 0) * ability:GetSpecialValueFor("silence_damage_pct") * 0.01
+		local damage = (self.damage or 0) * self.silence_damage_pct * 0.01
 		ParticleManager:SetParticleControl(ParticleManager:CreateParticle("particles/items2_fx/orchid_pop.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent), 1, Vector(damage))
 		if damage > 0 then
 			ApplyDamage({
 				attacker = self:GetCaster(),
 				victim = parent,
 				damage = damage,
-				damage_type = ability:GetAbilityDamageType(),
+				damage_type = self.ability_damage_type,
 				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-				ability = ability
+				ability = self:GetAbility()
 			})
 		end
 	end
@@ -128,6 +134,10 @@ modifier_item_bloodthorn_arena_crit = class({
 })
 
 if IsServer() then
+	function modifier_item_bloodthorn_arena_crit:OnCreated(keys)
+		self.target_crit_multiplier_pct = keys.target_crit_multiplier_pct
+	end
+
 	function modifier_item_bloodthorn_arena_crit:DeclareFunctions()
 		return {
 			MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
@@ -137,7 +147,7 @@ if IsServer() then
 
 	function modifier_item_bloodthorn_arena_crit:GetModifierPreAttack_CriticalStrike(keys)
 		if keys.target == self:GetCaster() and keys.target:HasModifier("modifier_item_bloodthorn_arena_silence") then
-			return self:GetAbility():GetSpecialValueFor("target_crit_multiplier_pct")
+			return self.target_crit_multiplier_pct
 		else
 			self:Destroy()
 		end
