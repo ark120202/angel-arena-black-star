@@ -19,6 +19,7 @@ end
 modifier_item_sacred_blade_mail = class({
 	IsHidden =   function() return true end,
 	IsPurgable = function() return false end,
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
 })
 
 function modifier_item_sacred_blade_mail:DeclareFunctions()
@@ -78,14 +79,17 @@ modifier_item_sacred_blade_mail_active = class({
 })
 
 if IsServer() then
+	function modifier_item_sacred_blade_mail_active:OnCreated()
+		self.reflected_damage_pct = self:GetAbility():GetSpecialValueFor("reflected_damage_pct")
+	end
+
 	function modifier_item_sacred_blade_mail_active:DeclareFunctions()
 		return { MODIFIER_EVENT_ON_TAKEDAMAGE }
 	end
 
 	function modifier_item_sacred_blade_mail_active:OnTakeDamage(keys)
 		local unit = self:GetParent()
-		local ability = self:GetAbility()
-		if unit == keys.unit and SimpleDamageReflect(unit, keys.attacker, keys.original_damage * ability:GetSpecialValueFor("reflected_damage_pct") * 0.01, keys.damage_flags, ability, keys.damage_type) then
+		if unit == keys.unit and SimpleDamageReflect(unit, keys.attacker, keys.original_damage * self.reflected_damage_pct * 0.01, keys.damage_flags, self:GetAbility(), keys.damage_type) then
 			keys.attacker:EmitSound("DOTA_Item.BladeMail.Damage")
 		end
 	end
