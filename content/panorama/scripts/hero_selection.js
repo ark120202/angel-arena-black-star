@@ -224,7 +224,7 @@ function OnLocalPlayerPicked() {
 	var model = localHeroData.model
 	var heroImageXML = '<DOTAScenePanel particleonly="false" ' +
 		(localHeroData.useCustomScene
-			? 'map="scenes/heroes" camera="' + model + '" />'
+			? 'map="scenes/heroes" camera="' + heroName + '" />'
 			: 'allowrotation="true" unit="' + model + '" />');
 	var ScenePanel = $('#HeroPreviewScene');
 	ScenePanel.RemoveAndDeleteChildren();
