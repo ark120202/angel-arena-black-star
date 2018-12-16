@@ -84,6 +84,7 @@ if IsServer() then
 	end
 	function modifier_item_radiance_lua:OnCreated()
 		local ability = self:GetAbility()
+		self.level = ability.level or ability:GetLevel()
 		ability.pfx = ParticleManager:CreateParticle(ability.particle_owner, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		self:StartIntervalThink(0.1)
 	end
@@ -119,29 +120,36 @@ function modifier_item_radiance_lua_effect:DeclareFunctions()
 		MODIFIER_PROPERTY_MISS_PERCENTAGE
 	}
 end
-function modifier_item_radiance_lua_effect:GetModifierAttackSpeedBonus_Constant()
+function modifier_item_radiance_lua_effect:OnCreated()
 	local ability = self:GetAbility()
-	return ability:GetSpecialValueFor(ability:GetName() == "item_radiance_frozen" and "cold_attack_speed" or "attack_speed_slow")
+	self.ASslow = ability:GetSpecialValueFor(ability:GetName() == "item_radiance_frozen" and "cold_attack_speed" or "attack_speed_slow")
+	self.MSslow = ability:GetSpecialValueFor(ability:GetName() == "item_radiance_frozen" and "cold_movement_speed_pct" or "move_speed_slow_pct")
+	self.blind_pct = ability:GetSpecialValueFor("blind_pct")
+	self.aura_damage_per_second = ability:GetSpecialValueFor("aura_damage_per_second")
+end
+function modifier_item_radiance_lua_effect:GetModifierAttackSpeedBonus_Constant()
+	return self.ASslow
 end
 function modifier_item_radiance_lua_effect:GetModifierMoveSpeedBonus_Percentage()
-	local ability = self:GetAbility()
-	return ability:GetSpecialValueFor(ability:GetName() == "item_radiance_frozen" and "cold_movement_speed_pct" or "move_speed_slow_pct")
+	return self.MSslow
 end
 function modifier_item_radiance_lua_effect:GetModifierMiss_Percentage()
-	local ability = self:GetAbility()
-	return ability:GetSpecialValueFor("blind_pct")
+print(self.blind_pct)
+	return self.blind_pct
 end
 
 if IsServer() then
+	modifier_item_radiance_lua_effect.ClientOnCreated = modifier_item_radiance_lua_effect.OnCreated
 	modifier_item_radiance_lua_effect.interval_think = 0.5
 	function modifier_item_radiance_lua_effect:OnCreated()
 		self:StartIntervalThink(self.interval_think)
+		self:ClientOnCreated()
 	end
 
 	function modifier_item_radiance_lua_effect:OnIntervalThink()
 		ApplyDamage({victim = self:GetParent(),
 			attacker = self:GetCaster(),
-			damage = self:GetAbility():GetSpecialValueFor("aura_damage_per_second") * self.interval_think,
+			damage = self.aura_damage_per_second * self.interval_think,
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self:GetAbility()
 		})
