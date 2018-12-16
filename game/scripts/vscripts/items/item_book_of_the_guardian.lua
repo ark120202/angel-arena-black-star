@@ -2,6 +2,9 @@ LinkLuaModifier("modifier_item_book_of_the_guardian", "items/item_book_of_the_gu
 LinkLuaModifier("modifier_item_book_of_the_guardian_effect", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_book_of_the_guardian_blast", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_book_of_the_guardian_aura", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_book_of_the_guardian_aura_2", "items/item_book_of_the_guardian.lua", LUA_MODIFIER_MOTION_NONE)
+
+require("util/priority")
 
 item_book_of_the_guardian_baseclass = {
 	GetIntrinsicModifierName = function() return "modifier_item_book_of_the_guardian" end
@@ -74,6 +77,12 @@ function modifier_item_book_of_the_guardian:DeclareFunctions()
 	}
 end
 
+if IsServer() then
+	function modifier_item_book_of_the_guardian:GetModifierAura()
+		return slowAuras[self:GetAbility():GetLevel()]
+	end
+end
+
 function modifier_item_book_of_the_guardian:GetModifierBonusStats_Intellect()
 	return self:GetAbility():GetSpecialValueFor("bonus_intellect")
 end
@@ -94,10 +103,6 @@ function modifier_item_book_of_the_guardian:GetModifierSpellAmplify_Percentage()
 	return self:GetAbility():GetSpecialValueFor("spell_amp_pct")
 end
 
-function modifier_item_book_of_the_guardian:GetModifierAura()
-	return "modifier_item_book_of_the_guardian_aura"
-end
-
 function modifier_item_book_of_the_guardian:GetAuraRadius()
 	return self:GetAbility():GetSpecialValueFor("aura_radius")
 end
@@ -115,18 +120,35 @@ function modifier_item_book_of_the_guardian:GetAuraSearchType()
 end
 
 
-modifier_item_book_of_the_guardian_aura = class({
+modifier_item_book_of_the_guardian_aura_baseclass = {
 	IsPurgable = function() return false end,
-})
+	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
+}
 
-function modifier_item_book_of_the_guardian_aura:DeclareFunctions()
+function modifier_item_book_of_the_guardian_aura_baseclass:DeclareFunctions()
 	return {MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT}
 end
 
-function modifier_item_book_of_the_guardian_aura:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor("aura_attack_speed")
+function modifier_item_book_of_the_guardian_aura_baseclass:OnCreated()
+	self:GetParent():InsertItemPriority("book_of_the_guardian_aura", self, self:GetAbility():GetLevel())
 end
 
+function modifier_item_book_of_the_guardian_aura_baseclass:OnDestroy()
+	self:GetParent():RemoveItemPriority("book_of_the_guardian_aura", self)
+end
+
+function modifier_item_book_of_the_guardian_aura_baseclass:IsHidden()
+	return self:GetParent():GetHighestPriorityItem("book_of_the_guardian_aura").priority ~= self:GetAbility():GetLevel()
+end
+
+function modifier_item_book_of_the_guardian_aura_baseclass:GetModifierAttackSpeedBonus_Constant()
+	return self:GetParent():GetHighestPriorityItem("book_of_the_guardian_aura").priority == self:GetAbility():GetLevel() and self:GetAbility():GetSpecialValueFor("aura_attack_speed") or 0
+end
+
+modifier_item_book_of_the_guardian_aura = class(modifier_item_book_of_the_guardian_aura_baseclass)
+modifier_item_book_of_the_guardian_aura_2 = class(modifier_item_book_of_the_guardian_aura_baseclass)
+
+slowAuras = {"modifier_item_book_of_the_guardian_aura", "modifier_item_book_of_the_guardian_aura_2"}
 
 modifier_item_book_of_the_guardian_blast = class({
 	GetEffectName = function() return "particles/econ/events/ti7/shivas_guard_slow.vpcf" end,
