@@ -159,24 +159,26 @@ modifier_item_scythe_of_the_ancients_stun = class({
 if IsServer() then
 	function modifier_item_scythe_of_the_ancients_stun:OnCreated()
 		local parent = self:GetParent()
+		local ability = self:GetAbility()
+		self.delayed_damage_per_health = ability:GetSpecialValueFor("delayed_damage_per_health")
+		self.ability_damage_type = ability:GetAbilityDamageType()
 		self.particle = ParticleManager:CreateParticle("particles/arena/items_fx/scythe_of_the_ancients_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
 		ParticleManager:SetParticleControlEnt(self.particle, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
 	end
 
 	function modifier_item_scythe_of_the_ancients_stun:OnDestroy()
-		local ability = self:GetAbility()
 		local caster = self:GetCaster()
 		local target = self:GetParent()
 		local team = caster:GetTeamNumber()
 		ParticleManager:DestroyParticle(self.particle, false)
-		local damage = (target:GetMaxHealth() - target:GetHealth()) * ability:GetSpecialValueFor("delayed_damage_per_health")
+		local damage = (target:GetMaxHealth() - target:GetHealth()) * self.delayed_damage_per_health
 		ApplyDamage({
 			attacker = caster,
 			victim = target,
 			damage = damage,
-			damage_type = ability:GetAbilityDamageType(),
+			damage_type = self.ability_damage_type,
 			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-			ability = ability
+			ability = self:GetAbility()
 		})
 	end
 end
