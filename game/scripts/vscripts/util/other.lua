@@ -191,11 +191,11 @@ function CastAdditionalAbility(caster, ability, target, delay)
 	end
 	skill:OnSpellStart()
 	if channelTime > 0 then
-		local abilityLastEndTime = ability.lastEndTime
-		if ability:IsChanneling() and (not abilityLastEndTime or abilityLastEndTime < GameRules:GetGameTime() - delay) then
-			local index = #ability.EndChannelListeners + 1
-			ability.EndChannelListeners[index] = function(interrupted)
-				ability.EndChannelListeners[index] = nil
+		local abilityLastEndTime = ability.lastEndTime or 0
+		if abilityLastEndTime < GameRules:GetGameTime() - delay then
+			local index = #caster.EndChannelListeners + 1
+			caster.EndChannelListeners[index] = function(interrupted)
+				caster.EndChannelListeners[index] = nil
 				EndAdditionalAbilityChannel(caster, unit, skill, interrupted, delay)
 			end
 		else
