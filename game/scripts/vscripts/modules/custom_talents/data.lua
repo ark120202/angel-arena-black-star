@@ -1083,9 +1083,7 @@ NATIVE_TALENTS = {
 	special_bonus_unique_pugna_6 = {
 		group = 5,
 	},
-	special_bonus_unique_timbersaw = {
-		group = 9,
-	},
+	special_bonus_unique_timbersaw = false,
 	special_bonus_unique_timbersaw_2 = {
 		group = 4,
 	},

@@ -47,23 +47,15 @@ DOTA_Tooltip_ability_boss_armor_Description: |-
 DOTA_Tooltip_modifier_boss_armor_no_invisibility: No Invisibility
 DOTA_Tooltip_modifier_boss_armor_no_invisibility_Description: Не может стать невидимым, так как атаковал босса.
 
-# Partial
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_Description: >-
-  Позволяет способностям героя срабатывать по нескольку раз за одно
-  применение и усиливает каждую из них:
-
-  <font color="#EEF10D">Fireblast</font> получает уменьшенное время
-  перезарядки и увеличенную дальность применения.
-
-  <font color="#DE8930">Ignite</font> действует на область вокруг цели,
-  получает увеличенную дальность применения и может сработать на случайных
-  врагов вокруг.
-
-  <font color="#E34F4F">Bloodlust</font> получает уменьшенное время
-  перезарядки и может сработать на случайных союзников вокруг.
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_Description: Позволяет способностям и предметам героя срабатывать по нескольку раз за одно применение.
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_2_times: '%ШАНС 2Х:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_3_times: '%ШАНС 3X:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_4_times: '%ШАНС 4Х:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally_scepter: 'ДЛИТЕЛЬНОСТЬ НА СОЮЗНИКАХ:'
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: >-
+  Добавляет способность Unrefined Fireblast. Multicast может быть использован на
+  союзниках, временно давая им эффект этой способности. Шанс срабатывания на
+  ультимативных способностях уменьшен на 50%
 
 DOTA_Tooltip_ability_ability_empty: Слот для способности
 

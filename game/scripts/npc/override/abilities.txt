@@ -5748,7 +5748,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"damage_multiplier"	"0.4 0.6 0.8 1.0 1.2 1.4 1.6"
+				"damage_multiplier"	"0.5 0.5 0.5 0.6 0.8 1.0 1.3"
 				"LinkedSpecialBonus"		"special_bonus_unique_riki_1"
 			}
 
@@ -7686,7 +7686,7 @@
 	"phantom_assassin_blur"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"				"60 55 50 45 30 25 20"
+		"AbilityCooldown"				"90 85 80 75 60 55 50"
 		"AbilityManaCost"				"20"
 		"AbilitySpecial"
 		{
@@ -7699,7 +7699,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"25"
+				"duration"					"10"
 			}
 			"03"
 			{
@@ -14749,13 +14749,13 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"poof_damage"				"80 100 120 140 160 180 200"
+				"poof_damage"				"40 80 100 120 140 160 180"
 				"LinkedSpecialBonus"		"special_bonus_unique_meepo_2"
 			}
 			"99"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_from_current_health_pct" "2.0"
+				"damage_from_current_health_pct" "1.0"
 				"CalculateSpellDamageTooltip" "0"
 			}
 		}
@@ -14764,7 +14764,7 @@
 	"meepo_geostrike"
 	{
 		"MaxLevel"						"7"
-		"AbilityDamage"					"10 20 30 40 50 60 70"
+		"AbilityDamage"					"5 10 15 20 25 30 35"
 		"AbilityDuration"				"2"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_EARTH"
 		"AbilitySpecial"
@@ -17440,7 +17440,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"trance_duration"		"6.5"
+				"trance_duration"		"4.5"
 			}
 			"02"
 			{

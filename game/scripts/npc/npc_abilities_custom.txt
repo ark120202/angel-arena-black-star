@@ -32,9 +32,7 @@
 {
 	"ogre_magi_multicast_arena"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_lua"
+		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_ogre_magi/multicast.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -48,9 +46,9 @@
 		"AbilityCooldown"				"55.0"
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
+		"AbilityCastRange"				"500"
+		"AbilityManaCost"				"75 100 125 150 175 200 225"
 
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
 			"particle"		"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf"
@@ -58,8 +56,6 @@
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 		}
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -80,48 +76,12 @@
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"fireblast_cooldown"	"2 2 3 4 5 6 7"
+				"duration_ally_scepter"		"30"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"ignite_aoe"		"150 300 450 500 550 600 650"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"ignite_cast_range"	"150 300 450 500 550 600 650"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bloodlust_aoe"			"575"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bloodlust_cooldown"	"10"
-			}
-			////////////////////////////////////////////////////////
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration_ally"		"30"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_FLOAT"
 				"multicast_delay"	"0.5"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"scepter_manacost"		"75 100 125 150 175 200 225"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"multicast_cast_range"	"500"
 			}
 		}
 	}

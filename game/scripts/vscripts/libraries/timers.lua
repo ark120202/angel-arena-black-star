@@ -77,6 +77,7 @@ if Timers == nil then
 end
 
 function Timers:start()
+	self.started = true
 	Timers = self
 	self:InitializeTimers()
 	self.nextTickCallbacks = {}
@@ -238,6 +239,6 @@ function Timers:InitializeTimers()
 	self.gameTimeHeap = BinaryHeap("endTime")
 end
 
-if not Timers.timers then Timers:start() end
+if not Timers.started then Timers:start() end
 
 GameRules.Timers = Timers

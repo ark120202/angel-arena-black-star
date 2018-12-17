@@ -211,12 +211,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"health_decrease_pct"			"10 13 16"
+				"health_decrease_pct"			"2 4 6"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"armor_decrease"				"-4 -8 -12"
+				"armor_decrease"				"-2 -4 -6"
 			}
 			"03"
 			{
