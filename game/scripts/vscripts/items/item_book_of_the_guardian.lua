@@ -122,7 +122,6 @@ end
 
 modifier_item_book_of_the_guardian_aura_baseclass = {
 	IsPurgable = function() return false end,
-	GetAttributes = function() return MODIFIER_ATTRIBUTE_MULTIPLE end,
 }
 
 function modifier_item_book_of_the_guardian_aura_baseclass:DeclareFunctions()
@@ -140,11 +139,11 @@ function modifier_item_book_of_the_guardian_aura_baseclass:OnDestroy()
 end
 
 function modifier_item_book_of_the_guardian_aura_baseclass:IsHidden()
-	return self:GetParent():GetHighestPriorityItem("book_of_the_guardian_aura").priority ~= self.level
+	return self:GetParent():GetHighestPriorityItem("book_of_the_guardian_aura") ~= self
 end
 
 function modifier_item_book_of_the_guardian_aura_baseclass:GetModifierAttackSpeedBonus_Constant()
-	return self:GetParent():GetHighestPriorityItem("book_of_the_guardian_aura").priority == self.level and self.aura_attack_speed or 0
+	return self:GetParent():GetHighestPriorityItem("book_of_the_guardian_aura") == self and self.aura_attack_speed or 0
 end
 
 modifier_item_book_of_the_guardian_aura = class(modifier_item_book_of_the_guardian_aura_baseclass)
