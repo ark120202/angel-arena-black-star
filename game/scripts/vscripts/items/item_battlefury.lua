@@ -1,4 +1,5 @@
 local factorySYK = require("items/factory_sange_yasha_kaya")
+require("util/priority")
 
 item_battlefury_baseclass = {}
 LinkLuaModifier("modifier_item_battlefury_arena", "items/item_battlefury.lua", LUA_MODIFIER_MOTION_NONE)
@@ -27,6 +28,7 @@ item_battlefury_arena = class(item_battlefury_baseclass)
 item_battlefury_arena.cleave_pfx = "particles/items_fx/battlefury_cleave.vpcf"
 item_elemental_fury = class(item_battlefury_baseclass)
 item_elemental_fury.cleave_pfx = "particles/items_fx/battlefury_cleave.vpcf"
+item_elemental_fury.level = 3
 function item_elemental_fury:GetIntrinsicModifierName()
 	return "modifier_item_elemental_fury"
 end
@@ -60,14 +62,19 @@ function modifier_item_battlefury_arena:GetModifierConstantManaRegen()
 end
 
 if IsServer() then
+	function modifier_item_battlefury_arena:OnCreated()
+		local ability = self:GetAbility()
+		self:GetParent():InsertItemPriority("item_battlefury_arena", self, ability.level or ability:GetLevel())
+	end
+	function modifier_item_battlefury_arena:OnDestroy()
+		self:GetParent():RemoveItemPriority("item_battlefury_arena", self)
+	end
 	function modifier_item_battlefury_arena:OnAttackLanded(keys)
 		local attacker = keys.attacker
 		if attacker == self:GetParent() and not attacker:IsIllusion() then
 			local ability = self:GetAbility()
 			local target = keys.target
-			local record = keys.record
-			local lastFuryRecord = attacker.lastFuryRecord
-			if target:IsRealCreep() and (not lastFuryRecord or record ~= lastFuryRecord) then
+			if self:GetParent():GetHighestPriorityItem("item_battlefury_arena") == self and target:IsRealCreep() then
 				ApplyDamage({
 					attacker = attacker,
 					victim = target,
@@ -76,7 +83,6 @@ if IsServer() then
 					damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 					ability = ability
 				})
-				attacker.lastFuryRecord = record
 			end
 			if not attacker:IsRangedUnit() then
 				DoCleaveAttack(
