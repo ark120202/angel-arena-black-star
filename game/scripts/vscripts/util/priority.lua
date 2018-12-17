@@ -7,8 +7,8 @@ end
 
 function baseNPC:GetHighestPriorityItem(itemType)
 	local heap = self:SetUpItemPriority(itemType)
-	if not heap[1] then return {item = nil, priority = 0} end
-	return {item = heap[1].item, priority = -heap[1].priority}
+	if not heap[1] then return nil end
+	return heap[1].item
 end
 
 function baseNPC:InsertItemPriority(itemType, item, priority)
