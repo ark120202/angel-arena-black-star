@@ -276,63 +276,84 @@ end
 
 function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
-	local team = PlayerResource:GetTeam(playerId)
 	local item = CreateItem(itemName, hero, hero)
 	local isInShop = unit:HasModifier("modifier_fountain_aura_arena") -- Works only while fontain area === shop area
 	item:SetPurchaseTime(GameRules:GetGameTime())
 	item:SetPurchaser(hero)
-
-	local itemPushed = false
-	--If unit has slot for that item
+	--If unit is in shop
 	if isInShop and not bOnlyStash then
-		if unit:UnitHasSlotForItem(itemName, true) then
-			unit:AddItem(item)
-			itemPushed = true
-		end
-	end
-
+		unit:AddItem(item)
 	--Try to add item to hero's stash
-	if not itemPushed then
-		if unit == FindCourier(team) then
-			unit = hero
-		end
-		-- Stackable item abuse fix, not very good, but that's all I can do without smth like SetStackable
-		local hasSameStackableItem = item:IsStackable() and unit:HasItemInInventory(itemName)
-		if hasSameStackableItem then
-			Notifications:Bottom(playerId, {text="panorama_shop_stackable_purchase", style = {color = "red"}, duration = 4.5})
-		else
-			if not isInShop then SetAllItemSlotsLocked(unit, true, true) end
-			FillSlotsWithDummy(unit, false)
-			for i = DOTA_STASH_SLOT_1 , DOTA_STASH_SLOT_6 do
-				local current_item = unit:GetItemInSlot(i)
-				if current_item and current_item:GetAbilityName() == "item_dummy" then
-					UTIL_Remove(current_item)
-					unit:AddItem(item)
-					itemPushed = true
-					break
-				end
-			end
-			ClearSlotsFromDummy(unit, false)
-			if not isInShop then SetAllItemSlotsLocked(unit, false, true) end
+	else
+		PanoramaShop:PushToStash (playerId, item, itemName)
+	end
+	Timers:CreateTimer(0, PanoramaShop.DropItemOnFailedPush, {frameDelay = 1, item = item, playerId = playerId, unit = unit, isInShop = isInShop})
+end
+
+function PanoramaShop:PushToStash (playerId, item, itemName)
+	local unit = PlayerResource:GetSelectedHeroEntity(playerId)
+	-- Stackable item abuse fix	
+	if item:IsStackable() then
+		unit:MakeItemsUnstackable(0, DOTA_STASH_SLOT_1 - 1)
+	end
+	
+	SetAllItemSlotsLocked(unit, true, true)
+	FillSlotsWithDummy(unit, false)
+	for i = DOTA_STASH_SLOT_1 , DOTA_STASH_SLOT_6 do
+		local current_item = unit:GetItemInSlot(i)
+		if current_item and current_item:GetAbilityName() == "item_dummy" then
+			UTIL_Remove(current_item)
 		end
 	end
-	--At last drop an item on fountain
-	if not itemPushed then
-		local spawnPointName = "info_courier_spawn"
-		local teamCared = true
-		if PlayerResource:GetTeam(playerId) == DOTA_TEAM_GOODGUYS then
-			spawnPointName = "info_courier_spawn_radiant"
-			teamCared = false
-		elseif PlayerResource:GetTeam(playerId) == DOTA_TEAM_BADGUYS then
-			spawnPointName = "info_courier_spawn_dire"
-			teamCared = false
-		end
-		local ent
-		while true do
-			ent = Entities:FindByClassname(ent, spawnPointName)
-			if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerId))) then
-				CreateItemOnPositionSync(ent:GetAbsOrigin() + RandomVector(RandomInt(0, 300)), item)
-				break
+	unit:SafeAddItem(item)
+	--Stackable item abuse fix part 2
+	unit:RestoreOwners(0, DOTA_STASH_SLOT_1 - 1)
+	
+	ClearSlotsFromDummy(unit, false)
+	
+	SetAllItemSlotsLocked(unit, false, true)
+end
+
+function PanoramaShop.DropItemOnFailedPush (keys)
+	if keys.frameDelay > 0 then
+		keys.frameDelay = keys.frameDelay - 1
+		return 0
+	else
+		local item = keys.item
+		local unit = keys.unit
+		local playerId = keys.playerId
+		local isInShop = keys.isInShop
+		if not (item:IsNull() or item:GetCaster()) then
+			local container = item:GetContainer()
+			if container then
+				container:Destroy()
+				PanoramaShop:PushToStash (playerId, item, itemName)
+				Timers:CreateTimer(0, PanoramaShop.DropItemOnFailedPush, {frameDelay = 1, item = item, playerId = playerId, unit = unit, isInShop = isInShop})
+			else
+				if isInShop then
+					--Drop item on feet if unit in shop
+					CreateItemOnPositionSync(unit:GetAbsOrigin(), item)
+				else
+					--At last drop an item on fountain
+					local spawnPointName = "info_courier_spawn"
+					local teamCared = true
+					if PlayerResource:GetTeam(playerId) == DOTA_TEAM_GOODGUYS then
+						spawnPointName = "info_courier_spawn_radiant"
+						teamCared = false
+					elseif PlayerResource:GetTeam(playerId) == DOTA_TEAM_BADGUYS then
+						spawnPointName = "info_courier_spawn_dire"
+						teamCared = false
+					end
+					
+					local ent
+					while true do
+						ent = Entities:FindByClassname(ent, spawnPointName)
+						if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerId))) then
+							CreateItemOnPositionSync(ent:GetAbsOrigin() + RandomVector(RandomInt(0, 300)), item)
+							break
+						end
+					end
+				end
 			end
 		end
 	end
