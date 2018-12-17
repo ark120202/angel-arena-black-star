@@ -168,6 +168,8 @@ function CDOTA_BaseNPC:GetIllusionParent()
 	end
 end
 
+CDOTA_BaseNPC.EndChannelListeners = {}
+
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	if self.OnDuel then return 1 end
