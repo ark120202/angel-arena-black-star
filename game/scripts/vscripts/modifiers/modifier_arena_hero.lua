@@ -189,7 +189,7 @@ if IsServer() then
 		if not endChannelListeners then return end
 		local ability = keys.ability
 		ability.lastEndTime = GameRules:GetGameTime()
-		ability.channelFailed = keys.fail_type < 0
+		ability.channelFailed = keys.fail_type <= 0
 		for k, v in pairs(endChannelListeners) do
 			v(ability.channelFailed)
 		end
