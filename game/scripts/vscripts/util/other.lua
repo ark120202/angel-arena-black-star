@@ -181,7 +181,7 @@ function CastAdditionalAbility(caster, ability, target, delay, channelData)
 			local buffName = v:GetName()
 			local buffAbility = v:GetAbility()
 			local dummyModifier = dummy:FindModifierByName(buffName) or dummy:AddNewModifier(dummy, buffAbility, buffName, nil)
-			dummyModifier:SetStackCount(v:GetStackCount())
+			if dummyModifier then dummyModifier:SetStackCount(v:GetStackCount()) end
 		end
 		Illusions:_copyAbilities(caster, dummy)
 		skill = skill or dummy:FindAbilityByName(ability:GetName())
