@@ -131,11 +131,6 @@ function GameMode:DamageFilter(filterTable)
 		attacker = EntIndexToHScript(filterTable.entindex_attacker_const)
 	end
 	local victim = EntIndexToHScript(filterTable.entindex_victim_const)
-	
-	local armor = victim.current_armor
-	if armor and armor > 0 and damagetype_const == 1 then
-		filterTable.damage = filterTable.damage * (1 - ( 0.05 * armor ) / ( 1 + 0.05 * armor ))
-	end
 
 	if IsValidEntity(attacker) then
 		if IsValidEntity(inflictor) and inflictor.GetAbilityName then
