@@ -156,6 +156,7 @@ function CastAdditionalAbility(caster, ability, target, delay, channelData)
 			end
 		end
 		local dummy = caster.dummyCasters[caster.nextFreeDummyCaster]
+		skill = nil
 		caster.nextFreeDummyCaster = caster.nextFreeDummyCaster % #caster.dummyCasters + 1
 		local abilityName = ability:GetName()
 		for i = 0, DOTA_ITEM_SLOT_9 do
@@ -186,6 +187,7 @@ function CastAdditionalAbility(caster, ability, target, delay, channelData)
 		skill = skill or dummy:FindAbilityByName(ability:GetName())
 		skill:SetLevel(ability:GetLevel())
 		skill.GetCaster = function() return ability:GetCaster() end
+		unit = dummy
 	end
 	if skill:HasBehavior(DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then
 		if target and type(target) == "table" then
@@ -215,7 +217,7 @@ end
 
 function EndAdditionalAbilityChannel(caster, unit, skill, interrupted, delay)
 	Timers:CreateTimer(delay or 0, function()
-		unit:SetOrigin(caster:GetOrigin() - caster:GetForwardVector())
+		FindClearSpaceForUnit(unit, caster:GetOrigin() - caster:GetForwardVector(), false)
 		skill:EndChannel(interrupted)
 		skill:OnChannelFinish(interrupted)
 	end)
