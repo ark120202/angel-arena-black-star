@@ -51,7 +51,8 @@ function Bosses:CreateBossLoot(unit, team)
 		end
 	end
 	PlayerTables:SetTableValue("bosses_loot_drop_votes", id, t)
-	Timers:CreateTimer(30, function()
+	local playerCount = PlayerResource:GetPlayerCountForTeam(team)
+	Timers:CreateTimer(playerCount > 1 and 30 or 0, function()
 		-- Take new data
 		t = PlayerTables:GetTableValue("bosses_loot_drop_votes", id)
 		-- Iterate over all entries
