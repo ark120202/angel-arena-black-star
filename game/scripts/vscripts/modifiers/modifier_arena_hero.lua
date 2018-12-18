@@ -185,14 +185,13 @@ if IsServer() then
 	end
 
 	function modifier_arena_hero:OnAbilityEndChannel(keys)
-		local endChannelListeners = self:GetParent().EndChannelListeners
+		local parent = self:GetParent()
+		local endChannelListeners = parent.EndChannelListeners
 		if not endChannelListeners then return end
-		local ability = keys.ability
-		ability.lastEndTime = GameRules:GetGameTime()
-		ability.channelFailed = keys.fail_type < 0
-		for k, v in pairs(endChannelListeners) do
-			v(ability.channelFailed)
+		for _, v in ipairs(endChannelListeners) do
+			v(keys.fail_type < 0)
 		end
+		parent.EndChannelListeners = {}
 	end
 
 	function modifier_arena_hero:OnDestroy()
