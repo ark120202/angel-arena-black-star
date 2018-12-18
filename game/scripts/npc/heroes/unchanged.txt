@@ -38,7 +38,7 @@
 	"npc_dota_hero_bloodseeker"
 	{
 		"override_hero"	"npc_dota_hero_bloodseeker"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.9"
 	}
 
 	"npc_dota_hero_drow_ranger"
@@ -769,7 +769,7 @@
 	"npc_dota_hero_troll_warlord"
 	{
 		"override_hero"	"npc_dota_hero_troll_warlord"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_centaur"
