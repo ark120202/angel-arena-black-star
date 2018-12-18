@@ -54,17 +54,22 @@ function PreformMulticast(caster, ability_cast, multicast, multicast_delay, targ
 	if multicast_type ~= MULTICAST_TYPE_NONE then
 		local prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf', PATTACH_OVERHEAD_FOLLOW, caster)
 		local multicast_flag_data = GetMulticastFlags(caster, ability_cast, multicast_type)
+		local channelData = {}
+		caster:AddEndChannelListener(function(interrupted)
+			channelData.endTime = GameRules:GetGameTime()
+			channelData.channelFailed = interrupted
+		end)
 		if multicast_type == MULTICAST_TYPE_INSTANT then
 			Timers:NextTick(function()
 				ParticleManager:SetParticleControl(prt, 1, Vector(multicast, 0, 0))
 				ParticleManager:ReleaseParticleIndex(prt)
 				local multicast_casted_data = {}
 				for i=2,multicast do
-					CastMulticastedSpellInstantly(caster, ability_cast, target, multicast_flag_data, multicast_casted_data)
+					CastMulticastedSpellInstantly(caster, ability_cast, target, multicast_flag_data, multicast_casted_data, 0, channelData)
 				end
 			end)
 		else
-			CastMulticastedSpell(caster, ability_cast, target, multicast-1, multicast_type, multicast_flag_data, {}, multicast_delay, prt, 2)
+			CastMulticastedSpell(caster, ability_cast, target, multicast-1, multicast_type, multicast_flag_data, {}, multicast_delay, channelData, prt, 2)
 		end
 	end
 end
@@ -86,7 +91,7 @@ function GetMulticastFlags(caster, ability, multicast_type)
 	return rv
 end
 
-function CastMulticastedSpellInstantly(caster, ability, target, multicast_flag_data, multicast_casted_data, delay)
+function CastMulticastedSpellInstantly(caster, ability, target, multicast_flag_data, multicast_casted_data, delay, channelData)
 	local candidates = FindUnitsInRadius(multicast_flag_data.team, caster:GetOrigin(), nil, multicast_flag_data.cast_range, multicast_flag_data.abilityTarget, multicast_flag_data.abilityTargetType, multicast_flag_data.targetFlags, FIND_ANY_ORDER, false)
 	local Tier1 = {} --heroes
 	local Tier2 = {} --creeps and self
@@ -107,11 +112,11 @@ function CastMulticastedSpellInstantly(caster, ability, target, multicast_flag_d
 	end
 	local castTarget = Tier1[math.random(#Tier1)] or Tier2[math.random(#Tier2)] or Tier3[math.random(#Tier3)] or Tier4[math.random(#Tier4)] or target
 	multicast_casted_data[castTarget] = true
-	CastAdditionalAbility(caster, ability, castTarget, delay)
+	CastAdditionalAbility(caster, ability, castTarget, delay, channelData)
 	return multicast_casted_data
 end
 
-function CastMulticastedSpell(caster, ability, target, multicasts, multicast_type, multicast_flag_data, multicast_casted_data, delay, prt, prtNumber)
+function CastMulticastedSpell(caster, ability, target, multicasts, multicast_type, multicast_flag_data, multicast_casted_data, delay, channelData, prt, prtNumber)
 	if multicasts >= 1 then
 		Timers:CreateTimer(delay, function()
 			ParticleManager:DestroyParticle(prt, true)
@@ -119,13 +124,13 @@ function CastMulticastedSpell(caster, ability, target, multicasts, multicast_typ
 			prt = ParticleManager:CreateParticle('particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf', PATTACH_OVERHEAD_FOLLOW, caster)
 			ParticleManager:SetParticleControl(prt, 1, Vector(prtNumber, 0, 0))
 			if multicast_type == MULTICAST_TYPE_SAME then
-				CastAdditionalAbility(caster, ability, target, delay * (prtNumber - 1))
+				CastAdditionalAbility(caster, ability, target, delay * (prtNumber - 1), channelData)
 			else
-				multicast_casted_data = CastMulticastedSpellInstantly(caster, ability, target, multicast_flag_data, multicast_casted_data, delay * (prtNumber - 1))
+				multicast_casted_data = CastMulticastedSpellInstantly(caster, ability, target, multicast_flag_data, multicast_casted_data, delay * (prtNumber - 1), channelData)
 			end
 			caster:EmitSound('Hero_OgreMagi.Fireblast.x'.. multicasts)
 			if multicasts >= 2 then
-				CastMulticastedSpell(caster, ability, target, multicasts - 1, multicast_type, multicast_flag_data, multicast_casted_data, delay, prt, prtNumber + 1)
+				CastMulticastedSpell(caster, ability, target, multicasts - 1, multicast_type, multicast_flag_data, multicast_casted_data, delay, channelData, prt, prtNumber + 1)
 			end
 		end)
 	else
@@ -134,7 +139,7 @@ function CastMulticastedSpell(caster, ability, target, multicasts, multicast_typ
 	end
 end
 
-function CastAdditionalAbility(caster, ability, target, delay)
+function CastAdditionalAbility(caster, ability, target, delay, channelData)
 	local skill = ability
 	local unit = caster
 	local channelTime = ability:GetChannelTime() or 0
@@ -152,10 +157,18 @@ function CastAdditionalAbility(caster, ability, target, delay)
 		end
 		local dummy = caster.dummyCasters[caster.nextFreeDummyCaster]
 		caster.nextFreeDummyCaster = caster.nextFreeDummyCaster % #caster.dummyCasters + 1
+		local abilityName = ability:GetName()
 		for i = 0, DOTA_ITEM_SLOT_9 do
+			local ditem = dummy:GetItemInSlot(i)
+			if ditem then
+				ditem:Destroy()
+			end
 			local citem = caster:GetItemInSlot(i)
 			if citem then
-				dummy:AddItem(CopyItem(citem))
+				local newditem = dummy:AddItem(CopyItem(citem))
+				if newditem:GetName() == abilityName then
+					skill = newditem
+				end
 			end
 		end
 		dummy:SetOwner(caster)
@@ -170,8 +183,7 @@ function CastAdditionalAbility(caster, ability, target, delay)
 			dummyModifier:SetStackCount(v:GetStackCount())
 		end
 		Illusions:_copyAbilities(caster, dummy)
-		skill = dummy:AddAbility(ability:GetName())
-		unit = dummy
+		skill = skill or dummy:FindAbilityByName(ability:GetName())
 		skill:SetLevel(ability:GetLevel())
 		skill.GetCaster = function() return ability:GetCaster() end
 	end
@@ -191,15 +203,12 @@ function CastAdditionalAbility(caster, ability, target, delay)
 	end
 	skill:OnSpellStart()
 	if channelTime > 0 then
-		local abilityLastEndTime = ability.lastEndTime or 0
-		if abilityLastEndTime < GameRules:GetGameTime() - delay then
-			local index = #caster.EndChannelListeners + 1
-			caster.EndChannelListeners[index] = function(interrupted)
-				caster.EndChannelListeners[index] = nil
-				EndAdditionalAbilityChannel(caster, unit, skill, interrupted, delay)
-			end
+		if channelData.endTime then
+			EndAdditionalAbilityChannel(caster, unit, skill, channelData.channelFailed, delay - GameRules:GetGameTime() + channelData.endTime)
 		else
-			EndAdditionalAbilityChannel(caster, unit, skill, ability.channelFailed, delay - GameRules:GetGameTime() + abilityLastEndTime)
+			caster:AddEndChannelListener(function(interrupted)
+				EndAdditionalAbilityChannel(caster, unit, skill, interrupted, delay)
+			end)
 		end
 	end
 end
