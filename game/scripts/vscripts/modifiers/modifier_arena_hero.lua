@@ -15,17 +15,17 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_EVENT_ON_RESPAWN,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
 		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
-		MODIFIER_PROPERTY_IGNORE_PHYSICAL_ARMOR,
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 	}
 end
 
-function modifier_arena_hero:GetModifierIgnorePhysicalArmor()
+function modifier_arena_hero:GetModifierPhysicalArmorBonus()
 	if not self.calculatingArmor then
 		self.calculatingArmor = true
 		local parent = self:GetParent()
 		parent.current_armor = parent:GetPhysicalArmorValue()
 		self.calculatingArmor = nil
-		return 1
+		return -parent.current_armor
 	end
 	return 0
 end
@@ -39,7 +39,7 @@ function modifier_arena_hero:GetModifierMagicalResistanceDirectModification()
 end
 
 if IsClient() then
-	function modifier_arena_hero:GetModifierIgnorePhysicalArmor() return 0 end
+	function modifier_arena_hero:GetModifierPhysicalArmorBonus() return 0 end
 end
 
 if IsServer() then
