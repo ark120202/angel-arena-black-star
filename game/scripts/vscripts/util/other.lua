@@ -215,7 +215,7 @@ end
 
 function EndAdditionalAbilityChannel(caster, unit, skill, interrupted, delay)
 	Timers:CreateTimer(delay or 0, function()
-		FindClearSpaceForUnit(unit, caster:GetOrigin() - caster:GetForwardVector(), false)
+		unit:SetOrigin(caster:GetOrigin() - caster:GetForwardVector())
 		skill:EndChannel(interrupted)
 		skill:OnChannelFinish(interrupted)
 	end)
