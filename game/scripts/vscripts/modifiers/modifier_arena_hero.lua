@@ -23,9 +23,12 @@ function modifier_arena_hero:GetModifierPhysicalArmorBonus()
 	if not self.calculatingArmor then
 		self.calculatingArmor = true
 		local parent = self:GetParent()
-		parent.current_armor = parent:GetPhysicalArmorValue()
+		local armor = parent:GetPhysicalArmorValue()
+		parent.current_armor = armor
+		local resistance = ( 0.05 * armor ) / ( 1 + 0.05 * armor ) --old resistance
+		local correctedArmor = ( 0.9 * resistance ) / ( 0.052 - 0.048 * resistance ) --transforms into new armor required for old resistance
 		self.calculatingArmor = nil
-		return -parent.current_armor
+		return -parent.current_armor + correctedArmor
 	end
 	return 0
 end
