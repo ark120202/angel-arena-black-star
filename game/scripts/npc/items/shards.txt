@@ -15,6 +15,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -58,6 +59,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -101,6 +103,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -144,6 +147,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -187,6 +191,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -230,6 +235,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -273,6 +279,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -316,6 +323,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -359,6 +367,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -402,6 +411,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -445,6 +455,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -488,6 +499,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -531,6 +543,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		"OnSpellStart"
 		{
@@ -563,6 +576,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -605,6 +619,7 @@
 		"ItemStackable"					"1"
 		"ItemPermanent"					"1"
 		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
 
 		"OnSpellStart"
 		{
