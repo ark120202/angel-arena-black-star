@@ -475,6 +475,15 @@ function IsInBox(point, point1, point2)
 	return point.x > point1.x and point.y > point1.y and point.x < point2.x and point.y < point2.y
 end
 
+function IsInTriggerBox(trigger, extension, vector)
+	local origin = trigger:GetAbsOrigin()
+	return IsInBox(
+		vector,
+		origin + ExpandVector(trigger:GetBoundingMins(), extension),
+		origin + ExpandVector(trigger:GetBoundingMaxs(), extension)
+	)
+end
+
 function GetConnectionState(playerId)
 	return PlayerResource:IsFakeClient(playerId) and DOTA_CONNECTION_STATE_CONNECTED or PlayerResource:GetConnectionState(playerId)
 end

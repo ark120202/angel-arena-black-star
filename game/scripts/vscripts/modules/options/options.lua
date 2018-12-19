@@ -183,11 +183,13 @@ function Options:LoadMapValues()
 	elseif gamemode == "" then
 		Options:SetValue("BanningPhaseBannedPercentage", 40)
 	end
-	if landscape == "4v4v4v4" then
+	if landscape == "war3" then
+		MAP_LENGTH = 16384
+		MAP_BORDER = 128
+	elseif landscape == "4v4v4v4" then
 		MAP_LENGTH = 9216
 		Options:SetValue("CustomTeamColors", true)
-	end
-	if landscape == "1v1" then
+	elseif landscape == "1v1" then
 		MAP_LENGTH = 3840
 		Options:SetValue("DynamicKillWeight", false)
 		Options:SetPreGameVoting("kill_limit", {10, 15, 20, 25, 30, 35}, 25)
