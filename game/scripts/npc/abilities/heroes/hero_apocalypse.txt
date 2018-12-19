@@ -25,7 +25,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"ablaze_max_damage_per_second"	"20 30 40 70 100 150 200 220"
+				"ablaze_max_damage_per_second"	"20 30 40 70 100 150 200"
 			}
 			"04"
 			{
