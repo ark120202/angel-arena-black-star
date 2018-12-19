@@ -51,7 +51,9 @@ function Bosses:CreateBossLoot(unit, team)
 		end
 	end
 	PlayerTables:SetTableValue("bosses_loot_drop_votes", id, t)
-	Timers:CreateTimer(30, function()
+
+	local skipVoting = not IsInToolsMode() and GetTeamPlayerCount(team) <= 1
+	Timers:CreateTimer(skipVoting and 0 or 30, function()
 		-- Take new data
 		t = PlayerTables:GetTableValue("bosses_loot_drop_votes", id)
 		-- Iterate over all entries
