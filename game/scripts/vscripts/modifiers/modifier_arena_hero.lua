@@ -117,7 +117,7 @@ if IsServer() then
 		end
 
 		local isAgilityHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY
-		local agilityCriticalDamage = 100 + parent:GetAgility() * (isAgilityHero and 0.125 or 0.1)
+		local agilityCriticalDamage = 100 + parent:GetAgility() * (isAgilityHero and 0.025 or 0.02)
 		if self.agilityCriticalDamage ~= agilityCriticalDamage then
 			self.agilityCriticalDamage = agilityCriticalDamage
 			parent:SetNetworkableEntityInfo("AgilityCriticalDamage", agilityCriticalDamage)
