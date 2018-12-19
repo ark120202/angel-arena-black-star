@@ -1,13 +1,13 @@
 function ArenaZoneOnStartTouch(trigger)
+	local caller = trigger.caller
 	local activator = trigger.activator
 	if not IsValidEntity(activator) then return end
 
-	if Duel:IsDuelOngoing() then
+	if Duel:IsDuelOngoing() and Duel.CurrentBox.trigger == caller then
 		HEROES_ON_DUEL[activator] = true
 		return
 	end
 
-	local caller = trigger.caller
 	local origin = caller:GetAbsOrigin()
 	local min = origin + ExpandVector(caller:GetBoundingMins(), 96)
 	local max = origin + ExpandVector(caller:GetBoundingMaxs(), 96)
@@ -16,6 +16,7 @@ function ArenaZoneOnStartTouch(trigger)
 end
 
 function ArenaZoneOnEndTouch(trigger)
+	local caller = trigger.caller
 	local activator = trigger.activator
 	if not IsValidEntity(activator) then return end
 	HEROES_ON_DUEL[activator] = nil
@@ -26,11 +27,11 @@ function ArenaZoneOnEndTouch(trigger)
 	Timers:NextTick(function()
 		if not IsValidEntity(activator) then return end
 		if not Duel:IsDuelOngoing() then return end
+		if Duel.CurrentBox.trigger ~= caller then return end
 
 		-- Teleports are also triggering OnEndTouch event
 		if HEROES_ON_DUEL[activator] then return end
 
-		local caller = trigger.caller
 		local origin = caller:GetAbsOrigin()
 		local min = origin + ExpandVector(caller:GetBoundingMins(), -96)
 		local max = origin + ExpandVector(caller:GetBoundingMaxs(), -96)

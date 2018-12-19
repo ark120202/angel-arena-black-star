@@ -7,11 +7,34 @@ if Duel == nil then
 	Duel.TimeUntilDuel = 0
 	Duel.DuelTimerEndTime = 0
 	Duel.DuelStatus = DOTA_DUEL_STATUS_NONE
-	Duel.EntIndexer = {}
 	Duel.TimesTeamWins = {}
 	Duel.AnnouncerCountdownCooldowns = {}
 	Duel.DuelCounter = 0
+	Duel.Boxes = {}
 end
+
+Events:Register("activate", function()
+	local spawnPoints = {}
+	for _, team in ipairs(Teams:GetAllEnabledTeams()) do
+		spawnPoints[team] = Entities:FindAllByName("target_mark_arena_team" .. team)
+	end
+
+	for _, trigger in ipairs(Entities:FindAllByName("trigger_arena_zone")) do
+		local triggerSpawnPoints = {}
+		for team, points in pairs(spawnPoints) do
+			for _, point in ipairs(points) do
+				if IsInTriggerBox(trigger, 96, point:GetAbsOrigin()) then
+					triggerSpawnPoints[team] = point:GetAbsOrigin()
+					break
+				end
+			end
+		end
+		table.insert(Duel.Boxes, {
+			trigger = trigger,
+			spawnPoints = triggerSpawnPoints,
+		})
+	end
+end)
 
 function Duel:SetDuelTimer(duration)
 	Duel.DuelTimerEndTime = GameRules:GetGameTime() + duration
@@ -75,6 +98,7 @@ function Duel:StartDuel()
 		Duel.IsFirstDuel = Duel.DuelCounter == 0
 		Duel:SetDuelTimer(DUEL_SETTINGS.DurationBase + DUEL_SETTINGS.DurationForPlayer * heroes_to_fight_n)
 		Duel.DuelStatus = DOTA_DUEL_STATUS_IN_PROGRESS
+		Duel.CurrentBox = Duel.Boxes[RandomInt(1, #Duel.Boxes)]
 		local rndtbl = {}
 		table.merge(rndtbl, Duel.heroes_teams_for_duel)
 
@@ -116,7 +140,7 @@ function Duel:StartDuel()
 						unit.OnDuel = true
 						unit.ArenaBeforeTpLocation = unit:GetAbsOrigin()
 						ProjectileManager:ProjectileDodge(unit)
-						unit:Teleport(Entities:FindByName(nil, "target_mark_arena_team" .. team):GetAbsOrigin())
+						unit:Teleport(Duel.CurrentBox.spawnPoints[team])
 						unit:AddNewModifier(unit, nil, "modifier_magic_immune", {duration = DUEL_SETTINGS.MagicImmunityDuration})
 					elseif unit:IsAlive() then
 						Duel:SetUpVisitor(unit)
@@ -200,7 +224,6 @@ function Duel:SetUpVisitor(unit)
 end
 
 function Duel:EndDuelLogic(bEndForUnits, timeUpdate)
-	Duel.EntIndexer = {}
 	Duel.DuelStatus = DOTA_DUEL_STATUS_WATING
 	Duel.heroes_teams_for_duel = {}
 	if bEndForUnits then
@@ -294,18 +317,4 @@ function Duel:EndIfFinished()
 	if Duel:IsDuelOngoing() and Duel:GetWinner() ~= nil then
 		Duel:EndDuel()
 	end
-end
-
-
-local triggerBox
-function Duel:IsOnDuel(vector)
-	if not triggerBox then
-		local trigger = Entities:FindByName(nil, "trigger_arena_zone")
-		local origin = trigger:GetAbsOrigin()
-		triggerBox = {
-			origin + ExpandVector(trigger:GetBoundingMins(), 96),
-			origin + ExpandVector(trigger:GetBoundingMaxs(), 96),
-		}
-	end
-	return IsInBox(vector, triggerBox[1], triggerBox[2])
 end

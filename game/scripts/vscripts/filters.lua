@@ -67,9 +67,11 @@ function GameMode:ExecuteOrderFilter(filterTable)
 					return false
 				end
 			end
-			if Duel:IsOnDuel(orderVector) then
-				Containers:DisplayError(playerId, "#arena_hud_error_cant_target_duel")
-				return false
+			for _, box in ipairs(Duel.Boxes) do
+				if IsInTriggerBox(box.trigger, 96, orderVector) then
+					Containers:DisplayError(playerId, "#arena_hud_error_cant_target_duel")
+					return false
+				end
 			end
 		end
 	elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and IsValidEntity(target) then
