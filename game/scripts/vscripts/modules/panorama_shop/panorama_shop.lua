@@ -15,6 +15,7 @@ end
 
 Events:Register("activate", function ()
 	GameRules:GetGameModeEntity():SetStickyItemDisabled(true)
+	PanoramaShop.ShopTriggers = Entities:FindAllByClassname("trigger_shop")
 	PanoramaShop:InitializeItemTable()
 end)
 
@@ -274,11 +275,20 @@ function PanoramaShop:SellItem(playerId, unit, item)
 	GameMode:TrackInventory(unit)
 end
 
+function PanoramaShop:IsInShop(unit)
+	for _, trigger in ipairs(PanoramaShop.ShopTriggers) do
+		if IsInTriggerBox(trigger, 0, unit:GetAbsOrigin()) then
+			return true
+		end
+	end
+	return false
+end
+
 function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	local team = PlayerResource:GetTeam(playerId)
 	local item = CreateItem(itemName, hero, hero)
-	local isInShop = unit:HasModifier("modifier_fountain_aura_arena") -- Works only while fontain area === shop area
+	local isInShop = PanoramaShop:IsInShop(unit)
 	item:SetPurchaseTime(GameRules:GetGameTime())
 	item:SetPurchaser(hero)
 
