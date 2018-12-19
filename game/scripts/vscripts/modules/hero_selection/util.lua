@@ -122,7 +122,7 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 		elseif key == "ProjectileModel" then
 			unit:SetRangedProjectileName(value)
 		elseif key == "AttributePrimary" then
-			Timers:CreateTimer(2/30, function()
+			Timers:NextTick(function()
 				unit:SetPrimaryAttribute(_G[value])
 				unit:CalculateStatBonus()
 
