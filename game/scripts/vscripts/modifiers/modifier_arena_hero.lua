@@ -15,6 +15,7 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_EVENT_ON_RESPAWN,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
 		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
+		MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
 	}
 end
 
@@ -27,6 +28,26 @@ function modifier_arena_hero:GetModifierMagicalResistanceDirectModification()
 end
 
 if IsServer() then
+
+	function modifier_arena_hero:GetModifierBaseAttackTimeConstant()
+		if self.calculatingBAT then return -1 end
+		self.calculatingBAT = true
+		local parent = self:GetParent()
+		local BAT = parent:GetBaseAttackTime()
+		local AS = parent:GetIncreasedAttackSpeed()
+		local MaxAS = GameRules:GetGameModeEntity():GetMaximumAttackSpeed()
+		if AS < MaxAS then
+			AS = MaxAS
+		end
+		local NewBAT = BAT * MaxAS / AS
+		local MaxBAT = 0.01 * MaxAS
+		if NewBAT < MaxBAT then
+			NewBAT = MaxBAT
+		end
+		self.calculatingBAT = false
+		return NewBAT
+	end
+
 	function modifier_arena_hero:GetModifierPreAttack_CriticalStrike()
 		if RollPercentage(15) then
 			return self.agilityCriticalDamage
