@@ -32,14 +32,12 @@ if IsServer() then
 
 	function modifier_arena_hero:OnAttack(keys)
 		local parent = self:GetParent()
-		if parent ~= keys.attacker or not self.ExtraAttacksPerAttack or self.PerformingExtraAttacks then return end
+		if parent ~= keys.attacker or keys.no_attack_cooldown == true or not self.ExtraAttacksPerAttack then return end
 		self.MaxASExtraAttacks = (self.MaxASExtraAttacks or 0) + self.ExtraAttacksPerAttack
-		self.PerformingExtraAttacks = true
 		while self.MaxASExtraAttacks > 1 do
 			parent:PerformAttack(keys.target, true, true, true, false, true, false, false)
 			self.MaxASExtraAttacks = self.MaxASExtraAttacks - 1
 		end
-		self.PerformingExtraAttacks = false
 		return
 	end
 
