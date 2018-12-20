@@ -52,7 +52,7 @@ if IsServer() then
 			self.calculatingBAT = false
 			return -1
 		end
-		AS = (AS - MaxAS) / 4 + MaxAS
+		AS = (AS - MaxAS) / 10 + MaxAS
 		local NewBAT = BAT * MaxAS / AS
 		local MaxBAT = 0.01 * MaxAS
 		if NewBAT < MaxBAT then
