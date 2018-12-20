@@ -16,6 +16,7 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
 		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
 		MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
+		MODIFIER_EVENT_ON_ATTACK,
 	}
 end
 
@@ -29,6 +30,19 @@ end
 
 if IsServer() then
 
+	function modifier_arena_hero:OnAttack(keys)
+		local parent = self:GetParent()
+		if parent ~= keys.attacker or not self.ExtraAttacksPerAttack or self.PerformingExtraAttacks then return end
+		self.MaxASExtraAttacks = (self.MaxASExtraAttacks or 0) + self.ExtraAttacksPerAttack
+		self.PerformingExtraAttacks = true
+		while self.MaxASExtraAttacks > 1 do
+			parent:PerformAttack(keys.target, true, true, true, false, true, false, false)
+			self.MaxASExtraAttacks = self.MaxASExtraAttacks - 1
+		end
+		self.PerformingExtraAttacks = false
+		return
+	end
+
 	function modifier_arena_hero:GetModifierBaseAttackTimeConstant()
 		if self.calculatingBAT then return -1 end
 		self.calculatingBAT = true
@@ -37,11 +51,13 @@ if IsServer() then
 		local AS = parent:GetIncreasedAttackSpeed()
 		local MaxAS = GameRules:GetGameModeEntity():GetMaximumAttackSpeed()
 		if AS < MaxAS then
-			AS = MaxAS
+			self.calculatingBAT = false
+			return -1
 		end
 		local NewBAT = BAT * MaxAS / AS
 		local MaxBAT = 0.01 * MaxAS
 		if NewBAT < MaxBAT then
+			self.ExtraAttacksPerAttack = MaxBAT / NewBAT - 1
 			NewBAT = MaxBAT
 		end
 		self.calculatingBAT = false
