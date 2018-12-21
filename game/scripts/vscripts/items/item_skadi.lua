@@ -83,10 +83,16 @@ function modifier_item_skadi_arena_cold_attack:DeclareFunctions()
 	}
 end
 
+function modifier_item_skadi_arena_cold_attack:OnCreated()
+	local ability = self:GetAbility()
+	self.cold_attack_speed = ability:GetSpecialValueFor("cold_attack_speed")
+	self.cold_movement_speed_pct = ability:GetSpecialValueFor("cold_movement_speed_pct")
+end
+
 function modifier_item_skadi_arena_cold_attack:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor("cold_attack_speed")
+	return self.cold_attack_speed
 end
 
 function modifier_item_skadi_arena_cold_attack:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor("cold_movement_speed_pct")
+	return self.cold_movement_speed_pct
 end
