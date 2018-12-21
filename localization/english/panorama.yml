@@ -19,6 +19,7 @@ duel_over_winner_p1: "The duel is over.\_"
 duel_over_winner_p2: "\_is the winner. All it's heroes received\_"
 duel_no_heroes: In one or more teams not enough heroes for duel
 containers_shop_duel_name: Duel Shop
+arthas_vsolyanova_notifiaction: NAAAAAAAAAAAAAAAA ✓✓✓✓
 
 hero_selection_select_hero: Select Hero
 hero_selection_button_select_hero: SELECT

@@ -52,6 +52,8 @@ custom_talents_talent_cooldown_reduction_pct: Уменьшение переза�
 custom_talents_talent_cooldown_reduction_pct_description: 'Уменьшает время перезарядки всех способностей и предметов на {%cooldown_reduction_pct%}'
 custom_talents_talent_hero_pudge_hook_splitter: Hook Splitter
 custom_talents_talent_hero_pudge_hook_splitter_description: 'Pudge бросает {hook_amount} крюков, а не 1'
+custom_talents_talent_hero_arthas_vsolyanova_bunus_chance: Mega Solyara
+custom_talents_talent_hero_arthas_vsolyanova_bunus_chance_description: 'Увеличивает шанс залить соляру в {chance_multiplier} раза'
 custom_talents_talent_hero_arc_warden_double_spark: Double Spark Wraith
 custom_talents_talent_hero_arc_warden_double_spark_description: Каждое применение Spark Wraith призывает две призрачные искры
 custom_talents_talent_hero_apocalypse_apocalypse_no_death: Protection from Apocalypse

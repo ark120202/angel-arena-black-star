@@ -52,6 +52,8 @@ custom_talents_talent_cooldown_reduction_pct: Cooldown Reduction
 custom_talents_talent_cooldown_reduction_pct_description: 'Reduces ability cooldown by {%cooldown_reduction_pct%}'
 custom_talents_talent_hero_pudge_hook_splitter: Hook Splitter
 custom_talents_talent_hero_pudge_hook_splitter_description: 'Pudge will launch {hook_amount} hooks, instead of 1'
+custom_talents_talent_hero_arthas_vsolyanova_bunus_chance: Mega Solyara
+custom_talents_talent_hero_arthas_vsolyanova_bunus_chance_description: 'Multiplies chance to Zalyit Solyaru by {chance_multiplier}'
 custom_talents_talent_hero_arc_warden_double_spark: Double Spark Wraith
 custom_talents_talent_hero_arc_warden_double_spark_description: Each cast of Spark Wraith creates two sparks
 custom_talents_talent_hero_apocalypse_apocalypse_no_death: Protection from Apocalypse

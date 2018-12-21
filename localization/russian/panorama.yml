@@ -17,6 +17,7 @@ duel_over_winner_p1: "Дуэль окончена.\_"
 duel_over_winner_p2: "\_победили. Все их герои получили\_"
 duel_no_heroes: В одной из команд недостаточно героев для дуэли.
 containers_shop_duel_name: Дуэльный Магазин
+arthas_vsolyanova_notifiaction: НЫЫЫЫЫЫЫЫАААААААААААААААААААААААА ✓✓✓✓
 
 hero_selection_select_hero: Выберите Героя
 hero_selection_button_select_hero: ВЫБРАТЬ

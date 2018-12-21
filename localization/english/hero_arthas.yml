@@ -1,0 +1,33 @@
+npc_arena_hero_arthas: Arthas
+npc_arena_hero_arthas_bio: 'The best DotA player, Evil Arthas, the greatest in the universe and the top 3 ladder, needs no introduction. Once, during the stream, in his apartment opened Split, leading into the arena of the Angels. Under his trademark hymn, he jumped into it, transformed into a powerful demon, to once again prove to the hayters that he is the best in the world.'
+
+DOTA_Tooltip_ability_arthas_rage_of_arthas: Rage Of Arthas
+DOTA_Tooltip_ability_arthas_rage_of_arthas_Description: 'Arthas shouts his loud roar, stunning and damaging nearby enemies.'
+DOTA_Too_ltip_ability_arthas_rage_of_arthas_area_of_effect: 'RADIUS:'
+DOTA_Tooltip_ability_arthas_rage_of_arthas_stun_duration: 'STUN DURATION:'
+DOTA_Tooltip_modifier_arthas_rage_of_arthas_stun: Stunned
+DOTA_Tooltip_modifier_arthas_rage_of_arthas_stun_Description: Stunned with powerful Arthas'es roar
+
+DOTA_Tooltip_ability_arthas_plus_morality: Plus Morality
+DOTA_Tooltip_ability_arthas_plus_morality_Description: 'When Arthas kills enemy or pick ups bounty rune, he gains one stack of Plus Morality buff, that grants him attackspeed and movespeed. Buff has infinity duration, but when Arthas dies he loses all stacks. Additionally, causes bounty runes to yield %bounty_multiplier_tooltip% times their normal gold.'
+DOTA_Tooltip_ability_arthas_plus_morality_bonus_attackspeed: 'ATTACKSPEED PER STACK:'
+DOTA_Tooltip_ability_arthas_plus_morality_bonus_movespeed: 'MOVESPEED PER STACK:'
+DOTA_Tooltip_ability_arthas_plus_morality_bounty_multiplier: 'BOUNTY RUNE MULTIPLIER:'
+DOTA_Tooltip_modifier_arthas_plus_morality_buff: Plus Morality
+DOTA_Tooltip_modifier_arthas_plus_morality_buff_Description: Adds %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% movespeed and %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attackspeed.
+
+DOTA_Tooltip_ability_arthas_vikared: Vikared Dimension
+DOTA_Tooltip_ability_arthas_vikared_Description: Arthas shifts into another dimension where is Vikared waiting for him. There he is immune from harm and gains additional health regeneration.
+DOTA_Tooltip_ability_arthas_vikared_duration: 'DURATION:'
+DOTA_Tooltip_ability_arthas_vikared_health_regen_percent: '%HEALTH REGENERATION:'
+DOTA_Tooltip_modifier_arthas_vikared: Vikared
+DOTA_Tooltip_modifier_arthas_vikared_Description: Shifted out of this dimension
+
+DOTA_Tooltip_ability_arthas_vsolyanova: V SOLYANOVA
+DOTA_Tooltip_ability_arthas_vsolyanova_Description: 'If there is no any allies around Arthas, then he becomes powerful demon with increased attack damage and small chance to kill enemy instantly. If it procs on enemy hero, Arthas shouts loud roar that stuns all enemies and silences all allies. Arthases illusions also have this ability, but with decreased proc chance.'
+DOTA_Tooltip_ability_arthas_vsolyanova_Note0: Can't kill bosses.
+DOTA_Tooltip_ability_arthas_vsolyanova_radius: 'ALLY SEARCH RADIUS:'
+DOTA_Tooltip_ability_arthas_vsolyanova_bonus_damage: 'BONUS DAMAGE:'
+DOTA_Tooltip_ability_arthas_vsolyanova_nia_chance: '%KILL CHANCE:'
+DOTA_Tooltip_ability_arthas_vsolyanova_nia_chance_illusions: '%ILLUSION KILL CHANCE:'
+DOTA_Tooltip_ability_arthas_vsolyanova_roar_duration: 'STUN / SILENCE DURATION:'

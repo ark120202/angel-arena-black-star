@@ -1,3 +1,98 @@
+"Arena.Hero_Arthas.Vsolyanova.Impact"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/arthas/vsolyanova_1.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"3.500000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"pitch_max"			{ "value"	"1.000000" }
+					"soundlevel_min"	{ "value"	"100.000000" }
+					"soundlevel_max"	{ "value"	"100.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Arthas.Vsolyanova.Transformate"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/arthas/vsolyanova_transformate.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"5.000000" }
+					"pitch_min"			{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
+"Arena.Hero_Arthas.RageOfArthas"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_stack"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/arena/weapons/hero/arthas/rage_of_arthas_1.vsnd"
+							"value1"	"sounds/arena/weapons/hero/arthas/rage_of_arthas_2.vsnd"
+							"value2"	"sounds/arena/weapons/hero/arthas/rage_of_arthas_3.vsnd"
+							"value3"	"sounds/arena/weapons/hero/arthas/rage_of_arthas_4.vsnd"
+							"value4"	"sounds/arena/weapons/hero/arthas/rage_of_arthas_5.vsnd"
+						}
+					}
+
+					"volume"			{ "value"	"3.000000" }
+					"pitch"				{ "value"	"1.000000" }
+					"soundlevel"		{ "value"	"100.000000" }
+					"distance_max"		{ "value"	"1600.000000" }
+				}
+			}
+		}
+	}
+}
+
 "Arena.Hero_Stargazer.GammaRay.Cast"
 {
 	"operator_stacks"

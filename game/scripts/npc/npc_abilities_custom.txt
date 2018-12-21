@@ -6,6 +6,7 @@
 #base "abilities/bosses/kel_thuzad.txt"
 #base "abilities/bosses/cursed_zeld.txt"
 
+#base "abilities/heroes/hero_arthas.txt"
 #base "abilities/heroes/hero_stargazer.txt"
 #base "abilities/heroes/hero_cherub.txt"
 #base "abilities/heroes/hero_queenofblades.txt"

@@ -12,6 +12,17 @@
 		"Ability6"	"boss_kel_thuzad_erebus"
 	}
 
+	"npc_arena_hero_arthas"
+	{
+		"base_hero"	"npc_dota_hero_skeleton_king"
+		"Ability1"	"arthas_rage_of_arthas"
+		"Ability2"	"arthas_plus_morality"
+		"Ability3"	"arthas_vikared"
+		"Ability4"	"generic_hidden"
+		"Ability5"	"generic_hidden"
+		"Ability6"	"arthas_vsolyanova"
+	}
+
 	"npc_arena_hero_stargazer"
 	{
 		"base_hero"	"npc_dota_hero_spectre"

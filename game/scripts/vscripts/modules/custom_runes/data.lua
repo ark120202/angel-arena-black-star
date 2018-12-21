@@ -84,6 +84,11 @@ RUNE_SETTINGS = {
 			local gold_multiplier = 1
 			local xp_multiplier = 1
 
+			local ability_plus_morality = unit:FindAbilityByName("arthas_plus_morality")
+			if ability_plus_morality and ability_plus_morality:GetLevel() > 0 then
+				gold_multiplier = gold_multiplier + ability_plus_morality:GetAbilitySpecial("bounty_multiplier") - 1
+				ModifyStacks(ability_plus_morality, unit, unit, "modifier_arthas_plus_morality_buff", 1, false)
+			end
 			local ability_goblins_greed = unit:FindAbilityByName("alchemist_goblins_greed")
 			if ability_goblins_greed and ability_goblins_greed:GetLevel() > 0 then
 				gold_multiplier = gold_multiplier + ability_goblins_greed:GetAbilitySpecial("bounty_multiplier") - 1
