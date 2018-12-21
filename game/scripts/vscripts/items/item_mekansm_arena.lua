@@ -86,9 +86,14 @@ function modifier_item_mekansm_arena_effect:DeclareFunctions()
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
 	}
 end
+function modifier_item_mekansm_arena_effect:OnCreated()
+	local ability = self:GetAbility()
+	self.aura_health_regen = ability:GetSpecialValueFor("aura_health_regen")
+	self.aura_bonus_armor = ability:GetSpecialValueFor("aura_bonus_armor")
+end
 function modifier_item_mekansm_arena_effect:GetModifierConstantHealthRegen()
-	return self:GetAbility():GetSpecialValueFor("aura_health_regen")
+	return self.aura_health_regen
 end
 function modifier_item_mekansm_arena_effect:GetModifierPhysicalArmorBonus()
-	return self:GetAbility():GetSpecialValueFor("aura_bonus_armor")
+	return self.aura_bonus_armor
 end
