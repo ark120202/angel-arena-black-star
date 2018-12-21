@@ -52,8 +52,8 @@ if IsServer() then
 			self.calculatingBAT = false
 			return -1
 		end
-		AS = (AS - MaxAS) / 10 + MaxAS
-		local NewBAT = BAT * MaxAS / AS
+		local postMaxASReductionFactor = 10
+		local NewBAT = BAT * MaxAS * postMaxASReductionFactor / (AS + (postMaxASReductionFactor - 1) * MaxAS)
 		local MaxBAT = 0.01 * MaxAS
 		if NewBAT < MaxBAT then
 			self.ExtraAttacksPerAttack = MaxBAT / NewBAT - 1
