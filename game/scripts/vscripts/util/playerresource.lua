@@ -28,13 +28,13 @@ function CDOTA_PlayerResource:SetPlayerTeam(playerId, newTeam)
 		PlayerTables:SetTableValue("hero_selection", oldTeam, tableData)
 	end
 
+	GameRules:SetCustomGameTeamMaxPlayers(newTeam, GameRules:GetCustomGameTeamMaxPlayers(newTeam) + 1)
 	for _,v in ipairs(FindAllOwnedUnits(player)) do
 		v:SetTeam(newTeam)
 	end
-	player:SetTeam(newTeam)
-
 	PlayerResource:UpdateTeamSlot(playerId, newTeam, 1)
 	PlayerResource:SetCustomTeamAssignment(playerId, newTeam)
+	GameRules:SetCustomGameTeamMaxPlayers(oldTeam, GameRules:GetCustomGameTeamMaxPlayers(oldTeam) - 1)
 
 	local newTableData = PlayerTables:GetTableValue("hero_selection", newTeam)
 	if newTableData and playerPickData then
