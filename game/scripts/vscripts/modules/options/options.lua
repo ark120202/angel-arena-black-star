@@ -166,14 +166,12 @@ function Options:LoadMapValues()
 
 			StatsClient:AssignTeams(function(response)
 				for i = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-					local player = PlayerResource:GetPlayer(i)
-					if player then player:SetTeam(DOTA_TEAM_NOTEAM) end
+					PlayerResource:SetCustomTeamAssignment(i, DOTA_TEAM_NOTEAM)
 				end
 
 				for team, players in ipairs(response) do
 					for _, player in ipairs(players) do
-						local player = PlayerResource:GetPlayer(player)
-						if player then player:SetTeam(team + 1) end
+						PlayerResource:SetCustomTeamAssignment(player, team + 1)
 					end
 				end
 
