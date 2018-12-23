@@ -13,6 +13,7 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_EVENT_ON_DEATH,
 		MODIFIER_PROPERTY_ABILITY_LAYOUT,
 		MODIFIER_EVENT_ON_RESPAWN,
+		MODIFIER_EVENT_ON_ABILITY_END_CHANNEL,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
 		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
 	}
@@ -175,13 +176,24 @@ if IsServer() then
 				for i = 1, caster.talents_ability_multicast[abilityname] - 1 do
 					Timers:CreateTimer(0.1*i, function()
 						if IsValidEntity(caster) and IsValidEntity(ability_cast) then
-							CastAdditionalAbility(caster, ability_cast, target)
+							CastAdditionalAbility(caster, ability_cast, target, 0, {})
 						end
 					end)
 				end
 			end
 		end
 	end
+
+	function modifier_arena_hero:OnAbilityEndChannel(keys)
+		local parent = self:GetParent()
+		local endChannelListeners = parent.EndChannelListeners
+		if not endChannelListeners then return end
+		for _, v in ipairs(endChannelListeners) do
+			v(keys.fail_type < 0)
+		end
+		parent.EndChannelListeners = {}
+	end
+
 	function modifier_arena_hero:OnDestroy()
 		if IsValidEntity(self.reflect_stolen_ability) then
 			self.reflect_stolen_ability:RemoveSelf()
