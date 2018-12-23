@@ -1350,7 +1350,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_percent"		"0.3"
+				"damage_percent"		"0.5"
 			}
 			"07"
 			{
