@@ -176,7 +176,7 @@ if IsServer() then
 				for i = 1, caster.talents_ability_multicast[abilityname] - 1 do
 					Timers:CreateTimer(0.1*i, function()
 						if IsValidEntity(caster) and IsValidEntity(ability_cast) then
-							CastAdditionalAbility(caster, ability_cast, target)
+							CastAdditionalAbility(caster, ability_cast, target, 0, {})
 						end
 					end)
 				end
