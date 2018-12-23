@@ -106,6 +106,9 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			disruptor_thunder_strike:GetSpecialValueFor("strikes") *
 			disruptor_thunder_strike:GetSpecialValueFor("strike_interval")
 	end
+	if hero:HasAbility("monkey_king_wukongs_command") then
+		preDuration = hero:FindAbilityByName("monkey_king_wukongs_command"):GetSpecialValueFor("duration")
+	end
 
 	hero.ChangingHeroProcessRunning = true
 	ProjectileManager:ProjectileDodge(hero)
@@ -114,12 +117,12 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 	hero:AddNewModifier(hero, nil, "modifier_hero_selection_transformation", nil)
 	local xp = hero:GetCurrentXP()
 	local location
-	RemoveAllOwnedUnits(playerId)
 
 	local startTime = GameRules:GetDOTATime(true, true)
 	local items = {}
 	local duelData = {}
 	Timers:CreateTimer(preDuration, function()
+		RemoveAllOwnedUnits(playerId)
 		HeroSelection:SelectHero(playerId, newHeroName, function(oldHero)
 			location = hero:GetAbsOrigin()
 			local fountatin = FindFountain(PlayerResource:GetTeam(playerId))
