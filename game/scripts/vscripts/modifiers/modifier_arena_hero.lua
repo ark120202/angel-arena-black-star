@@ -16,7 +16,6 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
 		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
 		MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
-		MODIFIER_EVENT_ON_ATTACK,
 	}
 end
 
@@ -29,18 +28,6 @@ function modifier_arena_hero:GetModifierMagicalResistanceDirectModification()
 end
 
 if IsServer() then
-
-	function modifier_arena_hero:OnAttack(keys)
-		local parent = self:GetParent()
-		if parent ~= keys.attacker or keys.no_attack_cooldown == true or not self.ExtraAttacksPerAttack then return end
-		self.MaxASExtraAttacks = (self.MaxASExtraAttacks or 0) + self.ExtraAttacksPerAttack
-		while self.MaxASExtraAttacks > 1 do
-			parent:PerformAttack(keys.target, true, true, true, false, true, false, false)
-			self.MaxASExtraAttacks = self.MaxASExtraAttacks - 1
-		end
-		return
-	end
-
 	function modifier_arena_hero:GetModifierBaseAttackTimeConstant()
 		if self.calculatingBAT then return -1 end
 		self.calculatingBAT = true
@@ -56,7 +43,6 @@ if IsServer() then
 		local NewBAT = BAT * MaxAS * postMaxASReductionFactor / (AS + (postMaxASReductionFactor - 1) * MaxAS)
 		local MaxBAT = 0.01 * MaxAS
 		if NewBAT < MaxBAT then
-			self.ExtraAttacksPerAttack = MaxBAT / NewBAT - 1
 			NewBAT = MaxBAT
 		end
 		self.calculatingBAT = false
