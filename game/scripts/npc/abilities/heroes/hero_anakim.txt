@@ -176,7 +176,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"global_radius"		"700"
+				"global_radius"		"99999"
 			}
 		}
 
