@@ -5,52 +5,36 @@ Variables:
   item_yasha_note: Yasha-based movement speed bonuses from multiple items do not stack.
   item_kaya_note: Multiple instances of this item do not stack.
 
-DOTA_Tooltip_ability_item_shard_level: Level Up Shard
-DOTA_Tooltip_ability_item_shard_level_Description: '<h1>Active: Consume</h1> Consumes shard and level up''s your hero by 1.'
-
-DOTA_Tooltip_ability_item_shard_level10: Level Up Shard x10
-DOTA_Tooltip_ability_item_shard_level10_Description: '<h1>Active: Consume</h1> Consumes shard and level up''s your hero by 10.'
-
 DOTA_Tooltip_ability_item_shard_str_small: Small Strength Shard
-DOTA_Tooltip_ability_item_shard_str_small_bonus_str: +$str
+DOTA_Tooltip_ability_item_shard_str_small_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %strength% strength permanently.'
 DOTA_Tooltip_ability_item_shard_str_medium: Medium Strength Shard
-DOTA_Tooltip_ability_item_shard_str_medium_bonus_str: +$str
+DOTA_Tooltip_ability_item_shard_str_medium_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %strength% strength permanently.'
 DOTA_Tooltip_ability_item_shard_str_large: Large Strength Shard
-DOTA_Tooltip_ability_item_shard_str_large_bonus_str: +$str
+DOTA_Tooltip_ability_item_shard_str_large_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %strength% strength permanently.'
 DOTA_Tooltip_ability_item_shard_str_extreme: Extreme Strength Shard
-DOTA_Tooltip_ability_item_shard_str_extreme_bonus_str: +$str
+DOTA_Tooltip_ability_item_shard_str_extreme_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %strength% strength permanently.'
 DOTA_Tooltip_ability_item_shard_agi_small: Small Agility Shard
-DOTA_Tooltip_ability_item_shard_agi_small_bonus_agi: +$agi
+DOTA_Tooltip_ability_item_shard_agi_small_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %agility% agility permanently.'
 DOTA_Tooltip_ability_item_shard_agi_medium: Medium Agility Shard
-DOTA_Tooltip_ability_item_shard_agi_medium_bonus_agi: +$agi
+DOTA_Tooltip_ability_item_shard_agi_medium_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %agility% agility permanently.'
 DOTA_Tooltip_ability_item_shard_agi_large: Large Agility Shard
-DOTA_Tooltip_ability_item_shard_agi_large_bonus_agi: +$agi
+DOTA_Tooltip_ability_item_shard_agi_large_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %agility% agility permanently.'
 DOTA_Tooltip_ability_item_shard_agi_extreme: Extreme Agility Shard
-DOTA_Tooltip_ability_item_shard_agi_extreme_bonus_agi: +$agi
+DOTA_Tooltip_ability_item_shard_agi_extreme_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %agility% agility permanently.'
 DOTA_Tooltip_ability_item_shard_int_small: Small Intelligence Shard
-DOTA_Tooltip_ability_item_shard_int_small_bonus_int: +$int
+DOTA_Tooltip_ability_item_shard_int_small_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %intelligence% intelligence permanently.'
 DOTA_Tooltip_ability_item_shard_int_medium: Medium Intelligence Shard
-DOTA_Tooltip_ability_item_shard_int_medium_bonus_int: +$int
+DOTA_Tooltip_ability_item_shard_int_medium_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %intelligence% intelligence permanently.'
 DOTA_Tooltip_ability_item_shard_int_large: Large Intelligence Shard
-DOTA_Tooltip_ability_item_shard_int_large_bonus_int: +$int
+DOTA_Tooltip_ability_item_shard_int_large_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %intelligence% intelligence permanently.'
 DOTA_Tooltip_ability_item_shard_int_extreme: Extreme Intelligence Shard
-DOTA_Tooltip_ability_item_shard_int_extreme_bonus_int: +$int
+DOTA_Tooltip_ability_item_shard_int_extreme_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %intelligence% intelligence permanently.'
+DOTA_Tooltip_ability_item_shard_level: Level Up Shard
+DOTA_Tooltip_ability_item_shard_level_Description: '<h1>Active: Consume</h1> Consumes shard and level up''s your hero by %levels%.'
+DOTA_Tooltip_ability_item_shard_level10: Level Up Shard x10
+DOTA_Tooltip_ability_item_shard_level10_Description: '<h1>Active: Consume</h1> Consumes shard and level up''s your hero by %levels%.'
 DOTA_Tooltip_ability_item_shard_attackspeed: Attack Speed Shard
-DOTA_Tooltip_ability_item_shard_attackspeed_bonus_attackspeed: +$attack
-'<h1>Use: Consume</h1> Consumes shard and gives hero permanent bonus.':
-  - DOTA_Tooltip_ability_item_shard_str_small_Description
-  - DOTA_Tooltip_ability_item_shard_str_medium_Description
-  - DOTA_Tooltip_ability_item_shard_str_large_Description
-  - DOTA_Tooltip_ability_item_shard_str_extreme_Description
-  - DOTA_Tooltip_ability_item_shard_agi_small_Description
-  - DOTA_Tooltip_ability_item_shard_agi_medium_Description
-  - DOTA_Tooltip_ability_item_shard_agi_large_Description
-  - DOTA_Tooltip_ability_item_shard_agi_extreme_Description
-  - DOTA_Tooltip_ability_item_shard_int_small_Description
-  - DOTA_Tooltip_ability_item_shard_int_medium_Description
-  - DOTA_Tooltip_ability_item_shard_int_large_Description
-  - DOTA_Tooltip_ability_item_shard_int_extreme_Description
-  - DOTA_Tooltip_ability_item_shard_attackspeed_Description
+DOTA_Tooltip_ability_item_shard_attackspeed_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %attackspeed% attack speed permanently.'
 
 DOTA_Tooltip_ability_item_lucifers_claw: Lucifer's Claw
 DOTA_Tooltip_ability_item_lucifers_claw_Description: |-

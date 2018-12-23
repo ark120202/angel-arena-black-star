@@ -326,8 +326,11 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 			if not isInShop then SetAllItemSlotsLocked(unit, false, true) end
 		end
 	end
-	--At last drop an item on fountain
-	if not itemPushed then
+
+	if itemPushed then
+		if item.OnPurchased then item:OnPurchased() end
+	else
+		-- At last drop an item on fountain
 		local spawnPointName = "info_courier_spawn"
 		local teamCared = true
 		if PlayerResource:GetTeam(playerId) == DOTA_TEAM_GOODGUYS then
