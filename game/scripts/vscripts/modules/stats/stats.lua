@@ -6,15 +6,6 @@ Events:Register("activate", function ()
 	PlayerTables:CreateTable("stats_team_rating", {}, AllPlayersInterval)
 	CustomGameEventManager:RegisterListener("stats_client_add_guide", Dynamic_Wrap(StatsClient, "AddGuide"))
 	CustomGameEventManager:RegisterListener("stats_client_vote_guide", Dynamic_Wrap(StatsClient, "VoteGuide"))
-
-	if not IsInToolsMode() then
-		debug.oldTraceback = debug.oldTraceback or debug.traceback
-		debug.traceback = function(...)
-			local result = debug.oldTraceback(...)
-			StatsClient:HandleError(result)
-			return result
-		end
-	end
 end)
 
 function StatsClient:FetchPreGameData()
