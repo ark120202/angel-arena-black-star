@@ -133,16 +133,21 @@ function FindCourier(unit) {
 	})[0]
 }
 
-function DynamicSubscribePTListener(table, callback) {
+function DynamicSubscribePTListener(table, callback, OnConnectedCallback) {
 	if (PlayerTables.IsConnected()) {
-		var tableData = PlayerTables.GetAllTableValues(table)
+		//$.Msg("Update " + table + " / PT connected")
+		var tableData = PlayerTables.GetAllTableValues(table);
 		if (tableData != null)
-			callback(table, tableData, {})
-		PlayerTables.SubscribeNetTableListener(table, callback)
+			callback(table, tableData, {});
+		var ptid = PlayerTables.SubscribeNetTableListener(table, callback);
+		if (OnConnectedCallback != null) {
+			OnConnectedCallback(ptid);
+		}
 	} else {
-		$.Schedule(1 / 30, function() {
-			DynamicSubscribePTListener(table, callback)
-		})
+		//$.Msg("Update " + table + " / PT not connected, repeat")
+		$.Schedule(0.1, function() {
+			DynamicSubscribePTListener(table, callback, OnConnectedCallback);
+		});
 	}
 }
 
