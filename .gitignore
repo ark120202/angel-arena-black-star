@@ -1,11 +1,15 @@
 *.vpcf_c
 *.vtex_c
+*.vsnd_c
 *.vsndevts_c
 *.vmat_c
 *.vjs_c
 *.vxml_c
 *.vcss_c
 *.vpk
+*.vmdl_c
+*.vanim_c
+*.vagrp_c
 
 *.vanim_c
 *.vmesh_c
