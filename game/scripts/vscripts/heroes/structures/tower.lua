@@ -22,15 +22,15 @@ function SplitShotLaunch( keys )
 	local split_shot_projectile
 	if string.find(caster:GetModelName(), "tower_bad") then
 		split_shot_projectile = "particles/base_attacks/ranged_tower_bad.vpcf"
-	else 
+	else
 		split_shot_projectile = "particles/base_attacks/ranged_tower_good.vpcf"
 	end
 
-	local split_shot_targets = FindUnitsInRadius(caster:GetTeam(), caster_location, nil, caster:GetAttackRange(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_CLOSEST, false)
+	local split_shot_targets = FindUnitsInRadius(caster:GetTeam(), caster_location, nil, caster:Script_GetAttackRange(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_CLOSEST, false)
 	-- Create projectiles for units that are not the casters current attack target
 	for _,v in ipairs(split_shot_targets) do
 		if v ~= attack_target then
-			local projectile_info = 
+			local projectile_info =
 			{
 				EffectName = split_shot_projectile,
 				Ability = ability,

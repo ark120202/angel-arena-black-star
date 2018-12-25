@@ -4,7 +4,7 @@ function SplitShotLaunch( keys )
 
 	local arrow_count = ability:GetLevelSpecialValueFor("arrow_count", ability:GetLevel() - 1)
 	local attack_target = caster:GetAttackTarget()
-	local split_shot_targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, caster:GetAttackRange(), ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_CLOSEST, false)
+	local split_shot_targets = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, caster:Script_GetAttackRange(), ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_CLOSEST, false)
 	for _,v in ipairs(split_shot_targets) do
 		if v ~= attack_target and not v:IsAttackImmune() then
 			local projectile_info = GenerateAttackProjectile(caster, ability)
