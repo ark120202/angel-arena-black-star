@@ -4,16 +4,14 @@
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/containers/container.css" />
 		<include src="file://{resources}/styles/containers/container_skins.css" />
-
-		<include src="s2r://panorama/styles/hero_splash.vcss_c" />
 	</styles>
 	<scripts>
-		<include src="file://{resources}/scripts/containers/container_base.js" /> 
-		<include src="file://{resources}/scripts/containers/container_events.js" /> 
-		<include src="file://{resources}/scripts/containers/dota_inventory.js" /> 
+		<include src="file://{resources}/scripts/containers/container_base.js" />
+		<include src="file://{resources}/scripts/containers/container_events.js" />
+		<include src="file://{resources}/scripts/containers/dota_inventory.js" />
 
 
-		<include src="file://{resources}/scripts/containers/container.js" /> 
+		<include src="file://{resources}/scripts/containers/container.js" />
 		<include src="file://{resources}/scripts/containers/inventory_item.js" />
 		<include src="file://{resources}/scripts/containers/inventory_context_menu.js" />
 		<include src="file://{resources}/scripts/containers/dota_inventory_item.js" />
@@ -146,4 +144,3 @@
 
 	</Panel>
 </root>
- 
