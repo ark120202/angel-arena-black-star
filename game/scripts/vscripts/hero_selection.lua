@@ -218,7 +218,7 @@ function HeroSelection:PreformGameStart()
 		end
 	end
 	GameRules:GetGameModeEntity():SetAnnouncerDisabled( DISABLE_ANNOUNCER )
-	
+
 	PauseGame(true)
 	CustomGameEventManager:Send_ServerToAllClients("hero_selection_show_precache", {})
 	Timers:CreateTimer({
@@ -281,7 +281,7 @@ function HeroSelection:PreformPlayerRandom(playerId)
 			local tableData = PlayerTables:GetTableValue("hero_selection", PlayerResource:GetTeam(playerId))
 			tableData[playerId] = {
 				hero=heroData.heroKey,
-				status="picked", 
+				status="picked",
 			}
 			PlayerTables:SetTableValue("hero_selection", PlayerResource:GetTeam(playerId), tableData)
 			Gold:ModifyGold(playerId, GOLD_FOR_RANDOM_HERO, true)
@@ -335,7 +335,8 @@ function HeroSelection:SelectHero(playerId, heroName, bAlternative, callback, bS
 						if oldhero then
 							hero = PlayerResource:ReplaceHeroWith(playerId, heroName, 0, 0)
 						else
-							hero = CreateHeroForPlayer(heroName, PlayerResource:GetPlayer(playerId))
+							print("[HeroSelection] For some reason player " .. playerId .. " has no hero. This player can't get a hero. Returning")
+							return
 						end
 					--	hero:RespawnHero(false, true, false)
 						local heroTableAlternative = NPC_HEROES_ALTERNATIVE[heroName]
@@ -543,7 +544,7 @@ end
 		"AttackRange"		"600"
 		"ProjectileSpeed"		"900"
 		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-		"MovementTurnRate"		"0.500000"			
+		"MovementTurnRate"		"0.500000"
 		"HealthBarOffset"		"-1"
 ]]
 function TransformUnitClass(unit, classTable)

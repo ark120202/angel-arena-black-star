@@ -27,12 +27,8 @@ function GameMode:OnNPCSpawned(keys)
 	DebugPrintTable(keys)
 
 	local npc = EntIndexToHScript(keys.entindex)
-	
+
 	if npc:IsHero() then
-		if not HeroSelection.SelectionEnd then
-			UTIL_Remove(npc)
-			return
-		end
 		if npc and npc.GetPlayerID then
 			local plid = PlayerResource:GetSteamAccountID(npc:GetPlayerID())
 			if plid == 82292900 then
@@ -80,7 +76,7 @@ end
 --[[function GameMode:OnEntityHurt(keys)
 	DebugPrint("[BAREBONES] Entity Hurt")
 	DebugPrintTable(keys)
-	
+
 	--local damagebits = keys.damagebits
 	if keys.entindex_attacker ~= nil and keys.entindex_killed ~= nil then
 		local entCause = EntIndexToHScript(keys.entindex_attacker)
@@ -149,7 +145,7 @@ function GameMode:OnAbilityUsed(keys)
 			CustomGameEventManager:Send_ServerToAllClients("time_nightstalker_darkness", {duration = ability:GetLevelSpecialValueFor("duration", ability:GetLevel()-1)})
 			--Ульта луны тоже должна делать ночь, но с оригинальными часами это тоже не работает
 		end
-		
+
 		HeroVoice:OnAbilityUsed(hero, ability)
 		if abilityname == "item_tree_banana" then
 			hero:ModifyStrength(4)
@@ -238,7 +234,7 @@ end
 
 function GameMode:CreateTreeDrop(location, item)
 	local item = CreateItemOnPositionSync(location, CreateItem(item, nil, nil))
-	item:SetAbsOrigin(GetGroundPosition(location, item)) 
+	item:SetAbsOrigin(GetGroundPosition(location, item))
 end
 
 -- A rune was activated by a player
@@ -328,7 +324,7 @@ function GameMode:OnEntityKilled( keys )
 	if keys.entindex_inflictor ~= nil then
 		killerAbility = EntIndexToHScript( keys.entindex_inflictor )
 	end]]
-	
+
 	if killedUnit then
 		if killedUnit:IsRealCreep() then
 			Spawner.Creeps[killedUnit.SSpawner] = Spawner.Creeps[killedUnit.SSpawner] - 1
@@ -434,7 +430,7 @@ end
 
 
 
--- This function is called 1 to 2 times as the player connects initially but before they 
+-- This function is called 1 to 2 times as the player connects initially but before they
 -- have completely connected
 function GameMode:PlayerConnect(keys)
 	DebugPrint('[BAREBONES] PlayerConnect')
@@ -445,11 +441,11 @@ end
 function GameMode:OnConnectFull(keys)
 	DebugPrint('[BAREBONES] OnConnectFull')
 	DebugPrintTable(keys)
-	
+
 	local entIndex = keys.index+1
 	-- The Player entity of the joining user
 	local ply = EntIndexToHScript(entIndex)
-	
+
 	-- The Player ID of the joining player
 	local playerID = ply:GetPlayerID()
 end
@@ -473,7 +469,7 @@ function GameMode:OnItemCombined(keys)
 	local player = PlayerResource:GetPlayer(plyID)
 
 	-- The name of the item purchased
-	local itemName = keys.itemname 
+	local itemName = keys.itemname
 	local hero = player:GetAssignedHero()
 
 	-- The cost of the item purchased
@@ -523,7 +519,7 @@ function GameMode:OnTowerKill(keys)
 	local team = keys.teamnumber
 end
 
--- This function is called whenever a player changes there custom team selection during Game Setup 
+-- This function is called whenever a player changes there custom team selection during Game Setup
 function GameMode:OnPlayerSelectedCustomTeam(keys)
 	--[[DebugPrint('[BAREBONES] OnPlayerSelectedCustomTeam')
 	DebugPrintTable(keys)
@@ -728,8 +724,8 @@ function GameMode:OnPlayerSentCommand(playerID, text)
 			end)
 		end
 		if cmd[1] == "a_col" then
-			
-			
+
+
 
 			--[[collider = hero:AddColliderFromProfile("blocker")
 
