@@ -452,9 +452,9 @@ function UpdateSelection() {
 							GameUI.SelectUnit(panel.unit, false)
 						})
 						if (Entities.IsIllusion(SelectedEntities[key]))
-							panel.style.washColor = "rgba(95,215,255, 220)";
+							panel.style.washColor = "rgba(95,215,255, 0.8627)";
 						if (!Entities.IsAlive(SelectedEntities[key]))
-							panel.style.washColor = "rgba(60,60,60, 220)";
+							panel.style.washColor = "rgba(60,60,60, 0.8627)";
 						if (Entities.GetUnitName(SelectedEntities[key]).lastIndexOf("npc_dota_hero_", 0) != 0) {
 							$.Msg("Not handled unit portrait " + Entities.GetUnitName(SelectedEntities[key]))
 								//panel.SetImage("") //TODO
