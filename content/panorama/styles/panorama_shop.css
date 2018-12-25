@@ -11,7 +11,7 @@
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in;
 	transition-property: transform, opacity;
-	box-shadow: rgba(0,0,0,235) -10px -10px 20px 20px;
+	box-shadow: rgba(0, 0, 0, 0.9216) -10px -10px 20px 20px;
 	margin-bottom: 16%;
 	margin-right: 0px;
 	flow-children: right;
@@ -27,7 +27,7 @@
 {
 	width: 300px;
 	height: 100%;
-	//background-color: rgba(0,0,0,252);
+	//background-color: rgba(0, 0, 0, 0.9882);
 	background-image: url("file://{images}/custom_game/shop/itembuilds_panel.png");
 	background-position: -18px -12px;
 	background-size: 112% 106%;
@@ -114,7 +114,7 @@ DropDownMenu Label
 {
 	horizontal-align: right;
 	height: 78.5%;
-	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 100);
+	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 0.3922);
 }
 
 #ItemRecipeBox
@@ -363,13 +363,13 @@ DropDownMenu Label
 }
 #QuickBuyPanel
 {
-	background-color: rgba(0,0,0,200);
+	background-color: rgba(0, 0, 0, 0.7843);
 	align: right bottom;
 	margin-bottom:  50px;
 	margin-right: 7px;
 	height: 65px;
 	width: 206px;
-	box-shadow: -6px -6px 12px 12px rgba(0,0,0,200);
+	box-shadow: -6px -6px 12px 12px rgba(0, 0, 0, 0.7843);
 }
 
 //4x3

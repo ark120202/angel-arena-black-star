@@ -81,7 +81,7 @@
 	height: 940px;
 	width: 80%;
 	vertical-align: bottom;
-	background-color: rgba(0,0,0,240);
+	background-color: rgba(0, 0, 0, 0.9412);
 	flow-children: down;
 }
 
@@ -141,7 +141,7 @@
 	height: 140px;
 	width: 80%;
 	flow-children: right;
-	background-color: rgba(0,0,0,252);
+	background-color: rgba(0, 0, 0, 0.9882);
 }
 
 #GameModeInfoPanel
@@ -411,8 +411,8 @@
 	height: 100%;
 	width: 250px;
 	margin: 5px;
-	background-color: rgba(0, 0, 0, 240);
-	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 240);
+	background-color: rgba(0, 0, 0, 0.9412);
+	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 0.9412);
 }
 
 .PrecachePlayerInTeamNickname
@@ -435,7 +435,7 @@
 	height: 100%;
 	width: 20%;
 	horizontal-align: right;
-	background-color: rgba(0,0,0,252);
+	background-color: rgba(0, 0, 0, 0.9882);
 	flow-children: down;
 }
 
@@ -450,7 +450,7 @@
 .MinimapImage
 {
 	blur: gaussian(10);
-	wash-color: rgba(0,0,0,220);
+	wash-color: rgba(0, 0, 0, 0.8627);
 }
 
 #SelectionChatBox
@@ -546,8 +546,8 @@
 {
 	align: center center;
 	flow-children: right;
-	background-color: rgba(0,0,0,220);
-	box-shadow: -10px -10px 20px 20px rgba(0,0,0,220);
+	background-color: rgba(0, 0, 0, 0.8627);
+	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 0.8627);
 }
 .AbilitiesLineSplitter
 {

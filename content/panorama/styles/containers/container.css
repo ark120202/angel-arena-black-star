@@ -77,8 +77,8 @@
   horizontal-align: right;
   vertical-align: bottom;
   margin-bottom: 28px;
-  margin-right: 10px; 
-  
+  margin-right: 10px;
+
   flow-children: down;
 }
 
@@ -140,7 +140,7 @@
 {
   flow-children: down;
   horizontal-align: right;
-  vertical-align: bottom; 
+  vertical-align: bottom;
   margin-bottom: 235px;
 }
 
@@ -148,7 +148,7 @@
 {
   horizontal-align: left;
   transform-origin: 0% 50%;
-} 
+}
 
 #stash_row
 {
@@ -156,7 +156,7 @@
   transform: scale3d(.8, .8, 1);
   flow-children: right;
   background-color: #222222;
-  border: 2px solid black; 
+  border: 2px solid black;
   horizontal-align: right;
   vertical-align: bottom;
 }
@@ -177,11 +177,11 @@
   margin-bottom: 4px;
   margin-left: 4px;
   margin-right: 4px;
-  flow-children: right; 
+  flow-children: right;
   background-color: #222222;
   align: center center;
 }
- 
+
 .ItemPanel
 {
   width: 66px;
@@ -204,7 +204,7 @@
 
 #ItemImage
 {
-  align: center center; 
+  align: center center;
   width: 100%;
   height: 100%;
 }
@@ -532,14 +532,14 @@
 #inventory_items .ItemPanel
 {
   box-shadow: none;
-  border-color: rgba(80, 80, 80, 255);
+  border-color: rgba(80, 80, 80, 1);
   border-style: solid;
   border-width: 2px 3px;
 }
 
 #inventory_items .no_item
 {
-  background-color: rgba(10,20,25,230);
+  background-color: rgba(10, 20, 25, 0.9019);
 }
 
 #inventory_items .no_item #ItemImage
@@ -568,7 +568,7 @@
   margin-top: 0px;
   margin-left: -3px;
 }
- 
+
 .MinimalisticHudDisabled #inventory_items .ItemPanel
 {
   box-shadow: #000000ff 1px 1px 2px 2px;

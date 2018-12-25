@@ -122,7 +122,7 @@
 #DotaAttributePic_2.PrimaryAttribute
 {
 	box-shadow: none;
-	text-shadow: 0 0 4px white; 
+	text-shadow: 0 0 4px white;
 }
 
 #DeadHeroBlocker Label
@@ -149,8 +149,8 @@
 {
 	horizontal-align: center;
 	flow-children: right;
-	background-color: rgba(0,0,0,220);
-	box-shadow: -3px -3px 6px 6px rgba(0,0,0,220);
+	background-color: rgba(0, 0, 0, 0.8627);
+	box-shadow: -3px -3px 6px 6px rgba(0, 0, 0, 0.8627);
 }
 
 #HPBar_LabelConst
@@ -198,8 +198,8 @@
 {
 	horizontal-align: center;
 	flow-children: right;
-	background-color: rgba(0,0,0,220);
-	box-shadow: -3px -3px 6px 6px rgba(0,0,0,220);
+	background-color: rgba(0, 0, 0, 0.8627);
+	box-shadow: -3px -3px 6px 6px rgba(0, 0, 0, 0.8627);
 }
 
 #ManaBar_LabelConst
@@ -320,7 +320,7 @@
 {
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,200);
+	background-color: rgba(0, 0, 0, 0.7843);
 	box-shadow: -4px -4px 8px 8px black;
 	visibility: collapse;
 	flow-children: right-wrap;
@@ -383,7 +383,7 @@
 {
 	width: 80px;
 	height: 80px;
-	border: 2px solid rgba(85, 85, 85, 200);
+	border: 2px solid rgba(85, 85, 85, 0.7843);
 	border-radius: 100%;
 }
 
@@ -730,7 +730,7 @@
 {
 	width: 100%;
 	height: 100%;
-	background-color: rgba(20,20,20,255);
+	background-color: rgba(20, 20, 20, 1.0000);
 	visibility: collapse;
 }
 #CourierDeadOverlay.DeadCourier
@@ -749,8 +749,8 @@
 {
 	width: 100%;
 	flow-children: down;
-	background-color: rgba(0,0,0,220);
-	box-shadow: -10px -10px 20px 20px rgba(0,0,0,220);
+	background-color: rgba(0, 0, 0, 0.8627);
+	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 0.8627);
 	border-radius: 10px;
 }
 #AbilitiesPanelInner
@@ -758,8 +758,8 @@
 	height: 100%;
 	horizontal-align: center;
 	flow-children: right;
-	background-color: rgba(0,0,0,230);
-	box-shadow: -1.5px -1.5px 3px 3px rgba(0,0,0,230);
+	background-color: rgba(0, 0, 0, 0.9020);
+	box-shadow: -1.5px -1.5px 3px 3px rgba(0, 0, 0, 0.9020);
 }
 
 //Standart, 16x9
@@ -771,10 +771,10 @@
 	vertical-align: bottom;
 	opacity: 1.0;
 
-	//background-color: rgba(0,0,0,220);
-	//box-shadow: -10px -10px 20px 20px rgba(0,0,0,220);
+	//background-color: rgba(0, 0, 0, 0.8627);
+	//box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 0.8627);
 
-	//background-color: gradient( linear, 0% 100%, 0% 0%, from( rgba(0,0,0,250) ), color-stop(0.4, rgba(0,0,0,200)), to( rgba(0,0,0,0) ) );
+	//background-color: gradient( linear, 0% 100%, 0% 0%, from( rgba(0, 0, 0, 0.9804) ), color-stop(0.4, rgba(0, 0, 0, 0.7843)), to( rgba(0, 0, 0, 0.0000) ) );
 }
 #DotaHeroStatus
 {
@@ -786,8 +786,8 @@
 	align: left bottom;
 	margin-bottom: 4px;
 	margin-left: 500px; //492px + margin
-	background-color: rgba(0,0,0,210);
-	box-shadow: -4px -4px 8px 8px rgba(0,0,0,220);
+	background-color: rgba(0, 0, 0, 0.8235);
+	box-shadow: -4px -4px 8px 8px rgba(0, 0, 0, 0.8627);
 }
 #HPManaBar,
 #DeadHeroBlocker
@@ -801,8 +801,8 @@
 }
 #DeadHeroBlocker
 {
-	background-color: rgba(0,0,0,220);
-	box-shadow: -10px -10px 20px 20px rgba(0,0,0,220);
+	background-color: rgba(0, 0, 0, 0.8627);
+	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 0.8627);
 	visibility: collapse;
 }
 #BuffsPanel
@@ -836,7 +836,7 @@
 	width: 120px;
 	height: 42px;
 	margin: 4px;
-	background-color: rgba(100,100,100,220);
+	background-color: rgba(100, 100, 100, 0.8627);
 	border-radius: 5px;
 }
 #AbilitiesPanelHittestBlocker
@@ -861,7 +861,8 @@
 .MinimalisticHudDisabled #HPManaBar,
 .MinimalisticHudDisabled #DeadHeroBlocker,
 .MinimalisticHudDisabled #BuffsPanel,
-.MinimalisticHudDisabled #CourierControls
+.MinimalisticHudDisabled #CourierControls,
+.MinimalisticHudDisabled #AbilitiesPanel
 {
 	visibility: collapse;
 }
@@ -869,22 +870,6 @@
 .MinimalisticHudDisabled #DefaultInterfaceHeroName
 {
 	visibility: visible;
-}
-.MinimalisticHudDisabled #AbilitiesPanel
-{
-	pre-transform-scale2d: 0.88;
-	width: 600px;
-	margin-left: 338px;
-	margin-bottom: 0px;
-}
-.MinimalisticHudDisabled .AbilityPanel
-{
-	margin: 0.8px;
-}
-.MinimalisticHudDisabled #AbilitiesPanelInner
-{
-	background-color: transparent;
-	box-shadow: 0 0 0 0 transparent;
 }
 
 .MinimalisticHudDisabled #GoldPanel

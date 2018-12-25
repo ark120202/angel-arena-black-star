@@ -334,8 +334,8 @@
 	margin: 4px;
 	width: 100%;
 	flow-children: down;
-	background-color: rgba(0, 0, 0, 175);
-	border: 1px solid rgba(0, 0, 0, 125);
+	background-color: rgba(0, 0, 0, 0.6863);
+	border: 1px solid rgba(0, 0, 0, 0.4902);
 	box-shadow: -5px -5px 10px 10px black;
 }
 
@@ -360,7 +360,7 @@
 	horizontal-align: center;
 	font-size: 50px;
 	color: black;
-	text-shadow: 0 0 1px rgba(192, 192, 192, 200);
+	text-shadow: 0 0 1px rgba(192, 192, 192, 0.7843);
 }
 
 .PlayerInTeamNickname
@@ -370,7 +370,7 @@
 	vertical-align: center;
 	font-size: 28px;
 	color: black;
-	text-shadow: 0 0 1px rgba(150, 150, 150, 255);
+	text-shadow: 0 0 1px rgba(150, 150, 150, 1.0000);
 }
 
 .PlayerInTeamHeroImagePanel
@@ -632,7 +632,7 @@
 .SelectedHeroAttributesElement,
 .SelectedHeroAttributesElementSmall
 {
-	background-color: rgba(0, 0, 0, 150);
+	background-color: rgba(0, 0, 0, 0.5882);
 	border-radius: 15px;
 	flow-children: right;
 	height: 42px;
@@ -738,8 +738,8 @@
 	height: 100%;
 	width: 250px;
 	margin: 5px;
-	background-color: rgba(0, 0, 0, 175);
-	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 175);
+	background-color: rgba(0, 0, 0, 0.6863);
+	box-shadow: -10px -10px 20px 20px rgba(0, 0, 0, 0.6863);
 }
 
 .PrecachePlayerInTeamNickname
