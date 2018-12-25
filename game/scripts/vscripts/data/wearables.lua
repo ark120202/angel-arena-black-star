@@ -4,7 +4,7 @@ CUSTOM_WEARABLES_PLAYER_ITEMS = {
 		"item_hero_omniknight_frozen_sword",
 		"item_common_radio_car",
 		"item_item_summoned_unit_kyuubey",
-		"_______item_test",
+		-- "_______item_test",
 		--"item_common_model_tree"
 	},
 	[82292900] = {
