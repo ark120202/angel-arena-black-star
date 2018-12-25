@@ -10,7 +10,7 @@ function PanoramaShop:InitializeItemTable()
 	--загрузка всех предметов, разделение на предмет/рецепт
 	for name, kv in pairs(KeyValues.ItemKV) do
 		if not table.contains(SHOP_IGNORED_ITEMS, name) and kv and type(kv) == "table" then
-			if kv.ItemRecipe == 1 then
+			if kv.ItemRecipe == 1 and kv.ItemResult then
 				RecipesToCheck[kv.ItemResult] = name
 			end
 			PanoramaShop._RawItemData[name] = kv
@@ -121,7 +121,7 @@ end
 
 function PanoramaShop:BuyItem(playerID, unit, itemName, baseItem)
 	--[[local newOrder = {
- 		UnitIndex = unit:GetEntityIndex(), 
+ 		UnitIndex = unit:GetEntityIndex(),
  		OrderType = DOTA_UNIT_ORDER_PURCHASE_ITEM,
  		AbilityIndex = GetItemIdByName(itemName),
  		TargetIndex = 0,
@@ -214,7 +214,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName, baseItem)
 						teamCared = false
 					end
 					local ent
-						
+
 					while true do
 						ent = Entities:FindByClassname(ent, spawnPointName)
 						if ent and (not teamCared or (teamCared and ent:GetTeam() == PlayerResource:GetTeam(playerID))) then

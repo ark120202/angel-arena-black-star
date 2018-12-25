@@ -3,7 +3,7 @@ BAREBONES_VERSION = "1.00"
 
 -- Set this to true if you want to see a complete debug output of all events/processes done by barebones
 -- You can also change the cvar 'barebones_spew' at any time to 1 or 0 for output/no output
-BAREBONES_DEBUG_SPEW = false 
+BAREBONES_DEBUG_SPEW = false
 GAMEMODE_INITIALIZATION_STATUS = {}
 
 SERVER_LOGGING = false
@@ -22,7 +22,6 @@ local requirements = {
 	"libraries/attachments",
 	"libraries/playertables",
 	"libraries/containers",
-	"libraries/modmaker",
 	"libraries/pathgraph",
 	"libraries/selection",
 	"libraries/worldpanels",
@@ -265,7 +264,7 @@ function GameMode:InitGameMode()
 			print(item:GetName(), "to")
 			if  playerID + 1 ~= toSlot then
 				return false
-			end 
+			end
 			local item2 = toContainer:GetItemInSlot(toSlot)
 			local addItem = nil
 			if item2 and IsValidEntity(item2) and (item2:GetAbilityName() ~= item:GetAbilityName() or not item2:IsStackable() or not item:IsStackable()) then
@@ -294,7 +293,7 @@ function GameMode:InitGameMode()
 				toContainer:AddItem(item2, toSlot, nil, true)
 			end
 			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "spellcrafting_update_slot_cad", {id = item:GetEntityIndex()})
-			return false 
+			return false
 		end,
 		OnLeftClick        = false,
 		OnRightClick       = false,
@@ -416,7 +415,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 					unit:RemoveModifierByName("modifier_item_pocket_riki_invisibility_fade")
 					unit:RemoveModifierByName("modifier_item_pocket_riki_permanent_invisibility")
 					unit:RemoveModifierByName("modifier_invisible")
-					GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber()) 
+					GameRules:SendCustomMessage("#riki_pocket_riki_chat_notify_text", 0, unit:GetTeamNumber())
 				end
 			end
 			if filterTable.position_x ~= 0 and filterTable.position_y ~= 0 then
@@ -442,7 +441,7 @@ function GameMode:DamageFilter(filterTable)
 		inflictor = EntIndexToHScript(filterTable.entindex_inflictor_const)
 	end
 	local attacker
-	if filterTable.entindex_attacker_const then 
+	if filterTable.entindex_attacker_const then
 		attacker = 				EntIndexToHScript(filterTable.entindex_attacker_const)
 	end
 	local victim = 				EntIndexToHScript(filterTable.entindex_victim_const)
@@ -561,7 +560,7 @@ function GameMode:RandomOMGRollAbilities(unit)
 			unit:RemoveAbility(ability:GetName())
 		end
 	end
-	
+
 	local has_abilities = 0
 	while has_abilities < RANDOM_OMG_SETTINGS.Total_Abilities - RANDOM_OMG_SETTINGS.Ultimate_Count do
 		local abilityTable = RANDOM_OMG_SETTINGS.Abilities.Abilities[RandomInt(1, #RANDOM_OMG_SETTINGS.Abilities.Abilities)]
@@ -676,7 +675,7 @@ function GameMode:GameModeThink()
 
 		end
 	end
-	
+
 	return GOLD_TICK_TIME
 end
 -- GameRules:Playtesting_UpdateAddOnKeyValues()

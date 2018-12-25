@@ -674,10 +674,12 @@ function pairsByKeys(t, f)
 end
 
 function AbilityHasBehaviorByName(ability_name, behavior)
-	local ability = GLOBAL_DUMMY:AddAbility(ability_name)
-	local value = bit.band( ability:GetBehavior(), behavior) == behavior
-	GLOBAL_DUMMY:RemoveAbility(ability_name)
-	return value
+	local AbilityBehavior = GetKeyValue(ability_name, "AbilityBehavior")
+	if AbilityBehavior then
+		local AbilityBehaviors = string.split(AbilityBehavior, " | ")
+		return table.contains(AbilityBehaviors, behaviorString)
+	end
+	return false
 end
 
 function AbilityHasBehavior(ability, behavior)

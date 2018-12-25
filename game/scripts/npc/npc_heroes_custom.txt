@@ -27,16 +27,7 @@
 	"npc_dota_hero_wisp"
 	{
 		"override_hero"			"npc_dota_hero_wisp"
-		"Ability1"				"wisp_tether"
-		"Ability2"				"wisp_tether_break"
-		"Ability3"				"wisp_spirits"
-		"Ability4"				"wisp_overcharge"
-		"Ability5"				"wisp_empty1"
-		"Ability6"				"wisp_empty2"
-		"Ability7"				"wisp_relocate"
-		"Ability8"				"attribute_bonus_arena"
-		"Ability9"				"wisp_spirits_in"
-		"Ability10"				"wisp_spirits_out"
+		"Ability10"				"attribute_bonus_arena"
 		"Changed"					"1"
 		"AttackRate"			"1.1"
 	}
@@ -86,7 +77,7 @@
 		"Ability1"				"skeleton_king_hellfire_blast"
 		"Ability2"				"skeleton_king_vampiric_aura"
 		"Ability3"				"skeleton_king_mortal_strike"
-		"Ability4"				"skeleton_king_reincarnation_arena"
+		// "Ability4"				"skeleton_king_reincarnation_arena"
 		"Changed"					"1"
 		"AttackRate"			"1.3"
 	}
@@ -101,7 +92,7 @@
 		"Changed"				"1"
 		"AttackRate"			"1.1"
 	}
-	
+
 	"npc_dota_hero_crystal_maiden"
 	{
 		"override_hero"			"npc_dota_hero_crystal_maiden"
@@ -298,20 +289,12 @@
 		"AttributeStrengthGain"		"2.5"
 		"AttributeAgilityGain"		"3.1"
 		"MovementSpeed"				"300"
-		"AttributeIntelligenceGain"	"2.0"		
+		"AttributeIntelligenceGain"	"2.0"
 	}
 
 	"npc_dota_hero_morphling"
 	{
 		"override_hero"	"npc_dota_hero_morphling"
-		"Ability1"	"morphling_waveform"
-		"Ability2"	"morphling_adaptive_strike"
-		"Ability3"	"morphling_morph_agi"
-		"Ability4"	"morphling_morph_str"
-		"Ability5"	"morphling_hybrid"
-		"Ability6"	"morphling_replicate"
-		"Ability7"	"morphling_morph"
-		"Ability8"	"morphling_morph_replicate"
 		"Ability9"	"attribute_bonus_arena"
 		"AttackRate"				"1.3"
 	}
@@ -350,7 +333,7 @@
 		"AttributeStrengthGain"		"2.6"
 		"AttributeAgilityGain"		"3.0"
 		"MovementSpeed"				"305"
-		"AttributeIntelligenceGain"	"2.0"		
+		"AttributeIntelligenceGain"	"2.0"
 	}
 
 	"npc_dota_hero_sand_king"
@@ -385,7 +368,7 @@
 		"AttributeStrengthGain"		"3.2"
 		"AttributeAgilityGain"		"2.1"
 		"MovementSpeed"				"300"
-		"AttributeIntelligenceGain"	"2.0"			
+		"AttributeIntelligenceGain"	"2.0"
 	}
 
 	"npc_dota_hero_tiny"
@@ -400,7 +383,7 @@
 		"AttributeStrengthGain"		"3.1"
 		"AttributeAgilityGain"		"2.1"
 		"MovementSpeed"				"300"
-		"AttributeIntelligenceGain"	"2.0"			
+		"AttributeIntelligenceGain"	"2.0"
 	}
 
 	"npc_dota_hero_vengefulspirit"
@@ -446,7 +429,7 @@
 		"AttributeStrengthGain"		"3.3"
 		"AttributeAgilityGain"		"2.1"
 		"MovementSpeed"				"300"
-		"AttributeIntelligenceGain"	"2.0"			
+		"AttributeIntelligenceGain"	"2.0"
 	}
 
 	"npc_dota_hero_lina"
@@ -462,10 +445,6 @@
 	"npc_dota_hero_lich"
 	{
 		"override_hero"	"npc_dota_hero_lich"
-		"Ability1"	"lich_frost_nova"
-		"Ability2"	"lich_frost_armor"
-		"Ability3"	"lich_dark_ritual"
-		"Ability4"	"lich_chain_frost"
 		"AttackRate"				"1.0"
 	}
 
@@ -1018,7 +997,7 @@
 		"AttributeStrengthGain"		"3.5"
 		"AttributeAgilityGain"		"2.1"
 		"MovementSpeed"				"300"
-		"AttributeIntelligenceGain"	"2.0"			
+		"AttributeIntelligenceGain"	"2.0"
 	}
 
 	"npc_dota_hero_rubick"
@@ -1076,21 +1055,12 @@
 		"AttributeStrengthGain"		"2.5"
 		"AttributeAgilityGain"		"3.1"
 		"MovementSpeed"				"300"
-		"AttributeIntelligenceGain"	"2.0"			
+		"AttributeIntelligenceGain"	"2.0"
 	}
 
 	"npc_dota_hero_keeper_of_the_light"
 	{
 		"override_hero"	"npc_dota_hero_keeper_of_the_light"
-		"Ability1"	"keeper_of_the_light_illuminate"
-		"Ability2"	"keeper_of_the_light_mana_leak"
-		"Ability3"	"keeper_of_the_light_chakra_magic"
-		"Ability4"	"keeper_of_the_light_recall"
-		"Ability5"	"keeper_of_the_light_blinding_light"
-		"Ability6"	"keeper_of_the_light_spirit_form"
-		"Ability7"	"keeper_of_the_light_illuminate_end"
-		"Ability8"	"keeper_of_the_light_spirit_form_illuminate"
-		"Ability9"	"keeper_of_the_light_spirit_form_illuminate_end"
 		"Ability10"	"attribute_bonus_arena"
 		"AttackRate"				"1.2"
 	}
@@ -1247,7 +1217,7 @@
 		"AttributeStrengthGain"		"2.5"
 		"AttributeAgilityGain"		"3.1"
 		"MovementSpeed"				"300"
-		"AttributeIntelligenceGain"	"2.0"			
+		"AttributeIntelligenceGain"	"2.0"
 	}
 
 	"npc_dota_hero_earth_spirit"
@@ -1276,15 +1246,6 @@
 	"npc_dota_hero_phoenix"
 	{
 		"override_hero"	"npc_dota_hero_phoenix"
-		"Ability1"	"phoenix_icarus_dive"
-		"Ability2"	"phoenix_fire_spirits"
-		"Ability3"	"phoenix_sun_ray"
-		"Ability4"	"phoenix_sun_ray_toggle_move_empty"
-		"Ability5"	"phoenix_supernova"
-		"Ability6"	"phoenix_launch_fire_spirit"
-		"Ability7"	"phoenix_icarus_dive_stop"
-		"Ability8"	"phoenix_sun_ray_stop"
-		"Ability9"	"phoenix_sun_ray_toggle_move"
 		"Ability10"	"attribute_bonus_arena"
 		"AttackRate"				"1.2"
 	}
