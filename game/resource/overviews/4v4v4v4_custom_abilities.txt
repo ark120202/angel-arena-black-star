@@ -1,7 +1,0 @@
-4v4v4v4
-{
-	material materials/overviews/4v4v4v4.vmat
-	pos_x -9216
-	pos_y 9216
-	scale 18.000
-}
