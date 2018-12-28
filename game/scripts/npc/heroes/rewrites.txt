@@ -4,14 +4,14 @@
 	{
 		"override_hero"			"npc_dota_hero_tinker"
 		"Ability6"				"tinker_rearm_arena"
-		"AttackRate"			"1.6"
+		"AttackRate"			"1.7"
 	}
 
 	"npc_dota_hero_life_stealer"
 	{
 		"override_hero"			"npc_dota_hero_life_stealer"
 		"Ability2"				"life_stealer_feast_arena"
-		"AttackRate"			"2.6"
+		"AttackRate"			"1.7"
 	}
 
 	"npc_dota_hero_gyrocopter"
