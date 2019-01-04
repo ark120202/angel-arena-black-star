@@ -107,7 +107,17 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepExp, duration, item
 			disruptor_thunder_strike:GetSpecialValueFor("strike_interval")
 	end
 	if hero:HasAbility("monkey_king_wukongs_command") then
-		preDuration = hero:FindAbilityByName("monkey_king_wukongs_command"):GetSpecialValueFor("duration")
+		preDuration = 0.5
+		local originalPosition = hero:GetAbsOrigin()
+		Timers:NextTick(function()
+			hero:SetAbsOrigin(Vector())
+			Timers:NextTick(function()
+				hero:SetAbsOrigin(Vector(10000, 10000, 10000))
+				Timers:NextTick(function()
+					hero:SetAbsOrigin(originalPosition)
+				end)
+			end)
+		end)
 	end
 
 	hero.ChangingHeroProcessRunning = true
