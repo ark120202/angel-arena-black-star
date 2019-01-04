@@ -49,7 +49,7 @@ panorama_shop_itembuilds_new_group: НОВАЯ ГРУППА
 panorama_shop_guide_youtube_open: Открыть в браузере
 panorama_shop_guide_publish: Опубликовать
 panorama_shop_guide_cancel: Отменить
-panorama_shop_stackable_purchase: Купленный назодится на базе, так как в инвентаре героя находится такой же стакающийся предмет
+panorama_shop_stackable_purchase: Купленный находится на базе, так как в инвентаре героя находится такой же стакающийся предмет
 
 error_panorama_shop_publish_guide_title: Название.
 server_error_panorama_shop_youtube_no_tags: Проверьте наличие тега 'Angel Arena Black Star' у этого видео
