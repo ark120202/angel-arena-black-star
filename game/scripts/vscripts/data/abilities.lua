@@ -24,6 +24,12 @@ MULTICAST_ABILITIES = {
 	ogre_magi_ignite = MULTICAST_TYPE_NONE,
 	ogre_magi_unrefined_fireblast = MULTICAST_TYPE_NONE,
 	ogre_magi_multicast_arena = MULTICAST_TYPE_NONE,
+
+	item_manta_arena = MULTICAST_TYPE_NONE,
+	item_diffusal_style = MULTICAST_TYPE_NONE,
+	item_refresher_arena = MULTICAST_TYPE_NONE,
+	item_refresher_core = MULTICAST_TYPE_NONE,
+
 	invoker_quas = MULTICAST_TYPE_NONE,
 	invoker_wex = MULTICAST_TYPE_NONE,
 	invoker_exort = MULTICAST_TYPE_NONE,
@@ -37,6 +43,13 @@ MULTICAST_ABILITIES = {
 	monkey_king_tree_dance = MULTICAST_TYPE_NONE,
 	monkey_king_primal_spring = MULTICAST_TYPE_NONE,
 	monkey_king_primal_spring_early = MULTICAST_TYPE_NONE,
+	wisp_spirits = MULTICAST_TYPE_NONE,
+	wisp_spirits_in = MULTICAST_TYPE_NONE,
+	wisp_spirits_out = MULTICAST_TYPE_NONE,
+	arc_warden_tempest_double = MULTICAST_TYPE_NONE,
+	phoenix_sun_ray = MULTICAST_TYPE_NONE,
+	phoenix_sun_ray_stop = MULTICAST_TYPE_NONE,
+	phoenix_sun_ray_toggle_move = MULTICAST_TYPE_NONE,
 
 	terrorblade_conjure_image = MULTICAST_TYPE_INSTANT,
 	terrorblade_reflection = MULTICAST_TYPE_INSTANT,
