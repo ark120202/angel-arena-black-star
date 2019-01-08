@@ -6542,7 +6542,7 @@
 		"ItemResult"					"item_awakened_cursed_eye"
 		"ItemRequirements"
 		{
-			"01"						"item_gem;item_gem_of_clear_mind;item_gem_of_pure_soul;item_cursed_eye"
+			"01"						"item_gem_arena;item_gem_of_clear_mind;item_gem_of_pure_soul;item_cursed_eye"
 		}
 	}
 
@@ -6688,7 +6688,7 @@
 		"ItemResult"					"item_shard_of_true_sight"
 		"ItemRequirements"
 		{
-			"01"						"item_gem"
+			"01"						"item_gem_arena"
 		}
 	}
 
@@ -8510,6 +8510,76 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"tooltip_range"			"250"
+			}
+		}
+	}
+
+	"item_gem_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_gem"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"900"
+		"Model"							"models/props_gameplay/gem01.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_gem.vpcf"
+		"ItemCost"						"900"
+		"ItemQuality"					"component"
+		"ItemAliases"					"gem of true sight"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemStockMax"					"3"
+		"ItemStockTime"					"180"
+		"ItemSupport"					"1"
+		"ItemContributesToNetWorthWhenDropped"	"0"
+		"AllowedInBackpack"				"0"
+		"IsTempestDoubleClonable"		"0"
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"900"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_gem_arena"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Aura"					"modifier_item_gem_arena_reveal"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_ALL"
+				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"DropItem"
+					}
+				}
+			}
+
+			"modifier_item_gem_arena_reveal"
+			{
+				"IsHidden"			"1"
+				"Duration"			"0.5"
+				"Priority"			"MODIFIER_PRIORITY_HIGH"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_DISABLED"
+				}
 			}
 		}
 	}

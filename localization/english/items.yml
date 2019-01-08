@@ -101,7 +101,7 @@ DOTA_Tooltip_ability_item_gem_of_clear_mind: Gem of Clear Mind
 DOTA_Tooltip_ability_item_gem_of_clear_mind_Description: |-
   <h1>Passive: Clear Mind</h1> Adds the ability to differentiate illusions and real heroes to any allied vision within its carrier's range.
 DOTA_Tooltip_ability_item_gem_of_clear_mind_radius: 'CLEAR MIND RADIUS:'
-DOTA_Tooltip_ability_item_gem_Note0: Disabled while on a courier.
+DOTA_Tooltip_ability_item_gem_of_clear_mind_Note0: Disabled while on a courier.
 
 DOTA_Tooltip_ability_item_gem_of_pure_soul: Gem of Pure Soul
 DOTA_Tooltip_ability_item_gem_of_pure_soul_Description: |-
@@ -1565,3 +1565,20 @@ DOTA_Tooltip_ability_item_flask_arena_Description: >-
 DOTA_Tooltip_ability_item_flask_arena_Lore: A magical salve that can quickly mend even the deepest of wounds.
 DOTA_Tooltip_modifier_item_flask_arena_healing: Healing Salve
 DOTA_Tooltip_modifier_item_flask_arena_healing_Description: Restoring health.
+
+DOTA_Tooltip_Ability_item_gem_arena: Gem of True Sight
+DOTA_Tooltip_ability_item_gem_arena_Description: >-
+  <h1>Passive: True Sight</h1> Grants the ability to see invisible units and wards to any allied
+  vision within %radius% range of its carrier.
+
+  <h1>Passive: Everlasting</h1><font color='#e03e2e'>Dropped on death, and cannot be
+  destroyed.</font>
+DOTA_Tooltip_ability_item_gem_arena_Note0: Disabled while on a courier.
+DOTA_Tooltip_ability_item_gem_arena_Lore: >-
+  Not one thrall creature of the depths,
+
+  Nor spirit bound in drowning's keep,
+
+  Nor Maelrawn the Tentacular,
+
+  Shall rest till seas, gem comes to sleep.

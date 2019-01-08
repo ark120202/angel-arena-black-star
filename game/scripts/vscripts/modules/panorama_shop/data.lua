@@ -71,7 +71,7 @@ PANORAMA_SHOP_ITEMS = {
 			"item_ring_of_tarrasque",
 			"item_ring_of_health",
 			"item_void_stone",
-			"item_gem",
+			"item_gem_arena",
 			"item_lifesteal",
 			"item_shadow_amulet",
 			"item_ghost",
