@@ -522,6 +522,11 @@ function PanoramaShop:BuyItem(playerId, unit, itemName)
 				if not removedItem then removedItem = FindItemInInventoryByName(unit, v, true, true) end
 				unit:RemoveItem(removedItem)
 			end
+			for _,v in ipairs(ItemsToBuy) do
+				if PanoramaShop.StocksTable[team][v] then
+					PanoramaShop:DecreaseItemStock(team, v)
+				end
+			end
 			PanoramaShop:PushItem(playerId, unit, itemName)
 			if PanoramaShop.StocksTable[team][itemName] then
 				PanoramaShop:DecreaseItemStock(team, itemName)
