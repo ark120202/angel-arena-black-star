@@ -381,7 +381,7 @@
 					<Panel class="MinimapSpawnBoxes only_map_landscape_1v1" />
 				</Panel>
 				<!--  ExternalBrowserGoToURL  BrowserGoToURL = DOTADisplayURL -->
-				<Image id="AdsBanner" onactivate="OnAdsClicked()" src="file://{images}/custom_game/hero_selection/ads.png">
+				<Image id="AdsBanner" onactivate="OnAdsClicked()">
 					<!-- <Label text="+25" /> -->
 				</Image>
 				<Panel id="SelectionChatBox">

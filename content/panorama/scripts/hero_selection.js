@@ -276,7 +276,7 @@ function OnMinimapClickSpawnBox(team, level, index) {
 function OnAdsClicked() {
 	var context = $.GetContextPanel();
 	$.Schedule(context.BHasClass('AdsClicked') ? 0 : .35, function() {
-		$.DispatchEvent('ExternalBrowserGoToURL', 'https://sgm-luck.ru/?utm_source=dota2&utm_medium=baner&utm_campaign=Angel_Arena_Black_Star');
+		$.DispatchEvent('ExternalBrowserGoToURL', 'https://www.donationalerts.com/r/murzik');
 	});
 	if (!context.BHasClass('AdsClicked')){
 		context.AddClass('AdsClicked');
@@ -342,6 +342,8 @@ function ShowHeroPreviewTab(tabID) {
 
 (function() {
 	$.GetContextPanel().RemoveClass('LocalPlayerPicked');
+	var isRussian = $.Language() === 'russian' || $.Language() === 'ukrainian';
+	$('#AdsBanner').SetHasClass('Russian', isRussian);
 	$('#HeroListPanel').RemoveAndDeleteChildren();
 	var localPlayerId = Game.GetLocalPlayerID();
 	if (Players.IsValidPlayerID(localPlayerId) && !Players.IsSpectator(localPlayerId)) {
