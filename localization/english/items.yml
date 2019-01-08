@@ -1247,8 +1247,8 @@ DOTA_Tooltip_ability_item_wand_of_midas_radius: 'RADIUS:'
 
 DOTA_Tooltip_ability_item_mekansm_arena: Mekansm
 DOTA_Tooltip_ability_item_mekansm_arena_Description: |-
-  <h1>Active: Restore</h1> Heals %heal_amount% health and gives +%aura_bonus_armor% armor to allied units in a %radius% radius.
-  <h1>Passive: Mekansm Aura</h1> Grants %aura_health_regen% health regeneration to allied units in a %radius% radius.
+  <h1>Active: Restore</h1> Heals %heal_amount% health to allied units in a %radius% radius.
+  <h1>Passive: Mekansm Aura</h1> Grants %aura_health_regen% health regeneration and +%aura_bonus_armor% armor to allied units in a %radius% radius.
 
   Multiple instances of Mekansm Aura do not stack.
 DOTA_Tooltip_ability_item_mekansm_arena_bonus_all_stats: +$all
@@ -1264,8 +1264,8 @@ DOTA_Tooltip_modifier_item_mekansm_arena_effect_Description: Regenerating %dMODI
 
 DOTA_Tooltip_ability_item_mekansm_2: Mekansm II
 DOTA_Tooltip_ability_item_mekansm_2_Description: |-
-  <h1>Active: Restore</h1> Heals %heal_amount% health and gives +%aura_bonus_armor% armor to allied units in a %radius% radius.
-  <h1>Passive: Mekansm Aura</h1> Grants %aura_health_regen% health regeneration to allied units in a %radius% radius.
+  <h1>Active: Restore</h1> Heals %heal_amount% health to allied units in a %radius% radius.
+  <h1>Passive: Mekansm Aura</h1> Grants %aura_health_regen% health regeneration and +%aura_bonus_armor% armor to allied units in a %radius% radius.
 
   Multiple instances of Mekansm Aura do not stack.
 DOTA_Tooltip_ability_item_mekansm_2_bonus_all_stats: +$all
@@ -1440,8 +1440,8 @@ DOTA_Tooltip_modifier_item_bloodthorn_arena_silence_Description: |-
 
 DOTA_Tooltip_ability_item_runic_mekansm: Runic Mekansm
 DOTA_Tooltip_ability_item_runic_mekansm_Description: |-
-  <h1>Active: Restore</h1> Heals %heal_amount% health and gives +%aura_bonus_armor% armor to allied units in a %radius% radius. Runes can be stored in the Runic Mekansm for later use. If Runic Mekansm contains a rune, it's effect will be shared with these allied units and it will have %rune_multiplier%x effect of normal rune.
-  <h1>Passive: Mekansm Aura</h1> Grants %aura_health_regen% health regeneration to allied units in a %radius% radius.
+  <h1>Active: Restore</h1> Heals %heal_amount% health to allied units in a %radius% radius. Runes can be stored in the Runic Mekansm for later use. If Runic Mekansm contains a rune, it's effect will be shared with these allied units and it will have %rune_multiplier%x effect of normal rune.
+  <h1>Passive: Mekansm Aura</h1> Grants %aura_health_regen% health regeneration and +%aura_bonus_armor% armor to allied units in a %radius% radius.
 DOTA_Tooltip_ability_item_runic_mekansm_Note0: Multiple instances of Mekansm Aura do not stack.
 DOTA_Tooltip_ability_item_runic_mekansm_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_runic_mekansm_bonus_armor: +$armor
