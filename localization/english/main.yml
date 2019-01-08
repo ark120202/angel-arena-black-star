@@ -29,6 +29,7 @@ arena_hud_error_cant_change_hero: Changing hero is not possible now
 arena_hud_error_cant_cast_on_fountain: Ability can't be used nearby the fountain
 arena_hud_error_cant_replicate_hero: Ability Can't Replicate That Hero
 arena_hud_error_courier_cant_order_item: Only item's owner can manipulate it in courier
+arena_hud_error_sentry_ward_limit: Sentry Ward limit is reached
 
 DOTA_Tooltip_modifier_neutral_champion: Champion
 DOTA_Tooltip_modifier_neutral_champion_Description: 'This neutral is a champion, so it''s %dMODIFIER_PROPERTY_TOOLTIP% times more powerful than normal creep and gives you more bounty on death'

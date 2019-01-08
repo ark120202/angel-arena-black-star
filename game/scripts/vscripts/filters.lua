@@ -57,6 +57,22 @@ function GameMode:ExecuteOrderFilter(filterTable)
 	if not ability then return true end
 
 	if order_type == DOTA_UNIT_ORDER_CAST_POSITION then
+		if (
+			abilityname == "item_ward_sentry" or
+			(abilityname == "item_ward_dispenser" and not ability:GetToggleState())
+		) then
+			local team = PlayerResource:GetTeam(playerId)
+			local wards = {}
+			for _, ward in ipairs(Entities:FindAllByClassname("npc_dota_ward_base_truesight")) do
+				if ward:GetUnitName() == "npc_dota_sentry_wards" and ward:GetTeamNumber() == team then
+					table.insert(wards, ward)
+				end
+			end
+			if #wards > 20 then
+				Containers:DisplayError(playerId, "arena_hud_error_sentry_ward_limit")
+				return false
+			end
+		end
 		if not Duel:IsDuelOngoing() and ARENA_NOT_CASTABLE_ABILITIES[abilityname] then
 			local orderVector = Vector(filterTable.position_x, filterTable.position_y, 0)
 			if type(ARENA_NOT_CASTABLE_ABILITIES[abilityname]) == "number" then
