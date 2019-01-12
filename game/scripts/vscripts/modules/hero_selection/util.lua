@@ -78,6 +78,123 @@ function HeroSelection:ExtractHeroStats(heroTable)
 	return attributes
 end
 
+local TransformUnitClass_switchFallThroughLabel = {
+	Level = function(unit, value)
+		unit:SetLevel(value)
+	end,
+	Model = function(unit, value)
+		unit.ModelOverride = value
+		unit:SetModel(value)
+		unit:SetOriginalModel(value)
+	end,
+	ModelScale = function(unit, value)
+		unit:SetModelScale(value)
+	end,
+	ArmorPhysical = function(unit, value)
+		unit:SetPhysicalArmorBaseValue(value)
+	end,
+	MagicalResistance = function(unit, value)
+		unit:SetBaseMagicalResistanceValue(value)
+	end,
+	AttackCapabilities = function(unit, value)
+		unit:SetAttackCapability(_G[value])
+	end,
+	AttackDamageMin = function(unit, value)
+		unit:SetBaseDamageMin(value)
+	end,
+	AttackDamageMax = function(unit, value)
+		unit:SetBaseDamageMax(value)
+	end,
+	AttackRate = function(unit, value)
+		unit:SetBaseAttackTime(value)
+		unit:SetNetworkableEntityInfo("AttackRate", value)
+	end,
+	AttackAcquisitionRange = function(unit, value)
+		unit:SetAcquisitionRange(value)
+	end,
+	ProjectileModel = function(unit, value)
+		unit:SetRangedProjectileName(value)
+	end,
+	AttributePrimary = function(unit, value)
+		Timers:NextTick(function()
+			unit:SetPrimaryAttribute(_G[value])
+			unit:CalculateStatBonus()
+
+			local illusionParent = unit:GetIllusionParent()
+			if IsValidEntity(illusionParent) then
+				unit:SetHealth(illusionParent:GetHealth())
+				unit:SetMana(illusionParent:GetMana())
+			end
+		end)
+	end,
+	AttributeBaseStrength = function(unit, value)
+		unit:SetBaseStrength(value)
+	end,
+	AttributeStrengthGain = function(unit, value)
+		unit.CustomGain_Strength = value
+		unit:SetNetworkableEntityInfo("AttributeStrengthGain", value)
+	end,
+	AttributeBaseIntelligence = function(unit, value)
+		unit:SetBaseIntellect(value)
+	end,
+	AttributeIntelligenceGain = function(unit, value)
+		unit.CustomGain_Intelligence = value
+		unit:SetNetworkableEntityInfo("AttributeIntelligenceGain", value)
+	end,
+	AttributeBaseAgility = function(unit, value)
+		unit:SetBaseAgility(value)
+	end,
+	AttributeAgilityGain = function(unit, value)
+		unit.CustomGain_Agility = value
+		unit:SetNetworkableEntityInfo("AttributeAgilityGain", value)
+	end,
+	BountyXP = function(unit, value)
+		unit:SetDeathXP(value)
+	end,
+	BountyGoldMin = function(unit, value)
+		unit:SetMinimumGoldBounty(value)
+	end,
+	BountyGoldMax = function(unit, value)
+		unit:SetMaximumGoldBounty(value)
+	end,
+	RingRadius = function(unit, value)
+		unit:SetHullRadius(value)
+	end,
+	MovementCapabilities = function(unit, value)
+		unit:SetMoveCapability(value)
+	end,
+	MovementSpeed = function(unit, value)
+		unit:SetBaseMoveSpeed(value)
+	end,
+	StatusHealth = function(unit, value)
+		unit:SetBaseMaxHealth(value)
+	end,
+	StatusHealthRegen = function(unit, value)
+		unit:SetBaseHealthRegen(value)
+	end,
+	StatusMana = function(unit, value)
+		--TODO
+		--unit:(value)
+		
+	end,
+	StatusManaRegen = function(unit, value)
+		unit:SetBaseManaRegen(value)
+	end,
+	VisionDaytimeRange = function(unit, value)
+		unit:SetDayTimeVisionRange(value)
+	end,
+	VisionNighttimeRange = function(unit, value)
+		unit:SetNightTimeVisionRange(value)
+	end,
+	HasInventory = function(unit, value)
+		--TODO Check
+		unit:SetHasInventory(toboolean(value))
+	end,
+	AttackRange = function(unit, value)
+		unit:AddNewModifier(unit, nil, "modifier_set_attack_range", {AttackRange = value})
+	end,
+}
+
 function TransformUnitClass(unit, classTable, skipAbilityRemap)
 	if not skipAbilityRemap then
 		for i = 0, unit:GetAbilityCount() - 1 do
@@ -96,88 +213,8 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 	end
 
 	for key, value in pairs(classTable) do
-		if key == "Level" then
-			unit:SetLevel(value)
-		elseif key == "Model" then
-			unit.ModelOverride = value
-			unit:SetModel(value)
-			unit:SetOriginalModel(value)
-		elseif key == "ModelScale" then
-			unit:SetModelScale(value)
-		elseif key == "ArmorPhysical" then
-			unit:SetPhysicalArmorBaseValue(value)
-		elseif key == "MagicalResistance" then
-			unit:SetBaseMagicalResistanceValue(value)
-		elseif key == "AttackCapabilities" then
-			unit:SetAttackCapability(_G[value])
-		elseif key == "AttackDamageMin" then
-			unit:SetBaseDamageMin(value)
-		elseif key == "AttackDamageMax" then
-			unit:SetBaseDamageMax(value)
-		elseif key == "AttackRate" then
-			unit:SetBaseAttackTime(value)
-			unit:SetNetworkableEntityInfo("AttackRate", value)
-		elseif key == "AttackAcquisitionRange" then
-			unit:SetAcquisitionRange(value)
-		elseif key == "ProjectileModel" then
-			unit:SetRangedProjectileName(value)
-		elseif key == "AttributePrimary" then
-			Timers:NextTick(function()
-				unit:SetPrimaryAttribute(_G[value])
-				unit:CalculateStatBonus()
-
-				local illusionParent = unit:GetIllusionParent()
-				if IsValidEntity(illusionParent) then
-					unit:SetHealth(illusionParent:GetHealth())
-					unit:SetMana(illusionParent:GetMana())
-				end
-			end)
-		elseif key == "AttributeBaseStrength" then
-			unit:SetBaseStrength(value)
-		elseif key == "AttributeStrengthGain" then
-			unit.CustomGain_Strength = value
-			unit:SetNetworkableEntityInfo("AttributeStrengthGain", value)
-		elseif key == "AttributeBaseIntelligence" then
-			unit:SetBaseIntellect(value)
-		elseif key == "AttributeIntelligenceGain" then
-			unit.CustomGain_Intelligence = value
-			unit:SetNetworkableEntityInfo("AttributeIntelligenceGain", value)
-		elseif key == "AttributeBaseAgility" then
-			unit:SetBaseAgility(value)
-		elseif key == "AttributeAgilityGain" then
-			unit.CustomGain_Agility = value
-			unit:SetNetworkableEntityInfo("AttributeAgilityGain", value)
-		elseif key == "BountyXP" then
-			unit:SetDeathXP(value)
-		elseif key == "BountyGoldMin" then
-			unit:SetMinimumGoldBounty(value)
-		elseif key == "BountyGoldMax" then
-			unit:SetMaximumGoldBounty(value)
-		elseif key == "RingRadius" then
-			unit:SetHullRadius(value)
-		elseif key == "MovementCapabilities" then
-			unit:SetMoveCapability(value)
-		elseif key == "MovementSpeed" then
-			unit:SetBaseMoveSpeed(value)
-		elseif key == "StatusHealth" then
-			unit:SetBaseMaxHealth(value)
-		elseif key == "StatusHealthRegen" then
-			unit:SetBaseHealthRegen(value)
-		elseif key == "StatusMana" then
-			--TODO
-			--unit:(value)
-		elseif key == "StatusManaRegen" then
-			unit:SetBaseManaRegen(value)
-		elseif key == "VisionDaytimeRange" then
-			unit:SetDayTimeVisionRange(value)
-		elseif key == "VisionNighttimeRange" then
-			unit:SetNightTimeVisionRange(value)
-		elseif key == "HasInventory" then
-			--TODO Check
-			unit:SetHasInventory(toboolean(value))
-		elseif key == "AttackRange" then
-			unit:AddNewModifier(unit, nil, "modifier_set_attack_range", {AttackRange = value})
-		end
+		local func = TransformUnitClass_switchFallThroughLabel[key]
+		if func then func(unit, value) end
 	end
 end
 
