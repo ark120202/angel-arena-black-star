@@ -26,7 +26,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mechanism;mekansm"
-		"AbilityCooldown"				"50 40"
+		"AbilityCooldown"				"70 60"
 		"AbilityCastRange"				"1000"
 		"AbilityManaCost"				"225 325"
 
@@ -43,7 +43,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"6 12"
+				"bonus_armor"			"6 7"
 			}
 			"03"
 			{
@@ -63,17 +63,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_health_regen"		"6 12"
+				"aura_health_regen"		"6 8"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"4 12"
+				"aura_bonus_armor"		"4 5"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"400 1500"
+				"heal_amount"			"400 500"
 			}
 		}
 	}
@@ -104,7 +104,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mechanism;mekansm"
-		"AbilityCooldown"				"50 40"
+		"AbilityCooldown"				"70 60"
 		"AbilityCastRange"				"1000"
 		"AbilityManaCost"				"225 325"
 
@@ -121,7 +121,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"6 12"
+				"bonus_armor"			"6 7"
 			}
 			"03"
 			{
@@ -141,17 +141,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_health_regen"		"6 12"
+				"aura_health_regen"		"6 8"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"4 12"
+				"aura_bonus_armor"		"4 5"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"400 1500"
+				"heal_amount"			"400 500"
 			}
 		}
 	}
@@ -183,7 +183,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"mechanism;mekansm;guardian greaves"
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"55"
 		"AbilityCastRange"				"1000"
 		"AbilityManaCost"				"300"
 
@@ -212,7 +212,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"20"
+				"bonus_armor"			"10"
 			}
 			"06"
 			{
@@ -227,7 +227,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_armor"			"20"
+				"aura_armor"			"10"
 			}
 			"09"
 			{
@@ -283,7 +283,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemAlertable"					"1"
 		"ItemAliases"					"runic mechanism;runic mekansm"
-		"AbilityCooldown"				"40"
+		"AbilityCooldown"				"60"
 		"AbilityCastRange"				"1000"
 		"AbilityManaCost"				"325"
 
@@ -297,7 +297,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"15"
+				"bonus_armor"			"8"
 			}
 			"03"
 			{
@@ -317,22 +317,22 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_health_regen"		"16"
+				"aura_health_regen"		"8"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"16"
+				"aura_bonus_armor"		"9"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"1500"
+				"heal_amount"			"500"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"rune_multiplier"		"0.5"
+				"rune_multiplier"		"0.2"
 			}
 		}
 	}

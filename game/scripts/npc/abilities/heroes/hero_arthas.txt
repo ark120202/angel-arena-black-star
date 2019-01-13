@@ -1,0 +1,409 @@
+"DOTAAbilities"
+{
+	"arthas_rage_of_arthas"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"				"7"
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"arena/arthas_rage_of_arthas"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"model"		"models/heroes/necrolyte/necrolyte_skull.vmdl"
+			"particle"	"particles/arena/units/heroes/hero_skeletonking/alternative_rage_of_arthas.vpcf"
+			"particle"	"particles/arena/units/heroes/hero_skeletonking/alternative_rage_of_arthas_explosion.vpcf"
+			"particle"	"particles/arena/units/heroes/hero_skeletonking/alternative_rage_of_arthas_warmup.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.35 0.35 0.35 0.35 0.35 0.30 0.25"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"9 8.5 8 7.5 7 6.5 6"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"75 125 175 225 275 325 375"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"		"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"900"
+			}
+			"99"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_from_current_health_pct"	"5"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Arena.Hero_Arthas.RageOfArthas"
+				"Target"		"CASTER"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"        "particles/arena/units/heroes/hero_skeletonking/alternative_rage_of_arthas_warmup.vpcf"
+				"EffectAttachType"  "start_at_customorigin"
+				"Target"		"CASTER"
+
+				"ControlPointEntities"
+				{
+					"CASTER"	"attach_attack2"
+				}
+			}
+
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Radius"	"%area_of_effect"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				}
+
+				"Action"
+				{
+					"TrackingProjectile"
+					{
+						"Target"           "TARGET"
+						"EffectName"       "particles/arena/units/heroes/hero_skeletonking/alternative_rage_of_arthas.vpcf"
+						"Dodgeable"        "1"
+						"ProvidesVision"   "0"
+						"MoveSpeed"        "%projectile_speed"
+						"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_2"
+					}
+				}
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"			"1"
+
+			"FireSound"
+			{
+				"EffectName"	"Hero_SkeletonKing.Hellfire_BlastImpact"
+				"Target"		"CASTER"
+			}
+
+			"Damage"
+			{
+				"Target"	"TARGET"
+				"Type"		"DAMAGE_TYPE_MAGICAL"
+				"Damage"	"%AbilityDamage"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_arthas_rage_of_arthas_stun"
+				"Target" 		"TARGET"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"		"particles/arena/units/heroes/hero_skeletonking/alternative_rage_of_arthas_explosion.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"TARGET"
+
+				"ControlPointEntities"
+				{
+					"TARGET"		"attach_hitloc"
+					"TARGET"		"attach_hitloc"
+					"TARGET"		"attach_hitloc"
+					"TARGET"		"attach_hitloc"
+				}
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_arthas_rage_of_arthas_stun"
+			{
+				"IsDebuff"			"1"
+				"IsStunDebuff"		"1"
+				"Duration"			"%stun_duration"
+
+				"OverrideAnimation"	"ACT_DOTA_DISABLED"
+				"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"	"follow_overhead"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"arthas_plus_morality"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"				"7"
+
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"arena/arthas_plus_morality"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attackspeed"	"5 10 15 20 25 30 35"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_movespeed"	"5 10 15 20 25 30 35"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bounty_multiplier"	"2.5"
+			}
+		}
+
+		"Modifiers"
+		{
+			"arthas_plus_morality"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				"OnHeroKilled"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_arthas/alternative_plus_morality.lua"
+						"Function"		"OnHeroKill"
+						"modifier"		"modifier_arthas_plus_morality_buff"
+					}
+				}
+			}
+			"modifier_arthas_plus_morality_buff"
+			{
+				"IsBuff"	"1"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"			"%bonus_attackspeed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%bonus_movespeed"
+				}
+			}
+		}
+	}
+
+	"arthas_vikared"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"				"7"
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK "
+		"AbilityTextureName"			"arena/arthas_vikared"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.05"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"3"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"health_regen_percent"		"3 4 5 6 7 8 9"
+			}
+		}
+
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		//"precache"
+		//{
+		//	"particle"					"particles/econ/items/ursa/ursa_fierce_heart/ursa_fierce_heart_warp_r.vpcf"
+		//}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_arthas_vikared"
+				"Target"		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_arthas_vikared"
+			{
+				"Duration"		"%duration"
+
+				//"EffectName"		"particles/econ/items/ursa/ursa_fierce_heart/ursa_fierce_heart_warp_r.vpcf"
+				//"EffectAttachType"	"attach_origin"
+
+				"OnCreated"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_arthas_vsolyanova_active"
+						"Target" 		"TARGET"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"kv.lua"
+						"Function"			"HideCaster"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"kv.lua"
+						"Function"			"ShowCaster"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" "%health_regen_percent"
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"arthas_vsolyanova"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"				"7"
+		"BaseClass"				"ability_datadriven"
+		"AbilityTextureName"			"arena/arthas_vsolyanova"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"70 100 160 220 280 300 350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"nia_chance"			"1"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"nia_chance_illusions"	"0.1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"roar_duration"			"1.0 1.5 2.0 2.5 3.0 3.5 4.0"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+			"particle"  "particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis.vpcf"
+			"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_transform.vpcf"
+			"particle"	"particles/units/heroes/hero_terrorblade/terrorblade_metamorphosis_ambient.vpcf"
+			"particle"  "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+			"particle"	"particles/arena/units/heroes/hero_skeletonking/alternative_vsolyanova_screen.vpcf"
+			"model"		"models/heroes/terrorblade/demon.vmdl"
+		}
+
+		"Modifiers"
+		{
+			"modifier_arthas_vsolyanova"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"ThinkInterval"  ".2"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_arthas/vsolyanova.lua"
+						"Function"		"CheckEnemies"
+					}
+				}
+			}
+		}
+	}
+}

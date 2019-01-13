@@ -19,6 +19,7 @@ duel_over_winner_p1: "The duel is over.\_"
 duel_over_winner_p2: "\_is the winner. All it's heroes received\_"
 duel_no_heroes: In one or more teams not enough heroes for duel
 containers_shop_duel_name: Duel Shop
+arthas_vsolyanova_notifiaction: NAAAAAAAAAAAAAAAA ✓✓✓✓
 
 hero_selection_select_hero: Select Hero
 hero_selection_button_select_hero: SELECT
@@ -82,10 +83,10 @@ boss_loot_vote_inactive: Untaken items
 boss_loot_vote_hero_duel_delayed: Hero change is scheduled after duel
 boss_loot_vote_hero: 'Change hero to '
 
-option_yes: 'Yes'
-option_no: 'No'
-
 option_voting_kill_limit: 'Kill Limit:'
+option_voting_disable_pauses: 'Disable Pauses:'
+option_voting_disable_pauses_yes: Yes
+option_voting_disable_pauses_no: No
 option_voting_custom_abilities: 'Custom Abilities Mode:'
 option_voting_custom_abilities_random_omg: Random OMG
 option_voting_custom_abilities_ability_shop: Ability Shop
@@ -101,12 +102,6 @@ abaddoned_panel_title: Game was abandoned
 abaddoned_panel_reason: Your hero was removed because you was disconnected for a long time
 abaddoned_panel_redistribution: All your items were sold and gold was redistributed among your allies
 abaddoned_panel_ranked: Your rating will be reduced highly
-
-banned_panel_title: You are banned
-banned_panel_reason: You are banned from playing Angel Arena Black Star as a result of excessive negative behavior
-banned_panel_description: Your hero is removed and your gold is redistributed among your allies. You are not allowed to use chat.
-banned_panel_ranked: Your rating won't be considered in the game result.
-banned_panel_unban: If you think it's a mistake, contact to
 
 ranked_top_players: Best Players
 ranked_top_more: Open Top 100...
@@ -125,3 +120,7 @@ arena_setup_party_warning: |-
   Select unranked maps if you want to be in the same team.
 arena_setup_loading: Authorizing the match...
 arena_setup_safe_to_leave: This game is now safe to leave.
+
+arena_hud_tooltip_details_strength: = {d:strength_hp} HP and {s:strength_hp_regen}% HP Regen
+arena_hud_tooltip_details_agility: = {d:agility_attack_speed} Attack Speed, {s:agility_movement_speed}% Movement Speed and {s:agility_critical_damage}% Crit. Dmg. (15% chance)
+arena_hud_tooltip_details_intelligence: = {d:intelligence_mana} Mana, {s:intelligence_mana_regen} Mana Regen, {s:intelligence_spell_amp}% Spell Amp and {s:agility_armor} Armor

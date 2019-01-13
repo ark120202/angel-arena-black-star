@@ -46,7 +46,7 @@ if IsServer() then
 
 		self:CreateFountainPFX()
 
-		if Bosses:IsAlive("cursed_zeld") then
+		if Bosses:IsAlive("cursed_zeld") or parent:IsCustomWard() then
 			parent:TrueKill()
 		else
 			ApplyDamage({

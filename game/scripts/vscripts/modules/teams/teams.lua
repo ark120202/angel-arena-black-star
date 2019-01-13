@@ -118,6 +118,16 @@ function Teams:PostInitialize()
 	end
 end
 
+function Teams:GetAllEnabledTeams()
+	local teams = {}
+	for team, data in pairsByKeys(Teams.Data) do
+		if data.enabled then
+			table.insert(teams, team)
+		end
+	end
+	return teams
+end
+
 function Teams:GetScore(team)
 	return Teams.Data[team].score or 0
 end

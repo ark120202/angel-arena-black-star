@@ -47,6 +47,7 @@ function OnAttackLanded(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
+	if caster:IsIllusion() then return end
 	if not target:IsMagicImmune() and not target:IsInvulnerable() then
 		local manaburn = keys.feedback_mana_burn
 		local manadrain = manaburn * keys.feedback_mana_drain_pct * 0.01
@@ -63,7 +64,7 @@ function OnAttackLanded(keys)
 		ParticleManager:CreateParticle("particles/arena/generic_gameplay/generic_manasteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	end
 
-	if RollPercentage(ability:GetLevelSpecialValueFor("purge_chance_pct", ability:GetLevel() - 1)) then
+	if not caster:HasModifier(keys.modifier_cooldown) then
 		ParticleManager:CreateParticle("particles/generic_gameplay/generic_purge.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 		caster:EmitSound("DOTA_Item.DiffusalBlade.Activate")
 		if target:IsSummoned() then
@@ -80,5 +81,6 @@ function OnAttackLanded(keys)
 				ability:ApplyDataDrivenModifier(caster, target, keys.modifier_slow, {})
 			end
 		end
+		ability:ApplyDataDrivenModifier(caster, caster, keys.modifier_cooldown, {})
 	end
 end

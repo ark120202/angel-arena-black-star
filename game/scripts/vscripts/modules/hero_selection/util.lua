@@ -69,9 +69,12 @@ function HeroSelection:ExtractHeroStats(heroTable)
 	}
 	attributes.damage_min = attributes.damage_min + attributes["attribute_base_" .. attributes.attribute_primary]
 	attributes.damage_max = attributes.damage_max + attributes["attribute_base_" .. attributes.attribute_primary]
-	--TODO: Get hero's unique growth
-	local armorForFirstLevel = Attributes:GetTotalPropValue(attributes["attribute_base_1"], "armor")
-	attributes.armor = attributes.armor + math.round(armorForFirstLevel)
+
+	local armorForFirstLevel = CalculateBaseArmor({
+		value = heroTable.AttributeBaseIntelligence,
+		isPrimary = heroTable.AttributePrimary == "DOTA_ATTRIBUTE_INTELLECT",
+	})
+	attributes.armor = attributes.armor + armorForFirstLevel
 	return attributes
 end
 
@@ -119,7 +122,7 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 		elseif key == "ProjectileModel" then
 			unit:SetRangedProjectileName(value)
 		elseif key == "AttributePrimary" then
-			Timers:CreateTimer(2/30, function()
+			Timers:NextTick(function()
 				unit:SetPrimaryAttribute(_G[value])
 				unit:CalculateStatBonus()
 

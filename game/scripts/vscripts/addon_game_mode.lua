@@ -76,6 +76,7 @@ function Precache(context)
 		"particles/neutral_fx/prowler_shaman_stomp_debuff_glow.vpcf",
 		"particles/items_fx/blademail.vpcf",
 		-- Weather
+		"particles/econ/items/antimage/antimage_weapon_basher_ti5_gold/am_basher_manaburn_impact_lightning_gold.vpcf",
 		"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf",
 		"particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf",
 	}
@@ -151,7 +152,7 @@ function Precache(context)
 	end
 
 	for _,v in pairs(WEATHER_EFFECTS) do
-		table.concat(particles, v.particles or {})
+		table.add(particles, v.particles or {})
 	end
 
 	for _,v in ipairs(particles) do

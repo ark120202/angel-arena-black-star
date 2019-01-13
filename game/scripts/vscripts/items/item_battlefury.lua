@@ -62,14 +62,14 @@ end
 if IsServer() then
 	function modifier_item_battlefury_arena:OnAttackLanded(keys)
 		local attacker = keys.attacker
-		if attacker == self:GetParent() --[[and not attacker:IsMuted()]] then
+		if attacker == self:GetParent() and not attacker:IsIllusion() then
 			local ability = self:GetAbility()
 			local target = keys.target
 			if target:IsRealCreep() then
 				ApplyDamage({
 					attacker = attacker,
 					victim = target,
-					damage = keys.damage * (ability:GetSpecialValueFor("quelling_bonus_damage_pct") * 0.01 - 1),
+					damage = keys.damage * ability:GetSpecialValueFor("quelling_bonus_damage_pct") * 0.01,
 					damage_type = DAMAGE_TYPE_PURE,
 					damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 					ability = ability

@@ -127,6 +127,12 @@ function Options:LoadDefaultValues()
 			Options:SetValue("KillLimit", math.round(value))
 		end
 	})
+	Options:SetPreGameVoting("disable_pauses", {"yes", "no"}, "no", {
+		calculationFunction = ">",
+		callback = function(value)
+			Options:SetValue("EnablePauses", value == "no")
+		end
+	})
 end
 
 function Options:LoadMapValues()
@@ -160,14 +166,12 @@ function Options:LoadMapValues()
 
 			StatsClient:AssignTeams(function(response)
 				for i = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-					local player = PlayerResource:GetPlayer(i)
-					if player then player:SetTeam(DOTA_TEAM_NOTEAM) end
+					PlayerResource:SetCustomTeamAssignment(i, DOTA_TEAM_NOTEAM)
 				end
 
 				for team, players in ipairs(response) do
 					for _, player in ipairs(players) do
-						local player = PlayerResource:GetPlayer(player)
-						if player then player:SetTeam(team + 1) end
+						PlayerResource:SetCustomTeamAssignment(player, team + 1)
 					end
 				end
 
@@ -177,11 +181,13 @@ function Options:LoadMapValues()
 	elseif gamemode == "" then
 		Options:SetValue("BanningPhaseBannedPercentage", 40)
 	end
-	if landscape == "4v4v4v4" then
+	if landscape == "war3" then
+		MAP_LENGTH = 16384
+		MAP_BORDER = 128
+	elseif landscape == "4v4v4v4" then
 		MAP_LENGTH = 9216
 		Options:SetValue("CustomTeamColors", true)
-	end
-	if landscape == "1v1" then
+	elseif landscape == "1v1" then
 		MAP_LENGTH = 3840
 		Options:SetValue("DynamicKillWeight", false)
 		Options:SetPreGameVoting("kill_limit", {10, 15, 20, 25, 30, 35}, 25)

@@ -14,27 +14,27 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"pure_damage_pct"	"33"
+				"pure_damage_pct"	"10"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"magic_damage_pct"	"33"
+				"magic_damage_pct"	"10"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"physical_damage_pct"	"33"
+				"physical_damage_pct"	"80"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"critical_damage_pct"	"233"
+				"critical_damage_pct"	"200"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"critical_chance_pct"	"33"
+				"critical_chance_pct"	"25"
 			}
 		}
 	}
@@ -150,7 +150,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityTextureName"			"arena/anakim_divine_gift"
 		"MaxLevel"	"7"
-		
+
 		"precache"
 		{
 			"model"     "models/untis/anakim_pet/anakim_pet.vmdl"
@@ -236,7 +236,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"knight_damage"				"200 400 600 800 1200 1400 1600"
+				"knight_damage"				"50 100 200 400 600 800 1000"
 			}
 			"05"
 			{

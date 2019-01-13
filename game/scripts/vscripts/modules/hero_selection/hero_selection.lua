@@ -73,8 +73,10 @@ function HeroSelection:PrepareTables()
 	for name, baseData in pairs(NPC_HEROES_CUSTOM) do
 		if baseData.Enabled ~= 0 then
 			local heroTable = GetHeroTableByName(name)
-			local tabIndex = heroTable.base_hero and 2 or 1
+			local baseHero = heroTable.base_hero
+			local tabIndex = baseHero and 2 or 1
 			local heroData = {
+				model = baseHero ~= "npc_dota_hero_arena_base" and baseHero or name,
 				useCustomScene = heroTable.UseCustomScene == 1,
 				attributes = HeroSelection:ExtractHeroStats(heroTable),
 				tabIndex = tabIndex
@@ -231,9 +233,6 @@ function HeroSelection:StartStateInGame(toPrecache)
 
 	for i = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
 		if PLAYER_DATA[i].adsClicked then
-			Gold:ModifyGold(i, ADS_CLICKED_BONUS_GOLD)
-		end
-		if PLAYER_DATA[i].adsClickedLoading then
 			Gold:ModifyGold(i, ADS_CLICKED_BONUS_GOLD)
 		end
 	end

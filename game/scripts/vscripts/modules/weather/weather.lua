@@ -14,12 +14,6 @@ Weather = Weather or class({
 	endTime = -1
 })
 
-for _,v in pairs(WEATHER_EFFECTS) do
-	if v.dummyModifier then
-		ModuleLinkLuaModifier(..., v.dummyModifier, "modifiers/" .. v.dummyModifier)
-	end
-end
-
 function Weather:Init()
 	Weather:Start(Weather:SelectRandomRecipient())
 	Timers:CreateTimer(1/30, Dynamic_Wrap(Weather, "Think"))
@@ -88,13 +82,13 @@ function Weather:Think()
 		weatherInfo.Think()
 	end
 	if weatherInfo.simulatesNight then
-		GameRules:BeginTemporaryNight(2/30)
+		GameRules:BeginTemporaryNight(0.4)
 	end
 
 	if now >= Weather.endTime then
 		Weather:Start(Weather:SelectRandomRecipient(Weather.current))
 	end
-	return 1/30
+	return 0.2
 end
 
 function Weather:GetPassedTime()

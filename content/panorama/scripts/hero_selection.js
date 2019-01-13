@@ -221,10 +221,11 @@ function OnLocalPlayerPicked() {
 	var hype = $.Localize(heroName + '_hype');
 	$('#HeroPreviewOverview').text = hype !== heroName + '_hype' ? hype : '';
 
+	var model = localHeroData.model
 	var heroImageXML = '<DOTAScenePanel particleonly="false" ' +
 		(localHeroData.useCustomScene
 			? 'map="scenes/heroes" camera="' + heroName + '" />'
-			: 'allowrotation="true" unit="' + heroName + '" />');
+			: 'allowrotation="true" unit="' + model + '" />');
 	var ScenePanel = $('#HeroPreviewScene');
 	ScenePanel.RemoveAndDeleteChildren();
 	ScenePanel.BCreateChildren(heroImageXML);
@@ -275,7 +276,7 @@ function OnMinimapClickSpawnBox(team, level, index) {
 function OnAdsClicked() {
 	var context = $.GetContextPanel();
 	$.Schedule(context.BHasClass('AdsClicked') ? 0 : .35, function() {
-		$.DispatchEvent('ExternalBrowserGoToURL', 'https://sgm-luck.ru/?utm_source=dota2&utm_medium=baner&utm_campaign=Angel_Arena_Black_Star');
+		$.DispatchEvent('ExternalBrowserGoToURL', 'https://www.donationalerts.com/r/murzik');
 	});
 	if (!context.BHasClass('AdsClicked')){
 		context.AddClass('AdsClicked');
@@ -341,6 +342,8 @@ function ShowHeroPreviewTab(tabID) {
 
 (function() {
 	$.GetContextPanel().RemoveClass('LocalPlayerPicked');
+	var isRussian = $.Language() === 'russian' || $.Language() === 'ukrainian';
+	$('#AdsBanner').SetHasClass('Russian', isRussian);
 	$('#HeroListPanel').RemoveAndDeleteChildren();
 	var localPlayerId = Game.GetLocalPlayerID();
 	if (Players.IsValidPlayerID(localPlayerId) && !Players.IsSpectator(localPlayerId)) {
@@ -368,10 +371,6 @@ function ShowHeroPreviewTab(tabID) {
 		DynamicSubscribePTListener('stats_client', function(tableName, changesObject, deletionsObject) {
 			for (var playerId in changesObject) {
 				Snippet_PlayerPanel(+playerId).SetDialogVariable('player_mmr', changesObject[playerId].Rating || 'TBD');
-			}
-
-			if (changesObject[localPlayerId] && changesObject[localPlayerId].isBanned) {
-				HeroSelectionEnd(true);
 			}
 		});
 		UpdateTimer();

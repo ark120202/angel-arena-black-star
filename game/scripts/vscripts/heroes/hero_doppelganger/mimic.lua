@@ -92,13 +92,14 @@ if IsServer() then
 	end
 
 	function doppelganger_mimic:CastFilterResultTarget(hTarget)
-		return (hTarget == self:GetCaster() or hTarget:IsBoss() or self.bannedHeroes[hTarget:GetFullName()]) and UF_FAIL_CUSTOM or UF_SUCCESS
+		return (hTarget == self:GetCaster() or hTarget:IsBoss() or self.bannedHeroes[hTarget:GetFullName()] or hTarget:IsIllusion()) and UF_FAIL_CUSTOM or UF_SUCCESS
 	end
 
 	function doppelganger_mimic:GetCustomCastErrorTarget(hTarget)
 		return (hTarget == self:GetCaster() and "#dota_hud_error_cant_cast_on_self") or
 			(hTarget:IsBoss() and "#dota_hud_error_ability_cant_target_boss") or
 			(self.bannedHeroes[hTarget:GetFullName()] and "#arena_hud_error_cant_mimic") or
+			(hTarget:IsIllusion() and "#dota_hud_error_cant_cast_on_illusions") or
 			""
 	end
 

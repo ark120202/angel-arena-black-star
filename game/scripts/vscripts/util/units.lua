@@ -168,6 +168,13 @@ function CDOTA_BaseNPC:GetIllusionParent()
 	end
 end
 
+function CDOTA_BaseNPC:AddEndChannelListener(listener)
+	local endChannelListeners = self.EndChannelListeners or {}
+	self.EndChannelListeners = endChannelListeners
+	local index = #endChannelListeners + 1
+	endChannelListeners[index] = listener
+end
+
 			--Hero
 function CDOTA_BaseNPC_Hero:CalculateRespawnTime()
 	if self.OnDuel then return 1 end
@@ -217,25 +224,4 @@ function CDOTA_BaseNPC_Hero:GetAttribute(attribute)
 	elseif attribute == DOTA_ATTRIBUTE_INTELLECT then
 		return self:GetIntellect()
 	end
-end
-
-function CDOTA_BaseNPC_Hero:GetMaxMovementSpeed()
-	local max = MAX_MOVEMENT_SPEED
-
-	for k,v in pairs(MOVEMENT_SPEED_MODIFIERS) do
-		if self:HasModifier(k) then
-			max = math.max(max, v(self))
-		end
-	end
-
-	--[[ TODO Works only for custom lua modifiers
-	for _,v in ipairs(self:FindAllModifiers()) do
-		if v.GetModifierMoveSpeed_Max or v.GetModifierMoveSpeed_Limit then
-			max = math.max(max,
-				(v:GetName() == "modifier_talent_movespeed_limit" and v:GetStackCount()) or
-				v:GetModifierMoveSpeed_Limit() or
-				v:GetModifierMoveSpeed_Max() or 0)
-		end
-	end]]
-	return max
 end

@@ -62,7 +62,7 @@ if IsServer() then
 	function modifier_item_skadi_arena:OnAttackLanded(keys)
 		local target = keys.target
 		local attacker = keys.attacker
-		if attacker == self:GetParent() then
+		if attacker == self:GetParent() and not attacker:IsIllusion() then
 			local ability = self:GetAbility()
 			if not (target.IsBoss and target:IsBoss()) then
 				target:AddNewModifier(attacker, ability, "modifier_item_skadi_arena_cold_attack", {duration = ability:GetSpecialValueFor("cold_duration")})

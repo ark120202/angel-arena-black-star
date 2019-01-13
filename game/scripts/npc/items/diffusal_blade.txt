@@ -111,34 +111,29 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_pct"	"15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"feedback_mana_drain_pct"	"10 15 20 25 30"
 			}
-			"06"
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
 			}
-			"07"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
-			"08"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"	"-60 -70 -80 -90 -100"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_burn_pct"		"80 90 100 110 120"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range_tooltip"		"500 550 600 650 700"
@@ -183,7 +178,6 @@
 						"ScriptFile"	"items/items_diffusal_blade.lua"
 						"Function"		"OnAttackLanded"
 						"feedback_mana_burn"				"%feedback_mana_burn"
-						"feedback_mana_burn_illusion_pct"	"%feedback_mana_burn_illusion_pct"
 						"feedback_mana_drain_pct"			"%feedback_mana_drain_pct"
 						"damage_per_burn_pct"				"%damage_per_burn_pct"
 					}
@@ -264,34 +258,29 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_pct"	"15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"feedback_mana_drain_pct"	"10 15 20 25 30"
 			}
-			"06"
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
 			}
-			"07"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
-			"08"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"	"-60 -70 -80 -90 -100"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_burn_pct"		"80 90 100 110 120"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range_tooltip"		"500 550 600 650 700"
@@ -336,7 +325,6 @@
 						"ScriptFile"	"items/items_diffusal_blade.lua"
 						"Function"		"OnAttackLanded"
 						"feedback_mana_burn"				"%feedback_mana_burn"
-						"feedback_mana_burn_illusion_pct"	"%feedback_mana_burn_illusion_pct"
 						"feedback_mana_drain_pct"			"%feedback_mana_drain_pct"
 						"damage_per_burn_pct"				"%damage_per_burn_pct"
 					}
@@ -417,34 +405,29 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_pct"	"15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"feedback_mana_drain_pct"	"10 15 20 25 30"
 			}
-			"06"
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
 			}
-			"07"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
-			"08"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"	"-60 -70 -80 -90 -100"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_burn_pct"		"80 90 100 110 120"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range_tooltip"		"500 550 600 650 700"
@@ -489,7 +472,6 @@
 						"ScriptFile"	"items/items_diffusal_blade.lua"
 						"Function"		"OnAttackLanded"
 						"feedback_mana_burn"				"%feedback_mana_burn"
-						"feedback_mana_burn_illusion_pct"	"%feedback_mana_burn_illusion_pct"
 						"feedback_mana_drain_pct"			"%feedback_mana_drain_pct"
 						"damage_per_burn_pct"				"%damage_per_burn_pct"
 					}
@@ -570,34 +552,29 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_pct"	"15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"feedback_mana_drain_pct"	"10 15 20 25 30"
 			}
-			"06"
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
 			}
-			"07"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
-			"08"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"	"-60 -70 -80 -90 -100"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_burn_pct"		"80 90 100 110 120"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range_tooltip"		"500 550 600 650 700"
@@ -642,7 +619,6 @@
 						"ScriptFile"	"items/items_diffusal_blade.lua"
 						"Function"		"OnAttackLanded"
 						"feedback_mana_burn"				"%feedback_mana_burn"
-						"feedback_mana_burn_illusion_pct"	"%feedback_mana_burn_illusion_pct"
 						"feedback_mana_drain_pct"			"%feedback_mana_drain_pct"
 						"damage_per_burn_pct"				"%damage_per_burn_pct"
 					}
@@ -723,34 +699,29 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feedback_mana_burn_illusion_pct"	"15"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"feedback_mana_drain_pct"	"10 15 20 25 30"
 			}
-			"06"
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"purge_root_duration"	"0.1 0.2 0.3 0.4 0.5"
 			}
-			"07"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"purge_slow_duration"	"2.0 2.5 3.0 3.5 4.0"
 			}
-			"08"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"	"-60 -70 -80 -90 -100"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_burn_pct"		"80 90 100 110 120"
 			}
-			"10"
+			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"cast_range_tooltip"		"500 550 600 650 700"
@@ -795,7 +766,6 @@
 						"ScriptFile"	"items/items_diffusal_blade.lua"
 						"Function"		"OnAttackLanded"
 						"feedback_mana_burn"				"%feedback_mana_burn"
-						"feedback_mana_burn_illusion_pct"	"%feedback_mana_burn_illusion_pct"
 						"feedback_mana_drain_pct"			"%feedback_mana_drain_pct"
 						"damage_per_burn_pct"				"%damage_per_burn_pct"
 					}

@@ -57,6 +57,22 @@ function GameMode:ExecuteOrderFilter(filterTable)
 	if not ability then return true end
 
 	if order_type == DOTA_UNIT_ORDER_CAST_POSITION then
+		if (
+			abilityname == "item_ward_sentry" or
+			(abilityname == "item_ward_dispenser" and not ability:GetToggleState())
+		) then
+			local team = PlayerResource:GetTeam(playerId)
+			local wards = {}
+			for _, ward in ipairs(Entities:FindAllByClassname("npc_dota_ward_base_truesight")) do
+				if ward:GetUnitName() == "npc_dota_sentry_wards" and ward:GetTeamNumber() == team then
+					table.insert(wards, ward)
+				end
+			end
+			if #wards > 20 then
+				Containers:DisplayError(playerId, "arena_hud_error_sentry_ward_limit")
+				return false
+			end
+		end
 		if not Duel:IsDuelOngoing() and ARENA_NOT_CASTABLE_ABILITIES[abilityname] then
 			local orderVector = Vector(filterTable.position_x, filterTable.position_y, 0)
 			if type(ARENA_NOT_CASTABLE_ABILITIES[abilityname]) == "number" then
@@ -67,9 +83,11 @@ function GameMode:ExecuteOrderFilter(filterTable)
 					return false
 				end
 			end
-			if Duel:IsOnDuel(orderVector) then
-				Containers:DisplayError(playerId, "#arena_hud_error_cant_target_duel")
-				return false
+			for _, box in ipairs(Duel.Boxes) do
+				if IsInTriggerBox(box.trigger, 96, orderVector) then
+					Containers:DisplayError(playerId, "#arena_hud_error_cant_target_duel")
+					return false
+				end
 			end
 		end
 	elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and IsValidEntity(target) then
@@ -135,16 +153,20 @@ function GameMode:DamageFilter(filterTable)
 	if IsValidEntity(attacker) then
 		if IsValidEntity(inflictor) and inflictor.GetAbilityName then
 			local inflictorname = inflictor:GetAbilityName()
-
-			if SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS[inflictorname] and attacker:IsHero() then
-				filterTable.damage = GetNotScaledDamage(filterTable.damage, attacker)
-			end
 			local damage_from_current_health_pct = inflictor:GetAbilitySpecial("damage_from_current_health_pct")
 			if victim and damage_from_current_health_pct then
 				if PERCENT_DAMAGE_MODIFIERS[inflictorname] then
 					damage_from_current_health_pct = damage_from_current_health_pct * PERCENT_DAMAGE_MODIFIERS[inflictorname]
 				end
 				filterTable.damage = filterTable.damage + (victim:GetHealth() * damage_from_current_health_pct * 0.01)
+			end
+
+			if IsValidEntity(inflictor.originalInflictor) then
+				inflictorname = inflictor.originalInflictor:GetAbilityName()
+			end
+
+			if SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS[inflictorname] and attacker:IsHero() then
+				filterTable.damage = GetNotScaledDamage(filterTable.damage, attacker)
 			end
 			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and victim:IsBoss() then
 				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
@@ -263,7 +285,8 @@ function GameMode:DamageFilter(filterTable)
 end
 
 function GameMode:ModifyGoldFilter(filterTable)
-	if filterTable.reason_const >= DOTA_ModifyGold_HeroKill and filterTable.reason_const <= DOTA_ModifyGold_CourierKill then
+	local reason = filterTable.reason_const
+	if reason >= DOTA_ModifyGold_Building and reason <= DOTA_ModifyGold_CourierKill then
 		filterTable.gold = 0
 		return false
 	end
@@ -306,7 +329,7 @@ function GameMode:ItemAddedToInventoryFilter(filterTable)
 			Timers:CreateTimer(0, GameMode.SendArenaNewItem, args)
 		end
 	end
-	if item.RuneType then 
+	if item.RuneType then
 		local unit = EntIndexToHScript(filterTable.inventory_parent_entindex_const)
 		CustomRunes:PickUpRune(unit, item)
 		return false

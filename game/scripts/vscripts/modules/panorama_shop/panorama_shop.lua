@@ -15,6 +15,7 @@ end
 
 Events:Register("activate", function ()
 	GameRules:GetGameModeEntity():SetStickyItemDisabled(true)
+	PanoramaShop.ShopTriggers = Entities:FindAllByClassname("trigger_shop")
 	PanoramaShop:InitializeItemTable()
 end)
 
@@ -274,11 +275,20 @@ function PanoramaShop:SellItem(playerId, unit, item)
 	GameMode:TrackInventory(unit)
 end
 
+function PanoramaShop:IsInShop(unit)
+	for _, trigger in ipairs(PanoramaShop.ShopTriggers) do
+		if IsInTriggerBox(trigger, 0, unit:GetAbsOrigin()) then
+			return true
+		end
+	end
+	return false
+end
+
 function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	local team = PlayerResource:GetTeam(playerId)
 	local item = CreateItem(itemName, hero, hero)
-	local isInShop = unit:HasModifier("modifier_fountain_aura_arena") -- Works only while fontain area === shop area
+	local isInShop = PanoramaShop:IsInShop(unit)
 	item:SetPurchaseTime(GameRules:GetGameTime())
 	item:SetPurchaser(hero)
 
@@ -316,8 +326,11 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 			if not isInShop then SetAllItemSlotsLocked(unit, false, true) end
 		end
 	end
-	--At last drop an item on fountain
-	if not itemPushed then
+
+	if itemPushed then
+		if item.OnPurchased then item:OnPurchased() end
+	else
+		-- At last drop an item on fountain
 		local spawnPointName = "info_courier_spawn"
 		local teamCared = true
 		if PlayerResource:GetTeam(playerId) == DOTA_TEAM_GOODGUYS then
@@ -381,7 +394,7 @@ function PanoramaShop:GetAllPrimaryRecipeItems(unit, childItemName, baseItemName
 	if (childItemName == baseItemName or itemcount < _tempItemCounter[childItemName]) and itemData.Recipe then
 		for _, newchilditem in ipairs(itemData.Recipe.items[1]) do
 			local subitems, newCounter = PanoramaShop:GetAllPrimaryRecipeItems(unit, newchilditem, baseItemName)
-			table.concat(primary_items, subitems)
+			table.add(primary_items, subitems)
 			for k,v in pairs(newCounter) do
 				_tempItemCounter[k] = (_tempItemCounter[k] or 0) + v
 			end
@@ -426,7 +439,7 @@ function PanoramaShop:BuyItem(playerId, unit, itemName)
 		return
 	end
 
-	if unit:IsIllusion() or not unit:HasInventory() then
+	if unit:IsIllusion() or unit:IsTempestDouble() or not unit:HasInventory() then
 		unit = hero
 	end
 	local isInShop = unit:HasModifier("modifier_fountain_aura_arena")
@@ -508,6 +521,11 @@ function PanoramaShop:BuyItem(playerId, unit, itemName)
 				local removedItem = FindItemInInventoryByName(unit, v, false)
 				if not removedItem then removedItem = FindItemInInventoryByName(unit, v, true, true) end
 				unit:RemoveItem(removedItem)
+			end
+			for _,v in ipairs(ItemsToBuy) do
+				if PanoramaShop.StocksTable[team][v] then
+					PanoramaShop:DecreaseItemStock(team, v)
+				end
 			end
 			PanoramaShop:PushItem(playerId, unit, itemName)
 			if PanoramaShop.StocksTable[team][itemName] then

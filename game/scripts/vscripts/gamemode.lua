@@ -6,7 +6,6 @@ GAMEMODE_INITIALIZATION_STATUS = {}
 local requirements = {
 	"libraries/keyvalues",
 	"libraries/timers",
-	"libraries/physics",
 	"libraries/projectiles",
 	"libraries/notifications",
 	"libraries/animations",
@@ -71,6 +70,7 @@ function GameMode:InitGameMode()
 
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
+	GameRules:GetGameModeEntity():SetPauseEnabled(IsInToolsMode())
 	Events:Emit("activate")
 
 	PlayerTables:CreateTable("arena", {}, AllPlayersInterval)
@@ -105,11 +105,13 @@ function GameMode:OnHeroSelectionStart()
 	Bosses:InitAllBosses()
 	CustomRunes:Init()
 	CustomTalents:Init()
-
 	Timers:CreateTimer(0.1, function()
 		for playerId, data in pairs(PLAYER_DATA) do
 			if PlayerResource:IsPlayerAbandoned(playerId) then
 				PlayerResource:RemoveAllUnits(playerId)
+			end
+			if PlayerResource:IsBanned(playerId) then
+				PlayerResource:KickPlayer(playerId)
 			end
 		end
 	end)
@@ -120,6 +122,7 @@ function GameMode:OnHeroSelectionEnd()
 	PanoramaShop:StartItemStocks()
 	Duel:CreateGlobalTimer()
 	Weather:Init()
+	GameRules:GetGameModeEntity():SetPauseEnabled(Options:IsEquals("EnablePauses"))
 
 	Timers:CreateTimer(10, function()
 		for playerId = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
@@ -173,6 +176,10 @@ function GameMode:PrecacheUnitQueueed(name)
 	end
 end
 
+local mapMin = Vector(-MAP_LENGTH, -MAP_LENGTH)
+local mapClampMin = ExpandVector(mapMin, -MAP_BORDER)
+local mapMax = Vector(MAP_LENGTH, MAP_LENGTH)
+local mapClampMax = ExpandVector(mapMax, -MAP_BORDER)
 function GameMode:GameModeThink()
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) then
@@ -180,12 +187,11 @@ function GameMode:GameModeThink()
 			if hero then
 				hero:SetNetworkableEntityInfo("unit_name", hero:GetFullName())
 				MeepoFixes:ShareItems(hero)
-				local position = hero:GetAbsOrigin()
-				if position.x > MAP_LENGTH or
-					position.x < -MAP_LENGTH or
-					position.y > MAP_LENGTH or
-					position.y < -MAP_LENGTH then
-					hero:TrueKill()
+				for _, v in ipairs(hero:GetFullName() == "npc_dota_hero_meepo" and MeepoFixes:FindMeepos(hero, true) or { hero }) do
+					local position = v:GetAbsOrigin()
+					if not IsInBox(position, mapMin, mapMax) then
+						FindClearSpaceForUnit(v, VectorOnBoxPerimeter(position, mapClampMin, mapClampMax), true)
+					end
 				end
 			end
 			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then

@@ -19,9 +19,12 @@ try {
 }
 
 
-const game = path.join(settings.dota, 'game/dota_addons', settings.name);
-const content = path.join(settings.dota, 'content/dota_addons', settings.name);
-fs.removeSync(game);
-fs.removeSync(content);
-fs.symlinkSync(path.resolve(__dirname, '../game'), game, 'junction');
-fs.symlinkSync(path.resolve(__dirname, '../content'), content, 'junction');
+const gamePath = path.join(settings.dota, 'game/dota_addons', settings.name);
+const contentPath = path.join(settings.dota, 'content/dota_addons', settings.name);
+const localGame = path.join(__dirname, '../game');
+const localContent = path.join(__dirname, '../content');
+
+fs.renameSync(localGame, gamePath);
+fs.renameSync(localContent, contentPath);
+fs.symlinkSync(gamePath, localGame, 'junction');
+fs.symlinkSync(contentPath, localContent, 'junction');

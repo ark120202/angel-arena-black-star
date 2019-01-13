@@ -14,5 +14,5 @@ function modifier_item_shard_attackspeed_stack:DeclareFunctions()
 end
 
 function modifier_item_shard_attackspeed_stack:GetModifierAttackSpeedBonus_Constant()
-	return 50 * self:GetStackCount()
+	return 55 * self:GetStackCount()
 end

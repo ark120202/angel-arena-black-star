@@ -4,11 +4,7 @@ weather_storm: Шторм
 weather_snow: Снег
 weather_blizzard: Метель
 
-DOTA_Tooltip_modifier_weather_sunny_aura_effect: Солнечно
-DOTA_Tooltip_modifier_weather_sunny_aura_effect_Description: Радиус обзора увеличен на %dMODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE%%%.
-DOTA_Tooltip_modifier_weather_rain_aura_effect: Дождливо
-DOTA_Tooltip_modifier_weather_rain_aura_effect_Description: Радиус обзора уменьшен на %dMODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE%%%.
-DOTA_Tooltip_modifier_weather_snow_aura_effect: Снег
-DOTA_Tooltip_modifier_weather_snow_aura_effect_Description: Скорость передвижения уменьшена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, скорость атаки уменьшена на %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.
 DOTA_Tooltip_modifier_weather_blizzard_debuff: Метель
 DOTA_Tooltip_modifier_weather_blizzard_debuff_Description: Не может ни двигаться, ни атаковать в течении %fMODIFIER_PROPERTY_TOOLTIP% сек.
+DOTA_Tooltip_modifier_weather_storm_debuff: Шторм
+DOTA_Tooltip_modifier_weather_storm_debuff_Description: Оглушен.

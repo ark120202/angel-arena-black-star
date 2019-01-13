@@ -1497,7 +1497,7 @@
 		"ItemResult"					"item_diffusal_style"
 		"ItemRequirements"
 		{
-			"01"						"item_manta_arena;item_diffusal_blade_arena_5;item_orb_of_essences;item_moon_dust"
+			"01"						"item_manta_arena;item_diffusal_blade_arena_5;item_orb_of_essences;item_moon_dust;item_demons_paw"
 		}
 	}
 
@@ -1610,12 +1610,12 @@
 			"18"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"feedback_mana_burn"								"120"
+				"feedback_mana_burn"								"100"
 			}
 			"19"
 			{
 				"var_type"											"FIELD_INTEGER"
-				"feedback_mana_drain_pct"							"25"
+				"feedback_mana_drain_pct"							"10"
 			}
 			"20"
 			{
@@ -1624,23 +1624,23 @@
 			}
 			"21"
 			{
-				"var_type"											"FIELD_INTEGER"
-				"purge_chance_pct"									"10"
-			}
-			"22"
-			{
 				"var_type"											"FIELD_FLOAT"
 				"purge_slow_duration"								"4"
 			}
-			"23"
+			"22"
 			{
 				"var_type"											"FIELD_INTEGER"
 				"purge_slow_movespeed_pct"							"-100"
 			}
-			"24"
+			"23"
 			{
 				"var_type"											"FIELD_INTEGER"
 				"damage_per_burn_pct"								"50"
+			}
+			"24"
+			{
+				"var_type"											"FIELD_INTEGER"
+				"purge_cooldown"									"10"
 			}
 		}
 
@@ -1714,6 +1714,7 @@
 						"damage_per_burn_pct"				"%damage_per_burn_pct"
 						"modifier_root"	"modifier_item_diffusal_style_root"
 						"modifier_slow"	"modifier_item_diffusal_style_slow"
+						"modifier_cooldown"	"modifier_item_diffusal_style_purge_cooldown"
 					}
 				}
 			}
@@ -1742,6 +1743,13 @@
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%purge_slow_movespeed_pct"
 				}
+			}
+
+			"modifier_item_diffusal_style_purge_cooldown"
+			{
+				"Duration"			"%purge_cooldown"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
 			}
 		}
 	}
@@ -3561,22 +3569,15 @@
 		"ItemResult"					"item_vermillion_robe"
 		"ItemRequirements"
 		{
-			"01"						"item_soul_booster;item_soul_ring;item_tranquil_boots;item_cloak"
+			"01"						"item_soul_booster;item_pers;item_tranquil_boots;item_cloak"
 		}
 	}
 
 	"item_vermillion_robe"
 	{
-		"BaseClass"             		"item_datadriven"
+		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_arena/vermillion_robe"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"20"
-		"AbilityUnitDamageSubType"		"DAMAGE_SUBTYPE_DARK"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
 		{
@@ -3593,12 +3594,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3"
+				"bonus_mana_regen"		"6"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"18"
+				"bonus_health_regen"	"24"
 			}
 			"05"
 			{
@@ -3608,7 +3609,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"60"
+				"bonus_movement_speed_pct"	"28"
 			}
 			"07"
 			{
@@ -3618,46 +3619,19 @@
 			}
 			"08"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_as_damage_pct"		"50"
-				"CalculateSpellDamageTooltip"	"0"
+				"var_type"				"FIELD_FLOAT"
+				"dust_mana_regen"		"0.4"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_radius"			"300"
-				"CalculateSpellDamageTooltip"	"0"
+				"dust_move_speed_pct"	"1"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_delay"			"1.5"
+				"dust_damage"			"3"
 				"CalculateSpellDamageTooltip"	"0"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dust_mana_regen"		"0.4"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dust_move_speed"		"1"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dust_damage"			"3.0"
-				"CalculateSpellDamageTooltip"	"0"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"items/item_vermillion_robe.lua"
-				"Function"		"TrueFlame"
 			}
 		}
 
@@ -3675,7 +3649,7 @@
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
 					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bonus_movement_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_movement_speed_pct"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_magical_damage_resistance_pct"
 				}
 
@@ -3698,21 +3672,7 @@
 					}
 				}
 			}
-			"modifier_item_vermillion_robe_delay"
-			{
-				"IsDebuff"			"1"
-				"IsPurgable"		"0"
-				"Duration"			"%damage_delay"
 
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"items/item_vermillion_robe.lua"
-						"Function"		"TrueFlameDamage"
-					}
-				}
-			}
 			"modifier_item_vermillion_robe_dust"
 			{
 				"Passive"			"0"
@@ -3723,7 +3683,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%dust_mana_regen"
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%dust_move_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%dust_move_speed_pct"
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%dust_damage"
 				}
 			}
@@ -3961,7 +3921,7 @@
 		"ItemResult"					"item_echo_sabre_2"
 		"ItemRequirements"
 		{
-			"01"						"item_echo_sabre_arena;item_shard_attackspeed;item_hyperstone"
+			"01"						"item_echo_sabre_arena;item_hyperstone;item_hyperstone"
 		}
 	}
 
@@ -4384,7 +4344,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_chance"			"75"
+				"bash_chance"			"25"
 			}
 			"03"
 			{
@@ -4394,7 +4354,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_stun"				"0"
+				"bash_stun"				"0.1"
 			}
 		}
 
@@ -4946,27 +4906,27 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attackspeed"		"65"
+				"bonus_attackspeed"		"45"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"kill_xp"				"35"
+				"kill_xp"				"20"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kill_gold"				"20"
+				"kill_gold"				"15"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_pct"			"30"
+				"lifesteal_pct"			"20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_gold_as_damage_pct"	"0.2"
+				"active_gold_as_damage_pct"	"0.02"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"07"
@@ -5727,7 +5687,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"7500"
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_piercing_blade"
 		"ItemRequirements"
@@ -5738,7 +5698,8 @@
 
 	"item_piercing_blade"
 	{
-		"BaseClass"             		"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_piercing_blade"
 		"AbilityTextureName"			"item_arena/piercing_blade"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5754,51 +5715,33 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"10"
+				"attack_damage_to_pure_pct"	"12"
 				"CalculateSpellDamageTooltip"	"0"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_piercing_blade"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
 			}
 		}
 	}
 
-	"item_recipe_haganemushi"
+	"item_recipe_soulcutter"
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"10000"	//50800 - Requirements Cost
+		"ItemCost"						"10000"
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_haganemushi"
+		"ItemResult"					"item_soulcutter"
 		"ItemRequirements"
 		{
-			"01"						"item_invis_sword;item_dark_flow;item_piercing_blade;item_dark_blade;item_soul_of_titan"
+			"01"						"item_piercing_blade;item_dark_flow;item_dark_blade;item_soul_of_titan"
 		}
 	}
 
-	"item_haganemushi"
+	"item_soulcutter"
 	{
-		"BaseClass"             		"item_datadriven"
-		"AbilityTextureName"			"item_arena/haganemushi"
-
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_soulcutter"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_arena/soulcutter"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"AbilitySharedCooldown"			"shadow_blade"
-
-		"AbilityCooldown"				"25"
-		"AbilityManaCost"				"80"
 		"AbilityCastRange"				"800"
 
 		"AbilitySpecial"
@@ -5812,243 +5755,28 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"120"
+				"attack_damage_to_pure_pct"	"12"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_hit"		"-2"
-				"CalculateSpellDamageTooltip" "0"
+				"var_type"				"FIELD_FLOAT"
+				"armor_per_hit_pct"		"-2"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"armor_per_hit"			"-0.25"
+				"duration"				"3"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_damage_to_pure_pct"	"20"
-				"CalculateSpellDamageTooltip"	"0"
+				"aura_armor_reduction"	"-20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_armor_reduction"	"-20"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"aura_radius"			"800"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"windwalk_duration"		"17"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"windwalk_movement_speed_pct"	"25"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"windwalk_fade_time"	"0.2"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"windwalk_bonus_damage"	"2000"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"EffectName"	"DOTA_Item.InvisibilitySword.Activate"
-				"Target" 		"CASTER"
-			}
-
-			"DelayedAction"
-			{
-				"Delay"     "%windwalk_fade_time"
-				"Action"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_item_haganemushi_active"
-						"Target" 		"CASTER"
-					}
-				}
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_haganemushi"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-
-				"Aura"          	"modifier_item_haganemushi_aura_effect"
-				"Aura_Radius"   	"%aura_radius"
-				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
-				}
-			}
-
-			"modifier_item_haganemushi_aura_effect"
-			{
-				"IsPurgable"		"0"
-				"IsDebuff"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%aura_armor_reduction"
-				}
-			}
-
-			"modifier_item_haganemushi_unique"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"AllowIllusionDuplicate"		"0"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IllusionModifierCleaner"
-						"modifier"		"modifier_item_haganemushi_unique"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"kv.lua"
-						"Function"		"IncreaseStacks"
-						"modifier"		"modifier_item_haganemushi_stack"
-						"NoBosses"		"1"
-					}
-
-					"FireEffect"
-					{
-						"EffectName"        "particles/arena/items_fx/dark_flow_explosion.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"            "TARGET"
-					}
-				}
-			}
-
-			"modifier_item_haganemushi_stack"
-			{
-				"IsDebuff"			"1"
-				"IsPurgable"		"0"
-				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%damage_per_hit"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_per_hit"
-				}
-			}
-
-			"modifier_item_haganemushi_active"
-			{
-				"IsBuff"			"1"
-				"Duration"			"%windwalk_duration"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%windwalk_movement_speed_pct"
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_INVISIBLE"					"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_UNIT_COLLISION"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_CANNOT_MISS"				"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"OnAttack"
-				{
-					"RemoveModifier"
-					{
-						"Target"			"CASTER"
-						"ModifierName"		"modifier_item_haganemushi_active"
-					}
-					"ApplyModifier"
-					{
-						"ModifierName"		"modifier_item_haganemushi_attack"
-						"Target" 			"CASTER"
-					}
-				}
-
-				"OnAbilityExecuted"
-				{
-					"RemoveModifier"
-					{
-						"Target"				"CASTER"
-						"ModifierName"			"modifier_item_haganemushi_active"
-					}
-				}
-
-				"OnCreated"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target" 		"CASTER"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_invisible"
-						"Target" 		"CASTER"
-					}
-				}
-			}
-
-			"modifier_item_haganemushi_attack"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-
-				"States"
-				{
-					"MODIFIER_STATE_CANNOT_MISS"			"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"OnAttackLanded"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_PURE"
-						"Damage"		"%windwalk_bonus_damage"
-					}
-
-					"RemoveModifier"
-					{
-						"Target"			"CASTER"
-						"ModifierName"		"modifier_item_haganemushi_attack"
-					}
-				}
 			}
 		}
 	}
@@ -6454,7 +6182,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_negative_armor"	"-8"
+				"aura_negative_armor"	"-15"
 			}
 		}
 
@@ -6814,7 +6542,7 @@
 		"ItemResult"					"item_awakened_cursed_eye"
 		"ItemRequirements"
 		{
-			"01"						"item_gem;item_gem_of_clear_mind;item_gem_of_pure_soul;item_cursed_eye"
+			"01"						"item_gem_arena;item_gem_of_clear_mind;item_gem_of_pure_soul;item_cursed_eye"
 		}
 	}
 
@@ -6960,7 +6688,7 @@
 		"ItemResult"					"item_shard_of_true_sight"
 		"ItemRequirements"
 		{
-			"01"						"item_gem"
+			"01"						"item_gem_arena"
 		}
 	}
 
@@ -7780,12 +7508,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"15 30"
+				"cleave_damage_percent"	"20 30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"15 30"
+				"quelling_bonus_damage_pct"	"20 30"
 			}
 			"06"
 			{
@@ -7850,12 +7578,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cleave_damage_percent"	"15 30"
+				"cleave_damage_percent"	"20 30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"15 30"
+				"quelling_bonus_damage_pct"	"20 30"
 			}
 			"06"
 			{
@@ -7970,7 +7698,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quelling_bonus_damage_pct"	"40"
+				"quelling_bonus_damage_pct"	"45"
 			}
 			"13"
 			{
@@ -8271,7 +7999,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"7500"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_rapier_arena"
@@ -8313,6 +8041,7 @@
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 
 				"OnDeath"
 				{
@@ -8523,7 +8252,9 @@
 		"ItemRequirements"
 		{
 			"01"						"item_yasha;item_sange;item_kaya"
-			"02"						"item_sange_and_yasha;item_kaya"
+			"02"						"item_kaya_and_sange;item_yasha"
+			"03"						"item_sange_and_yasha;item_kaya"
+			"04"						"item_yasha_and_kaya;item_sange"
 		}
 	}
 
@@ -8738,6 +8469,118 @@
 			"particle"							"particle/arena/items_fx/unstable_quasar.vpcf"
 			"particle"							"particles/items_fx/diffusal_slow.vpcf"
 			"sound"								"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
+		}
+	}
+
+	"item_flask_arena"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_flask_arena.lua"
+		"AbilityTextureName"			"item_flask"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/salve.vmdl"
+		"AbilityCastRange"				"250"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemCost"						"110"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"healing salve"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
+		"ItemShareability" 				"ITEM_FULLY_SHAREABLE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_regen"			"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_range"			"250"
+			}
+		}
+	}
+
+	"item_gem_arena"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_gem"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"900"
+		"Model"							"models/props_gameplay/gem01.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_gem.vpcf"
+		"ItemCost"						"900"
+		"ItemQuality"					"component"
+		"ItemAliases"					"gem of true sight"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemStockMax"					"3"
+		"ItemStockTime"					"180"
+		"ItemSupport"					"1"
+		"ItemContributesToNetWorthWhenDropped"	"0"
+		"AllowedInBackpack"				"0"
+		"IsTempestDoubleClonable"		"0"
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"900"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_gem_arena"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Aura"					"modifier_item_gem_arena_reveal"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_ALL"
+				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"kv.lua"
+						"Function"		"DropItem"
+					}
+				}
+			}
+
+			"modifier_item_gem_arena_reveal"
+			{
+				"IsHidden"			"1"
+				"Duration"			"0.5"
+				"Priority"			"MODIFIER_PRIORITY_HIGH"
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_DISABLED"
+				}
+			}
 		}
 	}
 }

@@ -32,6 +32,10 @@
 			<Image src="file://{images}/heroes/selection/npc_dota_hero_arena_base.png" />
 			<Image src="file://{images}/heroes/icons/npc_dota_hero_arena_base.png" />
 
+			<Image src="file://{images}/heroes/npc_arena_hero_arthas.png" />
+			<Image src="file://{images}/heroes/selection/npc_arena_hero_arthas.png" />
+			<Image src="file://{images}/heroes/icons/npc_arena_hero_arthas.png" />
+
 			<Image src="file://{images}/heroes/npc_arena_hero_stargazer.png" />
 			<Image src="file://{images}/heroes/selection/npc_arena_hero_stargazer.png" />
 			<Image src="file://{images}/heroes/icons/npc_arena_hero_stargazer.png" />
@@ -127,7 +131,6 @@
 		<Panel id="afterload_panel" hittest="true">
 			<Panel hittest="false" id="GCColumn" >
 				<!-- <Panel id="LocalPlayerData" /> -->
-				<Image id="AdsBanner" onactivate="OnAdsClicked()" />
 				<Panel id="TopPlayers">
 					<Label id="TopPlayersTitle" text="#ranked_top_players" />
 					<Panel class="Spinner" />

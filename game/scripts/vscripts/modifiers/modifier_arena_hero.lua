@@ -12,7 +12,10 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_PROPERTY_ABSORB_SPELL,
 		MODIFIER_EVENT_ON_DEATH,
 		MODIFIER_PROPERTY_ABILITY_LAYOUT,
-		MODIFIER_EVENT_ON_RESPAWN
+		MODIFIER_EVENT_ON_RESPAWN,
+		MODIFIER_EVENT_ON_ABILITY_END_CHANNEL,
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
+		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
 	}
 end
 
@@ -20,7 +23,17 @@ function modifier_arena_hero:GetModifierAbilityLayout()
 	return self.VisibleAbilitiesCount or self:GetSharedKey("VisibleAbilitiesCount") or 4
 end
 
+function modifier_arena_hero:GetModifierMagicalResistanceDirectModification()
+	return self.resistanceDifference or self:GetSharedKey("resistanceDifference") or 0
+end
+
 if IsServer() then
+	function modifier_arena_hero:GetModifierPreAttack_CriticalStrike()
+		if RollPercentage(15) then
+			return self.agilityCriticalDamage
+		end
+	end
+
 	modifier_arena_hero.HeroLevel = 1
 	function modifier_arena_hero:OnCreated()
 		self:StartIntervalThink(0.2)
@@ -50,6 +63,7 @@ if IsServer() then
 				parent:ModifyAgility((parent.CustomGain_Agility - parent:GetKeyValue("AttributeAgilityGain", nil, true)) * diff)
 			end
 		end
+
 		local VisibleAbilitiesCount = 0
 		for i = 0, parent:GetAbilityCount() - 1 do
 			local ability = parent:GetAbilityByIndex(i)
@@ -57,10 +71,57 @@ if IsServer() then
 				VisibleAbilitiesCount = VisibleAbilitiesCount + 1
 			end
 		end
-
 		if self.VisibleAbilitiesCount ~= VisibleAbilitiesCount then
 			self.VisibleAbilitiesCount = VisibleAbilitiesCount
 			self:SetSharedKey("VisibleAbilitiesCount", VisibleAbilitiesCount)
+		end
+
+		local isStrengthHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH
+		local function calculateResistanceFromStrength(str) return str * (isStrengthHero and 0.1 or 0.08) * 0.01 end
+		local strength = parent:GetStrength()
+		local strengthResistance = calculateResistanceFromStrength(strength)
+		if strengthResistance == 1 then
+			if not self.strengthBorrowed then
+				self.strengthBorrowed = true
+				parent:ModifyStrength(-1)
+				strength = strength - 1
+			else
+				self.strengthBorrowed = false
+				parent:ModifyStrength(1)
+				strength = strength + 1
+			end
+			strengthResistance = calculateResistanceFromStrength(strength)
+		elseif self.strengthBorrowed and calculateResistanceFromStrength(strength + 1) ~= 1 then
+			self.strengthBorrowed = false
+			parent:ModifyStrength(1)
+		end
+
+		local baseFactor = 100 - parent:GetBaseMagicalResistanceValue()
+		local resistanceDifference = baseFactor / (strengthResistance - 1) + baseFactor
+		if self.resistanceDifference ~= resistanceDifference then
+			self.resistanceDifference = resistanceDifference
+			self:SetSharedKey("resistanceDifference", resistanceDifference)
+		end
+
+		local isAgilityHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY
+		local agilityArmor = parent:GetAgility() * (isAgilityHero and 0.2 or 0.16)
+		local idealArmor = CalculateBaseArmor(parent)
+		if self.idealArmor ~= idealArmor then
+			self.idealArmor = idealArmor
+			parent:SetNetworkableEntityInfo("IdealArmor", idealArmor)
+		end
+
+		local armorDifference = idealArmor - agilityArmor
+		if parent.armorDifference ~= armorDifference then
+			parent.armorDifference = armorDifference
+			parent:SetPhysicalArmorBaseValue(parent:GetKeyValue("ArmorPhysical") + armorDifference)
+		end
+
+		local isAgilityHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY
+		local agilityCriticalDamage = 100 + parent:GetAgility() * (isAgilityHero and 0.025 or 0.02)
+		if self.agilityCriticalDamage ~= agilityCriticalDamage then
+			self.agilityCriticalDamage = agilityCriticalDamage
+			parent:SetNetworkableEntityInfo("AgilityCriticalDamage", agilityCriticalDamage)
 		end
 	end
 
@@ -99,10 +160,9 @@ if IsServer() then
 	end
 
 	function modifier_arena_hero:OnRespawn(k)
-		-- TODO: Check if still required
 		if k.unit == self:GetParent() and k.unit:GetUnitName() == "npc_dota_hero_crystal_maiden" then
 			k.unit:AddNoDraw()
-			Timers:NextTick(function() k.unit:RemoveNoDraw() end)
+			Timers:CreateTimer(0.1, function() k.unit:RemoveNoDraw() end)
 		end
 	end
 
@@ -116,13 +176,24 @@ if IsServer() then
 				for i = 1, caster.talents_ability_multicast[abilityname] - 1 do
 					Timers:CreateTimer(0.1*i, function()
 						if IsValidEntity(caster) and IsValidEntity(ability_cast) then
-							CastAdditionalAbility(caster, ability_cast, target)
+							CastAdditionalAbility(caster, ability_cast, target, 0, {})
 						end
 					end)
 				end
 			end
 		end
 	end
+
+	function modifier_arena_hero:OnAbilityEndChannel(keys)
+		local parent = self:GetParent()
+		local endChannelListeners = parent.EndChannelListeners
+		if not endChannelListeners then return end
+		for _, v in ipairs(endChannelListeners) do
+			v(keys.fail_type < 0)
+		end
+		parent.EndChannelListeners = {}
+	end
+
 	function modifier_arena_hero:OnDestroy()
 		if IsValidEntity(self.reflect_stolen_ability) then
 			self.reflect_stolen_ability:RemoveSelf()

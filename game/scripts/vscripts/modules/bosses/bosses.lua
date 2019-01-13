@@ -154,17 +154,10 @@ function Bosses:MakeBossAI(unit, name, params)
 		end
 	elseif name == "cursed_zeld" then
 		local boss_cursed_zeld_mind_crack = unit:FindAbilityByName("boss_cursed_zeld_mind_crack")
-		local boss_cursed_zeld_mental_influence = unit:FindAbilityByName("boss_cursed_zeld_mental_influence")
 		params.abilityCastCallback = function(self)
 			if boss_cursed_zeld_mind_crack:IsFullyCastable() and boss_cursed_zeld_mind_crack:IsActivated() then
 				if self.state == AI_STATE_AGGRESSIVE then
 					self:UseAbility(boss_cursed_zeld_mind_crack)
-				end
-			end
-			if boss_cursed_zeld_mental_influence:IsFullyCastable() and boss_cursed_zeld_mental_influence:IsActivated() then
-				local unitsInRange = self:FindUnitsNearbyForAbility(boss_cursed_zeld_mental_influence)
-				if #unitsInRange > 0 then
-					self:UseAbility(boss_cursed_zeld_mental_influence)
 				end
 			end
 		end

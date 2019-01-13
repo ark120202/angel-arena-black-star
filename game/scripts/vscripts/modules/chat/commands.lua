@@ -162,14 +162,8 @@ return {
 			if not PlayerResource:IsValidPlayerID(playerId) then return end
 
 			PLAYER_DATA[playerId].isBanned = true
-
-			local data = PLAYER_DATA[playerId].serverData or {}
-			local clientData = table.deepcopy(data)
-			clientData.TBDRating = nil
-			clientData.isBanned = true
-			PlayerTables:SetTableValue("stats_client", playerId, clientData)
-
 			PlayerResource:MakePlayerAbandoned(playerId)
+			PlayerResource:KickPlayer(playerId)
 		end
 	},
 	["a_createhero"] = {

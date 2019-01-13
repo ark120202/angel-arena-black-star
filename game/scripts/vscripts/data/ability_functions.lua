@@ -104,53 +104,27 @@ OUTGOING_DAMAGE_MODIFIERS = {
 	},
 	modifier_item_piercing_blade = {
 		condition = function(attacker, _, inflictor)
-			return not inflictor and not attacker:HasModifier("modifier_item_haganemushi")
+			return not inflictor and not attacker:HasModifier("modifier_item_soulcutter")
 		end,
-		multiplier = function(attacker, victim, _, damage, damagetype)
-			local pct = GetAbilitySpecial("item_piercing_blade", "attack_damage_to_pure_pct") * 0.01
-			ApplyDamage({
-				victim = victim,
-				attacker = attacker,
-				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
-				damage_type = _G[GetKeyValue("item_piercing_blade", "AbilityUnitDamageType")],
-				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-				ability = FindItemInInventoryByName(attacker, "item_piercing_blade", false)
-			})
-			return 1 - pct
+		multiplier = function()
+			return 1 - GetAbilitySpecial("item_piercing_blade", "attack_damage_to_pure_pct") * 0.01
 		end
 	},
-	modifier_item_haganemushi = {
+	modifier_item_soulcutter = {
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
-		multiplier = function(attacker, victim, _, damage, damagetype)
-			local pct = GetAbilitySpecial("item_haganemushi", "attack_damage_to_pure_pct") * 0.01
-			ApplyDamage({
-				victim = victim,
-				attacker = attacker,
-				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
-				damage_type = _G[GetKeyValue("item_haganemushi", "AbilityUnitDamageType")],
-				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-				ability = FindItemInInventoryByName(attacker, "item_haganemushi", false)
-			})
-			return 1 - pct
+		multiplier = function()
+			return 1 - GetAbilitySpecial("item_soulcutter", "attack_damage_to_pure_pct") * 0.01
 		end
 	},
 	modifier_sai_release_of_forge = {
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
-		multiplier = function(attacker, victim, _, damage, damagetype)
+		multiplier = function(attacker)
 			local ability = attacker:FindAbilityByName("sai_release_of_forge")
 			local pct = ability:GetSpecialValueFor("pure_damage_pct") * 0.01
-			ApplyDamage({
-				victim = victim,
-				attacker = attacker,
-				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype) * pct,
-				damage_type = ability:GetAbilityDamageType(),
-				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-				ability = ability
-			})
 			return 1 - pct
 		end
 	},
@@ -158,27 +132,8 @@ OUTGOING_DAMAGE_MODIFIERS = {
 		condition = function(_, _, inflictor)
 			return not inflictor
 		end,
-		multiplier = function(attacker, victim, _, damage, damagetype)
-			local anakim_wisps = attacker:FindAbilityByName("anakim_wisps")
-			if anakim_wisps then
-				damage = GetPreMitigationDamage(damage, victim, attacker, damagetype)
-				local dt = {
-					victim = victim,
-					attacker = attacker,
-					ability = anakim_wisps,
-					damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-				}
-				dt.damage_type = DAMAGE_TYPE_PURE
-				dt.damage = damage * anakim_wisps:GetAbilitySpecial("pure_damage_pct") * 0.01
-				ApplyDamage(dt)
-				dt.damage_type = DAMAGE_TYPE_MAGICAL
-				dt.damage = damage * anakim_wisps:GetAbilitySpecial("magic_damage_pct") * 0.01
-				ApplyDamage(dt)
-				dt.damage_type = DAMAGE_TYPE_PHYSICAL
-				dt.damage = damage * anakim_wisps:GetAbilitySpecial("physical_damage_pct") * 0.01
-				ApplyDamage(dt)
-				return 0
-			end
+		multiplier = function()
+			return 0
 		end
 	},
 	modifier_item_golden_eagle_relic = function(_, _, inflictor)
@@ -268,11 +223,6 @@ INCOMING_DAMAGE_MODIFIERS = {
 			if not inflictor or inflictor:GetAbilityName() ~= "item_meteor_hammer" then
 				return 1
 			end
-		end
-	},
-	modifier_arena_courier = {
-		damage = function ()
-			return 1
 		end
 	},
 	modifier_anakim_transfer_pain = {

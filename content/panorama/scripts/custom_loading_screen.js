@@ -70,7 +70,7 @@ function Snippet_OptionVoting(voteName, voteData) {
 		})(voteName, variant));
 
 		var label = $.CreatePanel('Label', button, '');
-		label.text = typeof variant === 'string' ? $.Localize('option_voting_' + voteName + '_' + variant) : typeof variant === 'boolean' ? $.Localize(variant ? 'option_yes' : 'option_no') : variant;
+		label.text = typeof variant === 'string' ? $.Localize('option_voting_' + voteName + '_' + variant) : variant;
 
 		var votedataLabel = $.CreatePanel('Label', button, 'vote_data_variant_' + tIndex);
 		votedataLabel.text = '{s:votes}';
@@ -148,29 +148,7 @@ function CheckStartable() {
 	}
 }
 
-var russianLangs = [
-	'russian',
-	'ukrainian',
-	'bulgarian'
-];
-function OnAdsClicked() {
-	var context = $.GetContextPanel();
-	$.Schedule(context.BHasClass('AdsClicked') ? 0 : .35, function() {
-		$.DispatchEvent('ExternalBrowserGoToURL', 'https://angelarenablackstar-ark120202.rhcloud.com/ads/loading_screen/go');
-	});
-	if (!context.BHasClass('AdsClicked')){
-		context.AddClass('AdsClicked');
-		Game.EmitSound('General.CoinsBig');
-		GameEvents.SendCustomGameEventToServer('on_ads_clicked', {
-			source: 'loading_screen'
-		});
-	}
-}
-
-
 (function() {
-	$('#AdsBanner').SetImage('https://angelarenablackstar-ark120202.rhcloud.com/ads/loading_screen/' + (russianLangs.indexOf($.Language()) !== -1 ? 'ru.png' : 'en.png'));
-
 	$('#OptionVotings').RemoveAndDeleteChildren();
 	CheckStartable();
 	FillTips();

@@ -1,20 +1,16 @@
-LinkLuaModifier("modifier_multicast_lua", "heroes/hero_ogre_magi/multicast.lua", LUA_MODIFIER_MOTION_NONE)
-ogre_magi_multicast_arena = class({
+ogre_magi_multicast_arena = {
 	GetIntrinsicModifierName = function() return "modifier_multicast_lua" end,
-})
+}
 
-function ogre_magi_multicast_arena:GetManaCost(iLevel)
-	if self:GetCaster():HasScepter() then
-		return self:GetSpecialValueFor("scepter_manacost")
-	else
-		return 0
-	end
-end
+if IsServer() then
+	function ogre_magi_multicast_arena:OnSpellStart()
+		local caster = self:GetCaster()
+		if not caster:HasScepter() then return end
 
-function ogre_magi_multicast_arena:OnSpellStart()
-	if IsServer() and self:GetCaster():HasScepter() then
-		self:GetCursorTarget():EmitSound("Hero_OgreMagi.Fireblast.x3")
-		self:GetCursorTarget():AddNewModifier(self:GetCaster(), self, "modifier_multicast_lua", {duration = self:GetSpecialValueFor("duration_ally")})
+		local target = self:GetCursorTarget()
+		local duration = self:GetSpecialValueFor("duration_ally_scepter")
+		target:EmitSound("Hero_OgreMagi.Fireblast.x3")
+		target:AddNewModifier(caster, self, "modifier_multicast_lua", { duration = duration })
 	end
 end
 
@@ -26,87 +22,79 @@ function ogre_magi_multicast_arena:GetBehavior()
 	end
 end
 
-function ogre_magi_multicast_arena:GetCastRange()
-	if self:GetCaster():HasScepter() then
-		return self:GetSpecialValueFor("multicast_cast_range")
-	else
-		return 0
-	end
+function ogre_magi_multicast_arena:GetManaCost(...)
+	return self:GetCaster():HasScepter() and self.BaseClass.GetManaCost(self, ...) or 0
 end
 
-function ogre_magi_multicast_arena:CastFilterResultTarget( hTarget )
-	if hTarget and self:GetCaster() == hTarget or (hTarget.FindAbilityByName and hTarget:FindAbilityByName("ogre_magi_multicast_arena")) then
+function ogre_magi_multicast_arena:GetCastRange(...)
+	return self:GetCaster():HasScepter() and self.BaseClass.GetCastRange(self, ...) or 0
+end
+
+function ogre_magi_multicast_arena:CastFilterResultTarget(target)
+	local caster = self:GetCaster()
+	if caster == target or target:FindAbilityByName("ogre_magi_multicast_arena") then
 		return UF_FAIL_CUSTOM
 	end
 
-	local nResult = UnitFilter( hTarget, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, self:GetCaster():GetTeamNumber() )
-	if nResult ~= UF_SUCCESS then
-		return nResult
-	end
-
-	return UF_SUCCESS
+	return UnitFilter(target, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, caster:GetTeamNumber())
 end
 
 
-function ogre_magi_multicast_arena:GetCustomCastErrorTarget( hTarget )
-	if self:GetCaster() == hTarget then
+function ogre_magi_multicast_arena:GetCustomCastErrorTarget(target)
+	if self:GetCaster() == target then
 		return "#dota_hud_error_cant_cast_on_self"
 	end
-
-	if hTarget:FindAbilityByName("ogre_magi_multicast_arena") then
+	if target:FindAbilityByName("ogre_magi_multicast_arena") then
 		return "#dota_hud_error_cant_cast_on_other"
 	end
-
 	return ""
 end
 
 
-modifier_multicast_lua = class({
-	DeclareFunctions    = function() return {MODIFIER_EVENT_ON_ABILITY_EXECUTED} end,
-	GetEffectName       = function() return "particles/arena/units/heroes/hero_ogre_magi/multicast_aghanims_buff.vpcf" end,
+LinkLuaModifier("modifier_multicast_lua", "heroes/hero_ogre_magi/multicast.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_multicast_lua = {
+	IsPurgable = function() return false end,
+	GetEffectName = function() return "particles/arena/units/heroes/hero_ogre_magi/multicast_aghanims_buff.vpcf" end,
 	GetEffectAttachType = function() return PATTACH_ABSORIGIN_FOLLOW end,
-	IsPurgable          = function() return false end,
-})
+	DeclareFunctions = function() return { MODIFIER_EVENT_ON_ABILITY_EXECUTED } end,
+}
 
-function modifier_multicast_lua:OnAbilityExecuted(keys)
-	if IsServer() and self:GetParent() == keys.unit then
-		local ability_cast = keys.ability
+if IsServer() then
+	function modifier_multicast_lua:OnAbilityExecuted(keys)
+		local parent = self:GetParent()
+		if parent ~= keys.unit then return end
+		local castedAbility = keys.ability
+
 		local caster = self:GetParent()
 		local target = keys.target or caster:GetCursorPosition()
 		local ability = self:GetAbility()
-		local ogre_abilities = {
-			"ogre_magi_bloodlust",
-			"ogre_magi_fireblast",
-			"ogre_magi_ignite",
-			"ogre_magi_unrefined_fireblast"
+
+		local ogreAbilities = {
+			ogre_magi_bloodlust = true,
+			ogre_magi_fireblast = true,
+			ogre_magi_ignite = true,
+			ogre_magi_unrefined_fireblast = true
 		}
-		if ability_cast and not ability_cast:IsItem() and not ability_cast:IsToggle() then
-			if table.includes(ogre_abilities, ability_cast:GetName()) then
-				local mc = caster:AddAbility("ogre_magi_multicast")
-				mc:SetHidden(true)
-				mc:SetLevel(ability:GetLevel())
-				Timers:NextTick(function() caster:RemoveAbility("ogre_magi_multicast") end)
-			else
-				local multicast
-				local pct_4 = ability:GetSpecialValueFor("multicast_4_times")
-				local pct_3 = ability:GetSpecialValueFor("multicast_3_times")
-				local pct_2 = ability:GetSpecialValueFor("multicast_2_times")
-				if IsUltimateAbility(ability_cast) then
-					pct_4 = pct_4 / 2
-					pct_3 = pct_3 / 2
-					pct_2 = pct_2 / 2
-				end
-				if RollPercentage(pct_4) then
-					multicast = 4
-				elseif RollPercentage(pct_3) then
-					multicast = 3
-				elseif RollPercentage(pct_2) then
-					multicast = 2
-				end
-				if ability_cast ~= nil and multicast then
-					PreformMulticast(caster, ability_cast, multicast, ability:GetSpecialValueFor( "multicast_delay"), target)
-				end
-			end
+		if ogreAbilities[castedAbility:GetAbilityName()] then
+			local mc = caster:AddAbility("ogre_magi_multicast")
+			mc:SetHidden(true)
+			mc:SetLevel(ability:GetLevel())
+			Timers:NextTick(function() caster:RemoveAbility("ogre_magi_multicast") end)
+			return
+		end
+
+		local multiplier = IsUltimateAbility(castedAbility) and 0.5 or 1
+		local multicast
+		if RollPercentage(ability:GetSpecialValueFor("multicast_4_times") * multiplier) then
+			multicast = 4
+		elseif RollPercentage(ability:GetSpecialValueFor("multicast_3_times") * multiplier) then
+			multicast = 3
+		elseif RollPercentage(ability:GetSpecialValueFor("multicast_2_times") * multiplier) then
+			multicast = 2
+		end
+
+		if multicast then
+			PreformMulticast(caster, castedAbility, multicast, ability:GetSpecialValueFor("multicast_delay"), target)
 		end
 	end
 end

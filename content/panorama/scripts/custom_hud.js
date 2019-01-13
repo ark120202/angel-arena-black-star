@@ -56,8 +56,8 @@ function UpdatePanoramaHUD() {
 	var sw = Game.GetScreenWidth();
 	var sh = Game.GetScreenHeight();
 	var minimap = FindDotaHudElement('minimap_block');
-	$('#DynamicMinimapRoot').style.height = ((minimap.actuallayoutheight + 16) / sh * 100) + '%';
-	$('#DynamicMinimapRoot').style.width = ((minimap.actuallayoutwidth + 16) / sw * 100) + '%';
+	$('#DynamicMinimapRoot').style.height = ((minimap.actuallayoutheight + minimap.contentheight - minimap.actuallayoutheight) / sh * 100) + '%';
+	$('#DynamicMinimapRoot').style.width = ((minimap.actuallayoutwidth + minimap.contentwidth - minimap.actuallayoutwidth) / sw * 100) + '%';
 	var pcs = FindDotaHudElement('PortraitContainer').GetPositionWithinWindow();
 	if (pcs != null && !isNaN(pcs.x) && !isNaN(pcs.y))
 		CustomModifiersList.style.position = (pcs.x / sw * 100) + '% ' + (pcs.y / sh * 100) + '% 0';
@@ -197,6 +197,10 @@ function HookPanoramaPanels() {
 			// https://dota2.gamepedia.com/Attack_speed#Attack_speed_representation
 			var attackSpeedTooltip = Entities.GetAttackSpeed(_unit) * 100 * (1.7 / attackRate);
 			DOTAHUDDamageArmorTooltip.SetDialogVariableInt('base_attack_speed', Math.round(attackSpeedTooltip));
+			if (custom_entity_value.IdealArmor != null)
+				DOTAHUDDamageArmorTooltip.SetDialogVariable('agility_armor', custom_entity_value.IdealArmor.toFixed(1));
+			if (custom_entity_value.AgilityCriticalDamage != null)
+				DOTAHUDDamageArmorTooltip.SetDialogVariable('agility_critical_damage', custom_entity_value.AgilityCriticalDamage.toFixed(1));
 
 			if (custom_entity_value.AttributeStrengthGain != null)
 				DOTAHUDDamageArmorTooltip.SetDialogVariable('strength_per_level', custom_entity_value.AttributeStrengthGain.toFixed(1));
@@ -204,10 +208,13 @@ function HookPanoramaPanels() {
 				DOTAHUDDamageArmorTooltip.SetDialogVariable('agility_per_level', custom_entity_value.AttributeAgilityGain.toFixed(1));
 			if (custom_entity_value.AttributeIntelligenceGain != null)
 				DOTAHUDDamageArmorTooltip.SetDialogVariable('intelligence_per_level', custom_entity_value.AttributeIntelligenceGain.toFixed(1));
-			/*if (custom_entity_value.AttackRangeModify != null) {
-				var modify = Math.round(custom_entity_value.AttackRangeModify);
-				DOTAHUDDamageArmorTooltip.SetDialogVariable("bonus_attack_range", newChange);
-			}*/
+
+			DOTAHUDDamageArmorTooltip.FindChildTraverse('StrengthDetails').text = $.Localize('#arena_hud_tooltip_details_strength', DOTAHUDDamageArmorTooltip);
+			DOTAHUDDamageArmorTooltip.FindChildTraverse('StrengthDetails').style.textOverflow = 'shrink';
+			DOTAHUDDamageArmorTooltip.FindChildTraverse('AgilityDetails').text = $.Localize('#arena_hud_tooltip_details_agility', DOTAHUDDamageArmorTooltip);
+			DOTAHUDDamageArmorTooltip.FindChildTraverse('AgilityDetails').style.textOverflow = 'shrink';
+			DOTAHUDDamageArmorTooltip.FindChildTraverse('IntelligenceDetails').text = $.Localize('#arena_hud_tooltip_details_intelligence', DOTAHUDDamageArmorTooltip);
+			DOTAHUDDamageArmorTooltip.FindChildTraverse('IntelligenceDetails').style.textOverflow = 'shrink';
 		}
 	});
 	stats_region.SetPanelEvent('onmouseout', function() {
@@ -370,13 +377,6 @@ function CreateHeroElements(id) {
 	$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
 	DynamicSubscribePTListener('players_abandoned', function(tableName, changesObject, deletionsObject) {
 		if (changesObject[Game.GetLocalPlayerID()]) $.GetContextPanel().AddClass('LocalPlayerAbandoned');
-	});
-
-	DynamicSubscribePTListener('stats_client', function(tableName, changesObject) {
-		var localPlayerId = Game.GetLocalPlayerID();
-		if (changesObject[localPlayerId] && changesObject[localPlayerId].isBanned) {
-			$.GetContextPanel().AddClass('LocalPlayerBanned');
-		}
 	});
 
 	AutoUpdatePanoramaHUD();

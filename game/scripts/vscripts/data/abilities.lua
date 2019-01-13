@@ -14,22 +14,48 @@ LINKED_ABILITIES = {
 	monkey_king_primal_spring = {"monkey_king_primal_spring_early"},
 }
 
-NOT_MULTICASTABLE_ABILITIES = {
-	"ogre_magi_bloodlust",
-	"ogre_magi_fireblast",
-	"ogre_magi_ignite",
-	"ogre_magi_unrefined_fireblast",
-	"ogre_magi_multicast_arena",
-	"invoker_quas",
-	"invoker_wex",
-	"invoker_exort",
-	"invoker_invoke",
-	"shredder_chakram",
-	"alchemist_unstable_concoction",
-	"alchemist_unstable_concoction_throw",
-	"elder_titan_ancestral_spirit",
-	"elder_titan_return_spirit",
-	"ember_spirit_sleight_of_fist",
+MULTICAST_TYPE_NONE = 0
+MULTICAST_TYPE_SAME = 1 -- Fireblast
+MULTICAST_TYPE_DIFFERENT = 2 -- Ignite
+MULTICAST_TYPE_INSTANT = 3 -- Bloodlust
+MULTICAST_ABILITIES = {
+	ogre_magi_bloodlust = MULTICAST_TYPE_NONE,
+	ogre_magi_fireblast = MULTICAST_TYPE_NONE,
+	ogre_magi_ignite = MULTICAST_TYPE_NONE,
+	ogre_magi_unrefined_fireblast = MULTICAST_TYPE_NONE,
+	ogre_magi_multicast_arena = MULTICAST_TYPE_NONE,
+
+	item_manta_arena = MULTICAST_TYPE_NONE,
+	item_diffusal_style = MULTICAST_TYPE_NONE,
+	item_refresher_arena = MULTICAST_TYPE_NONE,
+	item_refresher_core = MULTICAST_TYPE_NONE,
+
+	invoker_quas = MULTICAST_TYPE_NONE,
+	invoker_wex = MULTICAST_TYPE_NONE,
+	invoker_exort = MULTICAST_TYPE_NONE,
+	invoker_invoke = MULTICAST_TYPE_NONE,
+	shredder_chakram = MULTICAST_TYPE_NONE,
+	alchemist_unstable_concoction = MULTICAST_TYPE_NONE,
+	alchemist_unstable_concoction_throw = MULTICAST_TYPE_NONE,
+	elder_titan_ancestral_spirit = MULTICAST_TYPE_NONE,
+	elder_titan_return_spirit = MULTICAST_TYPE_NONE,
+	ember_spirit_sleight_of_fist = MULTICAST_TYPE_NONE,
+	monkey_king_tree_dance = MULTICAST_TYPE_NONE,
+	monkey_king_primal_spring = MULTICAST_TYPE_NONE,
+	monkey_king_primal_spring_early = MULTICAST_TYPE_NONE,
+	wisp_spirits = MULTICAST_TYPE_NONE,
+	wisp_spirits_in = MULTICAST_TYPE_NONE,
+	wisp_spirits_out = MULTICAST_TYPE_NONE,
+	arc_warden_tempest_double = MULTICAST_TYPE_NONE,
+	phoenix_sun_ray = MULTICAST_TYPE_NONE,
+	phoenix_sun_ray_stop = MULTICAST_TYPE_NONE,
+	phoenix_sun_ray_toggle_move = MULTICAST_TYPE_NONE,
+
+	terrorblade_conjure_image = MULTICAST_TYPE_INSTANT,
+	terrorblade_reflection = MULTICAST_TYPE_INSTANT,
+	magnataur_empower = MULTICAST_TYPE_INSTANT,
+	oracle_purifying_flames = MULTICAST_TYPE_SAME,
+	vengefulspirit_magic_missile = MULTICAST_TYPE_SAME,
 }
 
 REFRESH_LIST_IGNORE_REFRESHER = {
@@ -134,6 +160,7 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	centaur_return = true,
 	huskar_life_break = true,
 	item_spirit_helix = true,
+	item_ethereal_blade = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

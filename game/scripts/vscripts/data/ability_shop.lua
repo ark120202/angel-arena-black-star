@@ -102,6 +102,7 @@ ABILITY_SHOP_DATA = {
 	["freya_pain_reflection"] = { cost = 24, },
 	["freya_frozen_strike"] = { cost = 26, },
 	["shinobu_yumewatari_lua"] = { cost = 9, },
+	["arthas_plus_morality"] = { cost = 6, },
 	["saber_mana_burst"] = { cost = 4, },
 	["saber_avalon"] = { cost = 5, },
 	["saber_excalibur"] = { cost = 12, },
@@ -142,4 +143,5 @@ ABILITY_SHOP_SKIP_ABILITIES = {
 	"meepo_divided_we_stand",
 	"saitama_limiter",
 	"sai_release_of_forge",
+	"spectre_dispersion",
 }
