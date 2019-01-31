@@ -43,9 +43,7 @@ gulp.task('localization', () =>
 			return Promise.map(Object.keys(tokensByLanguages), language => {
 				let lang = {Language: language, Tokens: tokensByLanguages[language]};
 				let minified = '\ufeff' + vdf.stringify({lang}, 0);
-				return Promise.map([path.join(paths.game, 'resource/addon_' + language + '.txt'), path.join(paths.game, 'panorama/localization/addon_' + language + '.txt')], path => {
-					return fs.outputFile(path, minified, 'ucs2');
-				});
+				return fs.outputFile(path.join(paths.game, 'resource/addon_' + language + '.txt'), minified, 'ucs2');
 			});
 		})
 		.catch(console.error)
