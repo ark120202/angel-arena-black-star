@@ -638,13 +638,6 @@ function VectorOnBoxPerimeter(vec, min, max)
 	if m == dt then return Vector(x, t) end
 end
 
-function CalculateBaseArmor(arg)
-	local value = arg.value
-	local isPrimary = arg.isPrimary
-	if IsValidEntity(arg) then
-		value = arg:GetIntellect()
-		isPrimary = arg:GetPrimaryAttribute() == DOTA_ATTRIBUTE_INTELLECT
-	end
-
-	return value * (isPrimary and 0.125 or 0.1)
+function CalculateBaseArmor(intellect)
+	return intellect * 0.1
 end

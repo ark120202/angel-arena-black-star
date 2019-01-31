@@ -70,10 +70,7 @@ function HeroSelection:ExtractHeroStats(heroTable)
 	attributes.damage_min = attributes.damage_min + attributes["attribute_base_" .. attributes.attribute_primary]
 	attributes.damage_max = attributes.damage_max + attributes["attribute_base_" .. attributes.attribute_primary]
 
-	local armorForFirstLevel = CalculateBaseArmor({
-		value = heroTable.AttributeBaseIntelligence,
-		isPrimary = heroTable.AttributePrimary == "DOTA_ATTRIBUTE_INTELLECT",
-	})
+	local armorForFirstLevel = CalculateBaseArmor(heroTable.AttributeBaseIntelligence)
 	attributes.armor = attributes.armor + armorForFirstLevel
 	return attributes
 end

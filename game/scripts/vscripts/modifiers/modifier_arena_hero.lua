@@ -76,8 +76,7 @@ if IsServer() then
 			self:SetSharedKey("VisibleAbilitiesCount", VisibleAbilitiesCount)
 		end
 
-		local isStrengthHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_STRENGTH
-		local function calculateResistanceFromStrength(str) return str * (isStrengthHero and 0.1 or 0.08) * 0.01 end
+		local function calculateResistanceFromStrength(str) return str * 0.08 * 0.01 end
 		local strength = parent:GetStrength()
 		local strengthResistance = calculateResistanceFromStrength(strength)
 		if strengthResistance == 1 then
@@ -103,9 +102,8 @@ if IsServer() then
 			self:SetSharedKey("resistanceDifference", resistanceDifference)
 		end
 
-		local isAgilityHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY
-		local agilityArmor = parent:GetAgility() * (isAgilityHero and 0.2 or 0.16)
-		local idealArmor = CalculateBaseArmor(parent)
+		local agilityArmor = parent:GetAgility() * 0.16
+		local idealArmor = CalculateBaseArmor(parent:GetIntellect())
 		if self.idealArmor ~= idealArmor then
 			self.idealArmor = idealArmor
 			parent:SetNetworkableEntityInfo("IdealArmor", idealArmor)
@@ -117,8 +115,7 @@ if IsServer() then
 			parent:SetPhysicalArmorBaseValue(parent:GetKeyValue("ArmorPhysical") + armorDifference)
 		end
 
-		local isAgilityHero = parent:GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY
-		local agilityCriticalDamage = 100 + parent:GetAgility() * (isAgilityHero and 0.025 or 0.02)
+		local agilityCriticalDamage = 100 + parent:GetAgility() * 0.02
 		if self.agilityCriticalDamage ~= agilityCriticalDamage then
 			self.agilityCriticalDamage = agilityCriticalDamage
 			parent:SetNetworkableEntityInfo("AgilityCriticalDamage", agilityCriticalDamage)
