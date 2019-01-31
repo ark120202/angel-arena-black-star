@@ -276,7 +276,7 @@ function OnMinimapClickSpawnBox(team, level, index) {
 function OnAdsClicked() {
 	var context = $.GetContextPanel();
 	$.Schedule(context.BHasClass('AdsClicked') ? 0 : .35, function() {
-		$.DispatchEvent('ExternalBrowserGoToURL', 'https://www.donationalerts.com/r/murzik');
+		$.DispatchEvent('ExternalBrowserGoToURL', 'https://goo.gl/FJynE1');
 	});
 	if (!context.BHasClass('AdsClicked')){
 		context.AddClass('AdsClicked');
