@@ -261,6 +261,7 @@ function StatsClient:VoteGuide(data)
 	})
 end
 
+local AUTH_KEY = GetDedicatedServerKey("1")
 function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _currentRetry)
 	if type(retryCount) == "boolean" then
 		retryCount = retryCount and math.huge or 0
@@ -269,6 +270,7 @@ function StatsClient:Send(path, data, callback, retryCount, protocol, onerror, _
 	end
 
 	local request = CreateHTTPRequestScriptVM(protocol or "POST", self.ServerAddress .. path .. (protocol == "GET" and StatsClient:EncodeParams(data) or ""))
+	request:SetHTTPRequestHeaderValue("Auth-Key", AUTH_KEY)
 	request:SetHTTPRequestGetOrPostParameter("data", json.encode(data))
 	request:Send(function(response)
 		if response.StatusCode ~= 200 or not response.Body then
