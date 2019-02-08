@@ -16,6 +16,9 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_EVENT_ON_ABILITY_END_CHANNEL,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
 		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
+		MODIFIER_EVENT_ON_ATTACK_FINISHED,
+		MODIFIER_EVENT_ON_ATTACK_START,
+		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
 	}
 end
 
@@ -28,10 +31,28 @@ function modifier_arena_hero:GetModifierMagicalResistanceDirectModification()
 end
 
 if IsServer() then
-	function modifier_arena_hero:GetModifierPreAttack_CriticalStrike()
-		if RollPercentage(15) then
-			return self.agilityCriticalDamage
+	function modifier_arena_hero:OnAttackStart(keys)
+		if keys.attacker == self:GetParent() and RollPercentage(15) then
+			self.GetModifierDamageOutgoing_Percentage = self.crit_procced
+			self.GetModifierPreAttack_CriticalStrike = self.crit_procced_num
+			self.OnAttackFinished = self.crit_cancel
 		end
+	end
+	
+	function modifier_arena_hero:crit_cancel(keys)
+		if keys.attacker == self:GetParent() then
+			self.GetModifierDamageOutgoing_Percentage = nil
+			self.GetModifierPreAttack_CriticalStrike = nil
+			self.OnAttackFinished = nil
+		end
+	end
+	
+	function modifier_arena_hero:crit_procced()
+		return self.agilityCriticalDamage - 100
+	end
+	
+	function modifier_arena_hero:crit_procced_num()
+		return 100.0001 --if it is 100 the crit indicator won't show
 	end
 
 	modifier_arena_hero.HeroLevel = 1
