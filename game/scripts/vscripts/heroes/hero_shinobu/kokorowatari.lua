@@ -33,7 +33,7 @@ function ChanceToKill(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	if not target:IsConsideredHero() and not target:IsMagicImmune() and not target:IsInvulnerable() and RollPercentage(ability:GetAbilitySpecial("chance_to_kill")) then
+	if not target:IsConsideredHero() and not target:IsMagicImmune() and not target:IsInvulnerable() and ability:RollPRD(ability:GetAbilitySpecial("chance_to_kill")) then
 		target:Kill(ability, caster)
 	end
 end
