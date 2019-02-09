@@ -61,7 +61,7 @@ if IsServer() then
 	function modifier_item_sacred_blade_mail:OnTakeDamage(keys)
 		local unit = self:GetParent()
 		local ability = self:GetAbility()
-		if unit == keys.unit and IsValidEntity(ability) and IsValidEntity(keys.inflictor) and RollPercentage(ability:GetSpecialValueFor("buff_chance")) and not unit:HasModifier("modifier_item_sacred_blade_mail_buff_cooldown") then
+		if unit == keys.unit and IsValidEntity(ability) and IsValidEntity(keys.inflictor) and ability:RollPRD(ability:GetSpecialValueFor("buff_chance")) and not unit:HasModifier("modifier_item_sacred_blade_mail_buff_cooldown") then
 			unit:AddNewModifier(unit, ability, "modifier_item_sacred_blade_mail_buff", {duration = ability:GetSpecialValueFor("buff_duration")})
 			unit:AddNewModifier(unit, ability, "modifier_item_sacred_blade_mail_buff_cooldown", {duration = ability:GetSpecialValueFor("buff_cooldown")})
 
