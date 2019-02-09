@@ -41,7 +41,7 @@ local function OctarineLifesteal(attacker, victim, inflictor, damage, damagetype
 		end
 
 		local item = FindItemInInventoryByName(attacker, itemname, false)
-		if item and RollPercentage(GetAbilitySpecial(itemname, "bash_chance")) and not attacker:HasModifier(cooldownModifierName) then
+		if item and item:RollPRD(GetAbilitySpecial(itemname, "bash_chance"), "bash_chance_PRD") and not attacker:HasModifier(cooldownModifierName) then
 			victim:AddNewModifier(attacker, item, "modifier_stunned", {duration = GetAbilitySpecial(itemname, "bash_duration")})
 			item:ApplyDataDrivenModifier(attacker, attacker, cooldownModifierName, {})
 		end
@@ -66,7 +66,7 @@ ON_DAMAGE_MODIFIER_PROCS = {
 ON_DAMAGE_MODIFIER_PROCS_VICTIM = {
 	modifier_item_holy_knight_shield = function(attacker, victim, inflictor, damage) if inflictor then
 		local item = FindItemInInventoryByName(victim, "item_holy_knight_shield", false)
-		if item and RollPercentage(GetAbilitySpecial("item_holy_knight_shield", "buff_chance")) and victim:GetTeam() ~= attacker:GetTeam() then
+		if item and item:RollPRD(GetAbilitySpecial("item_holy_knight_shield", "buff_chance"), "buff_chance_PRD") and victim:GetTeam() ~= attacker:GetTeam() then
 			if item:PerformPrecastActions() then
 				item:ApplyDataDrivenModifier(victim, victim, "modifier_item_holy_knight_shield_buff", {})
 			end
@@ -156,7 +156,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 	modifier_mirratie_sixth_sense = {
 		multiplier = function(_, victim)
 			local mirratie_sixth_sense = victim:FindAbilityByName("mirratie_sixth_sense")
-			if mirratie_sixth_sense and victim:IsAlive() and RollPercentage(mirratie_sixth_sense:GetAbilitySpecial("dodge_chance_pct")) and not victim:PassivesDisabled() then
+			if mirratie_sixth_sense and victim:IsAlive() and mirratie_sixth_sense:RollPRD(mirratie_sixth_sense:GetAbilitySpecial("dodge_chance_pct"), "dodge_chance_PRD") and not victim:PassivesDisabled() then
 				ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
 				return 0
 			end
@@ -180,7 +180,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 			local saber_instinct = victim:FindAbilityByName("saber_instinct")
 			if not IsValidEntity(inflictor) and saber_instinct and victim:IsAlive() and not victim:PassivesDisabled() then
 				if attacker:IsRangedUnit() then
-					if RollPercentage(saber_instinct:GetAbilitySpecial("ranged_evasion_pct")) then
+					if saber_instinct:RollPRD(saber_instinct:GetAbilitySpecial("ranged_evasion_pct")) then
 						local victimPlayer = victim:GetPlayerOwner()
 						local attackerPlayer = attacker:GetPlayerOwner()
 
@@ -190,7 +190,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 						return false
 					end
 				else
-					if RollPercentage(saber_instinct:GetAbilitySpecial("melee_block_chance")) then
+					if saber_instinct:RollPRD(saber_instinct:GetAbilitySpecial("melee_block_chance")) then
 						local blockPct = saber_instinct:GetAbilitySpecial("melee_damage_pct") * 0.01
 						return {
 							BlockedDamage = blockPct * damage,
@@ -249,7 +249,7 @@ INCOMING_DAMAGE_MODIFIERS = {
 	},
 	modifier_item_timelords_butterfly = {
 		multiplier = function(_, victim)
-			if victim:IsAlive() and not victim:IsMuted() and RollPercentage(GetAbilitySpecial("item_timelords_butterfly", "dodge_chance_pct")) then
+			if victim:IsAlive() and not victim:IsMuted() and victim:RollPRD(GetAbilitySpecial("item_timelords_butterfly", "dodge_chance_pct"), "item_timelords_butterfly_PRD") then
 				ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
 				return false
 			end
