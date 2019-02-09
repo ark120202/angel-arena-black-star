@@ -73,7 +73,7 @@ return function(parts, funcs)
         local target = keys.target
         local attacker = keys.attacker
 
-        if attacker == self:GetParent() and RollPercentage(self:GetSpecialValueFor("maim_chance_pct")) then
+        if attacker == self:GetParent() and self:RollPRD(self:GetSpecialValueFor("maim_chance_pct")) then
           target:EmitSound("DOTA_Item.Maim")
           target:AddNewModifier(
             attacker,
