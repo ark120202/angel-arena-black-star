@@ -55,7 +55,7 @@ end
 if IsServer() then
 	function modifier_item_bloodthorn_arena:GetModifierPreAttack_CriticalStrike(k)
 		local ability = self:GetAbility()
-		if RollPercentage(ability:GetSpecialValueFor("crit_chance_pct")) then
+		if self:RollPRD(ability:GetSpecialValueFor("crit_chance_pct")) then
 			return ability:GetSpecialValueFor("crit_multiplier_pct")
 		end
 	end
