@@ -34,7 +34,7 @@ if IsServer() then
 
 	function modifier_kadash_assasins_skills:GetModifierPreAttack_CriticalStrike()
 		local ability = self:GetAbility()
-		self.order_strike = RollPercentage(ability:GetSpecialValueFor("crit_chance"))
+		self.order_strike = ability:RollPRD(ability:GetSpecialValueFor("crit_chance"))
 		if self.order_strike then
 			return ability:GetSpecialValueFor("crit_mult")
 		end
