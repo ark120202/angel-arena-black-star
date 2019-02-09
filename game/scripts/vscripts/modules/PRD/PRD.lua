@@ -3,6 +3,7 @@
 	API
 	CDOTABaseAbility:RollPRD(chance, key) - Rolls a number between 0 and 100 with at most 1 decimal place.
 	CDOTA_Buff:RollPRD(chance, key) - Same as above, but for buffs
+	CDOTA_BaseNPC:RollPRD(chance, key) - Same as above, but for units
 
 ]]--
 
@@ -1021,6 +1022,7 @@ function CDOTABaseAbility:RollPRD(chance, key) --chance must be number between 0
 end
 
 CDOTA_Buff.RollPRD = CDOTABaseAbility.RollPRD
+CDOTA_BaseNPC.RollPRD = CDOTABaseAbility.RollPRD
 
 --everything below is useless and only used for baking stuff. full credit goes to Adam Smith https://gaming.stackexchange.com/questions/161430/calculating-the-constant-c-in-dota-2-pseudo-random-distribution
 
