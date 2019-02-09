@@ -1020,7 +1020,7 @@ function CDOTABaseAbility:RollPRD(chance, key) --chance must be number between 0
 	return rv
 end
 
-CDOTA_Buff:RollPRD = CDOTABaseAbility:RollPRD
+CDOTA_Buff.RollPRD = CDOTABaseAbility.RollPRD
 
 --everything below is useless and only used for baking stuff. full credit goes to Adam Smith https://gaming.stackexchange.com/questions/161430/calculating-the-constant-c-in-dota-2-pseudo-random-distribution
 
