@@ -28,7 +28,7 @@ if IsServer() then
 
 		local value = self:GetSpecialValueFor("strength")
 		caster:ModifyStrength(value)
-		caster.Additional_agi = (caster.Additional_agi or 0) + value
+		caster.Additional_str = (caster.Additional_str or 0) + value
 		self:RemoveSelf()
 	end
 end
@@ -45,7 +45,7 @@ if IsServer() then
 
 		local value = self:GetSpecialValueFor("agility") * self:GetCurrentCharges()
 		caster:ModifyAgility(value)
-		caster.Additional_str = (caster.Additional_str or 0) + value
+		caster.Additional_agi = (caster.Additional_agi or 0) + value
 		self:RemoveSelf()
 	end
 end
