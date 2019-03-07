@@ -1066,4 +1066,9 @@
 		"override_hero"	"npc_dota_hero_skeleton_king"
 		"AttackRate"	"1.6"
 	}
+
+	"npc_dota_hero_mars"
+	{
+		"override_hero"	"npc_dota_hero_mars"
+	}
 }
