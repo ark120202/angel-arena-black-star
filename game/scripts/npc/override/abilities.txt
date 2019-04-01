@@ -20332,7 +20332,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"illusion_outgoing_tooltip"	"30 35 40 45 50 55 60"
+				"illusion_outgoing_tooltip"	"40 45 50 55 60 65 70"
 			}
 
 			"04"
