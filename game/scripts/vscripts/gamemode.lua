@@ -209,7 +209,8 @@ function GameMode:GameModeThink()
 			end
 			if hero then
 				local xp = hero:GetCurrentXP()
-				local diff = xp - (hero.previousTickXP or xp)
+				if not hero.previousTickXP then hero.previousTickXP = xp end
+				local diff = xp - hero.previousTickXP
 				if diff > 0 then
 					hero.previousTickXP = xp
 					xpDiffs[i] = diff
