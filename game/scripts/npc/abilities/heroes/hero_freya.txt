@@ -23,7 +23,7 @@
 
 		"AbilityManaCost"				"100 150 200 250 300 350 400"
 		"AOERadius"						"%radius"
-		
+
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ICE"
 
 		"AbilitySpecial"
@@ -36,7 +36,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_missile_stun"	"2.0"
+				"magic_missile_stun"	"2.5"
 			}
 			"03"
 			{
@@ -344,7 +344,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"stat_to_crit_pct"	"1"
+				"stat_to_crit_pct"	"4 5 6 7 8 9 10"
 			}
 			"03"
 			{

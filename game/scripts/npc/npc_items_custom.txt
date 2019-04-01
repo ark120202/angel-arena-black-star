@@ -5613,7 +5613,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_regen_per_stack"	"1.0"
+				"hp_regen_per_stack"	"2.0"
 			}
 			"02"
 			{

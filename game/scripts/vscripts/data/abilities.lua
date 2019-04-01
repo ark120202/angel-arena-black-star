@@ -161,6 +161,8 @@ SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS = {
 	huskar_life_break = true,
 	item_spirit_helix = true,
 	item_ethereal_blade = true,
+	death_prophet_spirit_siphon = true,
+	witch_doctor_maledict = true,
 }
 
 OCTARINE_NOT_LIFESTALABLE_ABILITIES = {

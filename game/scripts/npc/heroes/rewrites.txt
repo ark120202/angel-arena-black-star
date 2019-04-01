@@ -20,7 +20,7 @@
 		"Ability3"				"gyrocopter_flak_cannon_arena"
 		"AttackRate"			"1.6"
 		"MovementSpeed"			"325"
-		"AttributeBaseAgility"	"16"
-		"AttributeAgilityGain"	"2.0"
+		"AttributeBaseAgility"	"20"
+		"AttributeAgilityGain"	"3.0"
 	}
 }
