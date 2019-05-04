@@ -294,7 +294,7 @@
 		"ScriptFile"					"items/items_shards.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/shard_level"
-		"ItemCost"						"2400"
+		"ItemCost"						"1200"
 		"ItemShopTags"					"experience;level;shard"
 		"ItemQuality"					"rare"
 
@@ -318,7 +318,7 @@
 		"ScriptFile"					"items/items_shards.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"item_arena/shard_level"
-		"ItemCost"						"24000"
+		"ItemCost"						"12000"
 		"ItemShopTags"					"experience;level;shard"
 		"ItemQuality"					"rare"
 

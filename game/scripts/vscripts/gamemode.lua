@@ -181,7 +181,6 @@ local mapClampMin = ExpandVector(mapMin, -MAP_BORDER)
 local mapMax = Vector(MAP_LENGTH, MAP_LENGTH)
 local mapClampMax = ExpandVector(mapMax, -MAP_BORDER)
 function GameMode:GameModeThink()
-	local xpDiffs = {}
 	for i = 0, 23 do
 		if PlayerResource:IsValidPlayerID(i) then
 			local hero = PlayerResource:GetSelectedHeroEntity(i)
@@ -207,34 +206,9 @@ function GameMode:GameModeThink()
 				end
 				Gold:AddGold(i, gold_per_tick)
 			end
-			if hero then
-				local xp = hero:GetCurrentXP()
-				if not hero.previousTickXP then hero.previousTickXP = xp end
-				local diff = xp - hero.previousTickXP
-				if diff > 0 then
-					hero.previousTickXP = xp
-					xpDiffs[i] = diff
-				end
-			end
 			AntiAFK:Think(i)
 		end
 	end
-
-	for playerId, diff in pairs(xpDiffs) do
-		local hero = PlayerResource:GetSelectedHeroEntity(playerId)
-		if hero then
-			for _, allyPlayerId in ipairs(Teams:GetPlayerIDs(hero:GetTeamNumber(), true)) do
-				if allyPlayerId ~= playerId then
-					local ally = PlayerResource:GetSelectedHeroEntity(allyPlayerId)
-					if ally then
-						ally:AddExperience(diff, 0, false, false)
-						ally.previousTickXP = ally:GetCurrentXP()
-					end
-				end
-			end
-		end
-	end
-
 	return CUSTOM_GOLD_TICK_TIME
 end
 
