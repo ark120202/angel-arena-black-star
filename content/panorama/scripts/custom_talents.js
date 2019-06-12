@@ -154,7 +154,7 @@ function Update() {
 
 (function() {
 	$('#TalentListContainer').RemoveAndDeleteChildren();
-	GameEvents.Subscribe('custom_talents_toggle_tree', function() {
+	CustomHooks.custom_talents_toggle_tree.tap(function() {
 		$.GetContextPanel().ToggleClass('PanelOpened');
 	});
 	DynamicSubscribePTListener('custom_talents_data', function(tableName, changesObject, deletionsObject) {

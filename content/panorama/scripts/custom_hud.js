@@ -145,7 +145,7 @@ function HookPanoramaPanels() {
 				GoldUnit: Players.GetLocalPlayerPortraitUnit()
 			});
 		} else {
-			GameEvents.SendEventClientSide('panorama_shop_open_close', {});
+			CustomHooks.panorama_shop_open_close.call();
 		}
 	});
 
@@ -159,7 +159,7 @@ function HookPanoramaPanels() {
 	StatsLevelUpTab.ClearPanelEvent('onmouseout');
 	StatsLevelUpTab.ClearPanelEvent('onactivate');
 	StatsLevelUpTab.SetPanelEvent('onactivate', function() {
-		GameEvents.SendEventClientSide('custom_talents_toggle_tree', {});
+		CustomHooks.custom_talents_toggle_tree.call();
 	});
 	var DebugChat = false;
 
@@ -230,9 +230,7 @@ function HookPanoramaPanels() {
 						ability: item
 					});
 				} else {
-					GameEvents.SendEventClientSide('panorama_shop_show_item_if_open', {
-						'itemName': Abilities.GetAbilityName(item)
-					});
+					CustomHooks.panorama_shop_show_item_if_open.call(Abilities.GetAbilityName(item));
 					var _unit = Players.GetLocalPlayerPortraitUnit();
 					if (Entities.IsControllableByPlayer(_unit, Game.GetLocalPlayerID())) {
 						Abilities.ExecuteAbility(item, _unit, false);

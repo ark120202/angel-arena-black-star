@@ -9,6 +9,7 @@ var ItemList = {},
 	ItemStocks = [];
 
 function OpenCloseShop(newState) {
+	$.Msg('open/close')
 	if (typeof newState !== 'boolean') newState = !$('#ShopBase').BHasClass('ShopBaseOpen');
 	$('#ShopBase').SetHasClass('ShopBaseOpen', newState);
 
@@ -432,11 +433,9 @@ function SetQuickbuyTarget(itemName) {
 	RefreshQuickbuyItem(itemName);
 }
 
-function ShowItemInShop(data) {
-	if (data && data.itemName != null) {
-		$('#ShopBase').AddClass('ShopBaseOpen');
-		ShowItemRecipe(String(data.itemName));
-	}
+function ShowItemInShop(itemName) {
+	$('#ShopBase').AddClass('ShopBaseOpen');
+	ShowItemRecipe(itemName);
 }
 
 function UpdateShop() {
@@ -475,7 +474,7 @@ function SetItemStock(item, ItemStock) {
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS, true);
 	GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_QUICKBUY, true);
 	RegisterKeyBind('ShopToggle', OpenCloseShop);
-	GameEvents.Subscribe('panorama_shop_open_close', OpenCloseShop);
+	CustomHooks.panorama_shop_open_close.tap(OpenCloseShop);
 	RegisterKeyBind('PurchaseQuickbuy', function() {
 		if (QuickBuyTarget != null) {
 			var bought = false;
@@ -511,15 +510,17 @@ function SetItemStock(item, ItemStock) {
 		}
 	});
 
-	GameEvents.Subscribe('panorama_shop_show_item', ShowItemInShop);
+	CustomHooks.panorama_shop_show_item.tap(ShowItemInShop);
 	GameEvents.Subscribe('dota_link_clicked', function(data) {
 		if (data != null && data.link != null && data.link.lastIndexOf('dota.item.', 0) === 0) {
 			$('#ShopBase').AddClass('ShopBaseOpen');
 			ShowItemRecipe(data.link.replace('dota.item.', ''));
 		}
 	});
-	GameEvents.Subscribe('panorama_shop_show_item_if_open', function(data) {
-		if ($('#ShopBase').BHasClass('ShopBaseOpen')) ShowItemInShop(data);
+	CustomHooks.panorama_shop_show_item_if_open.tap(function(itemName) {
+		if ($('#ShopBase').BHasClass('ShopBaseOpen')) {
+			ShowItemInShop(itemName);
+		}
 	});
 	DynamicSubscribePTListener('panorama_shop_data', function(tableName, changesObject, deletionsObject) {
 		if (changesObject.ShopList) {

@@ -38,7 +38,7 @@ function Snippet_Player(playerId) {
 			panel.FindChildTraverse('PlayerNameLabel').text = Players.GetPlayerName(playerId);
 			panel.FindChildTraverse('AvatarImage').steamid = playerInfo.player_steamid;
 			panel.FindChildTraverse('AvatarImage').SetPanelEvent('onactivate', function() {
-				GameEvents.SendEventClientSide('player_profiles_show_info', { playerId: playerId });
+				CustomHooks.player_profiles_show_info.call(playerId);
 			});
 			var VoiceMute = panel.FindChildTraverse('VoiceMute');
 			panel.playerId = playerId;
