@@ -539,7 +539,7 @@ end
 --By Noya, from DotaCraft
 function GetPreMitigationDamage(value, victim, attacker, damagetype)
 	if damagetype == DAMAGE_TYPE_PHYSICAL then
-		local armor = victim:GetPhysicalArmorValue()
+		local armor = victim:GetPhysicalArmorValue(false)
 		local reduction = ((armor)*0.06) / (1+0.06*(armor))
 		local damage = value / (1 - reduction)
 		return damage,reduction

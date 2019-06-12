@@ -129,7 +129,7 @@ if IsServer() then
 		if parent:IsAlive() then
 			parent:CalculateHealthReduction()
 		end
-		self.armorReduction = ability:GetSpecialValueFor("armor_reduction_pct") * (parent:GetPhysicalArmorValue() - (self.armorReduction or 0)) * 0.01
+		self.armorReduction = ability:GetSpecialValueFor("armor_reduction_pct") * (parent:GetPhysicalArmorValue(false) - (self.armorReduction or 0)) * 0.01
 	end
 else
 	function modifier_sara_evolution:OnCreated()
@@ -138,6 +138,6 @@ else
 	function modifier_sara_evolution:OnIntervalThink()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-		self.armorReduction = ability:GetSpecialValueFor("armor_reduction_pct") * (parent:GetPhysicalArmorValue() - (self.armorReduction or 0)) * 0.01
+		self.armorReduction = ability:GetSpecialValueFor("armor_reduction_pct") * (parent:GetPhysicalArmorValue(false) - (self.armorReduction or 0)) * 0.01
 	end
 end

@@ -58,7 +58,7 @@ function modifier_destroyer_frenzy:OnIntervalThink()
 	elseif	healht_pct < ability:GetSpecialValueFor("hp_mark_pct_lvl1") then
 		level = 1
 	end
-	self.ReducedArmor = level == nil and 0 or (parent:GetPhysicalArmorValue() - (self.ReducedArmor or 0)) * ability:GetSpecialValueFor("bonus_armor_pct_lvl" .. level) * 0.01
+	self.ReducedArmor = level == nil and 0 or (parent:GetPhysicalArmorValue(false) - (self.ReducedArmor or 0)) * ability:GetSpecialValueFor("bonus_armor_pct_lvl" .. level) * 0.01
 	if IsServer() then
 		ParticleManager:SetParticleControl(self.pfx, 15, Vector(level == 3 and 255 or 0, level == 2 and 255 or 0, level == 1 and 255 or 0))
 	end
