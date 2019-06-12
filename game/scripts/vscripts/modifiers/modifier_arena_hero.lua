@@ -43,13 +43,14 @@ if IsServer() then
 		local parent = self:GetParent()
 		local hl = parent:GetLevel()
 		if hl > self.HeroLevel  then
-			if not parent:IsIllusion() then
+			if not parent:IsIllusion() and not parent:IsTempestDouble() then
 				for i = self.HeroLevel + 1, hl do
 					if LEVELS_WITHOUT_ABILITY_POINTS[i] then
 						parent:SetAbilityPoints(parent:GetAbilityPoints() + 1)
 					end
 				end
 			end
+
 			local diff = hl - self.HeroLevel
 			self.HeroLevel = hl
 			--print("Adding str, agi, int, times: ", parent.CustomGain_Strength, parent.CustomGain_Agility, parent.CustomGain_Intelligence, diff)
