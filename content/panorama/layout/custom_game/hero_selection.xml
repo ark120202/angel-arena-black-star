@@ -27,7 +27,7 @@
 		<snippet name="HeroCard">
 			<Panel class="HeroCard Showing" hittest="false">
 				<Panel id="Contents" hittest="false">
-					<DOTAHeroImage id="HeroImage" heroimagestyle="portrait" hittest="false" />
+					<Image id="HeroImage" hittest="false" />
 					<DOTAHeroMovie id="HeroMovie" hittest="false" />
 					<Label id="HeroName" hittest="false" />
 					<Image id="LockedIcon" hittest="false" />
@@ -57,9 +57,9 @@
 				<Panel id="HeroImageBorder"/>
 				<Panel id="HeroImageContainer" acceptsinput="true">
 					<Panel id="SlotColor"/>
-					<DOTAHeroImage id="HeroImage" >
+					<Image id="HeroImage" >
 						<Panel class="GradientTopBottom"/>
-					</DOTAHeroImage>
+					</Image>
 				</Panel>
 				<Label id="PlayerMMR" text="#DOTA_PlayerMMR" />
 				<Panel id="HeroImagePickBar"/>

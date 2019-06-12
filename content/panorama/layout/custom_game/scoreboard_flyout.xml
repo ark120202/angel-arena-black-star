@@ -34,9 +34,9 @@
 				<Panel id="PlayerColor"/>
 				<!-- onmouseover="DOTAShowProfileCardTooltip($('AvatarImage'))" -->
 				<DOTAAvatarImage id="AvatarImage" class="ScoreboardAvatar" />
-				<DOTAHeroImage id="HeroImage" class="ScoreboardHeroImage">
+				<Image id="HeroImage" class="ScoreboardHeroImage">
 					<!-- <Panel id="HeroInspectIcon" onactivate="DOTAHUDInspect()"/> -->
-				</DOTAHeroImage>
+				</Image>
 				<Panel id="PlayerAndHeroNameContainer" class="TopBottomFlow">
 					<Label id="PlayerNameLabel" class="PlayerNameLabel" text=""/>
 					<Label id="HeroNameLabel" class="HeroNameLabel" text=""/>

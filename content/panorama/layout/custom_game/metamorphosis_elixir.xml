@@ -22,7 +22,7 @@
 		<snippet name="HeroCard">
 			<Panel class="HeroCard Showing" hittest="false">
 				<Panel id="Contents" hittest="false">
-					<DOTAHeroImage id="HeroImage" heroimagestyle="portrait" hittest="false" />
+					<Image id="HeroImage" hittest="false" />
 					<DOTAHeroMovie id="HeroMovie" hittest="false" />
 					<Label id="HeroName" hittest="false" />
 					<Image id="LockedIcon" hittest="false" />
