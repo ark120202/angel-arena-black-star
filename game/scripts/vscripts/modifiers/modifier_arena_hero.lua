@@ -16,7 +16,6 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_EVENT_ON_ABILITY_END_CHANNEL,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
 		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
-		MODIFIER_EVENT_ON_ATTACK_FINISHED,
 		MODIFIER_EVENT_ON_ATTACK_START,
 		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
 	}
@@ -31,14 +30,6 @@ function modifier_arena_hero:GetModifierMagicalResistanceDirectModification()
 end
 
 if IsServer() then
-	local function critOnAttackFinished(self, keys)
-		if keys.attacker == self:GetParent() then
-			self.OnAttackFinished = nil
-			self.GetModifierDamageOutgoing_Percentage = nil
-			self.GetModifierPreAttack_CriticalStrike = nil
-		end
-	end
-
 	local function critGetModifierDamageOutgoing_Percentage(self)
 		return self.agilityCriticalDamage - 100
 	end
@@ -48,10 +39,14 @@ if IsServer() then
 	end
 
 	function modifier_arena_hero:OnAttackStart(keys)
-		if keys.attacker == self:GetParent() and RollPercentage(15) then
-			self.OnAttackFinished = critOnAttackFinished
+		if keys.attacker ~= self:GetParent() then return end
+
+		if RollPercentage(15) then
 			self.GetModifierDamageOutgoing_Percentage = critGetModifierDamageOutgoing_Percentage
 			self.GetModifierPreAttack_CriticalStrike = critGetModifierPreAttack_CriticalStrike
+		else
+			self.GetModifierDamageOutgoing_Percentage = nil
+			self.GetModifierPreAttack_CriticalStrike = nil
 		end
 	end
 
