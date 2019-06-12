@@ -175,7 +175,7 @@
 	"axe_counter_helix"
 	{
 		"MaxLevel"	"7"
-		"AbilityCooldown"	"0.4 0.35 0.3 0.25 0.2 0.15 0.1"
+		"AbilityCooldown"	"0.55 0.5 0.45 0.4 0.35 0.3 0.2"
 		"AbilityDamage"		"50 70 85 95 110 130 150"
 		"RequiredLevel"		"2"
 		"AbilitySpecial"
