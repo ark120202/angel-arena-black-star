@@ -14842,7 +14842,6 @@
 	}
 
 	"treant_natures_guise"
-
 	{
 		"MaxLevel"	"7"
 		"AbilityCastPoint"				"0.6"
