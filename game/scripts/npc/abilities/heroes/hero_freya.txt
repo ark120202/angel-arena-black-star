@@ -349,7 +349,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"cleave_radius"		"200"
+				"cleave_radius"		"450"
 			}
 			"04"
 			{
