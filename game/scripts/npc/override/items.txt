@@ -549,7 +549,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"3.0"
+				"sheep_duration"		"1.5"
 			}
 		}
 	}
@@ -1017,7 +1017,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"60"
+				"bonus_movement"		"18"
 			}
 			"02"
 			{
@@ -1158,12 +1158,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"disarm_range"				"3.0"
+				"disarm_range"				"2.0"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"disarm_melee"				"3.0"
+				"disarm_melee"				"2.0"
 			}
 			"06"
 			{
@@ -1222,7 +1222,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"broken_movement_speed"	"20"
+				"broken_movement_speed"	"25"
 			}
 		}
 	}

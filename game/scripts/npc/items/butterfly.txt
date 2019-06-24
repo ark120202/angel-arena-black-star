@@ -158,7 +158,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_evasion_active_pct"		"35"
+				"bonus_evasion_active_pct"		"100"
 			}
 			"07"
 			{
