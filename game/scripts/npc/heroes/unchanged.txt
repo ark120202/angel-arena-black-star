@@ -27,7 +27,7 @@
 	"npc_dota_hero_beastmaster"
 	{
 		"override_hero"	"npc_dota_hero_beastmaster"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.6"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_FIRE" 	"0"
@@ -38,13 +38,13 @@
 	"npc_dota_hero_bloodseeker"
 	{
 		"override_hero"	"npc_dota_hero_bloodseeker"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_drow_ranger"
 	{
 		"override_hero"	"npc_dota_hero_drow_ranger"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_earthshaker"
@@ -73,7 +73,7 @@
 	"npc_dota_hero_nevermore"
 	{
 		"override_hero"	"npc_dota_hero_nevermore"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.5"
 		"AttributeAgilityGain"	"2.8"
@@ -89,7 +89,8 @@
 	"npc_dota_hero_morphling"
 	{
 		"override_hero"	"npc_dota_hero_morphling"
-		"AttackRate"	"1.5"
+		"ArmorPhysical"	"4"
+		"AttackRate"	"1.4"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_FIRE" 	"100"
@@ -100,7 +101,7 @@
 	"npc_dota_hero_puck"
 	{
 		"override_hero"	"npc_dota_hero_puck"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_DARK" 	"50"
@@ -138,7 +139,7 @@
 	"npc_dota_hero_sand_king"
 	{
 		"override_hero"	"npc_dota_hero_sand_king"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.7"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_ENERGY" 	"50"
@@ -149,7 +150,7 @@
 	"npc_dota_hero_storm_spirit"
 	{
 		"override_hero"	"npc_dota_hero_storm_spirit"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.5"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_EARTH" 	"50"
@@ -160,9 +161,9 @@
 	"npc_dota_hero_sven"
 	{
 		"override_hero"	"npc_dota_hero_sven"
-		"AttackRate"	"1.9"
+		"AttackRate"	"1.8"
 		"ArmorPhysical"	"4"
-		"AttributeStrengthGain"	"2.8"
+		"AttributeStrengthGain"	"2.9"
 		"AttributeAgilityGain"	"2.1"
 		"MovementSpeed"	"300"
 		"AttributeIntelligenceGain"	"2.0"
@@ -171,12 +172,12 @@
 	"npc_dota_hero_tiny"
 	{
 		"override_hero"	"npc_dota_hero_tiny"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.8"
 		"ArmorPhysical"	"0"
 		"AttributeStrengthGain"	"2.8"
 		"AttributeAgilityGain"	"2.1"
 		"MovementSpeed"	"300"
-		"AttributeIntelligenceGain"	"2.0"
+		"AttributeIntelligenceGain"	"1.8"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_ENERGY" "100"
@@ -317,7 +318,7 @@
 	"npc_dota_hero_sniper"
 	{
 		"override_hero"	"npc_dota_hero_sniper"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.6"
 		"MovementSpeed"	"275"
 
 		// FIXME: remove once Valve would fix it
@@ -349,7 +350,7 @@
 	"npc_dota_hero_venomancer"
 	{
 		"override_hero"	"npc_dota_hero_venomancer"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_WATER" 	"0"
@@ -435,7 +436,7 @@
 	"npc_dota_hero_furion"
 	{
 		"override_hero"	"npc_dota_hero_furion"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.6"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_FIRE" 		"0"
@@ -502,7 +503,7 @@
 	"npc_dota_hero_weaver"
 	{
 		"override_hero"	"npc_dota_hero_weaver"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.6"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_ENERGY" 	"100"
@@ -512,7 +513,7 @@
 	"npc_dota_hero_jakiro"
 	{
 		"override_hero"	"npc_dota_hero_jakiro"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_ICE" 	"50"
@@ -565,7 +566,7 @@
 	"npc_dota_hero_ursa"
 	{
 		"override_hero"	"npc_dota_hero_ursa"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.7"
 	}
 
 	"npc_dota_hero_spirit_breaker"
@@ -594,7 +595,7 @@
 	"npc_dota_hero_silencer"
 	{
 		"override_hero"	"npc_dota_hero_silencer"
-		"AttackRate"	"1.3"
+		"AttackRate"	"1.5"
 		"ArmorPhysical"	"-5"
 		"AttributeBaseAgility"	"50"
 	}
@@ -602,7 +603,7 @@
 	"npc_dota_hero_obsidian_destroyer"
 	{
 		"override_hero"	"npc_dota_hero_obsidian_destroyer"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.6"
 		"ArmorPhysical"	"-5"
 		"AttributeBaseAgility"	"40"
 	}
@@ -618,8 +619,8 @@
 		"override_hero"	"npc_dota_hero_brewmaster"
 		"AttackRate"	"1.5"
 		"AttributeStrengthGain"	"2.6"
-		"AttributeAgilityGain"	"1.5"
-		"AttributeIntelligenceGain"	"1.0"
+		"AttributeAgilityGain"	"1.8"
+		"AttributeIntelligenceGain"	"1.8"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_LIGHT"	"20"
@@ -652,7 +653,7 @@
 	"npc_dota_hero_chaos_knight"
 	{
 		"override_hero"	"npc_dota_hero_chaos_knight"
-		"AttackRate"	"1.6"
+		"AttackRate"	"1.7"
 		"ArmorPhysical"	"4"
 		"AttributeStrengthGain"	"2.8"
 		"AttributeAgilityGain"	"2.4"
@@ -758,7 +759,7 @@
 	"npc_dota_hero_slark"
 	{
 		"override_hero"	"npc_dota_hero_slark"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.3"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_ICE" 	"0"
@@ -936,7 +937,7 @@
 	"npc_dota_hero_monkey_king"
 	{
 		"override_hero"	"npc_dota_hero_monkey_king"
-		"AttackRate"	"1.4"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_dota_hero_pangolier"
@@ -948,7 +949,7 @@
 	"npc_dota_hero_dark_willow"
 	{
 		"override_hero"	"npc_dota_hero_dark_willow"
-		"AttackRate"	"1.3"
+		"AttackRate"	"1.5"
 		"DamgeSubTypeResistance"
 		{
 			"DAMAGE_SUBTYPE_DARK" 	"0"
@@ -1040,8 +1041,8 @@
 	"npc_dota_hero_medusa"
 	{
 		"override_hero"	"npc_dota_hero_medusa"
-		"AttackRate"	"1.4"
-		"ArmorPhysical"	"1"
+		"AttackRate"	"1.6"
+		"ArmorPhysical"	"2"
 		"AttributeBaseAgility"	"23"
 		"AttributeStrengthGain"	"3.0"
 		"AttributeAgilityGain"	"2.5"
@@ -1070,5 +1071,6 @@
 	"npc_dota_hero_mars"
 	{
 		"override_hero"	"npc_dota_hero_mars"
+		"AttackRate"	"1.6"
 	}
 }
