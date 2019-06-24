@@ -145,7 +145,7 @@
 		"Ability4"	"shinobu_yumewatari_lua"
 		"Ability5"	"generic_hidden"
 		"Ability6"	"shinobu_hide_in_shadows"
-		"AttackRate"	"1.7"
+		"AttackRate"	"1.6"
 		"AttackCapabilities"	"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 		"AttackRange"			"150"
@@ -232,7 +232,7 @@
 		"Ability5"	"generic_hidden"
 		"Ability6"	"mirratie_impaling_shot"
 		"AttackRange"	"700"
-		"AttackRate"	"1.5"
+		"AttackRate"	"1.6"
 	}
 
 	"npc_arena_hero_freya"
@@ -382,7 +382,7 @@
 		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
 		"AttackRange"			"150"
 		"ProjectileModel"		""
-		"AttackRate"			"1.7"
+		"AttackRate"			"1.5"
 		"AttributeBaseStrength"	"24"
 		"AttributeBaseIntelligence"	"18"
 		"AttributeBaseAgility"	"21"
