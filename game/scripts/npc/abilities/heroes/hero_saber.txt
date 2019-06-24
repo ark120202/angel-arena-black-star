@@ -100,7 +100,7 @@
 		"AbilityCastPoint"				"0.45 0.45 0.45 0.45 0.45 0.35 0.25"
 		"AbilityCooldown"				"5"
 		"AbilityManaCost"				"100"
-		
+
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_AIR"
 		"AbilitySpecial"
 		{
@@ -186,7 +186,7 @@
 		"AbilityCooldown"				"100 95 90 85 80 75 70"
 		"HasScepterUpgrade"				"1"
 		"AbilityUnitDamageSubType"	"DAMAGE_SUBTYPE_ENERGY"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -197,13 +197,13 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_mana"	"0.5"
+				"damage_per_mana"	"2.0"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_mana_scepter"	"1.0"
+				"damage_per_mana_scepter"	"4.0"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"04"
