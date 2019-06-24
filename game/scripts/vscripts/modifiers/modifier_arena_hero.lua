@@ -16,6 +16,8 @@ function modifier_arena_hero:DeclareFunctions()
 		MODIFIER_EVENT_ON_ABILITY_END_CHANNEL,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION,
 		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
+		MODIFIER_EVENT_ON_ATTACK_START,
+		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
 	}
 end
 
@@ -28,9 +30,23 @@ function modifier_arena_hero:GetModifierMagicalResistanceDirectModification()
 end
 
 if IsServer() then
-	function modifier_arena_hero:GetModifierPreAttack_CriticalStrike()
+	local function critGetModifierDamageOutgoing_Percentage(self)
+		return self.agilityCriticalDamage - 100
+	end
+
+	local function critGetModifierPreAttack_CriticalStrike()
+		return 100.0001 -- if it is 100 the crit overhead won't show
+	end
+
+	function modifier_arena_hero:OnAttackStart(keys)
+		if keys.attacker ~= self:GetParent() then return end
+
 		if RollPercentage(15) then
-			return self.agilityCriticalDamage
+			self.GetModifierDamageOutgoing_Percentage = critGetModifierDamageOutgoing_Percentage
+			self.GetModifierPreAttack_CriticalStrike = critGetModifierPreAttack_CriticalStrike
+		else
+			self.GetModifierDamageOutgoing_Percentage = nil
+			self.GetModifierPreAttack_CriticalStrike = nil
 		end
 	end
 
@@ -43,13 +59,14 @@ if IsServer() then
 		local parent = self:GetParent()
 		local hl = parent:GetLevel()
 		if hl > self.HeroLevel  then
-			if not parent:IsIllusion() then
+			if not parent:IsIllusion() and not parent:IsTempestDouble() then
 				for i = self.HeroLevel + 1, hl do
 					if LEVELS_WITHOUT_ABILITY_POINTS[i] then
 						parent:SetAbilityPoints(parent:GetAbilityPoints() + 1)
 					end
 				end
 			end
+
 			local diff = hl - self.HeroLevel
 			self.HeroLevel = hl
 			--print("Adding str, agi, int, times: ", parent.CustomGain_Strength, parent.CustomGain_Agility, parent.CustomGain_Intelligence, diff)

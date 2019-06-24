@@ -91,7 +91,7 @@ function modifier_item_soulcutter_stack:OnIntervalThink()
 	self.armorReduction = (
 		self:GetStackCount() *
 		self:GetAbility():GetSpecialValueFor("armor_per_hit_pct") *
-		(self:GetParent():GetPhysicalArmorValue() - (self.armorReduction or 0)) *
+		(self:GetParent():GetPhysicalArmorValue(false) - (self.armorReduction or 0)) *
 		0.01
 	)
 end

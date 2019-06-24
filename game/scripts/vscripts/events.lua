@@ -20,7 +20,8 @@ function GameMode:OnNPCSpawned(keys)
 			npc:SetUnitName("npc_dota_hero_arena_base")
 			npc:AddNewModifier(unit, nil, "modifier_dragon_knight_dragon_form", {duration = 0})
 		end
-		if npc.tempestDoubleSecondSpawn then
+
+		if npc.tempestDoubleSpawned then
 			--Tempest Double resets stats and stuff, so everything needs to be put back where they belong
 			Illusions:_copyAbilities(caster, npc)
 			npc:ModifyStrength(caster:GetBaseStrength() - npc:GetBaseStrength())
@@ -33,9 +34,13 @@ function GameMode:OnNPCSpawned(keys)
 			npc:SetMana(caster:GetMana())
 		else
 			Illusions:_copyEverything(caster, npc)
-			npc.tempestDoubleSecondSpawn = true
+			npc.tempestDoubleSpawned = true
 		end
+
+		local tempestDoubleAbility = npc:FindAbilityByName("arc_warden_tempest_double")
+		if tempestDoubleAbility then tempestDoubleAbility:SetLevel(0) end
 	end
+
 	Timers:NextTick(function()
 		if not IsValidEntity(npc) or not npc:IsAlive() then return end
 		local illusionParent = npc:GetIllusionParent()
