@@ -34,23 +34,15 @@ function SpecialValuesArrayToString(values, level, percent) {
 }
 
 function getTalentTitle(talent) {
-	if (!_.startsWith(talent.name, 'special_bonus_unique_')) return $.Localize('custom_talents_' + talent.name);
-	var line = _.reduce(talent.original_values, function (line, originalValue, key) {
-		var value = talent.special_values[key];
-		var number = _.escapeRegExp(Math.abs(originalValue)).replace('\\.', '(\\.|\\,)')
-		var regexp = new RegExp('(\\+|\\-)?' + number + '%?');
-		return line.replace(regexp, function(match) {
-			var requiresSign = _.startsWith(match, '+');
-			var percentage = match.endsWith('%');
-			var text = percentage ? '{%' + key + '%}' : '{' + key + '}';
-			if (value > 0 && requiresSign) {
-				text = '+' + text;
-			}
-			return text
-		});
-	}, $.Localize('DOTA_Tooltip_ability_' + talent.name))
+	if (!talent.name.startsWith('special_bonus_unique_')) {
+		return $.Localize('custom_talents_' + talent.name);
+	}
 
-	return line;
+	const rawToken = $.Localize('DOTA_Tooltip_ability_' + talent.name, $.GetContextPanel());
+	return rawToken.replace(
+		/\[!s:(.+)\]%?/g,
+		(match, specialName) => match.endsWith('%') ? `{%${specialName}%}` : `{${specialName}}`,
+	);
 }
 
 function CreateTalent(talent, root) {

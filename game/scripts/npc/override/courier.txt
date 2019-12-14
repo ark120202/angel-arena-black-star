@@ -1,15 +1,5 @@
 "DOTAAbilities"
 {
-	"item_courier"
-	{
-		"SecretShop"					"0"
-		"ItemPurchasable"				"0"
-		"ItemDroppable"					"0"
-		"ItemSellable"					"0"
-		"ItemKillable"					"0"
-		"ItemCastOnPickup"				"1"
-	}
-
 	"courier_go_to_secretshop"
 	{
 		"BaseClass"             		"courier_go_to_secretshop"

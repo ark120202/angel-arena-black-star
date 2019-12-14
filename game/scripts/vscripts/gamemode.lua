@@ -141,9 +141,7 @@ function GameMode:OnHeroInGame(hero)
 	Timers:NextTick(function()
 		if IsValidEntity(hero) and hero:IsTrueHero() then
 			Teams:RecalculateKillWeight(hero:GetTeam())
-			if not TEAMS_COURIERS[hero:GetTeamNumber()] then
-				Structures:GiveCourier(hero)
-			end
+			Structures:GiveCourier(hero)
 		end
 	end)
 end
