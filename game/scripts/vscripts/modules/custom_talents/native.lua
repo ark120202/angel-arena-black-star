@@ -5,8 +5,6 @@ local npc_heroes = LoadKeyValues("scripts/npc/npc_heroes.txt")
 local npc_abilities = LoadKeyValues("scripts/npc/npc_abilities.txt")
 
 local function addTalent(talentName, heroName)
-	-- Get original value, before npc_abilities_override affection
-	local originalValues = GetAbilitySpecial(talentName, nil, nil, npc_abilities[talentName])
 	local newValues = GetAbilitySpecial(talentName)
 
 	if NATIVE_TALENTS[talentName] ~= nil then
@@ -18,7 +16,6 @@ local function addTalent(talentName, heroName)
 				group = 1,
 				icon = heroName,
 				requirement = heroName,
-				original_values = originalValues,
 				special_values = newValues,
 				effect = { abilities = talentName }
 			}, NATIVE_TALENTS[talentName])
