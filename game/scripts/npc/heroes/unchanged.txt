@@ -2,7 +2,7 @@
 {
 	"npc_dota_hero_arena_base"
 	{
-		"HeroID"	"126"
+		"HeroID"	"255"
 		"BaseClass"		"npc_dota_hero"
 		"AttackRate"	"1.7"
 	}
@@ -1072,5 +1072,15 @@
 	{
 		"override_hero"	"npc_dota_hero_mars"
 		"AttackRate"	"1.6"
+	}
+
+	"npc_dota_hero_snapfire"
+	{
+		"override_hero"	"npc_dota_hero_snapfire"
+	}
+
+	"npc_dota_hero_void_spirit"
+	{
+		"override_hero"	"npc_dota_hero_void_spirit"
 	}
 }

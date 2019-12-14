@@ -193,7 +193,7 @@
 		"Enabled"					"1"
 		"BotImplemented"			"0"
 		"NewHero"					"1"
-		"HeroID"					"126"
+		"HeroID"					"255"
 
 		"Team"						"Bad"
 		"ModelScale"				"1"
