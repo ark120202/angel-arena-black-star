@@ -298,8 +298,7 @@ function shadeColor2(color, percent) {
 
 function FormatGold(value) {
 	return (GameUI.IsAltDown() ? value : value > 9999999 ? (value/1000000).toFixed(2) + 'M' : value > 99999 ? (value/1000).toFixed(1) + 'k' : value)
-		.toString()
-		.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+		.toString();
 }
 
 function SortPanelChildren(panel, sortFunc, compareFunc) {
