@@ -43,7 +43,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"6 7"
+				"bonus_armor"			"6 12"
 			}
 			"03"
 			{
@@ -63,17 +63,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_health_regen"		"6 8"
+				"aura_health_regen"		"6 10"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"4 5"
+				"aura_bonus_armor"		"4 10"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"400 500"
+				"heal_amount"			"400 800"
 			}
 		}
 	}
@@ -121,7 +121,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"6 7"
+				"bonus_armor"			"6 12"
 			}
 			"03"
 			{
@@ -141,17 +141,17 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_health_regen"		"6 8"
+				"aura_health_regen"		"6 10"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"4 5"
+				"aura_bonus_armor"		"4 10"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"400 500"
+				"heal_amount"			"400 800"
 			}
 		}
 	}
@@ -192,7 +192,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement"		"75"
+				"bonus_movement"		"45"
 			}
 			"02"
 			{

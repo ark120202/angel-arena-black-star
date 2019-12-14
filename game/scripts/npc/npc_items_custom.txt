@@ -658,7 +658,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"3.0"
+				"sheep_duration"		"2.0"
 			}
 			"12"
 			{
@@ -5856,7 +5856,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"0.8"
+				"bash_duration"			"0.3"
 			}
 			"09"
 			{
@@ -7842,7 +7842,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hex_duration"			"3.0"
+				"hex_duration"			"2.0"
 			}
 			"12"
 			{
