@@ -373,7 +373,7 @@ SHOP_LIST_STATUS_NO_BOSS = 4
 
 function PanoramaShop:GetAllItemsByNameInInventory(unit, itemname, bBackpack)
 	local items = {}
-	for slot = 0, bBackpack and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do
+	for slot = 0, bBackpack and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_10 do
 		local item = unit:GetItemInSlot(slot)
 		if item and item:GetAbilityName() == itemname and item:GetPurchaser() == unit then
 			table.insert(items, item)

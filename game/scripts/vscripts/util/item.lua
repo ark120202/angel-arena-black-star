@@ -2,7 +2,7 @@ function CDOTA_BaseNPC:UnitHasSlotForItem(itemname, bBackpack)
 	if self.HasRoomForItem then
 		return self:HasRoomForItem(itemname, bBackpack, true) ~= 4
 	else
-		for i = 0, bBackpack and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_9 do
+		for i = 0, bBackpack and DOTA_STASH_SLOT_6 or DOTA_ITEM_SLOT_10 do
 			local item = self:GetItemInSlot(i)
 			if not IsValidEntity(item) or (item:GetAbilityName() == itemname and item:IsStackable()) then
 				return true
@@ -13,7 +13,7 @@ function CDOTA_BaseNPC:UnitHasSlotForItem(itemname, bBackpack)
 end
 
 function FillSlotsWithDummy(unit, bNoStash)
-	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
+	for i = 0, bNoStash and DOTA_ITEM_SLOT_10 or DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if not current_item then
 			unit:AddItemByName("item_dummy")
@@ -22,7 +22,7 @@ function FillSlotsWithDummy(unit, bNoStash)
 end
 
 function ClearSlotsFromDummy(unit, bNoStash)
-	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
+	for i = 0, bNoStash and DOTA_ITEM_SLOT_10 or DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if current_item and current_item:GetAbilityName() == "item_dummy" then
 			unit:RemoveItem(current_item)
@@ -32,7 +32,7 @@ function ClearSlotsFromDummy(unit, bNoStash)
 end
 
 function SetAllItemSlotsLocked(unit, locked, bNoStash)
-	for i = 0, bNoStash and DOTA_ITEM_SLOT_9 or DOTA_STASH_SLOT_6 do
+	for i = 0, bNoStash and DOTA_ITEM_SLOT_10 or DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if current_item then
 			if locked or not current_item.player_locked then
@@ -60,7 +60,7 @@ function swap_to_item(unit, srcItem, newItem)
 end
 
 function FindItemInInventoryByName(unit, itemname, searchStash, onlyStash, ignoreBackpack)
-	local lastSlot = ignoreBackpack and DOTA_ITEM_SLOT_6 or DOTA_ITEM_SLOT_9
+	local lastSlot = ignoreBackpack and DOTA_ITEM_SLOT_6 or DOTA_ITEM_SLOT_10
 	local startSlot = 0
 	if searchStash then lastSlot = DOTA_STASH_SLOT_6 end
 	if onlyStash then startSlot = DOTA_STASH_SLOT_1 end
