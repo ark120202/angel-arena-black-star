@@ -193,16 +193,23 @@ function GameMode:GameModeThink()
 				end
 			end
 			if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-				local gold_per_tick = CUSTOM_GOLD_PER_TICK
+				local goldPerTick = 0
+
+				local courier = Structures:GetCourier(i)
+				if courier and courier:IsAlive() then
+					goldPerTick = CUSTOM_GOLD_PER_TICK
+				end
+
 				if hero then
 					if hero.talent_keys and hero.talent_keys.bonus_gold_per_minute then
-						gold_per_tick = gold_per_tick + hero.talent_keys.bonus_gold_per_minute / 60 * CUSTOM_GOLD_TICK_TIME
+						goldPerTick = goldPerTick + hero.talent_keys.bonus_gold_per_minute / 60 * CUSTOM_GOLD_TICK_TIME
 					end
 					if hero.talent_keys and hero.talent_keys.bonus_xp_per_minute then
 						hero:AddExperience(hero.talent_keys.bonus_xp_per_minute / 60 * CUSTOM_GOLD_TICK_TIME, 0, false, false)
 					end
 				end
-				Gold:AddGold(i, gold_per_tick)
+
+				Gold:AddGold(i, goldPerTick)
 			end
 			AntiAFK:Think(i)
 		end
