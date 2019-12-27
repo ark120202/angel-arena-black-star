@@ -273,12 +273,11 @@ function ColorTableToCss(color)
 	return "rgb(" .. color[1] .. ',' .. color[2] .. ',' .. color[3] .. ')'
 end
 
-function FindAllOwnedUnits(player)
+function FindAllOwnedUnits(playerId)
 	local summons = {}
-	local playerId = type(player) == "number" and player or player:GetPlayerID()
 	local units = FindUnitsInRadius(PlayerResource:GetTeam(playerId), Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED, FIND_ANY_ORDER, false)
 	for _,v in ipairs(units) do
-		if type(player) == "number" and ((v.GetPlayerID ~= nil and v:GetPlayerID() or v:GetPlayerOwnerID()) == playerId) or v:GetPlayerOwner() == player then
+		if (v.GetPlayerID and v:GetPlayerID() or v:GetPlayerOwnerID()) == playerId then
 			if not (v:HasModifier("modifier_dummy_unit") or v:HasModifier("modifier_containers_shopkeeper_unit") or v:HasModifier("modifier_teleport_passive")) and v ~= hero then
 				table.insert(summons, v)
 			end
@@ -291,9 +290,8 @@ function RemoveAllOwnedUnits(playerId)
 	local player = PlayerResource:GetPlayer(playerId)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	RemoveDummyCasters(hero)
-	local courier = FindCourier(PlayerResource:GetTeam(playerId))
-	for _,v in ipairs(FindAllOwnedUnits(player or playerId)) do
-		if v ~= hero and v ~= courier then
+	for _,v in ipairs(FindAllOwnedUnits(playerId)) do
+		if v ~= hero and not v:IsCourier() then
 			v:ClearNetworkableEntityInfo()
 			v:ForceKill(false)
 			RemoveDummyCasters(v)
@@ -383,12 +381,6 @@ function GetTrueItemCost(name)
 		end
 	end
 	return cost
-end
-
-function FindCourier(team)
-	if type(TEAMS_COURIERS[team]) == "table" then
-		return TEAMS_COURIERS[team]
-	end
 end
 
 function GetNotScaledDamage(damage, unit)

@@ -11,8 +11,15 @@ end
 -- An NPC has spawned somewhere in game.	This includes heroes
 function GameMode:OnNPCSpawned(keys)
 	local npc = EntIndexToHScript(keys.entindex)
+
+	if npc:IsCourier() then
+		Structures:OnCourierSpawn(npc)
+		return
+	end
+
 	if not npc:IsHero() then return end
 	if HeroSelection:GetState() < HERO_SELECTION_PHASE_END then return end
+
 	local tempest_modifier = npc:FindModifierByName("modifier_arc_warden_tempest_double")
 	if tempest_modifier then
 		local caster = tempest_modifier:GetCaster()

@@ -70,6 +70,7 @@ function GameMode:InitGameMode()
 
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
+	GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
 	GameRules:GetGameModeEntity():SetPauseEnabled(IsInToolsMode())
 	Events:Emit("activate")
 
@@ -141,7 +142,6 @@ function GameMode:OnHeroInGame(hero)
 	Timers:NextTick(function()
 		if IsValidEntity(hero) and hero:IsTrueHero() then
 			Teams:RecalculateKillWeight(hero:GetTeam())
-			Structures:GiveCourier(hero)
 		end
 	end)
 end

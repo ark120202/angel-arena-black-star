@@ -183,13 +183,12 @@ function GetItemCountInCourier(nEntityIndex, itemName, bStash) {
 	return counter;
 }
 
-function FindCourier(unit) {
-	return _.each(Entities.GetAllEntitiesByClassname('npc_dota_courier'), function(ent) {
-		if (Entities.GetTeamNumber(ent) === Entities.GetTeamNumber(unit)) {
-			return ent;
-		}
-	})[0];
-}
+const FindCourier = _.memoize((unit) => {
+	const playerId = Entities.GetPlayerOwnerID(unit);
+	return Entities.GetAllEntitiesByClassname('npc_dota_courier').find(
+		courier => Entities.GetPlayerOwnerID(courier) === playerId
+	);
+});
 
 function DynamicSubscribePTListener(table, callback, OnConnectedCallback) {
 	if (PlayerTables.IsConnected()) {

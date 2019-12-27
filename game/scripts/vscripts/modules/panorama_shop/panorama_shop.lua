@@ -233,7 +233,7 @@ end
 function PanoramaShop:OnItemBuy(data)
 	if data and data.itemName and data.unit then
 		local ent = EntIndexToHScript(data.unit)
-		if ent and ent.entindex and (ent:GetPlayerOwner() == PlayerResource:GetPlayer(data.PlayerID) or ent == FindCourier(PlayerResource:GetTeam(data.PlayerID))) then
+		if ent and ent.entindex and (ent:GetPlayerOwner() == PlayerResource:GetPlayer(data.PlayerID) or ent == Structures:GetCourier(data.PlayerID)) then
 			PanoramaShop:BuyItem(data.PlayerID, ent, data.itemName)
 		end
 	end
@@ -303,7 +303,7 @@ function PanoramaShop:PushItem(playerId, unit, itemName, bOnlyStash)
 
 	--Try to add item to hero's stash
 	if not itemPushed then
-		if unit == FindCourier(team) then
+		if unit == Structures:GetCourier(playerId) then
 			unit = hero
 		end
 		-- Stackable item abuse fix, not very good, but that's all I can do without smth like SetStackable

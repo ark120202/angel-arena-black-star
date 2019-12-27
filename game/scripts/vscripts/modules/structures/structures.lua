@@ -1,4 +1,5 @@
-Structures = Structures or class({})
+Structures = Structures or {}
+Structures._couriers = Structures._couriers or {}
 
 ModuleRequire(..., "data")
 ModuleRequire(..., "shops")
@@ -40,13 +41,11 @@ function Structures:AddHealers()
 	end
 end
 
-function Structures:GiveCourier(hero)
-	local team = hero:GetTeamNumber()
-	if not TEAMS_COURIERS[team] then
-		local courier = CreateUnitByName("npc_dota_courier", hero:GetAbsOrigin(), true, hero, hero:GetPlayerOwner(), team)
-		courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
-		TEAMS_COURIERS[team] = courier
-	end
+function Structures:OnCourierSpawn(courier)
+	Structures._couriers[courier:GetPlayerOwnerID()] = courier
+	courier:AddNewModifier(courier, nil, "modifier_arena_courier", nil)
+end
 
-	TEAMS_COURIERS[team]:SetControllableByPlayer(hero:GetPlayerID(), true)
+function Structures:GetCourier(playerId)
+	return Structures._couriers[playerId]
 end
