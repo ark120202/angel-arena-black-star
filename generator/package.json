@@ -9,18 +9,16 @@
     "start": "node start_tools.js && gulp"
   },
   "dependencies": {
-    "bluebird": "^3.5.0",
-    "fs-extra": "^6.0.1",
-    "gulp": "^3.9.1",
-    "gulp-plumber": "^1.1.0",
+    "bluebird": "^3.7.2",
+    "fs-extra": "^8.1.0",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-util": "^3.0.8",
-    "gulp-watch": "^5.0.0",
-    "js-yaml": "^3.8.4",
-    "lodash": "^4.17.4",
-    "through2": "^2.0.3",
-    "vdf-extra": "^1.0.1",
-    "yargs": "^11.0.0"
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1",
+    "js-yaml": "^3.13.1",
+    "lodash": "^4.17.15",
+    "through2": "^2.0.5",
+    "vdf-extra": "^1.0.1"
   }
 }

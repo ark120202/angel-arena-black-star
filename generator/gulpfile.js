@@ -2,9 +2,7 @@ const localizationBuilder = require('./localization-builder');
 const path = require('path'),
 	vdf = require('vdf-extra'),
 	fs = require('fs-extra'),
-	Promise = require('bluebird'),
-	yaml = require('js-yaml'),
-	argv = require('yargs').argv;
+	yaml = require('js-yaml');
 
 let settings;
 try {
@@ -34,28 +32,31 @@ const gulp = require('gulp'),
 	watch = require('gulp-watch'),
 	plumber = require('gulp-plumber'),
 	replace = require('gulp-replace'),
-	gutil = require('gulp-util');
+	through2 = require('through2');
 
-// L10n
-gulp.task('localization', () =>
-	localizationBuilder.ParseLocalesFromDirectory(paths.localization)
-		.then(tokensByLanguages => {
-			return Promise.map(Object.keys(tokensByLanguages), language => {
-				let lang = {Language: language, Tokens: tokensByLanguages[language]};
-				let minified = '\ufeff' + vdf.stringify({lang}, 0);
-				return fs.outputFile(path.join(paths.game, 'resource/addon_' + language + '.txt'), minified, 'ucs2');
-			});
-		})
-		.catch(console.error)
-);
-gulp.task('localization_watch', ['localization'], () => {
-	gulp.watch(paths.localization + '/**/*.yml', ['localization']);
+gulp.task('localization', async () => {
+	const tokensByLanguages = await localizationBuilder.ParseLocalesFromDirectory(paths.localization);
+	await Promise.all(
+		Object.entries(tokensByLanguages).map(([language, tokens]) => {
+			const lang = { Language: language, Tokens: tokens };
+			const minified = '\ufeff' + vdf.stringify({lang}, 0);
+			return fs.outputFile(path.join(paths.game, 'resource/addon_' + language + '.txt'), minified, 'ucs2');
+		}),
+	);
 });
 
-const shouldWatch = argv.build == null;
+gulp.task('localization_watch', gulp.parallel(
+	'localization',
+	() => {
+		gulp.watch(paths.localization + '/**/*.yml', gulp.task('localization'));
+	},
+));
+
+const shouldWatch = !process.argv.includes('build');
+const noop = () => through2.obj();
 gulp.task('src_sass', () =>
 	gulp.src(path.join(paths.content, 'panorama_src/styles/**/*.sass'))
-		.pipe(shouldWatch ? watch(path.join(paths.content, 'panorama_src/styles/**/*.sass')) : gutil.noop())
+		.pipe(shouldWatch ? watch(path.join(paths.content, 'panorama_src/styles/**/*.sass')) : noop())
 		.pipe(plumber())
 		.pipe(sass())
 		.pipe(replace(/ {2}/g, ''))
@@ -64,15 +65,12 @@ gulp.task('src_sass', () =>
 
 gulp.task('src_css', () =>
 	gulp.src(path.join(paths.content, 'panorama_src/styles/**/*.css'))
-		.pipe(shouldWatch ? watch(path.join(paths.content, 'panorama_src/styles/**/*.css')) : gutil.noop())
+		.pipe(shouldWatch ? watch(path.join(paths.content, 'panorama_src/styles/**/*.css')) : noop())
 		.pipe(plumber())
 		.pipe(replace(/ {2}/g, ''))
 		.pipe(gulp.dest(path.join(paths.content, 'panorama/styles')))
 );
-gulp.task('panorama', ['src_sass', 'src_css']);
+gulp.task('panorama', gulp.parallel('src_sass', 'src_css'));
 
 // Startup
-gulp.task('default', [
-	'panorama',
-	shouldWatch ? 'localization_watch' : 'localization'
-]);
+gulp.task('default', gulp.parallel('panorama', shouldWatch ? 'localization_watch' : 'localization'));
