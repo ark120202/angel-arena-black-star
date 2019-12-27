@@ -14111,27 +14111,22 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"self_attack_chance"		"20 25 30 35 40 45 50"
+				"total_damage"				"75 120 150 175 220 280 350"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"ignite_dps"				"20 30 40 50 70 90 110"
+				"movement_slow"				"10 20 30 40 50 60 70"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"ignite_threshold"			"80"
+				"radius"					"400"
 			}
 			"05"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_slow"				"25"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"400"
+				"var_type"					"FIELD_FLOAT"
+				"extra_duration"			"3"
 			}
 		}
 	}
