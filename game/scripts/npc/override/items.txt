@@ -1140,41 +1140,37 @@
 		"SideShop"						"0"
 		"AbilitySpecial"
 		{
+
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_evasion"				"25"
-			}
+			}	
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"25"
-			}
+				"bonus_strength"		"20"
+			}		
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"20"
+				"var_type"				"FIELD_FLOAT"
+				"disarm_range"				"5.0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"disarm_range"				"2.0"
-			}
+				"disarm_melee"				"3.0"
+			}	
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"disarm_melee"				"2.0"
-			}
+				"var_type"						"FIELD_INTEGER"
+				"status_resistance"				"20"
+			}							
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"disarm_cast_range_tooltip"	"600"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"status_resistance"				"14"
-			}
+				"hp_regen_amp"			"30"
+			}		
 		}
 	}
 	"item_recipe_ring_of_aquila"
