@@ -11,6 +11,7 @@ LEVELS_WITHOUT_ABILITY_POINTS = {
 	[22] = true,
 	[23] = true,
 	[24] = true,
+	-- also all of the levels above 25
 }
 
 -- TODO: These enums appear to be outdated

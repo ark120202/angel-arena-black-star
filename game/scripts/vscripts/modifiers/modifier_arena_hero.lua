@@ -60,8 +60,8 @@ if IsServer() then
 		local hl = parent:GetLevel()
 		if hl > self.HeroLevel  then
 			if not parent:IsIllusion() and not parent:IsTempestDouble() then
-				for i = self.HeroLevel + 1, hl do
-					if LEVELS_WITHOUT_ABILITY_POINTS[i] then
+				for level = self.HeroLevel + 1, hl do
+					if LEVELS_WITHOUT_ABILITY_POINTS[level] or level > 25 then
 						parent:SetAbilityPoints(parent:GetAbilityPoints() + 1)
 					end
 				end
