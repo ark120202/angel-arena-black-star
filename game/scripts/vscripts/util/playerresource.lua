@@ -142,8 +142,13 @@ end
 
 function CDOTA_PlayerResource:RemoveAllUnits(playerId)
 	RemoveAllOwnedUnits(playerId)
+
 	local hero = PlayerResource:GetSelectedHeroEntity(playerId)
 	if not IsValidEntity(hero) then return end
+	if not hero:IsAlive() then
+		hero:RespawnHero(false, false)
+	end
+
 	hero:ClearNetworkableEntityInfo()
 	hero:Stop()
 
@@ -155,9 +160,9 @@ function CDOTA_PlayerResource:RemoveAllUnits(playerId)
 			end
 			ability:SetHidden(true)
 			ability:SetActivated(false)
-			--UTIL_Remove(ability)
 		end
 	end
+
 	hero:InterruptMotionControllers(false)
 	hero:DestroyAllModifiers()
 	hero:AddNewModifier(hero, nil, "modifier_hero_out_of_game", nil)
