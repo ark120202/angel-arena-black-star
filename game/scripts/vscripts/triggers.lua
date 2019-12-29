@@ -9,8 +9,8 @@ function ArenaZoneOnStartTouch(trigger)
 	end
 
 	local origin = caller:GetAbsOrigin()
-	local min = origin + ExpandVector(caller:GetBoundingMins(), 96)
-	local max = origin + ExpandVector(caller:GetBoundingMaxs(), 96)
+	local min = origin + ExpandVector(caller:GetBoundingMins(), 128)
+	local max = origin + ExpandVector(caller:GetBoundingMaxs(), 128)
 	local clamped = VectorOnBoxPerimeter(activator:GetAbsOrigin(), min, max)
 	FindClearSpaceForUnit(activator, clamped, true)
 end
@@ -33,8 +33,8 @@ function ArenaZoneOnEndTouch(trigger)
 		if HEROES_ON_DUEL[activator] then return end
 
 		local origin = caller:GetAbsOrigin()
-		local min = origin + ExpandVector(caller:GetBoundingMins(), -96)
-		local max = origin + ExpandVector(caller:GetBoundingMaxs(), -96)
+		local min = origin + ExpandVector(caller:GetBoundingMins(), -128)
+		local max = origin + ExpandVector(caller:GetBoundingMaxs(), -128)
 		local clamped = VectorOnBoxPerimeter(activator:GetAbsOrigin(), min, max)
 		activator:Teleport(clamped)
 	end)
