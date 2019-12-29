@@ -1145,12 +1145,12 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_evasion"				"25"
-			}	
+			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_strength"		"20"
-			}		
+			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
@@ -1160,17 +1160,17 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"disarm_melee"				"3.0"
-			}	
+			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"status_resistance"				"20"
-			}							
+			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"hp_regen_amp"			"30"
-			}		
+			}
 		}
 	}
 	"item_recipe_ring_of_aquila"
