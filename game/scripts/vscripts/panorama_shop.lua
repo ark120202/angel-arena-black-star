@@ -176,7 +176,7 @@ function PanoramaShop:BuyItem(playerID, unit, itemName, baseItem)
 						unit:DropItemAtPositionImmediate(citem, Vector(0,0,0))
 					end
 
-					for i = 6, 11 do
+					for i = DOTA_STASH_SLOT_1, DOTA_STASH_SLOT_6 do
 						local citem = unit:GetItemInSlot(i)
 						if citem and citem:GetName() == "item_dummy" and not avaliable_slot_index then
 							avaliable_slot_index = i

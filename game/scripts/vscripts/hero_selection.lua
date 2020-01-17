@@ -485,7 +485,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepGold, keepExp, dura
 	local location = hero:GetAbsOrigin()
 	if fountatin then location = location or fountatin:GetAbsOrigin() end
 	local items = {}
-	for i = 0, 11 do
+	for i = 0, DOTA_STASH_SLOT_6 do
 		local citem  = hero:GetItemInSlot(i)
 		if citem and citem ~= item then
 			local newItem = CreateItem(citem:GetName(), nil, nil)
@@ -526,7 +526,7 @@ function HeroSelection:ChangeHero(playerId, newHeroName, keepGold, keepExp, dura
 			end
 			newHero:AddItem(v)
 		end
-		for i = 0, 11 do
+		for i = 0, DOTA_STASH_SLOT_6 do
 			local citem = newHero:GetItemInSlot(i)
 			if citem and citem:GetName() == "item_dummy" then
 				UTIL_Remove(citem)

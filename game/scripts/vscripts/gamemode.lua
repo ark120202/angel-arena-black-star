@@ -349,7 +349,7 @@ function GameMode:ExecuteOrderFilter(filterTable)
 				local hero = PlayerResource:GetSelectedHeroEntity(issuer_player_id_const)
 				local can_continue = false
 				if abilityname == "courier_take_stash_and_transfer_items" then
-					for i = 6, 11 do
+					for i = DOTA_STASH_SLOT_1, DOTA_STASH_SLOT_6  do
 						local item = hero:GetItemInSlot(i)
 						if item and item:GetOwner() == hero then
 							can_continue = true

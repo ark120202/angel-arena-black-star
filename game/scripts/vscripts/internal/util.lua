@@ -566,7 +566,7 @@ function GetDotaAbilityLayout(unit)
 end
 
 function FillSlotsWithDummy(unit)
-	for i=0, 11 do
+	for i=0, DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if current_item == nil then
 			unit:AddItem(CreateItem("item_dummy", unit, unit))
@@ -575,7 +575,7 @@ function FillSlotsWithDummy(unit)
 end
 
 function ClearSlotsFromDummy(unit)
-	for i=0, 11 do
+	for i=0, DOTA_STASH_SLOT_6 do
 		local current_item = unit:GetItemInSlot(i)
 		if current_item ~= nil then
 			if current_item:GetName() == "item_dummy" then
@@ -592,7 +592,7 @@ function swap_to_item(unit, srcItem, newItem)
 		unit:RemoveItem(srcItem)
 		unit:AddItem(newItem)
 	end
-	
+
 	ClearSlotsFromDummy(unit)
 end
 
@@ -600,9 +600,9 @@ function FindItemInInventoryByName(unit, itemname, searchStash)
 	if not unit:HasItemInInventory( itemname ) then
 		return nil
 	end
-	local lastSlot = 5
+	local lastSlot = 8
 	if searchStash then
-		lastSlot = 11
+		lastSlot = DOTA_STASH_SLOT_6
 	end
 	for slot= 0, lastSlot, 1 do
 		local item = unit:GetItemInSlot( slot )
@@ -610,7 +610,7 @@ function FindItemInInventoryByName(unit, itemname, searchStash)
 			return item
 		end
 	end
-	
+
 	return nil
 end
 
@@ -747,7 +747,7 @@ function SpendCharge(item, amount)
 end
 
 function SwapModel(unit, newModel, priority, bHideWearables)
-	if unit.caster_model == nil then 
+	if unit.caster_model == nil then
 		unit.caster_model = unit:GetModelName()
 	end
 	--TODO
@@ -966,7 +966,7 @@ function CreateIllusion(unit, ability, illusion_origin, illusion_incoming_damage
 		end
 
 		local individual_ability = unit:GetAbilityByIndex(ability_slot)
-		if individual_ability ~= nil then 
+		if individual_ability ~= nil then
 			local illusion_ability = illusion:AddAbility(individual_ability:GetName())
 			if illusion_ability ~= nil and illusion_ability:GetLevel() < individual_ability:GetLevel() then
 				illusion_ability:SetLevel(individual_ability:GetLevel())
@@ -1173,7 +1173,7 @@ function MakePlayerAbandoned(iPlayerID)
 			Notifications:TopToAll({text="#game_player_abandoned_game", continue=true})
 			print("Abandoning: " .. hero:GetName())
 			hero:Stop()
-			for i = 0, 11 do
+			for i = 0, DOTA_STASH_SLOT_6 do
 				local citem = hero:GetItemInSlot(i)
 				if citem then
 					hero:SellItem(citem)
@@ -1320,7 +1320,7 @@ function FindNearestEntity(vec3, units)
 	return unit
 end
 
-function FindCourier(team) 
+function FindCourier(team)
 	for _,v in ipairs(Entities:FindAllByClassname("npc_dota_courier")) do
 		if v:GetTeamNumber() == team then
 			return v

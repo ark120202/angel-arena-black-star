@@ -477,7 +477,7 @@ function GameMode:OnItemCombined(keys)
 
 	local recipe = "item_recipe_" .. string.gsub(itemName, "item_", "")
 	if recipe and GetKeyValue(recipe) and GetKeyValue(recipe, "ItemUseCharges") then
-		for i = 0, 11 do
+		for i = 0, DOTA_STASH_SLOT_6 do
 			local item = hero.InventorySnapshot[i]
 			if item and item.name == GetKeyValue(recipe, "ItemUseCharges") and item.charges >= GetKeyValue(recipe, "ItemChargeAmount") then
 				local newCharges = item.charges - GetKeyValue(recipe, "ItemChargeAmount")
