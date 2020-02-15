@@ -1,18 +1,18 @@
 {
-	"files.exclude": {
-		"content/panorama/styles": true,
-		"game/maps": true,
-		"game/materials": true,
-		"game/models": true,
-		"game/particles": true,
-		"game/panorama": true,
-		"game/soundevents": true,
-		"game/sounds": true,
-		"game/**/*.bin": true,
-		"game/**/*.cfg": true,
-		"game/cache_*.soc": true,
-		"game/*.tmp": true,
-		"game/server_log.txt": true,
-		"game/rich_presence_persistent_data.txt": true
-	}
+  "files.exclude": {
+    "content/panorama/styles": true,
+    "game/maps": true,
+    "game/materials": true,
+    "game/models": true,
+    "game/particles": true,
+    "game/panorama": true,
+    "game/soundevents": true,
+    "game/sounds": true,
+    "game/**/*.bin": true,
+    "game/**/*.cfg": true,
+    "game/cache_*.soc": true,
+    "game/*.tmp": true,
+    "game/server_log.txt": true,
+    "game/rich_presence_persistent_data.txt": true
+  }
 }
