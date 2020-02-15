@@ -2,10 +2,18 @@
   "name": "angel_arena_black_star",
   "private": true,
   "scripts": {
-    "dev": "gulp --cwd scripts watch",
     "build": "gulp --cwd scripts build",
+    "dev": "gulp --cwd scripts watch",
     "launch": "node scripts/launch.js",
+    "lint": "run-p lint:prettier",
+    "lint:prettier": "prettier --check \"{,game/,content/}**/*.{js,ts,md,yml,yaml,json,css,scss}\"",
     "postinstall": "node scripts/install.js && yarn build"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "printWidth": 100,
+    "singleQuote": true,
+    "proseWrap": "always"
   },
   "devDependencies": {
     "find-steam-app": "^1.0.2",
@@ -15,6 +23,7 @@
     "gulp-sass": "^4.0.2",
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.15",
+    "prettier": "^1.19.1",
     "upath": "^1.2.0",
     "vdf-extra": "^2.2.2"
   }
