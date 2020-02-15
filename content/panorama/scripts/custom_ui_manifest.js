@@ -12,56 +12,58 @@ GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_CUSTOM_1] = $.Localize('
 GameUI.CustomUIConfig().team_names[DOTATeam_t.DOTA_TEAM_CUSTOM_2] = $.Localize('#DOTA_Custom2');
 
 Game.MouseEvents = {
-	OnLeftPressed: []
+  OnLeftPressed: [],
 };
 Game.DisableWheelPanels = [];
 GameUI.SetMouseCallback(function(eventName, arg) {
-	var result = false;
-	var ClickBehaviors = GameUI.GetClickBehaviors();
-	if (eventName === 'pressed') {
-		if (arg === 0) {
-			if (Game.MouseEvents.OnLeftPressed.length > 0) {
-				for (var k in Game.MouseEvents.OnLeftPressed) {
-					var r = Game.MouseEvents.OnLeftPressed[k](ClickBehaviors, eventName, arg);
-					if (r === true)
-						result = r;
-				}
-			}
-		} else if (ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE && (arg === 5 || arg === 6)) {
-			for (var index in Game.DisableWheelPanels) {
-				if (IsCursorOnPanel(Game.DisableWheelPanels[index])) {
-					return true;
-				}
-			}
-		};
-	};
-	return result;
+  var result = false;
+  var ClickBehaviors = GameUI.GetClickBehaviors();
+  if (eventName === 'pressed') {
+    if (arg === 0) {
+      if (Game.MouseEvents.OnLeftPressed.length > 0) {
+        for (var k in Game.MouseEvents.OnLeftPressed) {
+          var r = Game.MouseEvents.OnLeftPressed[k](ClickBehaviors, eventName, arg);
+          if (r === true) result = r;
+        }
+      }
+    } else if (
+      ClickBehaviors === CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE &&
+      (arg === 5 || arg === 6)
+    ) {
+      for (var index in Game.DisableWheelPanels) {
+        if (IsCursorOnPanel(Game.DisableWheelPanels[index])) {
+          return true;
+        }
+      }
+    }
+  }
+  return result;
 });
 
 GameUI.CustomUIConfig().custom_entity_values = GameUI.CustomUIConfig().custom_entity_values || {};
 DynamicSubscribeNTListener('custom_entity_values', function(tableName, key, value) {
-	GameUI.CustomUIConfig().custom_entity_values[key] = value;
+  GameUI.CustomUIConfig().custom_entity_values[key] = value;
 });
 
 function Hook() {
-	this.handlers = [];
+  this.handlers = [];
 }
 
 Hook.prototype.tap = function(handler) {
-	this.handlers.push(handler)
-}
+  this.handlers.push(handler);
+};
 
 Hook.prototype.call = function() {
-	var args = arguments;
-	_.each(this.handlers, function(handler) {
-		handler.apply(null, args)
-	})
-}
+  var args = arguments;
+  _.each(this.handlers, function(handler) {
+    handler.apply(null, args);
+  });
+};
 
 GameUI.CustomUIConfig().CustomHooks = {
-	custom_talents_toggle_tree: new Hook(),
-	panorama_shop_open_close: new Hook(),
-	panorama_shop_show_item: new Hook(),
-	panorama_shop_show_item_if_open: new Hook(),
-	player_profiles_show_info: new Hook(),
-}
+  custom_talents_toggle_tree: new Hook(),
+  panorama_shop_open_close: new Hook(),
+  panorama_shop_show_item: new Hook(),
+  panorama_shop_show_item_if_open: new Hook(),
+  player_profiles_show_info: new Hook(),
+};
