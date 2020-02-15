@@ -13,13 +13,6 @@
 4. Откройте консоль в директории **generator** и выполните команду `npm run i`
 5. Запускайте Dota 2 Workshop Tools используя файл **Start tools.bat** и начинайте матч через `dota_launch_custom_game angelarenablackstar 5v5` в vconsole
 
-## Linters
-```
-	npm i sass-lint eslint -g
-```
-* [sass-lint](https://github.com/sasstools/sass-lint)
-* [ESLint](http://eslint.org/)
-
 ## Related
 * **[Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=699441891)**
 * **[[RU] VK](https://vk.com/angelarenablackstar)**
