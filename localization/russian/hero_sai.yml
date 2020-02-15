@@ -3,7 +3,7 @@ npc_arena_hero_sai_bio: 'Могучий Воин бороздил множест
 
 DOTA_Tooltip_ability_sai_rage_of_pain_Description: 'Атаки Сая наносят больше урона, а также получают возможность нанести дополнительный критический урон при атаке. Дополнительный урон, шанс срабатывания и множитель крита увеличиваются за каждый стак способности. Чем меньше здоровья героя, тем больше стаков. За каждые %mana_for_bonus_damage% ед. максимальной маны получает 1% дополнительного урона за стак.'
 DOTA_Tooltip_ability_sai_rage_of_pain_Lore: Демону, обитающему глубоко в душе Воина, все проще выбираться наружу с каждой пролитой каплей крови хозяина.
-DOTA_Tooltip_ability_sai_rage_of_pain_health_per_stack_pct:  'МАКСИМУМ СТАКОВ:'
+DOTA_Tooltip_ability_sai_rage_of_pain_health_per_stack_pct: 'МАКСИМУМ СТАКОВ:'
 DOTA_Tooltip_ability_sai_rage_of_pain_damage_per_stack_pct: '%УРОН ЗА СТАК:'
 DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_pct: '%ШАНС КРИТА:'
 DOTA_Tooltip_ability_sai_rage_of_pain_crit_chance_per_stack_pct: '%ШАНС КРИТА ЗА СТАК:'

@@ -33,7 +33,7 @@ DOTA_Tooltip_modifier_poseidon_sea_hole_slow_Description: Скорость дв�
 
 DOTA_Tooltip_ability_poseidon_dark_whale: Dark Whale
 DOTA_Tooltip_ability_poseidon_dark_whale_Description: 'Посейдон призывает древнего кита из морских глубин. Кит наносит урон и оглушает врагов врадиусе. Урон и оглушение зависит от расстояния героя до кита.'
-DOTA_Tooltip_ability_poseidon_dark_whale_Lore:  Морская стихия вместе со всеми ее ужасами всегда сопровождает Посейдона.
+DOTA_Tooltip_ability_poseidon_dark_whale_Lore: Морская стихия вместе со всеми ее ужасами всегда сопровождает Посейдона.
 DOTA_Tooltip_ability_poseidon_dark_whale_aoe_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_poseidon_dark_whale_damage_min: 'МИН. УРОН:'
 DOTA_Tooltip_ability_poseidon_dark_whale_damage_max: 'МАКС. УРОН:'

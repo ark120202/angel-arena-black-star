@@ -1,4 +1,4 @@
-'%DAMAGE BASED ON VICTIM''S HP:':
+"%DAMAGE BASED ON VICTIM'S HP:":
   - DOTA_Tooltip_ability_rattletrap_rocket_flare_damage_from_current_health_pct
   - DOTA_Tooltip_ability_dazzle_shadow_wave_damage_from_current_health_pct
   - DOTA_Tooltip_ability_luna_lucent_beam_damage_from_current_health_pct

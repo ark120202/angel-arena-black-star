@@ -29,7 +29,7 @@ DOTA_Tooltip_ability_saber_invisible_air_aoe_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_saber_invisible_air_push_velocity: 'СИЛА ОТТАЛКИВАНИЯ:'
 DOTA_Tooltip_modifier_saber_invisible_air_Description: Следующее использование Invisible Air нанесёт %dMODIFIER_PROPERTY_TOOLTIP% единиц урона
 
-DOTA_Tooltip_ability_saber_avalon_Description: 'Священные ножны Экскалибура, делающие своего владельца бессмертным. Пассивно лечат Сэйбер, осносываясь на её текущей мане. Во время применения даёт Сэйбер ''абсолютную защиту'', погружая её во владения фей, на Авалон.'
+DOTA_Tooltip_ability_saber_avalon_Description: "Священные ножны Экскалибура, делающие своего владельца бессмертным. Пассивно лечат Сэйбер, осносываясь на её текущей мане. Во время применения даёт Сэйбер 'абсолютную защиту', погружая её во владения фей, на Авалон."
 DOTA_Tooltip_ability_saber_avalon_Lore: Благодаря огромному количеству магической энергии, Артурия может быстро восстанавливать полученные раны.
 DOTA_Tooltip_ability_saber_avalon_bonus_health_regen_max: 'МАКС. РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_saber_avalon_bonus_health_regen_min: 'МИН. РЕГЕНЕРАЦИЯ ЗДОРОВЬЯ:'

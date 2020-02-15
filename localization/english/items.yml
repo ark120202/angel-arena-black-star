@@ -30,9 +30,9 @@ DOTA_Tooltip_ability_item_shard_int_large_Description: '<h1>Use: Consume</h1> Co
 DOTA_Tooltip_ability_item_shard_int_extreme: Extreme Intelligence Shard
 DOTA_Tooltip_ability_item_shard_int_extreme_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %intelligence% intelligence permanently.'
 DOTA_Tooltip_ability_item_shard_level: Level Up Shard
-DOTA_Tooltip_ability_item_shard_level_Description: '<h1>Active: Consume</h1> Consumes shard and level up''s your hero by %levels%.'
+DOTA_Tooltip_ability_item_shard_level_Description: "<h1>Active: Consume</h1> Consumes shard and level up's your hero by %levels%."
 DOTA_Tooltip_ability_item_shard_level10: Level Up Shard x10
-DOTA_Tooltip_ability_item_shard_level10_Description: '<h1>Active: Consume</h1> Consumes shard and level up''s your hero by %levels%.'
+DOTA_Tooltip_ability_item_shard_level10_Description: "<h1>Active: Consume</h1> Consumes shard and level up's your hero by %levels%."
 DOTA_Tooltip_ability_item_shard_attackspeed: Attack Speed Shard
 DOTA_Tooltip_ability_item_shard_attackspeed_Description: '<h1>Use: Consume</h1> Consumes shard and gives hero %attackspeed% attack speed permanently.'
 
@@ -47,7 +47,7 @@ DOTA_Tooltip_ability_item_lucifers_claw_bonus_health_regen: +$hp_regen
 DOTA_Tooltip_ability_item_lucifers_claw_bonus_all: +$all
 
 DOTA_Tooltip_ability_item_homemade_cheese: Homemade Cheese
-DOTA_Tooltip_ability_item_homemade_cheese_Description: '<h1>Use: Fondue</h1> Consume to instantly restore your or ally''s health and mana. Has a %alternative_cooldown% on allies.'
+DOTA_Tooltip_ability_item_homemade_cheese_Description: "<h1>Use: Fondue</h1> Consume to instantly restore your or ally's health and mana. Has a %alternative_cooldown% on allies."
 DOTA_Tooltip_ability_item_homemade_cheese_Note0: Cheese is shareable.
 DOTA_Tooltip_ability_item_homemade_cheese_health_restore: 'HEALTH RESTORED:'
 DOTA_Tooltip_ability_item_homemade_cheese_mana_restore: 'MANA RESTORED:'
@@ -84,7 +84,7 @@ DOTA_Tooltip_ability_item_edge_of_vyse: Edge Of Vyse
 DOTA_Tooltip_ability_item_edge_of_vyse_Description: '<h1>Active: Vyse Walk</h1> Makes you invisible until the duration ends, or until you attack or cast a spell. While invisible, you move %windwalk_bonus_movement_speed_percentage%%% faster and can move through units.  Attacking to end the invisibility will deal %windwalk_bonus_damage% bonus damage to the target and turns it into a harmless critter for %sheep_duration% seconds.'
 DOTA_Tooltip_ability_item_edge_of_vyse_Note0: Backstab cannot miss.
 DOTA_Tooltip_ability_item_edge_of_vyse_Note1: Backstab does not pierce spell immunity.
-DOTA_Tooltip_ability_item_edge_of_vyse_Note2: 'The target will have a base movement speed of 100, but buffs granting maximum movement speed won''t be disabled.'
+DOTA_Tooltip_ability_item_edge_of_vyse_Note2: "The target will have a base movement speed of 100, but buffs granting maximum movement speed won't be disabled."
 DOTA_Tooltip_ability_item_edge_of_vyse_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_edge_of_vyse_bonus_strength: +$str
 DOTA_Tooltip_ability_item_edge_of_vyse_bonus_agility: +$agi
@@ -279,7 +279,7 @@ DOTA_Tooltip_ability_item_dagon_5_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_dagon_5_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dagon_5_arena_range_tooltip: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_enchanted_dagon_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_arena_Description: '<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit, decreasing it''s magic damage resistance.'
+DOTA_Tooltip_ability_item_enchanted_dagon_arena_Description: "<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit, decreasing it's magic damage resistance."
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_arena_bonus_damage: +$damage
@@ -290,7 +290,7 @@ DOTA_Tooltip_ability_item_enchanted_dagon_arena_range_tooltip: 'CAST RANGE:'
 DOTA_Tooltip_modifier_item_enchanted_dagon_arena_debuff: Enchanted Dagon
 DOTA_Tooltip_modifier_item_enchanted_dagon_arena_debuff_Description: Magic damage resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%.
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_Description: '<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit, decreasing it''s magic damage resistance.'
+DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_Description: "<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit, decreasing it's magic damage resistance."
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_bonus_damage: +$damage
@@ -299,7 +299,7 @@ DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_magic_resist_reduction_pct: '%
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_debuff_duration: 'DURATION:'
 DOTA_Tooltip_ability_item_enchanted_dagon_2_arena_range_tooltip: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_Description: '<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit, decreasing it''s magic damage resistance.'
+DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_Description: "<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit, decreasing it's magic damage resistance."
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_bonus_damage: +$damage
@@ -308,7 +308,7 @@ DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_magic_resist_reduction_pct: '%
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_debuff_duration: 'DURATION:'
 DOTA_Tooltip_ability_item_enchanted_dagon_3_arena_range_tooltip: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_Description: '<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit, decreasing it''s magic damage resistance.'
+DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_Description: "<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit, decreasing it's magic damage resistance."
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_bonus_damage: +$damage
@@ -317,7 +317,7 @@ DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_magic_resist_reduction_pct: '%
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_debuff_duration: 'DURATION:'
 DOTA_Tooltip_ability_item_enchanted_dagon_4_arena_range_tooltip: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena: Enchanted Dagon
-DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_Description: '<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit, decreasing it''s magic damage resistance.'
+DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_Description: "<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit, decreasing it's magic damage resistance."
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_enchanted_dagon_5_arena_bonus_damage: +$damage
@@ -393,7 +393,7 @@ DOTA_Tooltip_ability_item_sunray_dagon_5_arena_debuff_duration: 'DURATION:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_arena_spell_amp_pct: '%SPELL DAMAGE AMP:'
 DOTA_Tooltip_ability_item_sunray_dagon_5_range_tooltip: 'CAST RANGE:'
 DOTA_Tooltip_ability_item_blink_staff: Blink Staff
-DOTA_Tooltip_ability_item_blink_staff_Description: '<h1>Active: Blink Force</h1> Teleport any target unit to a target point up to %max_blink_range% units away. Double click to instantly cast Blink Force on yourself.  If damage bigger than %blink_damage_to_cooldown% is taken, Blink Staff cannot be used for %blink_damage_cooldown% seconds. After blink any unit get''s unobstructed movement for %unobstructed_movement_duration% seconds.'
+DOTA_Tooltip_ability_item_blink_staff_Description: "<h1>Active: Blink Force</h1> Teleport any target unit to a target point up to %max_blink_range% units away. Double click to instantly cast Blink Force on yourself.  If damage bigger than %blink_damage_to_cooldown% is taken, Blink Staff cannot be used for %blink_damage_cooldown% seconds. After blink any unit get's unobstructed movement for %unobstructed_movement_duration% seconds."
 DOTA_Tooltip_ability_item_blink_staff_Note0: Self-casting will cause you to the direction you are facing.
 DOTA_Tooltip_ability_item_blink_staff_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_blink_staff_bonus_health_regen: +$hp_regen
@@ -430,7 +430,7 @@ DOTA_Tooltip_ability_item_skull_of_midas_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_skull_of_midas_kill_xp: 'KILL XP:'
 DOTA_Tooltip_ability_item_skull_of_midas_kill_gold: 'KILL GOLD:'
 DOTA_Tooltip_ability_item_chest_of_midas: Chest of Midas
-DOTA_Tooltip_ability_item_chest_of_midas_Description: '<h1>Passive: Golden Chest</h1> Each time you get attacked by enemy hero you get some gold and some experience.<br><br>Bosses attacks won''t give you any experience and are reducing your gold.'
+DOTA_Tooltip_ability_item_chest_of_midas_Description: "<h1>Passive: Golden Chest</h1> Each time you get attacked by enemy hero you get some gold and some experience.<br><br>Bosses attacks won't give you any experience and are reducing your gold."
 DOTA_Tooltip_ability_item_chest_of_midas_Note0: Illusion's attacks won't give you any gold.
 DOTA_Tooltip_ability_item_chest_of_midas_bonus_armor: +$armor
 DOTA_Tooltip_ability_item_chest_of_midas_xp: 'XP:'
@@ -661,7 +661,7 @@ DOTA_Tooltip_modifier_item_soul_of_titan_effect: Elder Aura
 DOTA_Tooltip_modifier_item_soul_of_titan_effect_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 
 DOTA_Tooltip_ability_item_dark_flow: Dark Flow
-DOTA_Tooltip_ability_item_dark_flow_Description: '<h1>Passive: Armor Flow</h1> Each attack reduces target''s armor.'
+DOTA_Tooltip_ability_item_dark_flow_Description: "<h1>Passive: Armor Flow</h1> Each attack reduces target's armor."
 DOTA_Tooltip_ability_item_dark_flow_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_dark_flow_armor_per_hit: 'ARMOR REDUCTION PER HIT:'
 DOTA_Tooltip_ability_item_dark_flow_max_stacks: 'MAX STACKS:'
@@ -669,7 +669,7 @@ DOTA_Tooltip_ability_item_dark_flow_duration: 'DURATION:'
 DOTA_Tooltip_modifier_item_dark_flow_stack: Dark Flow
 DOTA_Tooltip_modifier_item_dark_flow_stack_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 DOTA_Tooltip_ability_item_echo_sabre_arena: Echo Sabre
-DOTA_Tooltip_ability_item_echo_sabre_arena_Description: '<h1>Passive: Double Hit</h1> Causes melee attacks to attack twice after a short delay. The double attacks apply a %slow_duration% second %movement_slow%%% movement slow and %attack_speed_slow% attack speed slow on each strike. Second attack isn''t affected by attack point and will be done instantly.'
+DOTA_Tooltip_ability_item_echo_sabre_arena_Description: "<h1>Passive: Double Hit</h1> Causes melee attacks to attack twice after a short delay. The double attacks apply a %slow_duration% second %movement_slow%%% movement slow and %attack_speed_slow% attack speed slow on each strike. Second attack isn't affected by attack point and will be done instantly."
 DOTA_Tooltip_ability_item_echo_sabre_arena_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_echo_sabre_arena_bonus_strength: +$str
 DOTA_Tooltip_ability_item_echo_sabre_arena_bonus_attack_speed: +$attack
@@ -682,7 +682,7 @@ DOTA_Tooltip_ability_item_echo_sabre_arena_slow_duration: 'DEBUFF DURATION:'
 DOTA_Tooltip_modifier_item_echo_sabre_arena_debuff: Echo Sabre
 DOTA_Tooltip_modifier_item_echo_sabre_arena_debuff_Description: 'Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%'
 DOTA_Tooltip_ability_item_echo_sabre_2: Echo Sabre 2
-DOTA_Tooltip_ability_item_echo_sabre_2_Description: '<h1>Passive: Double Hit</h1> Causes melee attacks to attack twice after a short delay. The double attacks apply a %slow_duration% second %movement_slow%%% movement slow and %attack_speed_slow% attack speed slow on each strike. Second attack isn''t affected by attack point and will be done instantly.'
+DOTA_Tooltip_ability_item_echo_sabre_2_Description: "<h1>Passive: Double Hit</h1> Causes melee attacks to attack twice after a short delay. The double attacks apply a %slow_duration% second %movement_slow%%% movement slow and %attack_speed_slow% attack speed slow on each strike. Second attack isn't affected by attack point and will be done instantly."
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_strength: +$str
 DOTA_Tooltip_ability_item_echo_sabre_2_bonus_attack_speed: +$attack
@@ -771,13 +771,13 @@ DOTA_Tooltip_ability_item_consecrated_sword_Description: '<h1>Passive: Holy Aura
 DOTA_Tooltip_ability_item_consecrated_sword_enemy_heal: 'ENEMY HEAL:'
 DOTA_Tooltip_ability_item_consecrated_sword_karma_increasement: 'KARMA INCREASEMENT:'
 DOTA_Tooltip_ability_item_desolator2: Desolator II
-DOTA_Tooltip_ability_item_desolator2_Description: '<h1>Passive: Corruption</h1> Your attacks reduce target''s armor for %corruption_duration% seconds.'
+DOTA_Tooltip_ability_item_desolator2_Description: "<h1>Passive: Corruption</h1> Your attacks reduce target's armor for %corruption_duration% seconds."
 DOTA_Tooltip_ability_item_desolator2_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_desolator2_corruption_armor: 'ARMOR REDUCTION:'
 DOTA_Tooltip_modifier_item_desolator2_arena_corruption: Desolator II Corruption
 DOTA_Tooltip_modifier_item_desolator2_arena_corruption_Description: Desolator II attacks reduced your armor by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%
 DOTA_Tooltip_ability_item_desolator3: Desolator III
-DOTA_Tooltip_ability_item_desolator3_Description: '<h1>Passive: Corruption</h1> Your attacks reduce target''s armor for %corruption_duration% seconds.'
+DOTA_Tooltip_ability_item_desolator3_Description: "<h1>Passive: Corruption</h1> Your attacks reduce target's armor for %corruption_duration% seconds."
 DOTA_Tooltip_ability_item_desolator3_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_desolator3_corruption_armor: 'ARMOR REDUCTION:'
 DOTA_Tooltip_modifier_item_desolator3_arena_corruption: Desolator III Corruption
@@ -948,11 +948,10 @@ DOTA_Tooltip_ability_item_book_of_the_keeper_spell_amp_pct: '%SPELL DAMAGE AMP:'
 
 DOTA_Tooltip_ability_item_angel_wings: Angel Wings
 DOTA_Tooltip_ability_item_angel_wings_Description: >-
-  <h1>Active: Flight</h1> Gives you ability to go through obstructions for
-  %duration% seconds. Can be cast while channelling.
+  <h1>Active: Flight</h1> Gives you ability to go through obstructions for %duration% seconds. Can be cast while channelling.
+  
+  <h1>Passive: Aethereal Focus</h1> Increases spell cast range by %cast_range_bonus%.
 
-  <h1>Passive: Aethereal Focus</h1> Increases spell cast range by
-  %cast_range_bonus%.
 DOTA_Tooltip_ability_item_angel_wings_bonus_movement_speed: +$move_speed
 DOTA_Tooltip_ability_item_angel_wings_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_angel_wings_bonus_all: +$all
@@ -961,7 +960,6 @@ DOTA_Tooltip_ability_item_angel_wings_bonus_mana_regen: +$mana_regen
 DOTA_Tooltip_ability_item_angel_wings_cast_range_bonus: +$cast_range
 DOTA_Tooltip_modifier_item_angel_wings_active: Flight
 DOTA_Tooltip_modifier_item_angel_wings_active_Description: Has ability to go through obstructions.
-
 
 DOTA_Tooltip_ability_item_blade_of_discord: Blade of Discord
 DOTA_Tooltip_ability_item_blade_of_discord_Description: '<h1>Active: Ether Weakness</h1> Emits a weakening blast which converts all caught enemies to ethereal form, increasing any incoming magic damage they take, while rendering them immune to physical damage and unable to attack, and dealing them %debuff_stats_multiplier%x your all attributes + %debuff_damage_base% as pure damage. Lasts %debuff_duration% seconds.'
@@ -1127,7 +1125,7 @@ DOTA_Tooltip_ability_item_demons_paw_Description: |-
 DOTA_Tooltip_ability_item_demons_paw_bonus_attack_range: 'BONUS ATTACK RANGE:'
 DOTA_Tooltip_ability_item_demons_paw_all_damage_bonus_pct: '%DAMAGE INCREASE:'
 DOTA_Tooltip_ability_item_awakened_cursed_eye: Awakened Cursed Eye
-DOTA_Tooltip_ability_item_awakened_cursed_eye_Description: '<h1>Passive: Cursed Sight</h1> Adds the ability to see invisible units and wards, differentiate illusions and real heroes and see enemies ability cooldowns to any allied vision within its carrier''s range and increases owner''s vision range.'
+DOTA_Tooltip_ability_item_awakened_cursed_eye_Description: "<h1>Passive: Cursed Sight</h1> Adds the ability to see invisible units and wards, differentiate illusions and real heroes and see enemies ability cooldowns to any allied vision within its carrier's range and increases owner's vision range."
 DOTA_Tooltip_ability_item_awakened_cursed_eye_radius: 'CURSED SIGHT RADIUS:'
 DOTA_Tooltip_ability_item_awakened_cursed_eye_bonus_day_vision: 'DAY VISION INCREASEMENT:'
 DOTA_Tooltip_ability_item_awakened_cursed_eye_bonus_night_vision: 'NIGHT VISION INCREASEMENT:'
@@ -1169,13 +1167,13 @@ DOTA_Tooltip_ability_item_rune_keeper_Description: |-
 DOTA_Tooltip_ability_item_rune_keeper_bonus_all_stats: +$all
 DOTA_Tooltip_ability_item_rune_keeper_bonus_movement_speed: +$move_speed
 DOTA_Tooltip_ability_item_bottle_arena: Bottle
-DOTA_Tooltip_ability_item_bottle_arena_Description: '<h1>Use: Regenerate</h1> Consumes a charge to restore Health and Mana over time. Bottle can be refilled at your team''s fountain. Runes can be stored in the Bottle for later use. Runes, used from bottle will have %rune_multiplier%x effect of normal rune.'
+DOTA_Tooltip_ability_item_bottle_arena_Description: "<h1>Use: Regenerate</h1> Consumes a charge to restore Health and Mana over time. Bottle can be refilled at your team's fountain. Runes can be stored in the Bottle for later use. Runes, used from bottle will have %rune_multiplier%x effect of normal rune."
 DOTA_Tooltip_ability_item_bottle_arena_health_restore: 'HEALTH RESTORED:'
 DOTA_Tooltip_ability_item_bottle_arena_mana_restore: 'MANA RESTORED:'
 DOTA_Tooltip_ability_item_bottle_arena_restore_time: 'DURATION:'
 DOTA_Tooltip_ability_item_blade_mail_arena: Blade Mail
-'<h1>Active: Damage Return</h1> Reflects any damage taken back to the unit that dealt the damage and reduces it. Lasts %duration% seconds.':
-  - DOTA_Tooltip_ability_item_blade_mail_arena_Description
+? '<h1>Active: Damage Return</h1> Reflects any damage taken back to the unit that dealt the damage and reduces it. Lasts %duration% seconds.'
+: - DOTA_Tooltip_ability_item_blade_mail_arena_Description
   - DOTA_Tooltip_ability_item_blade_mail_2_Description
   - DOTA_Tooltip_ability_item_blade_mail_3_Description
 DOTA_Tooltip_ability_item_blade_mail_arena_bonus_damage: +$damage
@@ -1305,7 +1303,7 @@ DOTA_Tooltip_ability_item_quelling_fury_Description: |-
   <h1>Passive: Cleave</h1> Deals a percent of attack damage in a %cleave_distance% area around the target. Ranged units cannot Cleave.
 DOTA_Tooltip_ability_item_quelling_fury_Note0: Cleave damage is reduced by armor type but not by armor value.
 DOTA_Tooltip_ability_item_quelling_fury_Note1: Cleave damage goes through spell immunity.
-DOTA_Tooltip_ability_item_quelling_fury_Note2: 'If multiple sources of Cleave are present, each Cleave''s damage is applied separately.'
+DOTA_Tooltip_ability_item_quelling_fury_Note2: "If multiple sources of Cleave are present, each Cleave's damage is applied separately."
 DOTA_Tooltip_ability_item_quelling_fury_Note3: Not works on illusions
 DOTA_Tooltip_ability_item_quelling_fury_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_quelling_fury_bonus_health_regen: +$hp_regen
@@ -1321,7 +1319,7 @@ DOTA_Tooltip_ability_item_battlefury_arena_Description: |-
   <h1>Passive: Cleave</h1> Deals a percent of attack damage in a %cleave_distance% area around the target. Ranged units cannot Cleave.
 DOTA_Tooltip_ability_item_battlefury_arena_Note0: Cleave damage is reduced by armor type but not by armor value.
 DOTA_Tooltip_ability_item_battlefury_arena_Note1: Cleave damage goes through spell immunity.
-DOTA_Tooltip_ability_item_battlefury_arena_Note2: 'If multiple sources of Cleave are present, each Cleave''s damage is applied separately.'
+DOTA_Tooltip_ability_item_battlefury_arena_Note2: "If multiple sources of Cleave are present, each Cleave's damage is applied separately."
 DOTA_Tooltip_ability_item_battlefury_arena_Note3: Not works on illusions
 DOTA_Tooltip_ability_item_battlefury_arena_bonus_damage: +$damage
 DOTA_Tooltip_ability_item_battlefury_arena_bonus_health_regen: +$hp_regen
@@ -1358,7 +1356,7 @@ DOTA_Tooltip_ability_item_elemental_fury_maim_Description: '{lc:modifier_item_sa
 DOTA_Tooltip_ability_item_scythe_of_sun: Scythe of Sun
 DOTA_Tooltip_ability_item_scythe_of_sun_Description: |-
   <h1>Active: Shiny Hex</h1> Turns a target unit into a harmless critter for %hex_duration% seconds, at the same time decreasing it's movement speed to %hex_movement_speed%. All attacks on the hexed target will have True Strike. Instantly destroys illusions.
-DOTA_Tooltip_ability_item_scythe_of_sun_Note0: 'The target will have a base movement speed of 100, but buffs granting maximum movement speed won''t be disabled.'
+DOTA_Tooltip_ability_item_scythe_of_sun_Note0: "The target will have a base movement speed of 100, but buffs granting maximum movement speed won't be disabled."
 DOTA_Tooltip_ability_item_scythe_of_sun_bonus_strength: +$str
 DOTA_Tooltip_ability_item_scythe_of_sun_bonus_agility: +$agi
 DOTA_Tooltip_ability_item_scythe_of_sun_bonus_intellect: +$int
@@ -1526,24 +1524,19 @@ DOTA_Tooltip_modifier_item_sange_and_yasha_and_kaya_maim_Description: '{lc:modif
 
 DOTA_Tooltip_ability_item_unstable_quasar: Unstable Quasar
 DOTA_Tooltip_ability_item_unstable_quasar_Description: >-
-  <h1>Passive: Singularity</h1> Usage of any ability or item with non-zero mana
-  cost, deals %base_damage% + %damage_pct%%% (%intelligence_damage_pct%%% for
-  heroes with intelligence being their primary attribute) of max health of
-  nearby enemies, pulling them to your hero and reducing their movement speed to
-  %slow_speed% for %slow_duration% second.
-
-
+  <h1>Passive: Singularity</h1> Usage of any ability or item with non-zero mana cost, deals %base_damage% + %damage_pct%%% (%intelligence_damage_pct%%% for heroes with intelligence being their primary attribute) of max health of nearby enemies, pulling them to your hero and reducing their movement speed to %slow_speed% for %slow_duration% second.
+  
+  
   Triggering the Singularity spends %manacost% + %manacost_pct%%% of max mana.
-
-
+  
+  
   Radius: %singularity_radius%
-
-  <h1>Passive: Decomposition Aura</h1> Grants the ability to see invisible units
-  and wards and reduces Magical Damage Resistance of enemy uses by
-  %aura_resist_debuff_pct%%%.
-
-
+  
+  <h1>Passive: Decomposition Aura</h1> Grants the ability to see invisible units and wards and reduces Magical Damage Resistance of enemy uses by %aura_resist_debuff_pct%%%.
+  
+  
   Radius: %aura_radius%
+
 DOTA_Tooltip_ability_item_unstable_quasar_Note0: Effects of multiple Unstable Quasar do not stack.
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_intellect: +$int
 DOTA_Tooltip_ability_item_unstable_quasar_bonus_day_vision: +Day Vision
@@ -1553,32 +1546,31 @@ DOTA_Tooltip_ability_item_unstable_quasar_Lore: Only sages can completely seize 
 
 DOTA_Tooltip_Ability_item_flask_arena: Healing Salve
 DOTA_Tooltip_ability_item_flask_arena_Description: >-
-  <h1>Use: Salve</h1> Grants %health_regen% health regeneration to the target
-  for %buff_duration% seconds.
-
-
-  If the unit is attacked by an enemy hero, tower, boss, or Jungle Bear, the
-  effect is lost.
-
-
+  <h1>Use: Salve</h1> Grants %health_regen% health regeneration to the target for %buff_duration% seconds.
+  
+  
+  If the unit is attacked by an enemy hero, tower, boss, or Jungle Bear, the effect is lost.
+  
+  
   Range: %tooltip_range%
+
 DOTA_Tooltip_ability_item_flask_arena_Lore: A magical salve that can quickly mend even the deepest of wounds.
 DOTA_Tooltip_modifier_item_flask_arena_healing: Healing Salve
 DOTA_Tooltip_modifier_item_flask_arena_healing_Description: Restoring health.
 
 DOTA_Tooltip_Ability_item_gem_arena: Gem of True Sight
 DOTA_Tooltip_ability_item_gem_arena_Description: >-
-  <h1>Passive: True Sight</h1> Grants the ability to see invisible units and wards to any allied
-  vision within %radius% range of its carrier.
+  <h1>Passive: True Sight</h1> Grants the ability to see invisible units and wards to any allied vision within %radius% range of its carrier.
+  
+  <h1>Passive: Everlasting</h1><font color='#e03e2e'>Dropped on death, and cannot be destroyed.</font>
 
-  <h1>Passive: Everlasting</h1><font color='#e03e2e'>Dropped on death, and cannot be
-  destroyed.</font>
 DOTA_Tooltip_ability_item_gem_arena_Note0: Disabled while on a courier.
 DOTA_Tooltip_ability_item_gem_arena_Lore: >-
   Not one thrall creature of the depths,
-
+  
   Nor spirit bound in drowning's keep,
-
+  
   Nor Maelrawn the Tentacular,
-
+  
   Shall rest till seas, gem comes to sleep.
+

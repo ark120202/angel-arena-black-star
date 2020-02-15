@@ -34,7 +34,7 @@ DOTA_Tooltip_ability_queenofblades_harbinger_of_death_tooltip_range: 'CAST RANGE
 
 DOTA_Tooltip_ability_queenofblades_alter_ego: Alter Ego
 DOTA_Tooltip_ability_queenofblades_alter_ego_Description: 'Queen remembers who she was. Looking into the depths of his blackened soul, she summons Sarah Kerrigan - her previous incarnation, so she will fought on the side of the Queen. Sarah lives %duration% seconds and is controllabe to player. She also has two abilities - Chains and Discharge.'
-DOTA_Tooltip_ability_queenofblades_alter_ego_aghanim_description: 'Increases Sarah''s health and damage and adds a new ability to her - Soul Breaker, that allowing her to bring a huge amount of damage to target once, per her live.'
+DOTA_Tooltip_ability_queenofblades_alter_ego_aghanim_description: "Increases Sarah's health and damage and adds a new ability to her - Soul Breaker, that allowing her to bring a huge amount of damage to target once, per her live."
 DOTA_Tooltip_ability_queenofblades_alter_ego_attack_damage: 'DAMAGE:'
 DOTA_Tooltip_ability_queenofblades_alter_ego_attack_damage_scepter: 'DAMAGE WITH SCEPTER:'
 DOTA_Tooltip_ability_queenofblades_alter_ego_hp: 'HEALTH:'

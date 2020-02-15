@@ -1,6 +1,7 @@
 Variables:
   ability_scepter_upgradable: |- # Handled with script
 
+
     Upgradable by Aghanim's Scepter.
 
 game_mode_15: Angel Arena Black Star
@@ -32,7 +33,7 @@ arena_hud_error_courier_cant_order_item: Only item's owner can manipulate it in 
 arena_hud_error_sentry_ward_limit: Sentry Ward limit is reached
 
 DOTA_Tooltip_modifier_neutral_champion: Champion
-DOTA_Tooltip_modifier_neutral_champion_Description: 'This neutral is a champion, so it''s %dMODIFIER_PROPERTY_TOOLTIP% times more powerful than normal creep and gives you more bounty on death'
+DOTA_Tooltip_modifier_neutral_champion_Description: "This neutral is a champion, so it's %dMODIFIER_PROPERTY_TOOLTIP% times more powerful than normal creep and gives you more bounty on death"
 
 npc_dummy_unit: Dummy
 npc_dummy_blank: Blank Dummy
@@ -72,9 +73,8 @@ DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_3_times: '%3X CAST CHAN
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_4_times: '%4X CAST CHANCE:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally_scepter: 'MULTICAST ALLY DURATION:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: >-
-  Adds the Unrefined Fireblast ability. Multicast can be used on allies to give
-  them chance to multicast for some time. Multicast chance on ultimates is
-  decreased by 50%
+  Adds the Unrefined Fireblast ability. Multicast can be used on allies to give them chance to multicast for some time. Multicast chance on ultimates is decreased by 50%
+
 
 DOTA_Tooltip_ability_ability_empty: Empty Ability Slot
 DOTA_Tooltip_ability_ability_empty_Description: ''
@@ -94,7 +94,7 @@ DOTA_Tooltip_ability_item_god_transform_zaken_Description: |-
 
   This item is dropped by bosses and you can't buy it in the shop.
 DOTA_Tooltip_ability_doom_bringer_devour_arena: Devour
-DOTA_Tooltip_ability_doom_bringer_devour_arena_Description: 'Consumes an enemy or neutral creep, acquiring any special abilities that it possessed and increasing Doom''s health and attack damage based on creep''s health.'
+DOTA_Tooltip_ability_doom_bringer_devour_arena_Description: "Consumes an enemy or neutral creep, acquiring any special abilities that it possessed and increasing Doom's health and attack damage based on creep's health."
 DOTA_Tooltip_ability_doom_bringer_devour_arena_min_bonus_gold: 'MINIMAL BONUS GOLD:'
 DOTA_Tooltip_ability_doom_bringer_devour_arena_bonus_gold_pct: '%BONUS GOLD:'
 DOTA_Tooltip_ability_doom_bringer_devour_arena_duration: 'DURATION:'
@@ -103,7 +103,7 @@ DOTA_Tooltip_ability_doom_bringer_devour_arena_stolen_health_to_damage: 'DAMAGE 
 DOTA_Tooltip_modifier_doom_bringer_devour_arena: Devour
 DOTA_Tooltip_modifier_doom_bringer_devour_arena_Description: 'Helath increased by %dMODIFIER_PROPERTY_HEALTH_BONUS%, attack damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%'
 DOTA_Tooltip_ability_huskar_burning_spear_arena: Burning Spear
-DOTA_Tooltip_ability_huskar_burning_spear_arena_Description: 'Huskar sets his spears aflame, dealing damage over time with his regular attack. Damage grows with each missing health point. Multiple attacks will stack additional damage. Each stack also decreases armor and magic damage resistance. Each attack drains some of Huskar''s health, based on burn damage. Lasts %duration% seconds. When Huskar''s health drops below %health_cost_pct%%%, his blood blazes, with some chance applying Burning Spear stacks to all enemies around him.'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_Description: "Huskar sets his spears aflame, dealing damage over time with his regular attack. Damage grows with each missing health point. Multiple attacks will stack additional damage. Each stack also decreases armor and magic damage resistance. Each attack drains some of Huskar's health, based on burn damage. Lasts %duration% seconds. When Huskar's health drops below %health_cost_pct%%%, his blood blazes, with some chance applying Burning Spear stacks to all enemies around him."
 DOTA_Tooltip_ability_huskar_burning_spear_arena_Note0: Burning Spears stacks additively when used multiple times on one target. There is no cap.
 DOTA_Tooltip_ability_huskar_burning_spear_arena_Note1: Huskar cannot kill himself with this skill.
 DOTA_Tooltip_ability_huskar_burning_spear_arena_health_cost_pct: '%HEALTH COST:'
@@ -125,18 +125,17 @@ DOTA_Tooltip_ability_meepo_divided_we_stand_Description: 'Meepo summons an imper
 DOTA_Tooltip_ability_meepo_divided_we_stand_Note0: Clones can't use Arcane Boots.
 
 DOTA_Tooltip_ability_filler_ability_Description: Generates an aura that provides increased health and mana regeneration to nearby allies when activated. Regeneration values increases with each minute.
-DOTA_Tooltip_ability_filler_ability_Note1: ""
+DOTA_Tooltip_ability_filler_ability_Note1: ''
 DOTA_Tooltip_ability_filler_ability_hp_heal_growth: 'HEALTH REGEN / MIN:'
 DOTA_Tooltip_ability_filler_ability_mp_heal_growth: 'MANA REGEN / MIN:'
 DOTA_Tooltip_ability_filler_ability_hp_heal_pct: '%HEALTH REGEN:'
 DOTA_Tooltip_ability_filler_ability_mp_heal_pct: '%MANA REGEN:'
 
-
 DOTA_Tooltip_modifier_fountain_aura_arena: Fountain Rejuvenation
 DOTA_Tooltip_modifier_fountain_aura_arena_Description: 'Heals %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% HP and %dMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE%%% mana per second.'
 
 DOTA_Tooltip_modifier_fountain_aura_invulnerability: Fountain Invulnerability
-DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: 'Takes no damage from any sources. Works only while Cursed Zeld is alive. If it''s not, fountain won''t kill enemy units, but instead will apply on them ''Fountain Weakness'' debuff.'
+DOTA_Tooltip_modifier_fountain_aura_invulnerability_Description: "Takes no damage from any sources. Works only while Cursed Zeld is alive. If it's not, fountain won't kill enemy units, but instead will apply on them 'Fountain Weakness' debuff."
 
 DOTA_Tooltip_modifier_fountain_aura_enemy: Fountain Weakness
 DOTA_Tooltip_modifier_fountain_aura_enemy_Description: 'Each second takes %dMODIFIER_PROPERTY_TOOLTIP%%% of max health as damage. Prevents health from from going up. All outgoing damage reduced by %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%.'

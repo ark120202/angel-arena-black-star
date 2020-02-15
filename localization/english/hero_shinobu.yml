@@ -45,7 +45,7 @@ DOTA_Tooltip_modifier_shinobu_vampire_blood_buff_lvl4_Description: |-
   +%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% movement speed
 
 DOTA_Tooltip_ability_shinobu_eat_oddity: Eat Oddity
-DOTA_Tooltip_ability_shinobu_eat_oddity_Description: 'Shinobu jumps to a unit, eats it and gains part of it''s health for some time and increased gold.'
+DOTA_Tooltip_ability_shinobu_eat_oddity_Description: "Shinobu jumps to a unit, eats it and gains part of it's health for some time and increased gold."
 DOTA_Tooltip_ability_shinobu_eat_oddity_Lore: Vampires never averse to sucking all the juices out of an appetizing creep.
 DOTA_Tooltip_ability_shinobu_eat_oddity_bonus_gold_pct: '%BONUS GOLD:'
 DOTA_Tooltip_ability_shinobu_eat_oddity_buff_duration: 'BUFF DURATION:'
@@ -54,7 +54,7 @@ DOTA_Tooltip_modifier_shinobu_eat_oddity_buff: Eat Oddity bonus health
 DOTA_Tooltip_modifier_shinobu_eat_oddity_buff_Description: Max Health increased by %dMODIFIER_PROPERTY_HEALTH_BONUS%
 
 DOTA_Tooltip_ability_shinobu_kokorowatari: Kokorowatari
-DOTA_Tooltip_ability_shinobu_kokorowatari_Description: 'When Shinobu kills non-hero unit, she creates a soul of this unit. This soul is invulnerable and lasts %soul_duration% seconds. Also, increases Shinobu''s attack range and gives her chance to kill creep with one hit.'
+DOTA_Tooltip_ability_shinobu_kokorowatari_Description: "When Shinobu kills non-hero unit, she creates a soul of this unit. This soul is invulnerable and lasts %soul_duration% seconds. Also, increases Shinobu's attack range and gives her chance to kill creep with one hit."
 DOTA_Tooltip_ability_shinobu_kokorowatari_Lore: Shinobu can turn a victim into a servant and make him obey his orders, but prefers not to use it.
 DOTA_Tooltip_ability_shinobu_kokorowatari_bonus_attack_range: 'BONUS ATTACK RANGE:'
 DOTA_Tooltip_ability_shinobu_kokorowatari_chance_to_kill: '%CHANCE TO KILL CREEP:'
@@ -62,7 +62,7 @@ DOTA_Tooltip_ability_shinobu_kokorowatari_soul_duration: 'SOUL DURATION:'
 npc_shinobu_soul: Soul
 
 DOTA_Tooltip_ability_shinobu_yumewatari_lua: Yumewatari
-DOTA_Tooltip_ability_shinobu_yumewatari_lua_Description: 'Shinobu ressurects selected soul with level below %max_ghost_level%. Also, increases Shinobu''s attack damage.'
+DOTA_Tooltip_ability_shinobu_yumewatari_lua_Description: "Shinobu ressurects selected soul with level below %max_ghost_level%. Also, increases Shinobu's attack damage."
 DOTA_Tooltip_ability_shinobu_yumewatari_lua_Lore: Although Shinoba looks like a loli, in fact she is incredibly strong.
 DOTA_Tooltip_ability_shinobu_yumewatari_lua_bonus_damage: +$damage
 DOTA_Tooltip_ability_shinobu_yumewatari_lua_max_ghost_level: 'MAX SOUL LEVEL:'

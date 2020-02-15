@@ -1,6 +1,7 @@
 Variables:
   ability_scepter_upgradable: |- # Handled with script
 
+
     Улучшается с Aghanim's Scepter.
 
 npc_dota_hero_arena_base: Герой
@@ -54,9 +55,8 @@ DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_3_times: '%ШАНС 3X:
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_4_times: '%ШАНС 4Х:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally_scepter: 'ДЛИТЕЛЬНОСТЬ НА СОЮЗНИКАХ:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: >-
-  Добавляет способность Unrefined Fireblast. Multicast может быть использован на
-  союзниках, временно давая им эффект этой способности. Шанс срабатывания на
-  ультимативных способностях уменьшен на 50%
+  Добавляет способность Unrefined Fireblast. Multicast может быть использован на союзниках, временно давая им эффект этой способности. Шанс срабатывания на ультимативных способностях уменьшен на 50%
+
 
 DOTA_Tooltip_ability_ability_empty: Слот для способности
 
@@ -81,7 +81,7 @@ DOTA_Tooltip_ability_doom_bringer_devour_arena_stolen_health_to_damage: 'УРО�
 DOTA_Tooltip_modifier_doom_bringer_devour_arena: Devour
 DOTA_Tooltip_modifier_doom_bringer_devour_arena_Description: 'Здоровья увеличено на %dMODIFIER_PROPERTY_HEALTH_BONUS%, урон увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%'
 DOTA_Tooltip_ability_huskar_burning_spear_arena: Burning Spear
-DOTA_Tooltip_ability_huskar_burning_spear_arena_Description: 'Huskar поджигает свои копья, нанося периодический урон своей обычной атакой. Урон горения увеличивается с уменьшением здоровья Huskar. Дополнительный урон складывается с несколькими атаками. Каждый стак также уменьшает броню и магическое сопротивление противника. Каждая атака поглощает часть здоровья Huskar, основанную на уроне от горения. Длится %duration% секунд. Когда здоровье Huskar''а опускается ниже %health_cost_pct%%%, его кровь начинает пылать, с некоторым шансом постоянно накладывая стаки Burning Spear на всех находящихся рядом противников.'
+DOTA_Tooltip_ability_huskar_burning_spear_arena_Description: "Huskar поджигает свои копья, нанося периодический урон своей обычной атакой. Урон горения увеличивается с уменьшением здоровья Huskar. Дополнительный урон складывается с несколькими атаками. Каждый стак также уменьшает броню и магическое сопротивление противника. Каждая атака поглощает часть здоровья Huskar, основанную на уроне от горения. Длится %duration% секунд. Когда здоровье Huskar'а опускается ниже %health_cost_pct%%%, его кровь начинает пылать, с некоторым шансом постоянно накладывая стаки Burning Spear на всех находящихся рядом противников."
 DOTA_Tooltip_ability_huskar_burning_spear_arena_Note0: Эффекты от этой способности складываются. Порога количества нет.
 DOTA_Tooltip_ability_huskar_burning_spear_arena_Note1: Этой способностью нельзя совершить самоубийство.
 DOTA_Tooltip_ability_huskar_burning_spear_arena_health_cost_pct: '%ЗДОРОВЬЯ ЗА УДАР:'
@@ -103,12 +103,11 @@ DOTA_Tooltip_ability_meepo_divided_we_stand_Description: 'Герой созда�
 DOTA_Tooltip_ability_meepo_divided_we_stand_Note0: Клоны не могут использовать артефакт Arcane Boots.
 
 DOTA_Tooltip_ability_filler_ability_Description: Создает ауру, которая восстанавливает здоровье и ману союзникам поблизости. Сила восстановления увеличивается каждую минуту.
-DOTA_Tooltip_ability_filler_ability_Note1: ""
+DOTA_Tooltip_ability_filler_ability_Note1: ''
 DOTA_Tooltip_ability_filler_ability_hp_heal_growth: 'ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ В МИНУТУ:'
 DOTA_Tooltip_ability_filler_ability_mp_heal_growth: 'ВОССТАНОВЛЕНИЕ МАНЫ В МИНУТУ:'
 DOTA_Tooltip_ability_filler_ability_hp_heal_pct: '%ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ:'
 DOTA_Tooltip_ability_filler_ability_mp_heal_pct: '%ВОССТАНОВЛЕНИЕ МАНЫ:'
-
 
 DOTA_Tooltip_modifier_fountain_aura_arena: Восстановление от фонтана
 DOTA_Tooltip_modifier_fountain_aura_arena_Description: 'Восстанавливает %dMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% здоровья и %dMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE%%% маны в секунду.'

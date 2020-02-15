@@ -1,9 +1,9 @@
 npc_arena_hero_stegius: Stegius
-npc_arena_hero_stegius_hype: 'Stegius bites into the enemy''s soul deeper with every blow, consuming his defense. Blessing the allies with his mercy, he increases their speed of attack and movement. But woe to him who falls under his displeasure ...'
+npc_arena_hero_stegius_hype: "Stegius bites into the enemy's soul deeper with every blow, consuming his defense. Blessing the allies with his mercy, he increases their speed of attack and movement. But woe to him who falls under his displeasure ..."
 npc_arena_hero_stegius_bio: 'Master of Destruction, Master of Death ... There are many names for this demon, but they all say one thing: this monster destroys everything in its path. Once he was the Master of Desolus, the terrible and destructive world of the sixth Abyss, and his chief blacksmith, it was he who created the most terrible blade in the whole universe - the Stigian Desolator made of a thorn on the tail of Stegius, which the devil wrenched himself. Dezolator absorbed all the malice and hatred of its creator. Stegius destroyed many worlds, not sparing their inhabitants, in fact completely destroyed the 3rd and 4th dimensions. For this, the seal of Al-Galor was imposed on him, and now Stegius will never find peace. He will destroy and destroy. All and all. Until he is destroyed by his own fury.'
 
 DOTA_Tooltip_ability_stegius_desolus_wave: Desolus Wave
-DOTA_Tooltip_ability_stegius_desolus_wave_Description: 'Stegius releases powerful wave, that deals damage to all enemy units on it''s way and decreasing their armor for some time.'
+DOTA_Tooltip_ability_stegius_desolus_wave_Description: "Stegius releases powerful wave, that deals damage to all enemy units on it's way and decreasing their armor for some time."
 DOTA_Tooltip_ability_stegius_desolus_wave_Lore: Stegius cleanses the mind of the enemies with a wave of insanity ...
 DOTA_Tooltip_ability_stegius_desolus_wave_range: 'MAX RANGE:'
 DOTA_Tooltip_ability_stegius_desolus_wave_speed: 'WAVE SPEED:'
@@ -13,7 +13,7 @@ DOTA_Tooltip_modifier_stegius_desolus_wave: Desolus Wave
 DOTA_Tooltip_modifier_stegius_desolus_wave_Description: Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.
 
 DOTA_Tooltip_ability_stegius_rage_of_desolus: Rage of Desolus
-DOTA_Tooltip_ability_stegius_rage_of_desolus_Description: 'Awakens rage in target unit, increasing it''s movement and attack speed.'
+DOTA_Tooltip_ability_stegius_rage_of_desolus_Description: "Awakens rage in target unit, increasing it's movement and attack speed."
 DOTA_Tooltip_ability_stegius_rage_of_desolus_Lore: Stegius's rage will suffice at all ... Even on allies.
 DOTA_Tooltip_ability_stegius_rage_of_desolus_duration: 'DURATION:'
 DOTA_Tooltip_ability_stegius_rage_of_desolus_bonus_attack_speed: 'ATTACK SPEED INCREASEMENT:'

@@ -35,7 +35,7 @@ DOTA_Tooltip_ability_sara_dark_blink_Description: 'Сара мгновенно �
 DOTA_Tooltip_ability_sara_dark_blink_blink_range: 'СТАНДАРТНАЯ ДАЛЬНОСТЬ:'
 DOTA_Tooltip_ability_sara_dark_blink_energy_to_blink_range: '%ЭНЕРГИИ В ДАЛЬНОСТЬ:'
 DOTA_Tooltip_ability_sara_dark_blink_min_cost_pct: '%БАЗОВЫЕ ЗАТРАТЫ ЭНЕРГИИ:'
-DOTA_Tooltip_ability_sara_dark_blink_Lore: "Пространство — что-то вроде листка бумаги. Чтобы попасть из точки A в точку Б, его нужно правильно согнуть."
+DOTA_Tooltip_ability_sara_dark_blink_Lore: 'Пространство — что-то вроде листка бумаги. Чтобы попасть из точки A в точку Б, его нужно правильно согнуть.'
 
 DOTA_Tooltip_ability_sara_fragment_of_hate: Fragment of Hate
 DOTA_Tooltip_ability_sara_fragment_of_hate_Description: 'Фрагмент души Сары, олицетворяющий ее жестокость и силу. Добавляет атакам шанс критического удара. Множитель крита основан на ее текущей энергии. Также увеличивает ее урон, основываясь на текущей энергии.'
@@ -47,7 +47,7 @@ DOTA_Tooltip_ability_sara_fragment_of_hate_damage_pct_scepter: '%ЭНЕРГИИ 
 DOTA_Tooltip_ability_sara_fragment_of_hate_buff_duration_scepter: 'ДЛИТЕЛЬНОСТЬ БАФФА СО СКИПЕТРОМ:'
 DOTA_Tooltip_modifier_sara_fragment_of_hate_buff_scepter: Fragment of Hate
 DOTA_Tooltip_modifier_sara_fragment_of_hate_buff_scepter_Description: Бонусный урон увеличен на %dMODIFIER_PROPERTY_TOOLTIP%%%
-DOTA_Tooltip_ability_sara_fragment_of_hate_Lore: "Когда-нибудь я прерву существование этого бессмысленного мира одним ударом."
+DOTA_Tooltip_ability_sara_fragment_of_hate_Lore: 'Когда-нибудь я прерву существование этого бессмысленного мира одним ударом.'
 
 DOTA_Tooltip_ability_sara_fragment_of_armor: Fragment of Armor
 DOTA_Tooltip_ability_sara_fragment_of_armor_Description: 'Фрагмент души Сары, олицетворяющий ее стойкость и непоколебимость. Создает щит, снижающий входящий урон на %blocked_damage_pct%%%, расходуя энергию Сары.'
@@ -66,4 +66,4 @@ DOTA_Tooltip_ability_sara_fragment_of_logic_debuff_duration: 'ДЛИТЕЛЬНО
 DOTA_Tooltip_ability_sara_fragment_of_logic_cooldown_scepter: 'ПЕРЕЗАРЯДКА СО СКИПЕТРОМ:'
 DOTA_Tooltip_modifier_sara_fragment_of_logic_debuff: Fragment of Logic
 DOTA_Tooltip_modifier_sara_fragment_of_logic_debuff_Description: Невозможно восстановить энергию.
-DOTA_Tooltip_ability_sara_fragment_of_logic_Lore: "Неважно, насколько сильным будет твой удар — тебе потребуется нечто большее, чтобы меня убить."
+DOTA_Tooltip_ability_sara_fragment_of_logic_Lore: 'Неважно, насколько сильным будет твой удар — тебе потребуется нечто большее, чтобы меня убить.'

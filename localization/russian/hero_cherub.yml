@@ -23,7 +23,7 @@ DOTA_Tooltip_ability_cherub_synthesis_hp_to_mana_pct: '%ЗДОРОВЬЕ В МА
 DOTA_Tooltip_ability_cherub_explosive_spore_Description: |-
   Создает плавающую спору со свободным передвижением. Спора будет расти с течением времени и взорвётся через %explode_delay% секунд, нанося магический урон в зоне действия и восстанавливаясь на основе нанесенного урона.
   Спора имеет 0 брони и 0% сопротивления к магии, а при убийстве даёт %spore_bounty_gold% золота и %spore_bounty_exp% опыта.
-DOTA_Tooltip_ability_cherub_explosive_spore_Lore: Хотя грибы - не растения, они также подвластны силе Черубы. 
+DOTA_Tooltip_ability_cherub_explosive_spore_Lore: Хотя грибы - не растения, они также подвластны силе Черубы.
 DOTA_Tooltip_ability_cherub_explosive_spore_explode_delay: 'ЗАДЕРЖКА ПЕРЕД ВЗРЫВОМ:'
 DOTA_Tooltip_ability_cherub_explosive_spore_explode_radius: 'РАДИУС ВЗРЫВА:'
 DOTA_Tooltip_ability_cherub_explosive_spore_lifesteel_heroes_pct: '%ВОССТАНОВЛЕНИЕ (ОТ ГЕРОЕВ):'

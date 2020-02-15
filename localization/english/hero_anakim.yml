@@ -1,5 +1,5 @@
 DOTA_Tooltip_ability_anakim_wisps: Wisps
-DOTA_Tooltip_ability_anakim_wisps_Description: 'Anakim attacks her enemies with wisps, causing her damage to deal pure, magical and physical damage at the same time, and also gives her a chance to deal critical strikes. All Anaikm''s attack damage will be considered as ability damage.'
+DOTA_Tooltip_ability_anakim_wisps_Description: "Anakim attacks her enemies with wisps, causing her damage to deal pure, magical and physical damage at the same time, and also gives her a chance to deal critical strikes. All Anaikm's attack damage will be considered as ability damage."
 DOTA_Tooltip_ability_anakim_wisps_pure_damage_pct: '%PURE DAMAGE:'
 DOTA_Tooltip_ability_anakim_wisps_magic_damage_pct: '%MAGICAL DAMAGE:'
 DOTA_Tooltip_ability_anakim_wisps_physical_damage_pct: '%PHYSICAL DAMAGE:'

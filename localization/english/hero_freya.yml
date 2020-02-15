@@ -10,7 +10,7 @@ DOTA_Tooltip_modifier_freya_strike_the_ice: Strike the Ice
 DOTA_Tooltip_modifier_freya_strike_the_ice_Description: Stunned. Can't be healed or regenerate
 
 DOTA_Tooltip_ability_freya_ice_cage: Ice Cage
-DOTA_Tooltip_ability_freya_ice_cage_Description: 'Cataches unit in ice stunning it and dealing damage, based on unit''s max health. All units around target will recieve same effect.'
+DOTA_Tooltip_ability_freya_ice_cage_Description: "Cataches unit in ice stunning it and dealing damage, based on unit's max health. All units around target will recieve same effect."
 DOTA_Tooltip_ability_freya_ice_cage_duration: 'DURATION:'
 DOTA_Tooltip_ability_freya_ice_cage_damage_per_second_pct: '%MAX HP DAMAGE PER SECOND:'
 DOTA_Tooltip_ability_freya_ice_cage_aura_radius: 'FREEZE RADIUS:'
@@ -28,10 +28,10 @@ DOTA_Tooltip_modifier_freya_pain_reflection: Pain Reflection
 DOTA_Tooltip_modifier_freya_pain_reflection_Description: Returning damage to attacking units and heals Freya for some part of reflected damage
 
 DOTA_Tooltip_ability_freya_frozen_strike: Frozen Strike
-DOTA_Tooltip_ability_freya_frozen_strike_Description: 'After activation, causes next Freya''s attack to push enemy away and deal critical damage, that will be increased for each primary attribute point. This attack will deal damage to all units around attacked enemy.'
+DOTA_Tooltip_ability_freya_frozen_strike_Description: "After activation, causes next Freya's attack to push enemy away and deal critical damage, that will be increased for each primary attribute point. This attack will deal damage to all units around attacked enemy."
 DOTA_Tooltip_ability_freya_frozen_strike_base_crit_pct: '%BASE CRITICAL STRIKE:'
 DOTA_Tooltip_ability_freya_frozen_strike_stat_to_crit_pct: '%BASE ATTRIBUTE TO BONUS CRITICAL DAMAGE:'
 DOTA_Tooltip_ability_freya_frozen_strike_cleave_radius: 'AOE DAMAGE RADIUS:'
 DOTA_Tooltip_ability_freya_frozen_strike_knockback_duration: 'KNOCKBACK DURATION:'
 DOTA_Tooltip_modifier_freya_frozen_strike_crit: Frozen Strike
-DOTA_Tooltip_modifier_freya_frozen_strike_crit_Description: 'Next Freya''s attack will cleave, push enemy away and deal critical damage'
+DOTA_Tooltip_modifier_freya_frozen_strike_crit_Description: "Next Freya's attack will cleave, push enemy away and deal critical damage"

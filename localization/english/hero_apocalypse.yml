@@ -2,7 +2,6 @@ npc_arena_hero_apocalypse: APOCALYPSE
 npc_arena_hero_apocalypse_hype: 'With his blazing sword, the Apocalypse burns any armor, becoming stronger. Releasing darkness in her soul, she transforms into the Beast, which grows together with the passage of time, after which it dies and is reborn again, in order to re-immerse in the darkness the worlds, the darkness that she once let into her soul.'
 npc_arena_hero_apocalypse_bio: 'Apocalypse - the eternal companion of Chaos, born in one of the darkest corners of the universe. An ancient and powerful demon, whose influence breaks the will of the strongest warriors, steps on the Arena in order to fight for his master. Or die in his honor. Previously, the Apocalypse was a man. At the dawn of the worlds, she was born in a virgin world, like a paradise. She was given the name of Appo, in honor of the valley in which she was born. This beautiful world consisted entirely of fields of flowers and orchards. However, a carefree and happy life was not to her liking. She longed for something more, something dark ... One day Appo found a dark, dark cave hidden in a cave. Descending into darkness, she discovered the Beast - a dark creature embodying the very Darkness, chained into cobalt chains under the earth. Appo let him into his soul, turning into a demon Apocalypse. With the help of her new powers, she destroyed her paradise world, and then realized that this is what she was looking for. Traveling around the universe, she met Chaos Knight, and, feeling a kinship with him, fell in love with him. The Knight of Chaos took her as his wife, and together they continued their march, destroying all the worlds on their way. However, behind the human shell lives its true dark essence, the Beast, and woe to him who dares to see her true face.'
 
-
 DOTA_Tooltip_ability_apocalypse_agnis_touch: Agni's Touch
 DOTA_Tooltip_ability_apocalypse_agnis_touch_Description: |-
   Apocalypse steals a portion of an enemy's armor with each attack. Stolen armor is lost on death. Can't steal armor from bosses, illusions and creeps. As Apocalypse's health dwindles it starts to become ablaze, gaining an aura that scorches enemies around it; the lower it's health gets, the stronger the effects.
@@ -20,7 +19,7 @@ DOTA_Tooltip_modifier_apocalypse_agnis_touch_ablaze: Agni's Touch Ablaze
 DOTA_Tooltip_modifier_apocalypse_agnis_touch_ablaze_Description: Scorches enemies around Apocalypse. Damage depends on missing health percentage
 
 DOTA_Tooltip_ability_apocalypse_king_slayer: King Slayer
-DOTA_Tooltip_ability_apocalypse_king_slayer_Description: 'Apocalypse strikes a devastating blow to a target, dealing damage. That unit''s armor will melt to the floor losing base armor. Damage will be based on lost armor amount.'
+DOTA_Tooltip_ability_apocalypse_king_slayer_Description: "Apocalypse strikes a devastating blow to a target, dealing damage. That unit's armor will melt to the floor losing base armor. Damage will be based on lost armor amount."
 DOTA_Tooltip_ability_apocalypse_king_slayer_Lore: It does not matter who you are, a king or a plebeian ...
 DOTA_Tooltip_ability_apocalypse_king_slayer_damage_per_armor: 'DAMAGE PER LOST ARMOR:'
 DOTA_Tooltip_ability_apocalypse_king_slayer_armor_reduction_pct: '%BASE ARMOR REDUCTION:'

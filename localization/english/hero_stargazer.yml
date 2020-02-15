@@ -26,5 +26,5 @@ DOTA_Tooltip_ability_stargazer_cosmic_countdown: Cosmic Countdown
 DOTA_Tooltip_ability_stargazer_cosmic_countdown_Description: |-
   Stargazer has the patience of one older than time. He gains a small amount of Intelligence, Agility, and Strength every time a cycle completes itself, hoping to make himself whole once more.
   This ability acts retroactively untill it is first leveled, but not on consecutive levels
-DOTA_Tooltip_ability_stargazer_cosmic_countdown_Lore: 'As the Stargazer grows older, so his enemies''s time grows shorter.'
+DOTA_Tooltip_ability_stargazer_cosmic_countdown_Lore: "As the Stargazer grows older, so his enemies's time grows shorter."
 DOTA_Tooltip_ability_stargazer_cosmic_countdown_stats_per_cycle: 'STATS PER CYCLE:'

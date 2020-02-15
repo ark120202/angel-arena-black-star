@@ -14,7 +14,7 @@ DOTA_Tooltip_modifier_zaken_stitching_strikes: Stitching Strikes
 DOTA_Tooltip_modifier_zaken_stitching_strikes_Description: Recieves damage over time. Can't move or blink
 
 DOTA_Tooltip_ability_zaken_last_chance: Last Chance
-DOTA_Tooltip_ability_zaken_last_chance_Description: 'When Zaken attacks, he has a chance to deal critical damage, stun, root or silence enemy, if it''s health is below required percent.'
+DOTA_Tooltip_ability_zaken_last_chance_Description: "When Zaken attacks, he has a chance to deal critical damage, stun, root or silence enemy, if it's health is below required percent."
 DOTA_Tooltip_ability_zaken_last_chance_Lore: 'The weaker the enemy, the easier it is to finish ...'
 DOTA_Tooltip_ability_zaken_last_chance_crit_chance_pct: '%CRIT CHANCE:'
 DOTA_Tooltip_ability_zaken_last_chance_crit_damage_pct: '%CRITICAL STRIKE:'
@@ -48,4 +48,4 @@ DOTA_Tooltip_ability_zaken_sword_control_incoming_damage_reduction: '%INCOMING D
 DOTA_Tooltip_ability_zaken_sword_control_attack_time: 'TIME BETWEEN ATTACKS:'
 DOTA_Tooltip_ability_zaken_sword_control_radius_tooltip: 'RADIUS:'
 DOTA_Tooltip_modifier_zaken_sword_control: Sword Control
-DOTA_Tooltip_modifier_zaken_sword_control_Description: 'Can''t attack using normal way, but instead attacks all enemies around. Incoming damage reduced by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%'
+DOTA_Tooltip_modifier_zaken_sword_control_Description: "Can't attack using normal way, but instead attacks all enemies around. Incoming damage reduced by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%"

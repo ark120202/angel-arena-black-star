@@ -6,7 +6,7 @@ DOTA_Tooltip_ability_pudge_meat_hook_lua_aghanim_description: 'Reduces cooldown,
 DOTA_Tooltip_ability_pudge_meat_hook_lua_Note0: Interrupts channeling spells of the primary target if it's an enemy.
 DOTA_Tooltip_ability_pudge_meat_hook_lua_Note1: Meat Hook hits invisible units.
 DOTA_Tooltip_ability_pudge_meat_hook_lua_Note2: 'Meat Hook can go through trees, cliffs and buildings.'
-DOTA_Tooltip_ability_pudge_meat_hook_lua_Note3: 'Meat Hook can drag friendly units, but they won''t be damaged.'
+DOTA_Tooltip_ability_pudge_meat_hook_lua_Note3: "Meat Hook can drag friendly units, but they won't be damaged."
 DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_speed: 'SPEED:'
 DOTA_Tooltip_ability_pudge_meat_hook_lua_hook_distance: 'RANGE:'
 DOTA_Tooltip_ability_pudge_meat_hook_lua_damage_scepter: 'SCEPTER DAMAGE:'
@@ -19,7 +19,7 @@ DOTA_Tooltip_ability_pudge_rot_arena: Rot
 DOTA_Tooltip_ability_pudge_rot_arena_Description: A toxic cloud that deals intense damage and slows movement--harming not only enemy units but Pudge himself. Each Flesh Heap stack increases Rot radius.
 DOTA_Tooltip_ability_pudge_rot_arena_Note0: Using Rot doesn't interrupt channeling.
 DOTA_Tooltip_ability_pudge_rot_arena_Note1: Rot hits invisible units.
-DOTA_Tooltip_ability_pudge_rot_arena_Note2: 'If Pudge is silenced, he can''t deactivate Rot if it''s activated.'
+DOTA_Tooltip_ability_pudge_rot_arena_Note2: "If Pudge is silenced, he can't deactivate Rot if it's activated."
 DOTA_Tooltip_ability_pudge_rot_arena_Note3: Pudge can deny himself with this ability.
 DOTA_Tooltip_ability_pudge_rot_arena_rot_radius: 'RADIUS:'
 DOTA_Tooltip_ability_pudge_rot_arena_rot_slow: '%MOVE SLOW:'
