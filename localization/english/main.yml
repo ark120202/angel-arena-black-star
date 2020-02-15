@@ -1,6 +1,6 @@
 Variables:
-  ability_scepter_upgradable: |- # Handled with script
-
+  # Handled with script
+  ability_scepter_upgradable: |-
 
     Upgradable by Aghanim's Scepter.
 
@@ -72,9 +72,7 @@ DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_2_times: '%2X CAST CHAN
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_3_times: '%3X CAST CHANCE:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_multicast_4_times: '%4X CAST CHANCE:'
 DOTA_Tooltip_ability_ogre_magi_multicast_arena_duration_ally_scepter: 'MULTICAST ALLY DURATION:'
-DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: >-
-  Adds the Unrefined Fireblast ability. Multicast can be used on allies to give them chance to multicast for some time. Multicast chance on ultimates is decreased by 50%
-
+DOTA_Tooltip_ability_ogre_magi_multicast_arena_aghanim_description: Adds the Unrefined Fireblast ability. Multicast can be used on allies to give them chance to multicast for some time. Multicast chance on ultimates is decreased by 50%
 
 DOTA_Tooltip_ability_ability_empty: Empty Ability Slot
 DOTA_Tooltip_ability_ability_empty_Description: ''

@@ -1,21 +1,15 @@
-DOTA_Tooltip_ability_tinker_rearm_arena_Description: >-
-  ПРЕРЫВАЕМАЯ — сбрасывает время перезарядки способностей и большинства предметов героя.
-
+DOTA_Tooltip_ability_tinker_rearm_arena_Description: ПРЕРЫВАЕМАЯ — сбрасывает время перезарядки способностей и большинства предметов героя.
 DOTA_Tooltip_ability_tinker_rearm_arena_channel_time: 'ДЛИТЕЛЬНОСТЬ ПРОИЗНЕСЕНИЯ:'
-DOTA_Tooltip_ability_life_stealer_feast_arena_Description: >-
-  Каждая атака лечит вас на долю от текущего здоровья противника и наносит равноценное количество урона.
 
+DOTA_Tooltip_ability_life_stealer_feast_arena_Description: Каждая атака лечит вас на долю от текущего здоровья противника и наносит равноценное количество урона.
 DOTA_Tooltip_ability_life_stealer_feast_arena_Note0: Не действует на боссов.
 DOTA_Tooltip_ability_life_stealer_feast_arena_Note1: 'Действует на врагов, невосприимчивых к заклинаниям.'
 DOTA_Tooltip_ability_life_stealer_feast_arena_Note2: Количество восстановленного здоровья не зависит от нанесенного урона.
 DOTA_Tooltip_ability_life_stealer_feast_arena_Note3: Складывается с другими источниками вампиризма.
 DOTA_Tooltip_ability_life_stealer_feast_arena_hp_leech_percent: '%ВАМПИРИЗМ:'
-DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_Description: >-
-  Атаки Gyrocopter наносят урон всем вражеским юнитам вокруг него в течение ограниченного количества атак. Только главная цель атак получит бонусы атаки, такие как критический удар. Длится %duration% секунд или до тех пор, пока не израсходуются все атаки.
 
-DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_Lore: >-
-  This newly revamped Gyrocopter has attached enough armaments to assault in a 360 degree radius.
-
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_Description: Атаки Gyrocopter наносят урон всем вражеским юнитам вокруг него в течение ограниченного количества атак. Только главная цель атак получит бонусы атаки, такие как критический удар. Длится %duration% секунд или до тех пор, пока не израсходуются все атаки.
+DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_Lore: This newly revamped Gyrocopter has attached enough armaments to assault in a 360 degree radius.
 DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_Note0: Дальность атаки по основной цели не изменяется.
 DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_radius: 'РАДИУС:'
 DOTA_Tooltip_ability_gyrocopter_flak_cannon_arena_max_attacks: 'МАКС. АТАК:'
