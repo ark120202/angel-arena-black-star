@@ -1,28 +1,18 @@
 {
 	"files.exclude": {
+		"content/panorama/styles": true,
 		"game/maps": true,
 		"game/materials": true,
 		"game/models": true,
 		"game/particles": true,
-		"game/panorama/images": true,
-		"game/panorama/layout": true,
-		"game/panorama/scripts": true,
-		"game/panorama/styles": true,
+		"game/panorama": true,
 		"game/soundevents": true,
 		"game/sounds": true,
-		"content/panorama/styles": true,
-		"**/.git": true,
-		"**/.DS_Store": true,
-		"**/node_modules": true,
-
-		"game/*.bin": true,
+		"game/**/*.bin": true,
+		"game/**/*.cfg": true,
 		"game/cache_*.soc": true,
 		"game/*.tmp": true,
 		"game/server_log.txt": true,
-		"game/rich_presence_persistent_data.txt": true,
-		"game/panorama_debugger.cfg": true,
-		"*.sublime-project": true,
-		"LICENSE.md": true,
-		"package-lock.json": true
+		"game/rich_presence_persistent_data.txt": true
 	}
 }

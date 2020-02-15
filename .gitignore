@@ -1,7 +1,9 @@
-# Ignore thumbnails created by windows
-Thumbs.db
+node_modules
+generator/settings.yml
+content/panorama/styles/*
+game/resource/addon_*.txt
+game/panorama/localization
 
-# Compiled files
 *.vpcf_c
 *.vtex_c
 *.vsndevts_c
@@ -10,40 +12,15 @@ Thumbs.db
 *.vxml_c
 *.vcss_c
 *.vsnd_c
-
 *.vanim_c
 *.vmesh_c
 *.vagrp_c
 *.vmdl_c
 *.vmorf_c
-
-# Preprocessed
-content/panorama/styles/*
-
-# Environments
-*.sublime-workspace
-*.sublime-project
-!project.sublime-project
-
-content/tooltips_*.txt
-content/addon_*_utf8.txt
-
-game/resource/addon_*.txt
-game/panorama/localization/addon_*.txt
 game/screenshots
-
-*.bin
-*.cfg
+game/**/*.bin
+game/**/*.cfg
 game/cache_*.soc
 game/*.tmp
 game/server_log.txt
 game/rich_presence_persistent_data.txt
-
-# npm
-npm-debug.log
-
-generator/settings.yml
-generator/node_modules/*
-
-changelogs/!ideas.txt
-changelogs/!local.txt
