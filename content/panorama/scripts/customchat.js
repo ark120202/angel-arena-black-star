@@ -20,8 +20,16 @@ function withPlayerColor(playerId, content) {
   return `<font color='${color}'>${content}</font>`;
 }
 
-function formatChatPlayerHeroName(playerId) {
-  return withPlayerColor(playerId, $.Localize(GetPlayerHeroName(playerId)));
+const formatChatPlayerName = playerId =>
+  withPlayerColor(playerId, _.escape(Players.GetPlayerName(playerId)));
+
+const formatChatPlayerHeroName = playerId =>
+  withPlayerColor(playerId, $.Localize(GetPlayerHeroName(playerId)));
+
+function formatChatPlayerNameAndHeroName(playerId) {
+  const heroName = $.Localize(GetPlayerHeroName(playerId));
+  const playerName = _.escape(Players.GetPlayerName(playerId));
+  return withPlayerColor(playerId, `${playerName} (${heroName})`);
 }
 
 function RecieveMessage(data) {
@@ -37,7 +45,9 @@ function RecieveMessage(data) {
     }
 
     html += `<font color=${data.teamonly === 1 ? '"lime">[A]' : '"darkred">[A]'}</font>`;
-    html += withPlayerColor(playerId, _.escape(Players.GetPlayerName(playerId)));
+    html += ' ';
+    html += formatChatPlayerName(playerId);
+    html += ': ';
   }
 
   if (data.text) {
@@ -150,7 +160,7 @@ function RecieveMessage(data) {
     }
 
     if (data.player != null) {
-      localized = localized.replace('{player}', formatChatPlayerHeroName(data.player));
+      localized = localized.replace('{player}', formatChatPlayerName(playerId));
     }
 
     html += localized;
@@ -166,20 +176,29 @@ function RecieveMessage(data) {
   messageLabel.text = html;
 }
 
-function RedirectMessage(label) {
-  var lastLine = customChatContainer.GetChild(0);
-  label.style.transform = 'scaleY(-1)';
-  label.SetParent(customChatContainer);
-  label.RemoveClass('Expired');
-  $.Schedule(7.5, () => label.AddClass('Expired'));
-  if (lastLine) customChatContainer.MoveChildBefore(label, lastLine);
-  /*
-		RecieveMessage({
-			playerId: -1,
-			text: label.text
-		});
-	*/
-}
+// https://github.com/SteamDatabase/GameTracking-Dota2/blob/200e7073953e08e11fa582dc216a5fc4acc2179d/Protobufs/dota_usermessages.proto#L142
+const pauseMessages = {
+  31: 'DOTA_Chat_CantPause',
+  32: 'DOTA_Chat_NoPausesLeft',
+  33: 'DOTA_Chat_CantPauseYet',
+  34: 'DOTA_Chat_Paused',
+  35: 'DOTA_Chat_UnpauseCountdown',
+  36: 'DOTA_Chat_Unpaused',
+  37: 'DOTA_Chat_AutoUnpaused',
+  38: 'DOTA_Chat_YouPaused',
+  39: 'DOTA_Chat_CantUnpauseTeam',
+};
+
+GameEvents.Subscribe('dota_pause_event', event => {
+  const token = pauseMessages[event.message];
+  if (!token) return;
+
+  RecieveMessage({
+    playerId: -1,
+    localizable: token,
+    variables: { '%s1': formatChatPlayerNameAndHeroName(event.value) },
+  });
+});
 
 var twitchRegExp = new RegExp(
   '\\b(' +

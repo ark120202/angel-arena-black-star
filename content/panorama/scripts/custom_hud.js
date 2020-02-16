@@ -82,35 +82,6 @@ function updatePanoramaHacks() {
       });
     });
   }
-
-  // Chat redirect
-  var redirectedPhrases = [
-    $.Localize('DOTA_Chat_CantPause'),
-    $.Localize('DOTA_Chat_NoPausesLeft'),
-    $.Localize('DOTA_Chat_CantPauseYet'),
-    $.Localize('DOTA_Chat_PauseCountdown'),
-    $.Localize('DOTA_Chat_Paused'),
-    $.Localize('DOTA_Chat_UnpauseCountdown'),
-    $.Localize('DOTA_Chat_Unpaused'),
-    $.Localize('DOTA_Chat_AutoUnpaused'),
-    $.Localize('DOTA_Chat_YouPaused'),
-    $.Localize('DOTA_Chat_CantUnpauseTeam'),
-  ];
-  // TODO: Doesn't work
-  var escaped = _.escapeRegExp(
-    redirectedPhrases
-      .map(function(x) {
-        return $.Localize(x).replace(/%s\d/g, '.*');
-      })
-      .join('|'),
-  );
-  var regexp = new RegExp('^(' + escaped + ')$');
-  for (var i = 0; i < chatLinesPanel.GetChildCount(); i++) {
-    var child = chatLinesPanel.GetChild(i);
-    if (child.text && child.text.match(regexp)) {
-      RedirectMessage(child);
-    }
-  }
 }
 
 function UpdateGoldLabel(playerTeam, unit, label) {
