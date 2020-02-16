@@ -1,7 +1,7 @@
 'use strict';
 
 // Shared libraries
-var { _, PlayerTables, Options, RegisterKeyBind, CustomHooks } = GameUI.CustomUIConfig();
+var { _, PlayerTables, Options, RegisterKeyBind } = GameUI.CustomUIConfig();
 
 const console = {
   log(...args) {

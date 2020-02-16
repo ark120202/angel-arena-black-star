@@ -26,7 +26,7 @@ function OnDisassemble() {
 
 function OnShowInShop() {
 	var itemName = Abilities.GetAbilityName($.GetContextPanel().Item);
-	CustomHooks.panorama_shop_show_item.call(itemName);
+  GameEvents.SendEventClientSide('panorama_shop_show_item', { itemName });
 	DismissMenu();
 }
 

@@ -14,7 +14,7 @@ function LoadPanelForPlayer(playerId) {
 (function() {
   //LoadPanelForPlayer()
   if ($.GetContextPanel().id !== 'LocalPlayerData') {
-    CustomHooks.player_profiles_show_info.tap(function(playerId) {
+    GameEvents.Subscribe('player_profiles_show_info', ({ playerId }) => {
       if (Players.IsValidPlayerID(playerId)) {
         LoadPanelForPlayer(playerId);
       }

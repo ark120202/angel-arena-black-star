@@ -44,26 +44,3 @@ GameUI.CustomUIConfig().custom_entity_values = GameUI.CustomUIConfig().custom_en
 DynamicSubscribeNTListener('custom_entity_values', function(tableName, key, value) {
   GameUI.CustomUIConfig().custom_entity_values[key] = value;
 });
-
-function Hook() {
-  this.handlers = [];
-}
-
-Hook.prototype.tap = function(handler) {
-  this.handlers.push(handler);
-};
-
-Hook.prototype.call = function() {
-  var args = arguments;
-  _.each(this.handlers, function(handler) {
-    handler.apply(null, args);
-  });
-};
-
-GameUI.CustomUIConfig().CustomHooks = {
-  custom_talents_toggle_tree: new Hook(),
-  panorama_shop_open_close: new Hook(),
-  panorama_shop_show_item: new Hook(),
-  panorama_shop_show_item_if_open: new Hook(),
-  player_profiles_show_info: new Hook(),
-};

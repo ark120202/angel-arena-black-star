@@ -148,7 +148,7 @@ function applyPanoramaHacks() {
         GoldUnit: Players.GetLocalPlayerPortraitUnit(),
       });
     } else {
-      CustomHooks.panorama_shop_open_close.call();
+      GameEvents.SendEventClientSide('panorama_shop_open_close', {});
     }
   });
 
@@ -161,8 +161,8 @@ function applyPanoramaHacks() {
   statsLevelUpTab.ClearPanelEvent('onmouseover');
   statsLevelUpTab.ClearPanelEvent('onmouseout');
   statsLevelUpTab.ClearPanelEvent('onactivate');
-  statsLevelUpTab.SetPanelEvent('onactivate', function() {
-    CustomHooks.custom_talents_toggle_tree.call();
+  statsLevelUpTab.SetPanelEvent('onactivate', () => {
+    GameEvents.SendEventClientSide('custom_talents_toggle_tree', {});
   });
 
   var debugChat = false;
@@ -243,7 +243,8 @@ function applyPanoramaHacks() {
       if (GameUI.IsAltDown()) {
         GameEvents.SendCustomGameEventToServer('custom_chat_send_message', { ability: item });
       } else {
-        CustomHooks.panorama_shop_show_item_if_open.call(Abilities.GetAbilityName(item));
+        const itemName = Abilities.GetAbilityName(item);
+        GameEvents.SendEventClientSide('panorama_shop_show_item_if_open', { itemName });
         const unit = Players.GetLocalPlayerPortraitUnit();
         if (Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID())) {
           Abilities.ExecuteAbility(item, unit, false);

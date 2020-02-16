@@ -9,7 +9,6 @@ var ItemList = {},
   ItemStocks = [];
 
 function OpenCloseShop(newState) {
-  $.Msg('open/close');
   if (typeof newState !== 'boolean') newState = !$('#ShopBase').BHasClass('ShopBaseOpen');
   $('#ShopBase').SetHasClass('ShopBaseOpen', newState);
 
@@ -505,11 +504,6 @@ function SetQuickbuyTarget(itemName) {
   RefreshQuickbuyItem(itemName);
 }
 
-function ShowItemInShop(itemName) {
-  $('#ShopBase').AddClass('ShopBaseOpen');
-  ShowItemRecipe(itemName);
-}
-
 function UpdateShop() {
   SearchItems();
   UpdateItembuildsForHero();
@@ -546,7 +540,7 @@ function SetItemStock(item, ItemStock) {
   GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS, true);
   GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_QUICKBUY, true);
   RegisterKeyBind('ShopToggle', OpenCloseShop);
-  CustomHooks.panorama_shop_open_close.tap(OpenCloseShop);
+  GameEvents.Subscribe('panorama_shop_open_close', OpenCloseShop);
   RegisterKeyBind('PurchaseQuickbuy', function() {
     if (QuickBuyTarget != null) {
       var bought = false;
@@ -582,18 +576,24 @@ function SetItemStock(item, ItemStock) {
     }
   });
 
-  CustomHooks.panorama_shop_show_item.tap(ShowItemInShop);
+  GameEvents.Subscribe('panorama_shop_show_item', ({ itemName }) => {
+    $('#ShopBase').AddClass('ShopBaseOpen');
+    ShowItemRecipe(itemName);
+  });
+
+  GameEvents.Subscribe('panorama_shop_show_item_if_open', ({ itemName }) => {
+    if ($('#ShopBase').BHasClass('ShopBaseOpen')) {
+      ShowItemRecipe(itemName);
+    }
+  });
+
   GameEvents.Subscribe('dota_link_clicked', function(data) {
-    if (data != null && data.link != null && data.link.lastIndexOf('dota.item.', 0) === 0) {
+    if (data != null && data.link != null && data.link.startsWith('dota.item.')) {
       $('#ShopBase').AddClass('ShopBaseOpen');
       ShowItemRecipe(data.link.replace('dota.item.', ''));
     }
   });
-  CustomHooks.panorama_shop_show_item_if_open.tap(function(itemName) {
-    if ($('#ShopBase').BHasClass('ShopBaseOpen')) {
-      ShowItemInShop(itemName);
-    }
-  });
+
   DynamicSubscribePTListener('panorama_shop_data', function(
     tableName,
     changesObject,

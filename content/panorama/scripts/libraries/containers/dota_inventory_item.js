@@ -103,7 +103,8 @@ function ActivateItem() {
 	lastClick = 0;
 	if (m_Item == -1)
 		return;
-	CustomHooks.panorama_shop_show_item_if_open.call(Abilities.GetAbilityName(m_Item));
+	var itemName = Abilities.GetAbilityName(m_Item);
+	GameEvents.SendEventClientSide('panorama_shop_show_item_if_open', { itemName });
 	// Items are abilities - just execute the ability
 	Abilities.ExecuteAbility(m_Item, m_QueryUnit, false);
 }
