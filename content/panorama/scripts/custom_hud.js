@@ -1,83 +1,78 @@
-var ONCLICK_PURGABLE_MODIFIERS = ['modifier_doppelganger_mimic', 'modifier_tether_ally_aghanims'];
-var CustomChatLinesPanel,
-  BossDropVoteTimers = [],
+const ONCLICK_PURGABLE_MODIFIERS = new Set([
+  'modifier_doppelganger_mimic',
+  'modifier_tether_ally_aghanims',
+]);
+
+var BossDropVoteTimers = [],
   HookedAbilityPanelsCount = 0;
 
-function UpdatePanoramaHUD() {
-  var unit = Players.GetLocalPlayerPortraitUnit();
-  var CustomModifiersList = $('#CustomModifiersList');
-  var VisibleModifiers = [];
-  for (var i = 0; i < Entities.GetNumBuffs(unit); ++i) {
-    var buffSerial = Entities.GetBuff(unit, i);
-    if (buffSerial !== -1) {
-      var buffName = Buffs.GetName(unit, buffSerial);
-      VisibleModifiers.push(buffName);
-      if (ONCLICK_PURGABLE_MODIFIERS.indexOf(buffName) !== -1) {
-        if (CustomModifiersList.FindChildTraverse(buffName) == null) {
-          var panel = $.CreatePanel('DOTAAbilityImage', CustomModifiersList, buffName);
-          panel.abilityname = Buffs.GetTexture(unit, buffSerial);
-          panel.SetPanelEvent(
-            'onactivate',
-            (function(_buffName) {
-              return function() {
-                GameEvents.SendCustomGameEventToServer('modifier_clicked_purge', {
-                  unit: unit,
-                  modifier: _buffName,
-                });
-              };
-            })(buffName),
-          );
-          panel.SetPanelEvent(
-            'onmouseover',
-            (function(_panel, _buffName) {
-              return function() {
-                $.DispatchEvent(
-                  'DOTAShowTitleTextTooltip',
-                  _panel,
-                  $.Localize('DOTA_Tooltip_' + _buffName),
-                  $.Localize('hud_modifier_click_to_remove'),
-                );
-              };
-            })(panel, buffName),
-          );
-          panel.SetPanelEvent(
-            'onmouseout',
-            (function(_panel) {
-              return function() {
-                $.DispatchEvent('DOTAHideTitleTextTooltip', _panel);
-              };
-            })(panel),
-          );
-        }
-      }
+const goldLabel = FindDotaHudElement('ShopButton').FindChildTraverse('GoldLabel');
+const abilitiesPanel = FindDotaHudElement('abilities');
+const minimapBlock = FindDotaHudElement('minimap_block');
+const portraitContainer = FindDotaHudElement('PortraitContainer');
+const chatLinesPanel = FindDotaHudElement('ChatLinesPanel');
+const levelStatsFrame = FindDotaHudElement('level_stats_frame');
+const dynamicMinimapRoot = $('#DynamicMinimapRoot');
+const customModifiersList = $('#CustomModifiersList');
+function updatePanoramaHacks() {
+  $.Schedule(0.2, updatePanoramaHacks);
+  const unit = Players.GetLocalPlayerPortraitUnit();
+  const seenPurgableBuffs = new Set();
+  for (let i = 0; i < Entities.GetNumBuffs(unit); ++i) {
+    const buffId = Entities.GetBuff(unit, i);
+    if (buffId === -1) continue;
+
+    const buffName = Buffs.GetName(unit, buffId);
+    seenPurgableBuffs.add(buffName);
+    if (!ONCLICK_PURGABLE_MODIFIERS.has(buffName)) continue;
+    if (customModifiersList.FindChildTraverse(buffName)) continue;
+
+    const panel = $.CreatePanel('DOTAAbilityImage', customModifiersList, buffName);
+    panel.abilityname = Buffs.GetTexture(unit, buffId);
+    panel.SetPanelEvent('onactivate', () => {
+      GameEvents.SendCustomGameEventToServer('modifier_clicked_purge', {
+        unit,
+        modifier: buffName,
+      });
+    });
+    panel.SetPanelEvent('onmouseover', () => {
+      $.DispatchEvent(
+        'DOTAShowTitleTextTooltip',
+        panel,
+        $.Localize(`DOTA_Tooltip_${buffName}`),
+        $.Localize('hud_modifier_click_to_remove'),
+      );
+    });
+    panel.SetPanelEvent('onmouseout', () => {
+      $.DispatchEvent('DOTAHideTitleTextTooltip', panel);
+    });
+  }
+
+  for (const child of customModifiersList.Children()) {
+    if (!seenPurgableBuffs.has(child.id)) {
+      child.DeleteAsync(0);
     }
   }
 
-  _.each(CustomModifiersList.Children(), function(child) {
-    if (VisibleModifiers.indexOf(child.id) === -1) child.DeleteAsync(0);
-  });
+  const playerTeam = Players.GetTeam(Game.GetLocalPlayerID());
+  UpdateGoldLabel(playerTeam, unit, goldLabel);
 
-  var GoldLabel = FindDotaHudElement('ShopButton').FindChildTraverse('GoldLabel');
-  var playerTeam = Players.GetTeam(Game.GetLocalPlayerID());
-  UpdateGoldLabel(playerTeam, unit, GoldLabel);
-  var sw = Game.GetScreenWidth();
-  var sh = Game.GetScreenHeight();
-  var minimap = FindDotaHudElement('minimap_block');
-  $('#DynamicMinimapRoot').style.height =
-    ((minimap.actuallayoutheight + minimap.contentheight - minimap.actuallayoutheight) / sh) * 100 +
-    '%';
-  $('#DynamicMinimapRoot').style.width =
-    ((minimap.actuallayoutwidth + minimap.contentwidth - minimap.actuallayoutwidth) / sw) * 100 +
-    '%';
-  var pcs = FindDotaHudElement('PortraitContainer').GetPositionWithinWindow();
-  if (pcs != null && !isNaN(pcs.x) && !isNaN(pcs.y))
-    CustomModifiersList.style.position = (pcs.x / sw) * 100 + '% ' + (pcs.y / sh) * 100 + '% 0';
-  var abilities = FindDotaHudElement('abilities');
-  if (HookedAbilityPanelsCount !== abilities.GetChildCount()) {
-    HookedAbilityPanelsCount = abilities.GetChildCount();
-    _.each(abilities.Children(), function(child, index) {
-      var btn = child.FindChildTraverse('AbilityButton');
-      btn.SetPanelEvent('onactivate', function() {
+  const screenWidth = Game.GetScreenWidth();
+  const screenHeight = Game.GetScreenHeight();
+
+  dynamicMinimapRoot.style.width = (minimapBlock.contentwidth / screenWidth) * 100 + '%';
+  dynamicMinimapRoot.style.height = (minimapBlock.contentheight / screenHeight) * 100 + '%';
+
+  const portraitPosition = portraitContainer.GetPositionWithinWindow();
+  if (!Number.isNaN(portraitPosition.x) && !Number.isNaN(portraitPosition.y)) {
+    customModifiersList.style.x = `${(portraitPosition.x / screenWidth) * 100}%`;
+    customModifiersList.style.y = `${(portraitPosition.y / screenHeight) * 100}%`;
+  }
+
+  if (HookedAbilityPanelsCount !== abilitiesPanel.GetChildCount()) {
+    HookedAbilityPanelsCount = abilitiesPanel.GetChildCount();
+    _.each(abilitiesPanel.Children(), function(child, index) {
+      child.FindChildTraverse('AbilityButton').SetPanelEvent('onactivate', () => {
         if (GameUI.IsAltDown()) {
           var unit = Players.GetLocalPlayerPortraitUnit();
           GameEvents.SendCustomGameEventToServer('custom_chat_send_message', {
@@ -89,7 +84,6 @@ function UpdatePanoramaHUD() {
   }
 
   // Chat redirect
-  var ChatLinesPanel = FindDotaHudElement('ChatLinesPanel');
   var redirectedPhrases = [
     $.Localize('DOTA_Chat_CantPause'),
     $.Localize('DOTA_Chat_NoPausesLeft'),
@@ -102,6 +96,7 @@ function UpdatePanoramaHUD() {
     $.Localize('DOTA_Chat_YouPaused'),
     $.Localize('DOTA_Chat_CantUnpauseTeam'),
   ];
+  // TODO: Doesn't work
   var escaped = _.escapeRegExp(
     redirectedPhrases
       .map(function(x) {
@@ -110,8 +105,8 @@ function UpdatePanoramaHUD() {
       .join('|'),
   );
   var regexp = new RegExp('^(' + escaped + ')$');
-  for (var i = 0; i < ChatLinesPanel.GetChildCount(); i++) {
-    var child = ChatLinesPanel.GetChild(i);
+  for (var i = 0; i < chatLinesPanel.GetChildCount(); i++) {
+    var child = chatLinesPanel.GetChild(i);
     if (child.text && child.text.match(regexp)) {
       RedirectMessage(child);
     }
@@ -127,12 +122,7 @@ function UpdateGoldLabel(playerTeam, unit, label) {
   }
 }
 
-function AutoUpdatePanoramaHUD() {
-  $.Schedule(0.2, AutoUpdatePanoramaHUD);
-  UpdatePanoramaHUD();
-}
-
-function HookPanoramaPanels() {
+function applyPanoramaHacks() {
   FindDotaHudElement('QuickBuyRows').visible = false;
   FindDotaHudElement('shop').visible = false;
   FindDotaHudElement('HUDSkinMinimap').visible = false;
@@ -143,17 +133,16 @@ function HookPanoramaPanels() {
   FindDotaHudElement('LevelLabel').style.width = '100%';
   FindDotaHudElement('stash').style.marginBottom = '47px';
 
-  var shopbtn = FindDotaHudElement('ShopButton');
-  var StatBranch = FindDotaHudElement('StatBranch');
-  var level_stats_frame = FindDotaHudElement('level_stats_frame');
-  var chat = FindDotaHudElement('ChatLinesWrapper');
-  var StatsLevelUpTab = level_stats_frame.FindChildTraverse('LevelUpTab');
+  const shopButton = FindDotaHudElement('ShopButton');
+  const statBranch = FindDotaHudElement('StatBranch');
+  const chatLinesWrapper = FindDotaHudElement('ChatLinesWrapper');
+  const statsLevelUpTab = levelStatsFrame.FindChildTraverse('LevelUpTab');
 
-  shopbtn.FindChildTraverse('BuybackHeader').visible = false;
-  shopbtn.ClearPanelEvent('onactivate');
-  shopbtn.ClearPanelEvent('onmouseover');
-  shopbtn.ClearPanelEvent('onmouseout');
-  shopbtn.SetPanelEvent('onactivate', function() {
+  shopButton.FindChildTraverse('BuybackHeader').visible = false;
+  shopButton.ClearPanelEvent('onactivate');
+  shopButton.ClearPanelEvent('onmouseover');
+  shopButton.ClearPanelEvent('onmouseout');
+  shopButton.SetPanelEvent('onactivate', function() {
     if (GameUI.IsAltDown()) {
       GameEvents.SendCustomGameEventToServer('custom_chat_send_message', {
         GoldUnit: Players.GetLocalPlayerPortraitUnit(),
@@ -163,28 +152,30 @@ function HookPanoramaPanels() {
     }
   });
 
-  StatBranch.ClearPanelEvent('onactivate');
-  StatBranch.ClearPanelEvent('onmouseover');
-  StatBranch.ClearPanelEvent('onmouseout');
-  StatBranch.hittestchildren = false;
+  statBranch.ClearPanelEvent('onactivate');
+  statBranch.ClearPanelEvent('onmouseover');
+  statBranch.ClearPanelEvent('onmouseout');
+  statBranch.hittestchildren = false;
 
-  level_stats_frame.ClearPanelEvent('onmouseover');
-  StatsLevelUpTab.ClearPanelEvent('onmouseover');
-  StatsLevelUpTab.ClearPanelEvent('onmouseout');
-  StatsLevelUpTab.ClearPanelEvent('onactivate');
-  StatsLevelUpTab.SetPanelEvent('onactivate', function() {
+  levelStatsFrame.ClearPanelEvent('onmouseover');
+  statsLevelUpTab.ClearPanelEvent('onmouseover');
+  statsLevelUpTab.ClearPanelEvent('onmouseout');
+  statsLevelUpTab.ClearPanelEvent('onactivate');
+  statsLevelUpTab.SetPanelEvent('onactivate', function() {
     CustomHooks.custom_talents_toggle_tree.call();
   });
-  var DebugChat = false;
 
-  chat.FindChildTraverse('ChatLinesPanel').visible = DebugChat;
-  if (chat.FindChildTraverse('SelectionChatMessages'))
-    chat.FindChildTraverse('SelectionChatMessages').DeleteAsync(0);
-  CustomChatLinesPanel = $.CreatePanel('Panel', chat, 'SelectionChatMessages');
-  CustomChatLinesPanel.visible = !DebugChat;
-  CustomChatLinesPanel.hittest = false;
-  CustomChatLinesPanel.hittestchildren = false;
-  AddStyle(CustomChatLinesPanel, {
+  var debugChat = false;
+  chatLinesWrapper.FindChildTraverse('ChatLinesPanel').visible = debugChat;
+  if (chatLinesWrapper.FindChildTraverse('CustomChatContainer')) {
+    chatLinesWrapper.FindChildTraverse('CustomChatContainer').DeleteAsync(0);
+  }
+
+  const chatContainer = $.CreatePanel('Panel', chatLinesWrapper, 'CustomChatContainer');
+  chatContainer.visible = !debugChat;
+  chatContainer.hittest = false;
+  chatContainer.hittestchildren = false;
+  AddStyle(chatContainer, {
     width: '100%',
     'flow-children': 'down',
     'vertical-align': 'top',
@@ -196,147 +187,120 @@ function HookPanoramaPanels() {
     'transition-duration': '0.23s',
     'transition-timing-function': 'ease-in-out',
   });
+  setCustomChatContainer(chatContainer);
 
-  var stats_region = FindDotaHudElement('stats_tooltip_region');
-  stats_region.SetPanelEvent('onmouseover', function() {
-    $.DispatchEvent('DOTAHUDShowDamageArmorTooltip', stats_region);
-    var _unit = Players.GetLocalPlayerPortraitUnit();
-    var custom_entity_value = GameUI.CustomUIConfig().custom_entity_values[_unit];
-    var DOTAHUDDamageArmorTooltip = FindDotaHudElement('DOTAHUDDamageArmorTooltip');
-    if (DOTAHUDDamageArmorTooltip != null && custom_entity_value != null) {
-      var attackRate =
-        custom_entity_value.AttackRate != null
-          ? custom_entity_value.AttackRate
-          : Entities.GetBaseAttackTime(_unit);
-      var batModifier = attackRate / Entities.GetBaseAttackTime(_unit);
-      var secondsPerAttack = Entities.GetSecondsPerAttack(_unit) * batModifier;
-      DOTAHUDDamageArmorTooltip.SetDialogVariable(
-        'seconds_per_attack',
-        '(' + secondsPerAttack.toFixed(2) + 's)',
-      );
-
-      // https://dota2.gamepedia.com/Attack_speed#Attack_speed_representation
-      var attackSpeedTooltip = Entities.GetAttackSpeed(_unit) * 100 * (1.7 / attackRate);
-      DOTAHUDDamageArmorTooltip.SetDialogVariableInt(
-        'base_attack_speed',
-        Math.round(attackSpeedTooltip),
-      );
-      if (custom_entity_value.IdealArmor != null)
-        DOTAHUDDamageArmorTooltip.SetDialogVariable(
-          'agility_armor',
-          custom_entity_value.IdealArmor.toFixed(1),
-        );
-      if (custom_entity_value.AgilityCriticalDamage != null)
-        DOTAHUDDamageArmorTooltip.SetDialogVariable(
-          'agility_critical_damage',
-          custom_entity_value.AgilityCriticalDamage.toFixed(1),
-        );
-
-      if (custom_entity_value.AttributeStrengthGain != null)
-        DOTAHUDDamageArmorTooltip.SetDialogVariable(
-          'strength_per_level',
-          custom_entity_value.AttributeStrengthGain.toFixed(1),
-        );
-      if (custom_entity_value.AttributeAgilityGain != null)
-        DOTAHUDDamageArmorTooltip.SetDialogVariable(
-          'agility_per_level',
-          custom_entity_value.AttributeAgilityGain.toFixed(1),
-        );
-      if (custom_entity_value.AttributeIntelligenceGain != null)
-        DOTAHUDDamageArmorTooltip.SetDialogVariable(
-          'intelligence_per_level',
-          custom_entity_value.AttributeIntelligenceGain.toFixed(1),
-        );
-
-      DOTAHUDDamageArmorTooltip.FindChildTraverse('StrengthDetails').text = $.Localize(
-        '#arena_hud_tooltip_details_strength',
-        DOTAHUDDamageArmorTooltip,
-      );
-      DOTAHUDDamageArmorTooltip.FindChildTraverse('StrengthDetails').style.textOverflow = 'shrink';
-      DOTAHUDDamageArmorTooltip.FindChildTraverse('AgilityDetails').text = $.Localize(
-        '#arena_hud_tooltip_details_agility',
-        DOTAHUDDamageArmorTooltip,
-      );
-      DOTAHUDDamageArmorTooltip.FindChildTraverse('AgilityDetails').style.textOverflow = 'shrink';
-      DOTAHUDDamageArmorTooltip.FindChildTraverse('IntelligenceDetails').text = $.Localize(
-        '#arena_hud_tooltip_details_intelligence',
-        DOTAHUDDamageArmorTooltip,
-      );
-      DOTAHUDDamageArmorTooltip.FindChildTraverse('IntelligenceDetails').style.textOverflow =
-        'shrink';
-    }
-  });
-  stats_region.SetPanelEvent('onmouseout', function() {
+  const statsTooltipRegion = FindDotaHudElement('stats_tooltip_region');
+  statsTooltipRegion.SetPanelEvent('onmouseout', () => {
     $.DispatchEvent('DOTAHUDHideDamageArmorTooltip');
   });
-  var InventoryContainer = FindDotaHudElement('InventoryContainer');
-  _.each(InventoryContainer.FindChildrenWithClassTraverse('InventoryItem'), function(child, index) {
-    child.FindChildTraverse('AbilityButton').SetPanelEvent('onactivate', function() {
-      var item = Entities.GetItemInSlot(Players.GetLocalPlayerPortraitUnit(), index);
-      if (item > -1) {
-        if (GameUI.IsAltDown()) {
-          GameEvents.SendCustomGameEventToServer('custom_chat_send_message', {
-            ability: item,
-          });
-        } else {
-          CustomHooks.panorama_shop_show_item_if_open.call(Abilities.GetAbilityName(item));
-          var _unit = Players.GetLocalPlayerPortraitUnit();
-          if (Entities.IsControllableByPlayer(_unit, Game.GetLocalPlayerID())) {
-            Abilities.ExecuteAbility(item, _unit, false);
-          }
+  statsTooltipRegion.SetPanelEvent('onmouseover', () => {
+    $.DispatchEvent('DOTAHUDShowDamageArmorTooltip', statsTooltipRegion);
+
+    const unit = Players.GetLocalPlayerPortraitUnit();
+    const customValues = Entities.GetNetworkableEntityInfo(unit);
+    const tooltip = FindDotaHudElement('DOTAHUDDamageArmorTooltip');
+    if (!tooltip || !customValues) return;
+
+    const attackRate =
+      customValues.AttackRate != null ? customValues.AttackRate : Entities.GetBaseAttackTime(unit);
+    const batModifier = attackRate / Entities.GetBaseAttackTime(unit);
+    const secondsPerAttack = Entities.GetSecondsPerAttack(unit) * batModifier;
+    tooltip.SetDialogVariable('seconds_per_attack', '(' + secondsPerAttack.toFixed(2) + 's)');
+
+    // https://dota2.gamepedia.com/Attack_speed#Attack_speed_representation
+    const attackSpeedTooltip = Entities.GetAttackSpeed(unit) * 100 * (1.7 / attackRate);
+    tooltip.SetDialogVariableInt('base_attack_speed', Math.round(attackSpeedTooltip));
+
+    for (const { key, variable } of [
+      { key: 'IdealArmor', variable: 'agility_armor' },
+      { key: 'AgilityCriticalDamage', variable: 'agility_critical_damage' },
+      { key: 'AttributeStrengthGain', variable: 'strength_per_level' },
+      { key: 'AttributeAgilityGain', variable: 'agility_per_level' },
+      { key: 'AttributeIntelligenceGain', variable: 'intelligence_per_level' },
+    ]) {
+      if (customValues[key] != null) {
+        tooltip.SetDialogVariable(variable, customValues[key].toFixed(1));
+      }
+    }
+
+    for (const { id, label } of [
+      { id: 'StrengthDetails', label: '#arena_hud_tooltip_details_strength' },
+      { id: 'AgilityDetails', label: '#arena_hud_tooltip_details_agility' },
+      { id: 'IntelligenceDetails', label: '#arena_hud_tooltip_details_intelligence' },
+    ]) {
+      const panel = tooltip.FindChildTraverse(id);
+      panel.style.textOverflow = 'shrink';
+      panel.text = $.Localize(label, tooltip);
+    }
+  });
+
+  const InventoryContainer = FindDotaHudElement('InventoryContainer');
+  _.each(InventoryContainer.FindChildrenWithClassTraverse('InventoryItem'), (child, index) => {
+    child.FindChildTraverse('AbilityButton').SetPanelEvent('onactivate', () => {
+      const item = Entities.GetItemInSlot(Players.GetLocalPlayerPortraitUnit(), index);
+      if (item === -1) return;
+
+      if (GameUI.IsAltDown()) {
+        GameEvents.SendCustomGameEventToServer('custom_chat_send_message', { ability: item });
+      } else {
+        CustomHooks.panorama_shop_show_item_if_open.call(Abilities.GetAbilityName(item));
+        const unit = Players.GetLocalPlayerPortraitUnit();
+        if (Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID())) {
+          Abilities.ExecuteAbility(item, unit, false);
         }
       }
     });
   });
+
   var xpRoot = FindDotaHudElement('xp');
-  _.each(
-    [
-      xpRoot.FindChildTraverse('LevelBackground'),
-      xpRoot.FindChildTraverse('CircularXPProgress'),
-      xpRoot.FindChildTraverse('XPProgress'),
-    ],
-    function(p) {
-      p.SetPanelEvent('onactivate', function() {
-        if (GameUI.IsAltDown()) {
-          GameEvents.SendCustomGameEventToServer('custom_chat_send_message', {
-            xpunit: Players.GetLocalPlayerPortraitUnit(),
-          });
-        }
-      });
-    },
-  );
+  for (const panel of [
+    xpRoot.FindChildTraverse('LevelBackground'),
+    xpRoot.FindChildTraverse('CircularXPProgress'),
+    xpRoot.FindChildTraverse('XPProgress'),
+  ]) {
+    panel.SetPanelEvent('onactivate', function() {
+      if (GameUI.IsAltDown()) {
+        GameEvents.SendCustomGameEventToServer('custom_chat_send_message', {
+          xpunit: Players.GetLocalPlayerPortraitUnit(),
+        });
+      }
+    });
+  }
 }
 
+DynamicSubscribeNTListener('custom_entity_values', OnUpdateSelectedUnit);
+GameEvents.Subscribe('dota_player_update_selected_unit', OnUpdateSelectedUnit);
+GameEvents.Subscribe('dota_player_update_query_unit', OnUpdateSelectedUnit);
 function OnUpdateSelectedUnit() {
-  var unitName = GetHeroName(Players.GetLocalPlayerPortraitUnit());
+  const unitName = GetHeroName(Players.GetLocalPlayerPortraitUnit());
   FindDotaHudElement('UnitNameLabel').text = $.Localize(unitName).toUpperCase();
   OnSkillPoint();
 }
 
+GameEvents.Subscribe('dota_player_gained_level', OnSkillPoint);
+GameEvents.Subscribe('dota_player_learned_ability', OnSkillPoint);
 function OnSkillPoint() {
   const unit = Players.GetLocalPlayerPortraitUnit();
   const canLevelStats =
     Entities.GetAbilityPoints(unit) > 0 &&
     Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
-  const level_stats_frame = FindDotaHudElement('level_stats_frame');
 
-  // `level_stats_frame` resets `CanLevelStats` class every frame
-  level_stats_frame.GetParent().SetHasClass('CanLevelStats', canLevelStats);
-  level_stats_frame.visible = canLevelStats;
+  // levelStatsFrame resets `CanLevelStats` class every frame
+  levelStatsFrame.GetParent().SetHasClass('CanLevelStats', canLevelStats);
+  levelStatsFrame.visible = canLevelStats;
 }
 
-// On Death
-function OnDeath(data) {
-  if (data.entindex_killed === SafeGetPlayerHeroEntityIndex(Game.GetLocalPlayerID())) {
-    var killerOwner = Entities.GetPlayerOwnerID(data.entindex_attacker);
-    var attacker = Players.IsValidPlayerID(killerOwner)
+GameEvents.Subscribe('entity_killed', event => {
+  if (event.entindex_killed === SafeGetPlayerHeroEntityIndex(Game.GetLocalPlayerID())) {
+    const killerOwner = Entities.GetPlayerOwnerID(event.entindex_attacker);
+    const attacker = Players.IsValidPlayerID(killerOwner)
       ? SafeGetPlayerHeroEntityIndex(killerOwner)
-      : data.entindex_attacker;
+      : event.entindex_attacker;
     FindDotaHudElement('KilledByHeroName').text = $.Localize(GetHeroName(attacker)).toUpperCase();
   }
-}
+});
 
-// Toasts
+GameEvents.Subscribe('create_custom_toast', CreateCustomToast);
 function CreateCustomToast(data) {
   var row = $.CreatePanel('Panel', $('#CustomToastManager'), '');
   row.BLoadLayoutSnippet('ToastPanel');
@@ -457,29 +421,18 @@ function CreateHeroElements(id) {
   );
 }
 
-(function() {
-  HookPanoramaPanels();
-  _DynamicMinimapSubscribe($('#DynamicMinimapRoot'));
-  var mapInfo = Options.GetMapInfo();
-  hud.AddClass('map_landscape_' + mapInfo.landscape);
-  hud.AddClass('map_gamemode_' + mapInfo.gamemode);
-  $.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
-  DynamicSubscribePTListener('players_abandoned', function(
-    tableName,
-    changesObject,
-    deletionsObject,
-  ) {
-    if (changesObject[Game.GetLocalPlayerID()])
-      $.GetContextPanel().AddClass('LocalPlayerAbandoned');
-  });
+_DynamicMinimapSubscribe($('#DynamicMinimapRoot'));
 
-  AutoUpdatePanoramaHUD();
-  GameEvents.Subscribe('entity_killed', OnDeath);
-  DynamicSubscribeNTListener('custom_entity_values', OnUpdateSelectedUnit);
-  GameEvents.Subscribe('dota_player_update_selected_unit', OnUpdateSelectedUnit);
-  GameEvents.Subscribe('dota_player_update_query_unit', OnUpdateSelectedUnit);
-  GameEvents.Subscribe('dota_player_gained_level', OnSkillPoint);
-  GameEvents.Subscribe('dota_player_learned_ability', OnSkillPoint);
+const { landscape, gamemode } = Options.GetMapInfo();
+hud.AddClass(`map_landscape_${landscape}`);
+hud.AddClass(`map_gamesome_${gamemode}`);
 
-  GameEvents.Subscribe('create_custom_toast', CreateCustomToast);
-})();
+$.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
+DynamicSubscribePTListener('players_abandoned', (_name, changes) => {
+  if (changes[Game.GetLocalPlayerID()]) {
+    $.GetContextPanel().AddClass('LocalPlayerAbandoned');
+  }
+});
+
+applyPanoramaHacks();
+updatePanoramaHacks();

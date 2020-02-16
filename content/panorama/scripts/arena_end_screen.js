@@ -32,7 +32,7 @@ function Snippet_Player(playerId, rootPanel, index) {
   panel.FindChildTraverse('PlayerNameScoreboard').steamid = playerInfo.player_steamid;
 
   panel.index = index; // For backwards compatibility
-  panel.style.animationDelay = index * 0.3 + 's';
+  panel.style.animationDelay = `${index * 0.3}s`;
   $.Schedule(index * 0.3, function() {
     try {
       panel.AddClass('AnimationEnd');
@@ -60,13 +60,13 @@ function Snippet_Player(playerId, rootPanel, index) {
       var delta = playerData.ratingNew - playerData.ratingOld;
       mmrString =
         delta > 0
-          ? '<font color="lime">+' + delta + '</font>'
+          ? `<font color="lime">+${delta}</font>`
           : delta < 0
-          ? '<font color="red">' + delta + '</font>'
+          ? `<font color="red">${delta}</font>`
           : '±0';
-      mmrString = playerData.ratingNew + ' (' + mmrString + ')';
-    } else mmrString = 'TBD -> ' + playerData.ratingNew;
-  } else mmrString = 'TBD (' + (playerData.ratingGamesRemaining || 0) + ')';
+      mmrString = `${playerData.ratingNew} (${mmrString})`;
+    } else mmrString = `TBD -> ${playerData.ratingNew}`;
+  } else mmrString = `TBD (${playerData.ratingGamesRemaining || 0})`;
   panel.SetDialogVariable('rating', mmrString);
 
   var ItemsContainer = panel.FindChildTraverse('ItemsContainer');
@@ -135,8 +135,8 @@ function OnGameResult(gameResult) {
         ? 'arena_end_screen_victory'
         : 'arena_end_screen_defeat',
     );
-    $('#LevelProgressValue').text = Math.floor(experienceNew % 100) + ' / 100 XP';
-    $('#LevelProgressChange').text = '+' + Math.floor(experienceNew - experienceOld) + ' XP';
+    $('#LevelProgressValue').text = `${Math.floor(experienceNew % 100)} / 100 XP`;
+    $('#LevelProgressChange').text = `+${Math.floor(experienceNew - experienceOld)} XP`;
     $('#LevelProgress').value = experienceOld % 100;
     $.Schedule(0.5, function() {
       $('#LevelProgress').value = experienceNew % 100;

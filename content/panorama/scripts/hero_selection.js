@@ -205,9 +205,9 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
       }
       if (isLocalTeam) {
         if (playerData.SpawnBoxes != null) {
-          if (PlayerSpawnBoxes[playerIdInTeam] == null) PlayerSpawnBoxes[playerIdInTeam] = [];
-          var PlayerSPBoxesTable = PlayerSpawnBoxes[playerIdInTeam];
-          var checkedPanels = [];
+          var PlayerSPBoxesTable =
+            PlayerSpawnBoxes[playerIdInTeam] || (PlayerSpawnBoxes[playerIdInTeam] = new Set());
+          var checkedPanels = new Set();
           for (var index in playerData.SpawnBoxes) {
             var SPBoxInfoGroup = playerData.SpawnBoxes[index];
             var SPBoxID = 'MinimapSpawnBoxPlayerIcon_' + SPBoxInfoGroup + '_' + playerIdInTeam;
@@ -221,18 +221,17 @@ function UpdateHeroesSelected(tableName, changesObject, deletionsObject) {
             }
             SpawnBoxUnitPanel.SetImage(TransformTextureToPath(playerData.hero, 'icon'));
             SpawnBoxUnitPanel.SetHasClass('hero_selection_hover', playerData.status === 'hover');
-            checkedPanels.push(SpawnBoxUnitPanel);
-            if (!_.includes(PlayerSPBoxesTable, SpawnBoxUnitPanel))
-              PlayerSPBoxesTable.push(SpawnBoxUnitPanel);
+            checkedPanels.add(SpawnBoxUnitPanel);
+            PlayerSPBoxesTable.add(SpawnBoxUnitPanel);
           }
-          for (var index in PlayerSPBoxesTable) {
-            var panel = PlayerSPBoxesTable[index];
-            if (!_.includes(checkedPanels, panel)) {
+
+          for (const panel of PlayerSPBoxesTable) {
+            if (!checkedPanels.has(panel)) {
               try {
                 panel.DeleteAsync(0);
               } catch (e) {
               } finally {
-                PlayerSPBoxesTable.splice(index, 1);
+                PlayerSPBoxesTable.delete(panel);
               }
             }
           }
@@ -254,17 +253,17 @@ function OnLocalPlayerPicked() {
   var heroName = LocalPlayerStatus.hero;
   var localHeroData = HeroesData[heroName];
   $('#HeroPreviewName').text = $.Localize(heroName).toUpperCase();
-  var bio = $.Localize(heroName + '_bio');
-  $('#HeroPreviewLore').text = bio !== heroName + '_bio' ? bio : '';
-  var hype = $.Localize(heroName + '_hype');
-  $('#HeroPreviewOverview').text = hype !== heroName + '_hype' ? hype : '';
+  var bio = $.Localize(`${heroName}_bio`);
+  $('#HeroPreviewLore').text = bio !== `${heroName}_bio` ? bio : '';
+  var hype = $.Localize(`${heroName}_hype`);
+  $('#HeroPreviewOverview').text = hype !== `${heroName}_hype` ? hype : '';
 
   var model = localHeroData.model;
   var heroImageXML =
     '<DOTAScenePanel particleonly="false" ' +
     (localHeroData.useCustomScene
-      ? 'map="scenes/heroes" camera="' + heroName + '" />'
-      : 'allowrotation="true" unit="' + model + '" />');
+      ? `map="scenes/heroes" camera="${heroName}" />`
+      : `allowrotation="true" unit="${model}" />`);
   var ScenePanel = $('#HeroPreviewScene');
   ScenePanel.RemoveAndDeleteChildren();
   ScenePanel.BCreateChildren(heroImageXML);
@@ -297,22 +296,19 @@ function OnLocalPlayerPicked() {
       label.style.align = 'center center';
       label.style.textAlign = 'center';
     }
-    //These wearables are useless, hide them
-    try {
-      GlobalLoadoutItems.FindChildrenWithClassTraverse('ItemSlot_terrain')[0]
-        .GetParent()
-        .GetParent().visible = false;
-    } catch (e) {}
-    try {
-      GlobalLoadoutItems.FindChildrenWithClassTraverse('ItemSlot_heroic_statue')[0]
-        .GetParent()
-        .GetParent().visible = false;
-    } catch (e) {}
-    try {
-      GlobalLoadoutItems.FindChildrenWithClassTraverse('ItemSlot_loading_screen')[0]
-        .GetParent()
-        .GetParent().visible = false;
-    } catch (e) {}
+
+    // These wearables are useless, hide them
+    for (const panelId of [
+      'ItemSlot_terrain',
+      'ItemSlot_heroic_statue',
+      'ItemSlot_loading_screen',
+    ]) {
+      try {
+        GlobalLoadoutItems.FindChildrenWithClassTraverse('panelId')[0]
+          .GetParent()
+          .GetParent().visible = false;
+      } catch (e) {}
+    }
   }
   ToggleHeroPreviewHeroList(true);
 }

@@ -7,10 +7,10 @@
 	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/arena_util.js" />
-		<include src="file://{resources}/scripts/custom_hud.js" />
-		<include src="file://{resources}/scripts/entity_tooltips.js" />
 		<include src="file://{resources}/scripts/chat_smiles.js" />
 		<include src="file://{resources}/scripts/customchat.js" />
+		<include src="file://{resources}/scripts/entity_tooltips.js" />
+		<include src="file://{resources}/scripts/custom_hud.js" />
 	</scripts>
 	<snippets>
 		<snippet name="ToastPanel">

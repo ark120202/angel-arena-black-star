@@ -71,14 +71,7 @@ function PushItemsToList() {
     var TabButtonLabel = $.CreatePanel('Label', TabButton, '');
     TabButtonLabel.text = $.Localize('panorama_shop_shop_tab_' + shopName);
     TabButtonLabel.hittest = false;
-    TabButton.SetPanelEvent(
-      'onactivate',
-      (function(_shopName) {
-        return function() {
-          SelectShopTab(_shopName);
-        };
-      })(shopName),
-    );
+    TabButton.SetPanelEvent('onactivate', () => SelectShopTab(shopName));
     var TabShopItemlistPanel = $.CreatePanel(
       'Panel',
       $('#ShopItemsBase'),

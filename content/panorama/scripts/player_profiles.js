@@ -7,7 +7,7 @@ function LoadPanelForPlayer(playerId) {
   var stats = Players.GetStatsData(playerId);
   SetPagePlayerLevel($('#ProfileBadge'), Math.floor((stats.experience || 0) / 100) + 1);
   $('#PlayerVariable_Rating').text = stats.Rating || 'TBD';
-  $('#PlayerVariable_WinMatches').text = (stats.gamesWon || 0) + '/' + (stats.gamesPlayed || 0);
+  $('#PlayerVariable_WinMatches').text = `${stats.gamesWon || 0}/${stats.gamesPlayed || 0}`;
   // TODO: use rest api for other features
 }
 

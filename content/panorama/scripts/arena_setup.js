@@ -264,14 +264,12 @@ function HostSwapPlayers(playerId, playerId2) {
 
 (function() {
   $('#TeamList').RemoveAndDeleteChildren();
-  $.GetContextPanel()
-    .Children()
-    .forEach(function(child) {
-      child.visible = false;
-    });
+  for (const child of $.GetContextPanel().Children()) {
+    child.visible = false;
+  }
 
   Options.Subscribe('TeamSetupMode', function(mode) {
-    $('#team-select__' + mode).visible = true;
+    $(`#team-select__${mode}`).visible = true;
 
     switch (mode) {
       case 'open':
@@ -284,6 +282,7 @@ function HostSwapPlayers(playerId, playerId2) {
         SetUnassignedTeamDraggable();
         UpdateTimer();
         break;
+
       case 'balanced':
         $('#LoadingPanel').visible = true;
         $('#ErrorPanel').visible = false;

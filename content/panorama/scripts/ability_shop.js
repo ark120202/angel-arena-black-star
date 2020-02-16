@@ -222,10 +222,10 @@ function Fill(heroesData, panel) {
 			abs[ability].ability
 		}
 	}*/
-  for (var herokey in heroesData) {
-    var heroData = heroesData[herokey];
-    var StatPanel = panel.FindChildTraverse('HeroesByAttributes_' + heroData.attribute_primary);
-    var HeroImagePanel = $.CreatePanel(
+  for (const herokey in heroesData) {
+    const heroData = heroesData[herokey];
+    const StatPanel = panel.FindChildTraverse('HeroesByAttributes_' + heroData.attribute_primary);
+    const HeroImagePanel = $.CreatePanel(
       'Image',
       StatPanel,
       'HeroListPanel_element_' + heroData.heroKey,
@@ -235,19 +235,17 @@ function Fill(heroesData, panel) {
     if (heroData.isChanged) {
       HeroImagePanel.AddClass('ChangedHeroPanel');
     }
-    var SelectHeroAction = (function(_heroData, _herokey, _panel) {
-      return function() {
-        if (SelectedHeroPanel !== _panel) {
-          SelectedHeroData = _heroData;
-          if (SelectedHeroPanel != null) {
-            SelectedHeroPanel.RemoveClass('HeroPanelSelected');
-          }
-          _panel.AddClass('HeroPanelSelected');
-          SelectedHeroPanel = _panel;
-          UpdateHeroAbilityList(_herokey, _heroData.abilities);
+    const SelectHeroAction = () => {
+      if (SelectedHeroPanel !== HeroImagePanel) {
+        SelectedHeroData = heroData;
+        if (SelectedHeroPanel != null) {
+          SelectedHeroPanel.RemoveClass('HeroPanelSelected');
         }
-      };
-    })(heroData, herokey, HeroImagePanel);
+        HeroImagePanel.AddClass('HeroPanelSelected');
+        SelectedHeroPanel = HeroImagePanel;
+        UpdateHeroAbilityList(herokey, heroData.abilities);
+      }
+    };
     HeroImagePanel.SetPanelEvent('onactivate', SelectHeroAction);
     HeroImagePanel.SelectHeroAction = SelectHeroAction;
     for (var k in heroData.abilities) {

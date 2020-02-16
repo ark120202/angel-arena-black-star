@@ -8,18 +8,10 @@ var RegisterKeyBind = GameUI.CustomUIConfig().RegisterKeyBind;
 var CustomHooks = GameUI.CustomUIConfig().CustomHooks;
 
 var console = {
-  log: function() {
-    var args = Array.prototype.slice.call(arguments);
-    return $.Msg(
-      args
-        .map(function(x) {
-          return typeof x === 'object' ? JSON.stringify(x, null, 4) : x;
-        })
-        .join('\t'),
-    );
+  log(...args) {
+    $.Msg(args.map(x => (typeof x === 'object' ? JSON.stringify(x, null, 4) : x)).join('\t'));
   },
-  error: function() {
-    var args = Array.prototype.slice.call(arguments);
+  error(...args) {
     _.each(args, function(arg) {
       console.log(arg instanceof Error ? arg.stack : new Error(arg).stack);
     });
@@ -51,10 +43,6 @@ var RUNES_COLOR_MAP = {
   11: 'B35F5F',
 };
 
-String.prototype.endsWith = function(suffix) {
-  return this.indexOf(suffix, this.length - suffix.length) !== -1;
-};
-
 Entities.GetNetworkableEntityInfo = function(ent, key) {
   var t = GameUI.CustomUIConfig().custom_entity_values[ent];
   if (t != null) {
@@ -78,9 +66,7 @@ function GetDataFromServer(path, params, resolve, reject) {
       ? ''
       : '?' +
         Object.keys(params)
-          .map(function(key) {
-            return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
-          })
+          .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(params[key]))
           .join('&');
   $.AsyncWebRequest(ServerAddress + path + encodedParams, {
     type: 'GET',
@@ -116,20 +102,20 @@ var bossesMap = {
 function TransformTextureToPath(texture, optPanelImageStyle) {
   if (IsHeroName(texture)) {
     return optPanelImageStyle === 'portrait'
-      ? 'file://{images}/heroes/selection/' + texture + '.png'
+      ? `file://{images}/heroes/selection/${texture}.png`
       : optPanelImageStyle === 'icon'
-      ? 'file://{images}/heroes/icons/' + texture + '.png'
-      : 'file://{images}/heroes/' + texture + '.png';
+      ? `file://{images}/heroes/icons/${texture}.png`
+      : `file://{images}/heroes/${texture}.png`;
   } else if (IsBossName(texture)) {
-    return bossesMap[texture] || 'file://{images}/custom_game/units/' + texture + '.png';
+    return bossesMap[texture] || `file://{images}/custom_game/units/${texture}.png`;
   } else if (texture.lastIndexOf('npc_') === 0) {
     return optPanelImageStyle === 'portrait'
-      ? 'file://{images}/custom_game/units/portraits/' + texture + '.png'
-      : 'file://{images}/custom_game/units/' + texture + '.png';
+      ? `file://{images}/custom_game/units/portraits/${texture}.png`
+      : `file://{images}/custom_game/units/${texture}.png`;
   } else {
     return optPanelImageStyle === 'item'
-      ? 'raw://resource/flash3/images/items/' + texture + '.png'
-      : 'raw://resource/flash3/images/spellicons/' + texture + '.png';
+      ? `raw://resource/flash3/images/items/${texture}.png`
+      : `raw://resource/flash3/images/spellicons/${texture}.png`;
   }
 }
 
@@ -233,14 +219,13 @@ function DynamicSubscribeNTListener(table, callback, OnConnectedCallback) {
   }
 }
 
-function GetDotaHud() {
-  var p = $.GetContextPanel();
-  while (true) {
-    var parent = p.GetParent();
-    if (parent == null) return p;
-    else p = parent;
+const hud = (() => {
+  let panel = $.GetContextPanel();
+  while (panel) {
+    if (panel.id === 'DotaHud') return panel;
+    panel = panel.GetParent();
   }
-}
+})();
 
 function _DynamicMinimapSubscribe(minimapPanel, OnConnectedCallback) {
   _.each(Game.GetAllTeamIDs(), function(team) {
@@ -282,9 +267,9 @@ function secondsToMS(seconds, bTwoChars) {
   var minutes = Math.floor(sec_num / 60);
   var seconds = Math.floor(sec_num - minutes * 60);
 
-  if (bTwoChars && minutes < 10) minutes = '0' + minutes;
-  if (seconds < 10) seconds = '0' + seconds;
-  return minutes + ':' + seconds;
+  if (bTwoChars && minutes < 10) minutes = `0${minutes}`;
+  if (seconds < 10) seconds = `0${seconds}`;
+  return `${minutes}:${seconds}`;
 }
 
 function AddStyle(panel, table) {
@@ -297,15 +282,18 @@ function FindDotaHudElement(id) {
   return hud.FindChildTraverse(id);
 }
 
-function GetHEXPlayerColor(playerId) {
-  var playerColor = Players.GetPlayerColor(playerId).toString(16);
-  return playerColor == null
-    ? '#000000'
-    : '#' +
-        playerColor.substring(6, 8) +
-        playerColor.substring(4, 6) +
-        playerColor.substring(2, 4) +
-        playerColor.substring(0, 2);
+// TODO: Default
+function GetHEXPlayerColor(playerId, fallback = '#000000') {
+  if (!Players.IsValidPlayerID(playerId)) return fallback;
+
+  const playerColor = Players.GetPlayerColor(playerId).toString(16);
+  return (
+    '#' +
+    playerColor.substring(6, 8) +
+    playerColor.substring(4, 6) +
+    playerColor.substring(2, 4) +
+    playerColor.substring(0, 2)
+  );
 }
 
 function shadeColor2(color, percent) {
@@ -363,10 +351,10 @@ function GetTeamInfo(team) {
 function SetPagePlayerLevel(ProfileBadge, level) {
   var levelbg = Math.floor(level / 100);
   ProfileBadge.FindChildTraverse('BackgroundImage').SetImage(
-    'file://{images}/profile_badges/bg_' + ('0' + (levelbg + 1)).slice(-2) + '.psd',
+    `file://{images}/profile_badges/bg_${('0' + (levelbg + 1)).slice(-2)}.psd`,
   );
   ProfileBadge.FindChildTraverse('ItemImage').SetImage(
-    'file://{images}/profile_badges/level_' + ('0' + (level - levelbg * 100)).slice(-2) + '.png',
+    `file://{images}/profile_badges/level_${('0' + (level - levelbg * 100)).slice(-2)}.png`,
   );
   ProfileBadge.FindChildTraverse('ProfileLevel').SetImage(
     'file://{images}/profile_badges/bg_number_01.psd',
@@ -375,7 +363,7 @@ function SetPagePlayerLevel(ProfileBadge, level) {
 }
 
 function FindFountain(team) {
-  return Entities.GetAllEntitiesByName('npc_arena_fountain_' + team)[0];
+  return Entities.GetAllEntitiesByName(`npc_arena_fountain_${team}`)[0];
 }
 
 function GetVisibleAbilityInSlot(unit, slot) {
@@ -389,5 +377,3 @@ function GetVisibleAbilityInSlot(unit, slot) {
     }
   }
 }
-
-var hud = GetDotaHud();
