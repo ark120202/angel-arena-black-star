@@ -74,7 +74,6 @@ function GameMode:InitGameMode()
 	Events:Emit("activate")
 
 	PlayerTables:CreateTable("arena", {}, AllPlayersInterval)
-	PlayerTables:CreateTable("player_hero_indexes", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("players_abandoned", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("gold", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("weather", {}, AllPlayersInterval)

@@ -62,8 +62,6 @@ function GameMode:OnNPCSpawned(keys)
 			npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 			if npc:IsTrueHero() then
 				npc:ApplyDelayedTalents()
-
-				PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
 				CustomAbilities:RandomOMGRollAbilities(npc)
 				if not npc.OnDuel and Duel:IsDuelOngoing() then
 					Duel:SetUpVisitor(npc)

@@ -290,13 +290,15 @@ function OnSkillPoint() {
   levelStatsFrame.visible = canLevelStats;
 }
 
+const killedByHeroName = FindDotaHudElement('KilledByHeroName');
 GameEvents.Subscribe('entity_killed', event => {
-  if (event.entindex_killed === SafeGetPlayerHeroEntityIndex(Game.GetLocalPlayerID())) {
+  if (event.entindex_killed === Game.GetLocalPlayerInfo().player_selected_hero_entity_index) {
     const killerOwner = Entities.GetPlayerOwnerID(event.entindex_attacker);
     const attacker = Players.IsValidPlayerID(killerOwner)
-      ? SafeGetPlayerHeroEntityIndex(killerOwner)
+      ? Game.GetPlayerInfo(killerOwner).player_selected_hero_entity_index
       : event.entindex_attacker;
-    FindDotaHudElement('KilledByHeroName').text = $.Localize(GetHeroName(attacker)).toUpperCase();
+
+    killedByHeroName.text = $.Localize(GetHeroName(attacker)).toUpperCase();
   }
 });
 
