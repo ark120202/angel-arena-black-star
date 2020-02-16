@@ -370,7 +370,7 @@ CUSTOM_TALENTS_DATA = {
 		group = 9,
 		requirement = "pudge_meat_hook_lua",
 		special_values = {
-			hook_amount = 3
+			hook_amount = {3}
 		}
 	},
 	talent_hero_arthas_vsolyanova_bunus_chance = {

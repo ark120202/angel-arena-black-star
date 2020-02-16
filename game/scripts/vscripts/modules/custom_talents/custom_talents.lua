@@ -41,14 +41,10 @@ function CustomTalents:Init()
 		t.name = k
 		t.effect = nil
 		if t.special_values then
-			for key,value in pairs(t.special_values) do
-				if type(value) == "table" then
-					t.special_values[key] = {}
-					for _,value2 in ipairs(value) do
-						table.insert(t.special_values[key], tostring(value2))
-					end
-				else
-					t.special_values[key] = tostring(value)
+			for key, values in pairs(t.special_values) do
+				t.special_values[key] = {}
+				for _,value in ipairs(values) do
+					table.insert(t.special_values[key], tostring(value))
 				end
 			end
 		end
@@ -72,7 +68,7 @@ function CustomTalents:Talent_GetCost(name)
 	return CUSTOM_TALENTS_DATA[name].cost
 end
 
-function CustomTalents:Talent_GetSpecialValue(name, property)
+function CustomTalents:Talent_GetSpecialValues(name, property)
 	return CUSTOM_TALENTS_DATA[name].special_values[property]
 end
 
@@ -122,10 +118,8 @@ end
 
 function CDOTA_BaseNPC:GetTalentSpecial(name, property)
 	if CustomTalents:Talent_Verify(name) and self:HasTalent(name) then
-		local t = CustomTalents:Talent_GetSpecialValue(name, property)
-		if type(t) == "table" then
-			t = t[self.talents[name].level] or t[#t]
-		end
+		local values = CustomTalents:Talent_GetSpecialValues(name, property)
+		local t = values[self.talents[name].level] or values[#values]
 		local effect = CUSTOM_TALENTS_DATA[name].effect
 		if effect and effect.special_values_multiplier then
 			t = t * effect.special_values_multiplier

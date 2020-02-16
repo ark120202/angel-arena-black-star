@@ -184,10 +184,7 @@ function ChooseHeroUpdatePanels() {
   $('#SelectedHeroOverview').text = $.Localize(SelectedHeroName + '_hype');
   context.SetHasClass('HoveredHeroHasLinked', selectedHeroData.linked_heroes != null);
   if (selectedHeroData.linked_heroes != null) {
-    var linked = [];
-    _.each(selectedHeroData.linked_heroes, function(hero) {
-      linked.push($.Localize(hero));
-    });
+    const linked = selectedHeroData.linked_heroes.map(hero => $.Localize(hero));
     $('#SelectedHeroLinkedHero').text = linked.join(', ');
   }
   $('#SelectedHeroAbilitiesPanelInner').RemoveAndDeleteChildren();

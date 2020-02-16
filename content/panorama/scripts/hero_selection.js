@@ -253,10 +253,8 @@ function OnLocalPlayerPicked() {
   var heroName = LocalPlayerStatus.hero;
   var localHeroData = HeroesData[heroName];
   $('#HeroPreviewName').text = $.Localize(heroName).toUpperCase();
-  var bio = $.Localize(`${heroName}_bio`);
-  $('#HeroPreviewLore').text = bio !== `${heroName}_bio` ? bio : '';
-  var hype = $.Localize(`${heroName}_hype`);
-  $('#HeroPreviewOverview').text = hype !== `${heroName}_hype` ? hype : '';
+  $('#HeroPreviewLore').text = tryLocalize(`${heroName}_bio`) || '';
+  $('#HeroPreviewOverview').text = tryLocalize(`${heroName}_hype`) || '';
 
   var model = localHeroData.model;
   var heroImageXML =
@@ -298,13 +296,9 @@ function OnLocalPlayerPicked() {
     }
 
     // These wearables are useless, hide them
-    for (const panelId of [
-      'ItemSlot_terrain',
-      'ItemSlot_heroic_statue',
-      'ItemSlot_loading_screen',
-    ]) {
+    for (const slot of ['terrain', 'heroic_statue', 'loading_screen']) {
       try {
-        GlobalLoadoutItems.FindChildrenWithClassTraverse('panelId')[0]
+        GlobalLoadoutItems.FindChildrenWithClassTraverse(`ItemSlot_${slot}`)[0]
           .GetParent()
           .GetParent().visible = false;
       } catch (e) {}

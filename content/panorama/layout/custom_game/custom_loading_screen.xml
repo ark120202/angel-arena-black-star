@@ -6,6 +6,7 @@
 		<include src="file://{resources}/styles/custom_loading_screen.css" />
 	</styles>
 	<scripts>
+		<include src="file://{resources}/scripts/libraries/lodash.min.js" />
 		<include src="file://{resources}/scripts/arena_util.js" />
 		<include src="file://{resources}/scripts/custom_loading_screen.js" />
 	</scripts>
@@ -124,7 +125,7 @@
 			<Image id="loading-author" src="file://{images}/custom_game/loading_screen/author.png" />
 		</Panel>
 
-		<Panel id="TipsPanel" hittest="true" onactivate="NextTip()">
+		<Panel id="TipsPanel" hittest="true" onactivate="nextTip()">
 			<Panel id="TipSaitama" />
 			<Label id="TipLabel" />
 		</Panel>

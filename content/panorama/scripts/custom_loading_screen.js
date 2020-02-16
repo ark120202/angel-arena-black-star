@@ -1,24 +1,18 @@
 'use strict';
 
-var TipList = [];
-var ShuffledTipList = [];
-
-function FillTips() {
-  var i = 1;
+/** @type {readonly string[]} */
+var tipList = (() => {
+  const list = [];
+  let index = 1;
   while (true) {
-    var unlocalized = 'arena_tip_' + i;
-    var localized = $.Localize(unlocalized);
-    if (localized !== unlocalized) {
-      TipList.push({
-        num: i,
-        text: localized,
-      });
+    const localized = tryLocalize(`arena_tip_${index++}`);
+    if (localized) {
+      list.push(localized);
     } else {
-      break;
+      return list;
     }
-    i++;
   }
-}
+})();
 
 function shuffle(a) {
   var j, x, i;
@@ -30,14 +24,15 @@ function shuffle(a) {
   }
 }
 
-function NextTip() {
-  if (ShuffledTipList.length === 0) {
-    ShuffledTipList = TipList.slice();
-    shuffle(ShuffledTipList);
+/** @type {string[]} */
+var currentTipList = [];
+function nextTip() {
+  if (currentTipList.length === 0) {
+    currentTipList = tipList.slice();
+    shuffle(currentTipList);
   }
-  var tip = ShuffledTipList.shift();
 
-  $('#TipLabel').text = tip.text;
+  $('#TipLabel').text = currentTipList.shift();
 }
 
 function Snippet_OptionVoting(voteName, voteData) {
@@ -77,9 +72,7 @@ function Snippet_OptionVoting(voteName, voteData) {
 
     var label = $.CreatePanel('Label', button, '');
     label.text =
-      typeof variant === 'string'
-        ? $.Localize('option_voting_' + voteName + '_' + variant)
-        : variant;
+      typeof variant === 'string' ? $.Localize(`option_voting_${voteName}_${variant}`) : variant;
 
     var votedataLabel = $.CreatePanel('Label', button, 'vote_data_variant_' + tIndex);
     votedataLabel.text = '{s:votes}';
@@ -166,7 +159,6 @@ function CheckStartable() {
 (function() {
   $('#OptionVotings').RemoveAndDeleteChildren();
   CheckStartable();
-  FillTips();
-  $('#TipsPanel').visible = TipList.length > 0;
-  if (TipList.length > 0) NextTip();
+  $('#TipsPanel').visible = tipList.length > 0;
+  if (tipList.length > 0) nextTip();
 })();

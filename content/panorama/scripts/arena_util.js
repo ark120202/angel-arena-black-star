@@ -361,3 +361,10 @@ function GetVisibleAbilityInSlot(unit, slot) {
     }
   }
 }
+
+function tryLocalize(token) {
+  const localized = $.Localize(token);
+  if (token !== localized) {
+    return localized;
+  }
+}

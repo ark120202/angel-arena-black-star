@@ -5,7 +5,11 @@ local npc_heroes = LoadKeyValues("scripts/npc/npc_heroes.txt")
 local npc_abilities = LoadKeyValues("scripts/npc/npc_abilities.txt")
 
 local function addTalent(talentName, heroName)
-	local newValues = GetAbilitySpecial(talentName)
+	local specialValues = GetAbilitySpecial(talentName)
+	-- GetAbilitySpecial should return all levels
+	for key, value in pairs(specialValues) do
+		specialValues[key] = { value }
+	end
 
 	if NATIVE_TALENTS[talentName] ~= nil then
 		if NATIVE_TALENTS[talentName] == false then
@@ -16,7 +20,7 @@ local function addTalent(talentName, heroName)
 				group = 1,
 				icon = heroName,
 				requirement = heroName,
-				special_values = newValues,
+				special_values = specialValues,
 				effect = { abilities = talentName }
 			}, NATIVE_TALENTS[talentName])
 		end

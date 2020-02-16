@@ -17,21 +17,13 @@ function LoadTalentTable(table) {
   });
 }
 
-function SpecialValuesArrayToString(values, level, percent) {
-  if (typeof values !== 'object') {
-    if (level === 0) return percent ? values + '%' : values;
-    else return "<font color='gold'>" + (percent ? values + '%' : values) + '</font>';
-  } else {
-    var text = '';
-    _.each(values, function(value, index) {
-      if (index++ === level)
-        text = text + "<font color='gold'>" + (percent ? value + '%' : value) + '</font>' + '/';
-      else text = text + (percent ? value + '%' : value) + '/';
-    });
-    text = text.slice(0, -1);
-    return text;
-  }
-}
+const formatTalentSpecialValues = (values, level, percent) =>
+  Object.values(values)
+    .map((value, index) => {
+      const formatted = percent ? value + '%' : value;
+      return index + 1 === level ? "<font color='gold'>" + formatted + '</font>' : formatted;
+    })
+    .join('/');
 
 function getTalentTitle(talent) {
   if (!talent.name.startsWith('special_bonus_unique_')) {
@@ -49,59 +41,28 @@ function CreateTalent(talent, root) {
   panel.AddClass('TalentIcon');
   panel.SetImage(TransformTextureToPath(talent.icon, 'icon'));
   var CreateTooltip = function() {
-    var description = $.Localize('custom_talents_' + talent.name + '_description');
-    if (description === 'custom_talents_' + talent.name + '_description') description = undefined;
-    var title = getTalentTitle(talent);
-    if (talent.special_values != null)
-      _.each(talent.special_values, function(values, key) {
-        if (description)
-          description = description
-            .replace(
-              '{' + key + '}',
-              SpecialValuesArrayToString(
-                values,
-                GetTalentLevel(
-                  Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()),
-                  talent.name,
-                ),
-              ),
-            )
-            .replace(
-              '{%' + key + '%}',
-              SpecialValuesArrayToString(
-                values,
-                GetTalentLevel(
-                  Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()),
-                  talent.name,
-                ),
-                true,
-              ),
-            );
-        title = title
-          .replace(
-            '{' + key + '}',
-            SpecialValuesArrayToString(
-              values,
-              GetTalentLevel(
-                Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()),
-                talent.name,
-              ),
-            ),
-          )
-          .replace(
-            '{%' + key + '%}',
-            SpecialValuesArrayToString(
-              values,
-              GetTalentLevel(
-                Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()),
-                talent.name,
-              ),
-              true,
-            ),
-          );
-      });
+    const talentLevel = GetTalentLevel(
+      Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()),
+      talent.name,
+    );
+
+    let title = getTalentTitle(talent);
+    let description = tryLocalize(`custom_talents_${talent.name}_description`);
+    for (const [key, values] of Object.entries(talent.special_values || {})) {
+      title = title
+        .replace(`{${key}}`, formatTalentSpecialValues(values, talentLevel))
+        .replace(`{%${key}%}`, formatTalentSpecialValues(values, talentLevel, true));
+
+      if (description) {
+        description = description
+          .replace(`{${key}}`, formatTalentSpecialValues(values, talentLevel))
+          .replace(`{%${key}%}`, formatTalentSpecialValues(values, talentLevel, true));
+      }
+    }
+
     title = title.replace('+', '%2B');
     if (description) description = description.replace('+', '%2B');
+
     var params =
       'title=' +
       title +
@@ -113,9 +74,10 @@ function CreateTalent(talent, root) {
       talent.requirement +
       '&levelText=' +
       $.Localize('custom_talents_level') +
-      GetTalentLevel(Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()), talent.name) +
+      talentLevel +
       '/' +
       (talent.max_level || 1);
+
     $.DispatchEvent(
       'UIShowCustomLayoutParametersTooltip',
       panel,
@@ -205,11 +167,7 @@ function Update() {
   CustomHooks.custom_talents_toggle_tree.tap(function() {
     $.GetContextPanel().ToggleClass('PanelOpened');
   });
-  DynamicSubscribePTListener('custom_talents_data', function(
-    tableName,
-    changesObject,
-    deletionsObject,
-  ) {
+  DynamicSubscribePTListener('custom_talents_data', (_name, changesObject) => {
     groupLevelMap = changesObject.groupLevelMap;
     LoadTalentTable(changesObject.talentList);
   });

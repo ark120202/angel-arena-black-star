@@ -145,7 +145,7 @@ function RecieveMessage(data) {
   } else if (data.localizable) {
     let localized = $.Localize(data.localizable);
 
-    for (const [name, value] in Object.entries(data.variables || {})) {
+    for (const [name, value] of Object.entries(data.variables || {})) {
       localized = localized.replace(name, $.Localize(value));
     }
 

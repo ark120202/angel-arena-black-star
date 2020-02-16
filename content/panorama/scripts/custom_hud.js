@@ -285,7 +285,7 @@ function OnSkillPoint() {
     Entities.GetAbilityPoints(unit) > 0 &&
     Entities.IsControllableByPlayer(unit, Game.GetLocalPlayerID());
 
-  // levelStatsFrame resets `CanLevelStats` class every frame
+  // levelStatsFrame resets `CanLevelStats` class every frame, so add class to it's parent
   levelStatsFrame.GetParent().SetHasClass('CanLevelStats', canLevelStats);
   levelStatsFrame.visible = canLevelStats;
 }
