@@ -6,12 +6,12 @@ const ONCLICK_PURGABLE_MODIFIERS = new Set([
 var BossDropVoteTimers = [],
   HookedAbilityPanelsCount = 0;
 
-const goldLabel = FindDotaHudElement('ShopButton').FindChildTraverse('GoldLabel');
-const abilitiesPanel = FindDotaHudElement('abilities');
-const minimapBlock = FindDotaHudElement('minimap_block');
-const portraitContainer = FindDotaHudElement('PortraitContainer');
-const chatLinesPanel = FindDotaHudElement('ChatLinesPanel');
-const levelStatsFrame = FindDotaHudElement('level_stats_frame');
+const goldLabel = findDotaHudElement('ShopButton').FindChildTraverse('GoldLabel');
+const abilitiesPanel = findDotaHudElement('abilities');
+const minimapBlock = findDotaHudElement('minimap_block');
+const portraitContainer = findDotaHudElement('PortraitContainer');
+const chatLinesPanel = findDotaHudElement('ChatLinesPanel');
+const levelStatsFrame = findDotaHudElement('level_stats_frame');
 const dynamicMinimapRoot = $('#DynamicMinimapRoot');
 const customModifiersList = $('#CustomModifiersList');
 function updatePanoramaHacks() {
@@ -123,19 +123,19 @@ function UpdateGoldLabel(playerTeam, unit, label) {
 }
 
 function applyPanoramaHacks() {
-  FindDotaHudElement('QuickBuyRows').visible = false;
-  FindDotaHudElement('shop').visible = false;
-  FindDotaHudElement('HUDSkinMinimap').visible = false;
-  FindDotaHudElement('combat_events').visible = false;
-  FindDotaHudElement('ChatEmoticonButton').visible = false;
-  FindDotaHudElement('topbar').visible = false;
-  FindDotaHudElement('DeliverItemsButton').style.horizontalAlign = 'right';
-  FindDotaHudElement('LevelLabel').style.width = '100%';
-  FindDotaHudElement('stash').style.marginBottom = '47px';
+  findDotaHudElement('QuickBuyRows').visible = false;
+  findDotaHudElement('shop').visible = false;
+  findDotaHudElement('HUDSkinMinimap').visible = false;
+  findDotaHudElement('combat_events').visible = false;
+  findDotaHudElement('ChatEmoticonButton').visible = false;
+  findDotaHudElement('topbar').visible = false;
+  findDotaHudElement('DeliverItemsButton').style.horizontalAlign = 'right';
+  findDotaHudElement('LevelLabel').style.width = '100%';
+  findDotaHudElement('stash').style.marginBottom = '47px';
 
-  const shopButton = FindDotaHudElement('ShopButton');
-  const statBranch = FindDotaHudElement('StatBranch');
-  const chatLinesWrapper = FindDotaHudElement('ChatLinesWrapper');
+  const shopButton = findDotaHudElement('ShopButton');
+  const statBranch = findDotaHudElement('StatBranch');
+  const chatLinesWrapper = findDotaHudElement('ChatLinesWrapper');
   const statsLevelUpTab = levelStatsFrame.FindChildTraverse('LevelUpTab');
 
   shopButton.FindChildTraverse('BuybackHeader').visible = false;
@@ -189,7 +189,7 @@ function applyPanoramaHacks() {
   });
   setCustomChatContainer(chatContainer);
 
-  const statsTooltipRegion = FindDotaHudElement('stats_tooltip_region');
+  const statsTooltipRegion = findDotaHudElement('stats_tooltip_region');
   statsTooltipRegion.SetPanelEvent('onmouseout', () => {
     $.DispatchEvent('DOTAHUDHideDamageArmorTooltip');
   });
@@ -198,7 +198,7 @@ function applyPanoramaHacks() {
 
     const unit = Players.GetLocalPlayerPortraitUnit();
     const customValues = Entities.GetNetworkableEntityInfo(unit);
-    const tooltip = FindDotaHudElement('DOTAHUDDamageArmorTooltip');
+    const tooltip = findDotaHudElement('DOTAHUDDamageArmorTooltip');
     if (!tooltip || !customValues) return;
 
     const attackRate =
@@ -234,7 +234,7 @@ function applyPanoramaHacks() {
     }
   });
 
-  const InventoryContainer = FindDotaHudElement('InventoryContainer');
+  const InventoryContainer = findDotaHudElement('InventoryContainer');
   _.each(InventoryContainer.FindChildrenWithClassTraverse('InventoryItem'), (child, index) => {
     child.FindChildTraverse('AbilityButton').SetPanelEvent('onactivate', () => {
       const item = Entities.GetItemInSlot(Players.GetLocalPlayerPortraitUnit(), index);
@@ -252,7 +252,7 @@ function applyPanoramaHacks() {
     });
   });
 
-  var xpRoot = FindDotaHudElement('xp');
+  var xpRoot = findDotaHudElement('xp');
   for (const panel of [
     xpRoot.FindChildTraverse('LevelBackground'),
     xpRoot.FindChildTraverse('CircularXPProgress'),
@@ -273,7 +273,7 @@ GameEvents.Subscribe('dota_player_update_selected_unit', OnUpdateSelectedUnit);
 GameEvents.Subscribe('dota_player_update_query_unit', OnUpdateSelectedUnit);
 function OnUpdateSelectedUnit() {
   const unitName = GetHeroName(Players.GetLocalPlayerPortraitUnit());
-  FindDotaHudElement('UnitNameLabel').text = $.Localize(unitName).toUpperCase();
+  findDotaHudElement('UnitNameLabel').text = $.Localize(unitName).toUpperCase();
   OnSkillPoint();
 }
 
@@ -290,7 +290,7 @@ function OnSkillPoint() {
   levelStatsFrame.visible = canLevelStats;
 }
 
-const killedByHeroName = FindDotaHudElement('KilledByHeroName');
+const killedByHeroName = findDotaHudElement('KilledByHeroName');
 GameEvents.Subscribe('entity_killed', event => {
   if (event.entindex_killed === Game.GetLocalPlayerInfo().player_selected_hero_entity_index) {
     const killerOwner = Entities.GetPlayerOwnerID(event.entindex_attacker);
@@ -426,8 +426,8 @@ function CreateHeroElements(id) {
 _DynamicMinimapSubscribe($('#DynamicMinimapRoot'));
 
 const { landscape, gamemode } = Options.GetMapInfo();
-hud.AddClass(`map_landscape_${landscape}`);
-hud.AddClass(`map_gamesome_${gamemode}`);
+dotaHud.AddClass(`map_landscape_${landscape}`);
+dotaHud.AddClass(`map_gamesome_${gamemode}`);
 
 $.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
 DynamicSubscribePTListener('players_abandoned', (_name, changes) => {

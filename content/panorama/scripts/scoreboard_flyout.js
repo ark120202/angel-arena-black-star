@@ -46,7 +46,7 @@ function Snippet_Player(playerId) {
       panel.playerId = playerId;
       panel.SetHasClass('EmptyPlayerRow', false);
       panel.SetHasClass('LocalPlayer', playerId === Game.GetLocalPlayerID());
-      var xpRoot = FindDotaHudElement('ScoreboardXP');
+      var xpRoot = findDotaHudElement('ScoreboardXP');
       _.each(
         [
           xpRoot.FindChildTraverse('LevelBackground'),

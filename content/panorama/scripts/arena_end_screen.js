@@ -148,7 +148,7 @@ function OnGameResult(gameResult) {
 (function() {
   GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false);
   GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME_CHAT, false);
-  FindDotaHudElement('GameEndContainer').visible = false;
+  findDotaHudElement('GameEndContainer').visible = false;
 
   $.GetContextPanel().SetHasClass('ShowMMR', Options.IsEquals('EnableRatingAffection'));
   $.GetContextPanel().RemoveClass('FadeOut');

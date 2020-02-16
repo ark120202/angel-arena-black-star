@@ -17,7 +17,7 @@ var SelectedHeroPanel,
 
 function HeroSelectionEnd(bImmidate) {
   $.GetContextPanel().style.opacity = 0;
-  hud.GetChild(0).RemoveClass('IsBeforeGameplay');
+  dotaHud.GetChild(0).RemoveClass('IsBeforeGameplay');
   $.Schedule(bImmidate ? 0 : 1.6, function() {
     //1.5 + 0.1
     MainPanel.visible = false;
@@ -97,7 +97,7 @@ function UpdateTimer() {
     (SelectionTimerEndTime || Number.MIN_SAFE_INTEGER) - Game.GetGameTime();
   if (SelectionTimerRemainingTime > 0) {
     if (HeroSelectionState < HERO_SELECTION_PHASE_END) {
-      hud.GetChild(0).AddClass('IsBeforeGameplay');
+      dotaHud.GetChild(0).AddClass('IsBeforeGameplay');
     }
     $('#HeroSelectionTimer').text = Math.ceil(SelectionTimerRemainingTime);
     SearchHero();
@@ -272,7 +272,7 @@ function OnLocalPlayerPicked() {
   FillAbilitiesUI($('#HeroPreviewAbilities'), localHeroData.abilities, 'HeroPreviewAbility');
   FillAttributeUI($('#HeroPreviewAttributes'), localHeroData.attributes);
 
-  var GlobalLoadoutItems = FindDotaHudElement('GlobalLoadoutItems');
+  var GlobalLoadoutItems = findDotaHudElement('GlobalLoadoutItems');
   if (GlobalLoadoutItems) {
     GlobalLoadoutItems.SetParent($('#GlobalLoadoutContainer'));
     //Custom styles

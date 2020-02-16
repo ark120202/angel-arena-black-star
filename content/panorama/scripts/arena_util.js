@@ -1,13 +1,9 @@
 'use strict';
 
-//Libraries
-var PlayerTables = GameUI.CustomUIConfig().PlayerTables;
-var _ = GameUI.CustomUIConfig()._;
-var Options = GameUI.CustomUIConfig().Options;
-var RegisterKeyBind = GameUI.CustomUIConfig().RegisterKeyBind;
-var CustomHooks = GameUI.CustomUIConfig().CustomHooks;
+// Shared libraries
+var { _, PlayerTables, Options, RegisterKeyBind, CustomHooks } = GameUI.CustomUIConfig();
 
-var console = {
+const console = {
   log(...args) {
     $.Msg(args.map(x => (typeof x === 'object' ? JSON.stringify(x, null, 4) : x)).join('\t'));
   },
@@ -210,7 +206,8 @@ function DynamicSubscribeNTListener(table, callback, OnConnectedCallback) {
   }
 }
 
-const hud = (() => {
+const findDotaHudElement = id => dotaHud.FindChildTraverse(id);
+const dotaHud = (() => {
   let panel = $.GetContextPanel();
   while (panel) {
     if (panel.id === 'DotaHud') return panel;
@@ -267,10 +264,6 @@ function AddStyle(panel, table) {
   for (var k in table) {
     panel.style[k] = table[k];
   }
-}
-
-function FindDotaHudElement(id) {
-  return hud.FindChildTraverse(id);
 }
 
 // TODO: Default

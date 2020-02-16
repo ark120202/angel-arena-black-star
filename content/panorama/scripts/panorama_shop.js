@@ -521,13 +521,13 @@ function UpdateShop() {
     _.each(SmallItems, function(panel) {
       UpdateSmallItem(panel, gold);
     });
-  //$.GetContextPanel().SetHasClass("InRangeOfShop", Entities.IsInRangeOfShop(m_QueryUnit, 0, true))
+  // $.GetContextPanel().SetHasClass("InRangeOfShop", Entities.IsInRangeOfShop(m_QueryUnit, 0, true))
 }
 
 function AutoUpdateShop() {
   UpdateShop();
   $.Schedule(0.5, AutoUpdateShop);
-  //OpenCloseShop(FindDotaHudElement("shop").BHasClass("ShopOpen"));
+  // OpenCloseShop(findDotaHudElement("shop").BHasClass("ShopOpen"));
 }
 
 function AutoUpdateQuickbuy() {
