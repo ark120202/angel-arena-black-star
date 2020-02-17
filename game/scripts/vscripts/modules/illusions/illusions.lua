@@ -26,25 +26,6 @@ function Illusions:_copyAbilities(unit, illusion)
 	end
 end
 
-function Illusions:_copyItems(unit, illusion)
-	for slot = 0, 5 do
-		local illusionItem = illusion:GetItemInSlot(slot)
-		if illusionItem then
-			illusion:RemoveItem(illusionItem)
-		end
-	end
-
-	for slot = 0, 5 do
-		local item = unit:GetItemInSlot(slot)
-		if item then
-			local illusionItem = CreateItem(item:GetName(), illusion, illusion)
-			illusionItem:SetCurrentCharges(item:GetCurrentCharges())
-			illusionItem.suggestedSlot = slot
-			illusion:AddItem(illusionItem)
-		end
-	end
-end
-
 function Illusions:_copyShards(unit, illusion)
 	if unit.Additional_str then
 		illusion:ModifyStrength(unit.Additional_str)
@@ -70,13 +51,6 @@ function Illusions:_copyShards(unit, illusion)
 	end
 end
 
-function Illusions:_copyLevel(unit, illusion)
-	local level = unit:GetLevel()
-	for i = 1, level - 1 do
-		illusion:HeroLevelUp(false)
-	end
-end
-
 function Illusions:_copyAppearance(unit, illusion)
 	illusion:SetModelScale(unit:GetModelScale())
 	if unit:GetModelName() ~= illusion:GetModelName() then
@@ -91,9 +65,7 @@ function Illusions:_copyAppearance(unit, illusion)
 end
 
 function Illusions:_copyEverything(unit, illusion)
-	illusion:SetAbilityPoints(0)
 	Illusions:_copyAbilities(unit, illusion)
-	Illusions:_copyItems(unit, illusion)
 	Illusions:_copyAppearance(unit, illusion)
 
 	if unit.overrideUnitName then

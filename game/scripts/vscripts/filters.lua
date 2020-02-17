@@ -324,9 +324,5 @@ function GameMode:ItemAddedToInventoryFilter(filterTable)
 		return false
 	end
 
-	if item.suggestedSlot then
-		filterTable.suggested_slot = item.suggestedSlot
-		item.suggestedSlot = nil
-	end
 	return true
 end
