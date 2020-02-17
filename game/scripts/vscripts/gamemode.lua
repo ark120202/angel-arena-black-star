@@ -43,6 +43,7 @@ local modifiers = {
 	modifier_arena_hero = "modifiers/modifier_arena_hero",
 	modifier_item_demon_king_bar_curse = "items/modifier_item_demon_king_bar_curse",
 	modifier_hero_out_of_game = "modifiers/modifier_hero_out_of_game",
+	modifier_arena_event_proxy = "modifiers/modifier_arena_event_proxy",
 
 	modifier_item_shard_attackspeed_stack = "modifiers/modifier_item_shard_attackspeed_stack",
 }
@@ -78,6 +79,9 @@ function GameMode:InitGameMode()
 	PlayerTables:CreateTable("gold", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("weather", {}, AllPlayersInterval)
 	PlayerTables:CreateTable("disable_help_data", {[0] = {}, [1] = {}, [2] = {}, [3] = {}, [4] = {}, [5] = {}, [6] = {}, [7] = {}, [8] = {}, [9] = {}, [10] = {}, [11] = {}, [12] = {}, [13] = {}, [14] = {}, [15] = {}, [16] = {}, [17] = {}, [18] = {}, [19] = {}, [20] = {}, [21] = {}, [22] = {}, [23] = {}}, AllPlayersInterval)
+
+	GLOBAL_DUMMY = CreateUnitByName("npc_dummy_unit", Vector(0, 0, 0), false, nil, nil, DOTA_TEAM_NEUTRALS)
+	GLOBAL_DUMMY:AddNewModifier(GLOBAL_DUMMY, nil, "modifier_arena_event_proxy", nil)
 end
 
 function GameMode:OnFirstPlayerLoaded()

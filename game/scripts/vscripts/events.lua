@@ -218,6 +218,14 @@ function GameMode:OnEntityKilled(keys)
 	end
 end
 
+-- Expired illusions don't trigger entity_killed event
+Events:Register("OnDeath", function(event)
+	local unit = event.unit
+	if unit:IsIllusion() then
+		unit:ClearNetworkableEntityInfo()
+	end
+end)
+
 -- This function is called once when the player fully connects and becomes "Ready" during Loading
 function GameMode:OnConnectFull(keys)
 	if GameRules:State_Get() >= DOTA_GAMERULES_STATE_PRE_GAME and PlayerResource:IsBanned(keys.PlayerID) then
