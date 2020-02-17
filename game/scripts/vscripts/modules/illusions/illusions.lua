@@ -53,11 +53,12 @@ end
 
 function Illusions:_copyAppearance(unit, illusion)
 	illusion:SetModelScale(unit:GetModelScale())
+	-- TODO: Is it necessary only for illusions of non-hero units?
 	if unit:GetModelName() ~= illusion:GetModelName() then
-		illusion.ModelOverride = unit:GetModelName()
-		illusion:SetModel(illusion.ModelOverride)
-		illusion:SetOriginalModel(illusion.ModelOverride)
+		illusion:SetModel(unit:GetModelName())
+		illusion:SetOriginalModel(unit:GetModelName())
 	end
+
 	local rc = unit:GetRenderColor()
 	if rc ~= Vector(255, 255, 255) then
 		illusion:SetRenderColor(rc.x, rc.y, rc.z)

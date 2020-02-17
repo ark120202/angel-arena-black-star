@@ -50,11 +50,6 @@ function GameMode:OnNPCSpawned(keys)
 
 	DynamicWearables:AutoEquip(npc)
 
-	if npc.ModelOverride then
-		npc:SetModel(npc.ModelOverride)
-		npc:SetOriginalModel(npc.ModelOverride)
-	end
-
 	if not npc:IsWukongsSummon() then
 		npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
 	end
