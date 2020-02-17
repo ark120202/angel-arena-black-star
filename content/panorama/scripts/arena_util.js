@@ -117,7 +117,9 @@ function TransformTextureToPath(texture, optPanelImageStyle) {
 
 function GetHeroName(unit) {
   var data = GameUI.CustomUIConfig().custom_entity_values[unit || -1];
-  return data != null && data.unit_name != null ? data.unit_name : Entities.GetUnitName(unit);
+  return data != null && data.overrideUnitName != null
+    ? data.overrideUnitName
+    : Entities.GetUnitName(unit);
 }
 
 function GetPlayerHeroName(playerId) {

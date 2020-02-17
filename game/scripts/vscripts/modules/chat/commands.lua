@@ -198,7 +198,7 @@ return {
 				HeroSelection:InitializeHeroClass(heroEntity, heroTableCustom)
 				if heroTableCustom.base_hero then
 					TransformUnitClass(heroEntity, heroTableCustom)
-					heroEntity.UnitName = heroName
+					heroEntity:SetOverrideUnitName(heroName)
 				end
 			end
 		end

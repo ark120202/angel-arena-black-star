@@ -22,8 +22,13 @@ function CDOTA_BaseNPC:IsRealCreep()
 	return self.SSpawner ~= nil and self.SpawnerType ~= nil
 end
 
+function CDOTA_BaseNPC:SetOverrideUnitName(name)
+	self.overrideUnitName = name
+	self:SetNetworkableEntityInfo("overrideUnitName", name)
+end
+
 function CDOTA_BaseNPC:GetFullName()
-	return self.UnitName or (self.GetUnitName and self:GetUnitName()) or self:GetName()
+	return self.overrideUnitName or self:GetUnitName()
 end
 
 function CDOTA_BaseNPC:DestroyAllModifiers()
