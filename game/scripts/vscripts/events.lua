@@ -48,25 +48,33 @@ function GameMode:OnNPCSpawned(keys)
 		if tempestDoubleAbility then tempestDoubleAbility:SetLevel(0) end
 	end
 
-	Timers:NextTick(function()
-		if not IsValidEntity(npc) or not npc:IsAlive() then return end
-		local illusionParent = npc:GetIllusionParent()
-		if illusionParent then Illusions:_copyEverything(illusionParent, npc) end
+	DynamicWearables:AutoEquip(npc)
 
-		DynamicWearables:AutoEquip(npc)
-		if npc.ModelOverride then
-			npc:SetModel(npc.ModelOverride)
-			npc:SetOriginalModel(npc.ModelOverride)
+	if npc.ModelOverride then
+		npc:SetModel(npc.ModelOverride)
+		npc:SetOriginalModel(npc.ModelOverride)
+	end
+
+	if not npc:IsWukongsSummon() then
+		npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
+	end
+
+	if npc:IsTrueHero() then
+		npc:ApplyDelayedTalents()
+		CustomAbilities:RandomOMGRollAbilities(npc)
+		if not npc.OnDuel and Duel:IsDuelOngoing() then
+			Duel:SetUpVisitor(npc)
 		end
-		if not npc:IsWukongsSummon() then
-			npc:AddNewModifier(npc, nil, "modifier_arena_hero", nil)
-			if npc:IsTrueHero() then
-				npc:ApplyDelayedTalents()
-				CustomAbilities:RandomOMGRollAbilities(npc)
-				if not npc.OnDuel and Duel:IsDuelOngoing() then
-					Duel:SetUpVisitor(npc)
-				end
-			end
+	end
+
+	-- modifier_illusion is applied after spawn event (even for native illusions)
+	Timers:NextTick(function()
+		if not IsValidEntity(npc) and npc:IsAlive() then return end
+
+		local illusionParent = npc:GetIllusionParent()
+		-- TODO: Leaks memory?
+		if illusionParent and npc.isCustomIllusion then
+			Illusions:_copyEverything(illusionParent, npc)
 		end
 	end)
 end

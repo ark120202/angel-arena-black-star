@@ -54,16 +54,15 @@ function CustomRunes:ActivateRune(unit, runeType, rune_multiplier)
 	elseif runeType == ARENA_RUNE_HASTE then
 		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_haste", {duration = settings.duration}):SetStackCount(settings.movespeed)
 	elseif runeType == ARENA_RUNE_ILLUSION then
-		for i = 1, settings.illusion_count do
-			Illusions:create({
-				unit = unit,
-				ability = CustomRunes.ModifierApplier,
-				origin = unit:GetAbsOrigin() + RandomVector(100),
-				damageIncoming = settings.illusion_incoming_damage,
-				damageOutgoing = settings.illusion_outgoing_damage,
-				duration = settings.duration,
-			})
-		end
+		Illusions:create({
+			unit = unit,
+			count = settings.illusion_count,
+			padding = 100,
+			scramblePosition = true,
+			damageIncoming = settings.illusion_incoming_damage,
+			damageOutgoing = settings.illusion_outgoing_damage,
+			duration = settings.duration,
+		})
 	elseif runeType == ARENA_RUNE_INVISIBILITY then
 		unit:AddNewModifier(unit, CustomRunes.ModifierApplier, "modifier_arena_rune_invisibility", {duration = settings.duration})
 	elseif runeType == ARENA_RUNE_REGENERATION then

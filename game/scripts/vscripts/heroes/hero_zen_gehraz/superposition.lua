@@ -3,22 +3,25 @@ function Superposition(keys)
 	local ability = keys.ability
 	local point = keys.target_points[1]
 	local distance = ability:GetAbilitySpecial("distance")
-	local abs = caster:GetAbsOrigin()
-	if (point - abs):Length2D() > distance then
-		point = abs + (point - abs):Normalized() * distance
+	local castPosition = caster:GetAbsOrigin()
+	if (point - castPosition):Length2D() > distance then
+		point = castPosition + (point - castPosition):Normalized() * distance
 	end
-	FindClearSpaceForUnit(caster, point, false)
-	caster:EmitSound("Arena.Hero_ZenGehraz.Superposition")
+
 	local illusion_duration = ability:GetAbilitySpecial("illusion_duration")
 	local illusion = Illusions:create({
 		unit = caster,
-		ability = ability,
-		origin = abs,
 		damageIncoming = ability:GetAbilitySpecial("illusion_damage_percent_incoming"),
 		damageOutgoing = ability:GetAbilitySpecial("illusion_damage_percent_outgoing"),
 		duration = illusion_duration,
-	})
-	if ability.LastInterruptedAbilityTime and GameRules:GetGameTime() - ability.LastInterruptedAbilityTime < 0.5 and ability.LastInterruptedAbility and ability.LastInterruptedAbilityCastTime then
+	})[1]
+
+	FindClearSpaceForUnit(caster, point, false)
+	caster:EmitSound("Arena.Hero_ZenGehraz.Superposition")
+
+	Timers:NextTick(function()
+		if not (ability.LastInterruptedAbilityTime and GameRules:GetGameTime() - ability.LastInterruptedAbilityTime < 0.5 and ability.LastInterruptedAbility and ability.LastInterruptedAbilityCastTime) then return end
+
 		local name = ability.LastInterruptedAbility:GetAbilityName()
 		local illusion_ability = illusion:FindAbilityByName(name)
 		local channel_time = math.min(illusion_duration, illusion_ability:GetAbilitySpecial("channel_time") - (GameRules:GetGameTime() - ability.LastInterruptedAbilityCastTime))
@@ -52,7 +55,7 @@ function Superposition(keys)
 				illusion_ability:ApplyDataDrivenModifier(illusion, illusion, "modifier_zen_gehraz_vow_of_silence", {duration = channel_time})
 			end
 		end
-	end
+	end)
 end
 
 function OnChanneledAbilityInterrupted(keys)

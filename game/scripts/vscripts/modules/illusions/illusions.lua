@@ -109,40 +109,23 @@ function Illusions:_copyEverything(unit, illusion)
 end
 
 function Illusions:create(info)
-	local ability = info.ability
-	local unit = info.unit
-	local origin = info.origin or unit:GetAbsOrigin()
-	local team = info.team or unit:GetTeamNumber()
-	local isOwned = info.isOwned
-	if isOwned == nil then isOwned = true end
+	local illusions = CreateIllusions(
+		info.owner or info.unit,
+		info.unit,
+		{
+			duration = info.duration,
+			outgoing_damage = info.damageOutgoing - 100,
+			incoming_damage = info.damageIncoming - 100,
+		},
+		info.count or 1,
+		info.padding or 0,
+		info.scramblePosition or false,
+		true
+	)
 
-	local source = unit
-	local replicateModifier = unit:FindModifierByName("modifier_morphling_replicate")
-	if replicateModifier then
-		source = replicateModifier:GetCaster()
+	for _, illusion in ipairs(illusions) do
+		illusion.isCustomIllusion = true
 	end
 
-	local illusion = CreateUnitByName(
-		source:GetUnitName(),
-		origin,
-		true,
-		isOwned and unit or nil,
-		isOwned and source:GetPlayerOwner() or nil,
-		team
-	)
-	if isOwned then illusion:SetControllableByPlayer(unit:GetPlayerID(), true) end
-	FindClearSpaceForUnit(illusion, origin, true)
-	illusion:SetForwardVector(unit:GetForwardVector())
-
-	Illusions:_copyLevel(unit, illusion)
-
-	illusion.isCustomIllusion = true
-	illusion:AddNewModifier(unit, ability, "modifier_illusion", {
-		duration = info.duration,
-		outgoing_damage = info.damageOutgoing - 100,
-		incoming_damage = info.damageIncoming - 100,
-	})
-	illusion:MakeIllusion()
-
-	return illusion
+	return illusions
 end

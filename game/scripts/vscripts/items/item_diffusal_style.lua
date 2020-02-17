@@ -25,20 +25,15 @@ end
 function modifier_item_diffusal_style_invulnerability_on_destroy(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	local caster_origin = caster:GetAbsOrigin()
-	FindClearSpaceForUnit(caster, caster_origin + RandomVector(100), true)
-	caster.MantaIllusions = {}
-	for i = 1, ability:GetLevelSpecialValueFor("images_count", ability:GetLevel()-1) do
-		local illusion = Illusions:create({
-			unit = caster,
-			ability = ability,
-			origin = caster_origin + RandomVector(100),
-			damageIncoming = ability:GetSpecialValueFor("illusion_damage_percent_incoming_tooltip"),
-			damageOutgoing = ability:GetSpecialValueFor("illusion_damage_percent_outgoing_tooltip"),
-			duration = ability:GetSpecialValueFor("illusion_duration"),
-		})
-		table.insert(caster.MantaIllusions, illusion)
-	end
+	caster.MantaIllusions = Illusions:create({
+		unit = caster,
+		count = ability:GetSpecialValueFor("images_count"),
+		padding = 100,
+		scramblePosition = true,
+		damageIncoming = ability:GetSpecialValueFor("illusion_damage_percent_incoming_tooltip"),
+		damageOutgoing = ability:GetSpecialValueFor("illusion_damage_percent_outgoing_tooltip"),
+		duration = ability:GetSpecialValueFor("illusion_duration"),
+	})
 
 	caster:RemoveNoDraw()
 end
