@@ -67,8 +67,7 @@ function GameMode:OnNPCSpawned(keys)
 		if not IsValidEntity(npc) and npc:IsAlive() then return end
 
 		local illusionParent = npc:GetIllusionParent()
-		-- TODO: Leaks memory?
-		if illusionParent and npc.isCustomIllusion then
+		if illusionParent then
 			Illusions:_copyEverything(illusionParent, npc)
 		end
 	end)

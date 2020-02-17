@@ -99,9 +99,5 @@ function Illusions:create(info)
 		true
 	)
 
-	for _, illusion in ipairs(illusions) do
-		illusion.isCustomIllusion = true
-	end
-
 	return illusions
 end
