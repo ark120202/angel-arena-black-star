@@ -30,10 +30,6 @@ function FindFountain(team)
 	return Entities:FindByName(nil, "npc_arena_fountain_" .. team)
 end
 
-function HasDamageFlag(damage_flags, flag)
-	return bit.band(damage_flags, flag) == flag
-end
-
 function ReplaceAbilities(unit, oldAbility, newAbility, keepLevel, keepCooldown)
 	local ability = unit:FindAbilityByName(oldAbility)
 	local level = ability:GetLevel()
@@ -293,24 +289,12 @@ function GetTrueItemCost(name)
 	return cost
 end
 
-function GetNotScaledDamage(damage, unit)
-	return damage / (1 + unit:GetSpellAmplification(false))
-end
-
 function IsUltimateAbility(ability)
 	return bit.band(ability:GetAbilityType(), 1) == 1
 end
 
 function IsUltimateAbilityKV(abilityname)
 	return GetKeyValue(abilityname, "AbilityType") == "DOTA_ABILITY_TYPE_ULTIMATE"
-end
-
-function RandomPositionAroundPoint(pos, radius)
-	return RotatePosition(pos, QAngle(0, RandomInt(0,359), 0), pos + Vector(1, 1, 0) * RandomInt(0, radius))
-end
-
-function EvalString(str)
-	return DebugCallFunction(loadstring(str))
 end
 
 function GetPlayersInTeam(team)
@@ -456,8 +440,7 @@ function GetPreMitigationDamage(value, victim, attacker, damagetype)
 end
 
 function SimpleDamageReflect(victim, attacker, damage, flags, ability, damage_type)
-	if victim:IsAlive() and not HasDamageFlag(flags, DOTA_DAMAGE_FLAG_REFLECTION) and attacker:GetTeamNumber() ~= victim:GetTeamNumber() then
-		--print("Reflected " .. damage .. " damage from " .. victim:GetUnitName() .. " to " .. attacker:GetUnitName())
+	if victim:IsAlive() and bit.band(flags, DOTA_DAMAGE_FLAG_REFLECTION) == 0 and attacker:GetTeamNumber() ~= victim:GetTeamNumber() then
 		ApplyDamage({
 			victim = attacker,
 			attacker = victim,

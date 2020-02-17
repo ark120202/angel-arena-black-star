@@ -139,7 +139,6 @@ end
 
 function GameMode:DamageFilter(filterTable)
 	local damagetype_const = filterTable.damagetype_const
-	local damage = filterTable.damage
 	local inflictor
 	if filterTable.entindex_inflictor_const then
 		inflictor = EntIndexToHScript(filterTable.entindex_inflictor_const)
@@ -166,10 +165,10 @@ function GameMode:DamageFilter(filterTable)
 			end
 
 			if SPELL_AMPLIFY_NOT_SCALABLE_MODIFIERS[inflictorname] and attacker:IsHero() then
-				filterTable.damage = GetNotScaledDamage(filterTable.damage, attacker)
+				filterTable.damage = filterTable.damage / (1 + attacker:GetSpellAmplification(false))
 			end
 			if BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] and victim:IsBoss() then
-				filterTable.damage = damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
+				filterTable.damage = filterTable.damage * BOSS_DAMAGE_ABILITY_MODIFIERS[inflictorname] * 0.01
 			end
 		end
 		if victim:IsBoss() and (attacker:GetAbsOrigin() - victim:GetAbsOrigin()):Length2D() > 950 then
@@ -182,11 +181,11 @@ function GameMode:DamageFilter(filterTable)
 		local function ProcessDamageModifier(v)
 			local multiplier
 			if type(v) == "function" then
-				multiplier = v(attacker, victim, inflictor, damage, damagetype_const)
+				multiplier = v(attacker, victim, inflictor, filterTable.damage, damagetype_const)
 			elseif type(v) == "table" then
 				if v.multiplier then
 					if type(v.multiplier) == "function" then
-						multiplier = v.multiplier(attacker, victim, inflictor, damage, damagetype_const)
+						multiplier = v.multiplier(attacker, victim, inflictor, filterTable.damage, damagetype_const)
 					else
 						multiplier = v.multiplier
 					end

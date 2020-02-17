@@ -25,7 +25,7 @@ end
 function CDOTABaseAbility:ClearFalseInnateModifiers()
 	if self:GetKeyValue("HasInnateModifiers") ~= 1 then
 		for _,v in ipairs(self:GetCaster():FindAllModifiers()) do
-			if v:GetAbility() and v:GetAbility() == self then
+			if v:GetAbility() == self then
 				v:Destroy()
 			end
 		end

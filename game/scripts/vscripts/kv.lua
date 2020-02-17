@@ -115,7 +115,7 @@ function SummonUnit(keys)
 	for i = 1, keys.amount or 1 do
 		local pos = (keys.position or caster):GetAbsOrigin()
 		if keys.summon_random_radius then
-			pos = RandomPositionAroundPoint(pos, keys.summon_random_radius)
+			pos = pos + RandomVector(RandomInt(0, keys.summon_random_radius))
 		end
 		local unit = CreateUnitByName(keys.summoned, pos, true, caster, caster:GetPlayerOwner(), team)
 		if not unit then

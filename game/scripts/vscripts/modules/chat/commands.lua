@@ -115,19 +115,6 @@ return {
 		end
 	},
 
-
-	["debugallcalls"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
-		f = function()
-			DebugAllCalls()
-		end
-	},
-	["dcs"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
-		f = function()
-			_G.DebugConnectionStates = not DebugConnectionStates
-		end
-	},
 	["kick"] = {
 		level = CUSTOMCHAT_COMMAND_LEVEL_DEVELOPER,
 		f = function(args)
@@ -199,16 +186,6 @@ return {
 				if heroTableCustom.base_hero then
 					TransformUnitClass(heroEntity, heroTableCustom)
 					heroEntity:SetOverrideUnitName(heroName)
-				end
-			end
-		end
-	},
-	["consts"] = {
-		level = CUSTOMCHAT_COMMAND_LEVEL_CHEAT_DEVELOPER,
-		f = function(args)
-			for k, v in pairs(_G) do
-				if string.find(k, args[1]) then
-					print(k, v)
 				end
 			end
 		end
