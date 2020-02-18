@@ -374,15 +374,6 @@ function GetConnectionState(playerId)
 	return PlayerResource:IsFakeClient(playerId) and DOTA_CONNECTION_STATE_CONNECTED or PlayerResource:GetConnectionState(playerId)
 end
 
-function DebugCallFunction(fun)
-	local status, nextCall = xpcall(fun, function (msg)
-		return msg..'\n'..debug.traceback()..'\n'
-	end)
-	if not status then
-		Timers:HandleEventError(nil, nil, nextCall)
-	end
-end
-
 function GetInGamePlayerCount()
 	local counter = 0
 	for i = 0, 23 do

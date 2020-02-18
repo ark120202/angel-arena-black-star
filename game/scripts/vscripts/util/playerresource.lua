@@ -85,13 +85,9 @@ function CDOTA_PlayerResource:IsDisableHelpSetForPlayerID(nPlayerID, nOtherPlaye
 	)
 end
 
-function CDOTA_PlayerResource:KickPlayer(nPlayerID)
-	local usid = PLAYER_DATA[nPlayerID].UserID
-	if usid then
-		SendToServerConsole("kickid " .. usid)
-		return true
-	end
-	return false
+function CDOTA_PlayerResource:KickPlayer(playerId)
+	-- userid is always playerId + 1
+	SendToServerConsole("kickid " .. playerId + 1)
 end
 
 function CDOTA_PlayerResource:IsPlayerAbandoned(playerId)

@@ -170,6 +170,5 @@ function Precache(context)
 end
 
 function Activate()
-	GameRules.GameMode = GameMode()
-	GameRules.GameMode:_InitGameMode()
+	GameMode:Activate()
 end

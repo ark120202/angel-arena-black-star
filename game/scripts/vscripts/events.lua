@@ -1,10 +1,23 @@
 -- The overall game state has changed
 function GameMode:OnGameRulesStateChange(keys)
 	local newState = GameRules:State_Get()
+
+	if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+		Events:Emit("AllPlayersLoaded")
+	end
+
 	if newState == DOTA_GAMERULES_STATE_PRE_GAME then
 		HeroSelection:CollectPD()
 		HeroSelection:HeroSelectionStart()
 		GameMode:OnHeroSelectionStart()
+	end
+
+	if newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		Spawner:RegisterTimers()
+		Timers:CreateTimer(function()
+			CustomRunes:SpawnRunes()
+			return CUSTOM_RUNE_SPAWN_TIME
+		end)
 	end
 end
 
@@ -57,8 +70,14 @@ function GameMode:OnNPCSpawned(keys)
 	if npc:IsTrueHero() then
 		PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
 
+		if not npc.isRespawning then
+			npc.isRespawning = true
+			Teams:RecalculateKillWeight(npc:GetTeam())
+		end
+
 		npc:ApplyDelayedTalents()
 		CustomAbilities:RandomOMGRollAbilities(npc)
+
 		if not npc.OnDuel and Duel:IsDuelOngoing() then
 			Duel:SetUpVisitor(npc)
 		end
@@ -73,25 +92,6 @@ function GameMode:OnNPCSpawned(keys)
 			Illusions:_copyEverything(illusionParent, npc)
 		end
 	end)
-end
-
--- An item was picked up off the ground
-function GameMode:OnItemPickedUp(keys)
-	local unitEntity = nil
-	if keys.UnitEntitIndex then
-		unitEntity = EntIndexToHScript(keys.UnitEntitIndex)
-	elseif keys.HeroEntityIndex then
-		unitEntity = EntIndexToHScript(keys.HeroEntityIndex)
-	end
-
-	local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
-	local player = PlayerResource:GetPlayer(keys.PlayerID)
-	local itemname = keys.itemname
-	--[[if itemEntity.CanOverrideOwner and unitEntity and (unitEntity:IsHero() or unitEntity:IsConsideredHero()) then
-		itemEntity:SetOwner(PlayerResource:GetSelectedHeroEntity(keys.PlayerID))
-		itemEntity:SetPurchaser(PlayerResource:GetSelectedHeroEntity(keys.PlayerID))
-		itemEntity.CanOverrideOwner = nil
-	end]]
 end
 
 -- An ability was used by a player
@@ -229,6 +229,11 @@ end)
 
 -- This function is called once when the player fully connects and becomes "Ready" during Loading
 function GameMode:OnConnectFull(keys)
+	if not GameMode.firstPlayerLoaded then
+		GameMode:OnFirstPlayerLoaded()
+		GameMode.firstPlayerLoaded = true
+	end
+
 	if GameRules:State_Get() >= DOTA_GAMERULES_STATE_PRE_GAME and PlayerResource:IsBanned(keys.PlayerID) then
 		PlayerResource:KickPlayer(keys.PlayerID)
 	end

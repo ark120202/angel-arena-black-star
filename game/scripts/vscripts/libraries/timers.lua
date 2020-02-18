@@ -81,7 +81,7 @@ function Timers:start()
 	Timers = self
 	self:InitializeTimers()
 	self.nextTickCallbacks = {}
-	
+
 	local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
 	ent:SetThink("Think", self, "timers", TIMERS_THINK)
 end
@@ -90,7 +90,10 @@ function Timers:Think()
 	local nextTickCallbacks = table.merge({}, Timers.nextTickCallbacks)
 	Timers.nextTickCallbacks = {}
 	for _, cb in ipairs(nextTickCallbacks) do
-		DebugCallFunction(cb)
+		local status, result = xpcall(cb, debug.traceback)
+		if not status then
+			Timers:HandleEventError(result)
+		end
 	end
 	if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return
@@ -109,10 +112,10 @@ end
 function Timers:ExecuteTimers(timerList, now)
 	--Empty timer, ignore
 	if not timerList[1] then return end
-	
+
 	--Timers are alr. sorted by end time upon insertion
 	local currentTimer = timerList[1]
-	
+
 	currentTimer.endTime = currentTimer.endTime or now
 	--Check if timer has finished
 	if now >= currentTimer.endTime then
@@ -122,15 +125,11 @@ function Timers:ExecuteTimers(timerList, now)
 		Timers.removeSelf = false
 
 		-- Run the callback
-		local status, nextCall
+		local status, timerResult
 		if currentTimer.context then
-			status, nextCall = xpcall(function() return currentTimer.callback(currentTimer.context, currentTimer) end, function (msg)
-										return msg..'\n'..debug.traceback()..'\n'
-									end)
+			status, timerResult = xpcall(function() return currentTimer.callback(currentTimer.context, currentTimer) end, debug.traceback)
 		else
-			status, nextCall = xpcall(function() return currentTimer.callback(currentTimer) end, function (msg)
-										return msg..'\n'..debug.traceback()..'\n'
-									end)
+			status, timerResult = xpcall(function() return currentTimer.callback(currentTimer) end, debug.traceback)
 		end
 
 		Timers.runningTimer = nil
@@ -138,11 +137,11 @@ function Timers:ExecuteTimers(timerList, now)
 		-- Make sure it worked
 		if status then
 			-- Check if it needs to loop
-			if nextCall and not Timers.removeSelf then
+			if timerResult and not Timers.removeSelf then
 				-- Change its end time
-				
-				currentTimer.endTime = currentTimer.endTime + nextCall
-				
+
+				currentTimer.endTime = currentTimer.endTime + timerResult
+
 				timerList:Insert(currentTimer)
 			end
 
@@ -150,34 +149,18 @@ function Timers:ExecuteTimers(timerList, now)
 			--self:UpdateTimerData()
 		else
 			-- Nope, handle the error
-			Timers:HandleEventError('Timer', k, nextCall)
+			Timers:HandleEventError(timerResult)
 		end
 		--run again!
 		self:ExecuteTimers(timerList, now)
 	end
 end
 
-function Timers:HandleEventError(name, event, err)
+function Timers:HandleEventError(err)
 	if IsInToolsMode() then
 		print(err)
 	else
 		StatsClient:HandleError(err)
-	end
-
-	-- Ensure we have data
-	name = tostring(name or 'unknown')
-	event = tostring(event or 'unknown')
-	err = tostring(err or 'unknown')
-
-	-- Tell everyone there was an error
-
-	--Say(nil, name .. ' threw an error on event '..event, false)
-	--Say(nil, err, false)
-
-	-- Prevent loop arounds
-	if not self.errorHandled then
-		-- Store that we handled an error
-		self.errorHandled = true
 	end
 end
 
@@ -227,7 +210,7 @@ function Timers:RemoveTimer(name)
 	if name.useGameTime ~= nil and name.useGameTime == false then
 		timerHeap = self.realTimeHeap
 	end
-	
+
 	timerHeap:Remove(name)
 	if Timers.runningTimer == name then
 		Timers.removeSelf = true

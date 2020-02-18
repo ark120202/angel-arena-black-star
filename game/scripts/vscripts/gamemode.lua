@@ -1,7 +1,5 @@
-GameMode = GameMode or class({})
+GameMode = GameMode or {}
 ARENA_VERSION = LoadKeyValues("addoninfo.txt").version
-
-GAMEMODE_INITIALIZATION_STATUS = {}
 
 local requirements = {
 	"libraries/keyvalues",
@@ -22,9 +20,6 @@ local requirements = {
 	"data/abilities",
 	"data/ability_functions",
 	"data/ability_shop",
-	--------------------------------------------------
-	"internal/gamemode",
-	"internal/events",
 	--------------------------------------------------
 	"modules/index",
 
@@ -54,19 +49,25 @@ end
 
 AllPlayersInterval = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23}
 
-for i = 1, #requirements do
-	require(requirements[i])
+for _, requirement in ipairs(requirements) do
+	require(requirement)
 end
 
 Options:Preload()
 
-function GameMode:InitGameMode()
+function GameMode:Activate()
+	math.randomseed(tonumber((string.gsub(string.gsub(GetSystemTime(), ':', ''), '^0+', ''))))
+
+	ListenToGameEvent('entity_killed', Dynamic_Wrap(GameMode, 'OnEntityKilled'), GameMode)
+	ListenToGameEvent('player_connect_full', Dynamic_Wrap(GameMode, 'OnConnectFull'), GameMode)
+	ListenToGameEvent('tree_cut', Dynamic_Wrap(GameMode, 'OnTreeCut'), GameMode)
+	ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(GameMode, 'OnAbilityUsed'), GameMode)
+	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(GameMode, 'OnGameRulesStateChange'), GameMode)
+	ListenToGameEvent('npc_spawned', Dynamic_Wrap(GameMode, 'OnNPCSpawned'), GameMode)
+	ListenToGameEvent('dota_team_kill_credit', Dynamic_Wrap(GameMode, 'OnTeamKillCredit'), GameMode)
+	ListenToGameEvent("dota_item_combined", Dynamic_Wrap(GameMode, 'OnItemCombined'), GameMode)
+
 	GameMode:SetupRules()
-	GameMode = self
-	if GAMEMODE_INITIALIZATION_STATUS[2] then
-		return
-	end
-	GAMEMODE_INITIALIZATION_STATUS[2] = true
 
 	Containers:SetItemLimit(50)
 	Containers:UsePanoramaInventory(false)
@@ -90,14 +91,6 @@ function GameMode:OnFirstPlayerLoaded()
 	if Options:IsEquals("MainHeroList", "NoAbilities") then
 		CustomAbilities:PrepareData()
 	end
-end
-
-function GameMode:OnAllPlayersLoaded()
-	if GAMEMODE_INITIALIZATION_STATUS[4] then
-		return
-	end
-	GAMEMODE_INITIALIZATION_STATUS[4] = true
-	Events:Emit("AllPlayersLoaded")
 end
 
 function GameMode:OnHeroSelectionStart()
@@ -138,26 +131,6 @@ function GameMode:OnHeroSelectionEnd()
 				end
 			end
 		end
-	end)
-end
-
-function GameMode:OnHeroInGame(hero)
-	Timers:NextTick(function()
-		if IsValidEntity(hero) and hero:IsTrueHero() then
-			Teams:RecalculateKillWeight(hero:GetTeam())
-		end
-	end)
-end
-
-function GameMode:OnGameInProgress()
-	if GAMEMODE_INITIALIZATION_STATUS[3] then
-		return
-	end
-	GAMEMODE_INITIALIZATION_STATUS[3] = true
-	Spawner:RegisterTimers()
-	Timers:CreateTimer(function()
-		CustomRunes:SpawnRunes()
-		return CUSTOM_RUNE_SPAWN_TIME
 	end)
 end
 
