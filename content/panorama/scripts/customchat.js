@@ -159,9 +159,9 @@ function RecieveMessage(data) {
       localized = localized.replace(name, $.Localize(value));
     }
 
-    if (data.player != null) {
-      localized = localized.replace('{player}', formatChatPlayerName(playerId));
-    }
+    localized = localized.replace(/{player:(\d+)}/g, (_, playerId) =>
+      formatChatPlayerName(Number(playerId)),
+    );
 
     html += localized;
   }

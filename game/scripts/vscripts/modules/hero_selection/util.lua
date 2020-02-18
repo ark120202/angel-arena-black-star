@@ -287,10 +287,9 @@ function HeroSelection:PreformPlayerRandom(playerId)
 			Chat:SendSystemMessage({
 				localizable = "DOTA_Chat_Random",
 				variables = {
-					["%s1"] = "{player}",
+					["%s1"] = "{player:" .. playerId .. "}",
 					["%s2"] = hero
 				},
-				player = playerId
 			}, PlayerResource:GetTeam(playerId))
 			Gold:ModifyGold(playerId, CUSTOM_GOLD_FOR_RANDOM_TOTAL)
 			break
