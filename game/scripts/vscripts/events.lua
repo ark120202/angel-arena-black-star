@@ -55,6 +55,8 @@ function GameMode:OnNPCSpawned(keys)
 	end
 
 	if npc:IsTrueHero() then
+		PlayerTables:SetTableValue("player_hero_indexes", npc:GetPlayerID(), npc:GetEntityIndex())
+
 		npc:ApplyDelayedTalents()
 		CustomAbilities:RandomOMGRollAbilities(npc)
 		if not npc.OnDuel and Duel:IsDuelOngoing() then

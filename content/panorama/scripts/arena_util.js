@@ -122,11 +122,20 @@ function GetHeroName(unit) {
     : Entities.GetUnitName(unit);
 }
 
+function SafeGetPlayerHeroEntityIndex(playerId) {
+  var clientEnt = Players.GetPlayerHeroEntityIndex(playerId);
+  return clientEnt === -1
+    ? Number(PlayerTables.GetTableValue('player_hero_indexes', playerId)) || -1
+    : clientEnt;
+}
+
 function GetPlayerHeroName(playerId) {
-  const playerInfo = Game.GetPlayerInfo(playerId);
-  if (playerInfo) {
-    return GetHeroName(playerInfo.player_selected_hero_entity_index);
+  if (Players.IsValidPlayerID(playerId)) {
+    //Is it causes lots of table copies? TODO: Check how that affects perfomance
+    //return PlayerTables.GetTableValue("hero_selection", Players.GetTeam(playerId))[playerId].hero;
+    return GetHeroName(SafeGetPlayerHeroEntityIndex(playerId));
   }
+  return '';
 }
 
 function GetPlayerGold(playerId) {
