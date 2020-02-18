@@ -138,22 +138,10 @@ function CDOTA_BaseNPC:IsMainHero()
 	return self:IsRealHero() and self == PlayerResource:GetSelectedHeroEntity(self:GetPlayerID())
 end
 
-function CDOTA_BaseNPC:AddNewAbility(ability_name, skipLinked)
-	local hAbility = self:AddAbility(ability_name)
-	hAbility:ClearFalseInnateModifiers()
-	local linked
-	local link = LINKED_ABILITIES[ability_name]
-	if link and not skipLinked then
-		linked = {}
-		for _,v in ipairs(link) do
-			local h = self:AddNewAbility(v)
-			table.insert(linked, h)
-		end
-	end
-	if hAbility.Spawn then
-		hAbility:Spawn()
-	end
-	return hAbility, linked
+function CDOTA_BaseNPC:AddNewAbility(abilityName)
+	local ability = self:AddAbility(abilityName)
+	ability:ClearFalseInnateModifiers()
+	return ability
 end
 
 function CDOTA_BaseNPC:IsWukongsSummon()

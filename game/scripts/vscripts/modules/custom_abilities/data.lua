@@ -1,3 +1,19 @@
+LINKED_ABILITIES = {
+	shredder_chakram_2 = {"shredder_return_chakram_2"},
+	shredder_chakram = {"shredder_return_chakram"},
+	kunkka_x_marks_the_spot = {"kunkka_return"},
+	life_stealer_infest = {"life_stealer_control", "life_stealer_consume"},
+	rubick_telekinesis = {"rubick_telekinesis_land"},
+	bane_nightmare = {"bane_nightmare_end"},
+	phoenix_icarus_dive = {"phoenix_icarus_dive_stop"},
+	phoenix_fire_spirits = {"phoenix_launch_fire_spirit"},
+	ancient_apparition_ice_blast = {"ancient_apparition_ice_blast_release"},
+	wisp_tether = {"wisp_tether_break"},
+	alchemist_unstable_concoction = {"alchemist_unstable_concoction_throw"},
+	monkey_king_mischief = {"monkey_king_untransform"},
+	monkey_king_primal_spring = {"monkey_king_primal_spring_early"},
+}
+
 ABILITY_SHOP_BANNED = {
 	["obsidian_destroyer_essence_aura"] = { "nevermore_shadowraze3", "nevermore_shadowraze2", "nevermore_shadowraze1", "tinker_rearm_arena", "rocket_barrage_arena", "storm_spirit_ball_lightning", "bristleback_quill_spray", "pugna_life_drain", "shredder_chakram_2", "shredder_return_chakram_2", "shredder_chakram", "shredder_return_chakram", "techies_focused_detonate", "spectre_reality", "oracle_purifying_flames", "templar_assassin_trap", "skywrath_mage_arcane_bolt", "shadow_demon_shadow_poison_release", "nyx_assassin_unburrow", "nyx_assassin_burrow", "shadow_demon_shadow_poison", "saber_mana_burst", },
 	["batrider_sticky_napalm"] = { "nevermore_shadowraze3", "nevermore_shadowraze2", "nevermore_shadowraze1", "rocket_barrage_arena", "sandking_sand_storm", "shadow_shaman_shackles", "doom_bringer_scorched_earth", "venomancer_venomous_gale", "venomancer_poison_nova", "ember_spirit_flame_guard", "weaver_the_swarm", "dark_seer_ion_shell", "spectre_dispersion", "shadow_demon_shadow_poison", },

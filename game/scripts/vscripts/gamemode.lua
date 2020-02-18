@@ -19,7 +19,6 @@ local requirements = {
 	"data/modifiers",
 	"data/abilities",
 	"data/ability_functions",
-	"data/ability_shop",
 	--------------------------------------------------
 	"modules/index",
 

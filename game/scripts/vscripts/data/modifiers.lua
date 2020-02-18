@@ -10,25 +10,13 @@ MODIFIERS_DEATH_PREVENTING = {
 	"modifier_saber_avalon_invulnerability",
 }
 
-DUEL_PURGED_MODIFIERS = {
-	"modifier_life_stealer_infest",
-	"modifier_tether_ally_aghanims",
-	"modifier_life_stealer_assimilate",
-	"modifier_life_stealer_assimilate_effect",
-	"modifier_item_black_king_bar_arena_active",
-	"modifier_item_titanium_bar_active"
-}
-
 MODIFIERS_TRUESIGHT = {
 	"modifier_item_dustofappearance",
 	"modifier_bounty_hunter_track",
 	"modifier_slardar_amplify_damage",
 }
 
-ONCLICK_PURGABLE_MODIFIERS = {
-	"modifier_doppelganger_mimic",
-	"modifier_tether_ally_aghanims"
-}
+ONCLICK_PURGABLE_MODIFIERS = { "modifier_doppelganger_mimic" }
 
 UNDESTROYABLE_MODIFIERS = {
 	modifier_razor_static_link_debuff = true,

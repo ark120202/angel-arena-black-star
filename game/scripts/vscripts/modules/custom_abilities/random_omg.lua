@@ -32,12 +32,17 @@ end
 
 function CustomAbilities:GiveRandomOMGAbility(unit, abilityList)
 	local abilityTable = abilityList[RandomInt(1, #abilityList)]
-	local ability = abilityTable.ability
-	if not ability or unit:HasAbility(ability) then
+	local abilityName = abilityTable.ability
+	if not abilityName or unit:HasAbility(abilityName) then
 		return false
 	end
-	PrecacheItemByNameAsync(ability, function() end)
+	PrecacheItemByNameAsync(abilityName, function() end)
 	GameMode:PrecacheUnitQueueed(abilityTable.hero)
-	unit:AddNewAbility(ability)
+
+	local ability = self:AddNewAbility(abilityName)
+	for _,link in ipairs(LINKED_ABILITIES[abilityName] or {}) do
+		self:AddNewAbility(link)
+	end
+
 	return true
 end

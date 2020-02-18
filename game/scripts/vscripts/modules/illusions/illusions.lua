@@ -10,10 +10,10 @@ function Illusions:_copyAbilities(unit, illusion)
 			if illusionAbility then
 				if illusionAbility:GetAbilityName() ~= newName then
 					illusion:RemoveAbility(illusionAbility:GetAbilityName())
-					illusionAbility = illusion:AddNewAbility(newName, true)
+					illusionAbility = illusion:AddNewAbility(newName)
 				end
 			else
-				illusionAbility = illusion:AddNewAbility(newName, true)
+				illusionAbility = illusion:AddNewAbility(newName)
 			end
 			illusionAbility:SetHidden(unitAbility:IsHidden())
 			local ualevel = unitAbility:GetLevel()

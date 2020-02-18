@@ -1,7 +1,4 @@
-const ONCLICK_PURGABLE_MODIFIERS = new Set([
-  'modifier_doppelganger_mimic',
-  'modifier_tether_ally_aghanims',
-]);
+const ONCLICK_PURGABLE_MODIFIERS = new Set(['modifier_doppelganger_mimic']);
 
 var BossDropVoteTimers = [],
   HookedAbilityPanelsCount = 0;

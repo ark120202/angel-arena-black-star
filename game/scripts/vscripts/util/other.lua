@@ -400,7 +400,7 @@ function RecreateAbility(unit, ability)
 	local name = ability:GetAbilityName()
 	local level = ability:GetLevel()
 	RemoveAbilityWithModifiers(unit, ability)
-	ability = unit:AddNewAbility(name, true)
+	ability = unit:AddNewAbility(name)
 	if ability then
 		ability:SetLevel(level)
 	end
