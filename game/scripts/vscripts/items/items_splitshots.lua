@@ -91,7 +91,7 @@ function modifier_item_splitshot_ultimate:OnAttack(keys)
 
 	modifier_item_splitshot_ultimate_projectiles(attacker, target, ability)
 
-	if RollPercentage(ability:GetSpecialValueFor("global_attack_chance_pct")) then
+	if self:RollPRD(ability:GetSpecialValueFor("global_attack_chance_pct")) then
 		local units = FindUnitsInRadius(
 			attacker:GetTeamNumber(),
 			Vector(0, 0, 0),

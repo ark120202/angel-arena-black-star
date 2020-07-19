@@ -80,7 +80,7 @@ if IsServer() then
 		local chance = ability:GetSpecialValueFor("chance_to_live")
 		parent.RespawnTimeModifierSaiReleaseOfForge = ability:GetSpecialValueFor("bonus_respawn_time_pct") * (1 - respawn_time_decreasement_reduction * 0.01)
 
-		if parent:HasScepter() and RollPercentage(chance) then
+		if parent:HasScepter() and self:RollPRD(chance) then
 			parent:SetHealth(parent:GetMaxHealth())
 			ParticleManager:CreateParticle("particles/arena/units/heroes/hero_sara/fragment_of_logic.vpcf", PATTACH_ABSORIGIN, parent)
 			parent:EmitSound("Hero_Chen.HandOfGodHealHero")

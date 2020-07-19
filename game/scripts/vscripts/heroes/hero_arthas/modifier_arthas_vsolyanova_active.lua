@@ -34,7 +34,7 @@ if IsServer() then
 			local ability = self:GetAbility()
 			local target = keys.target
 			local chance = ability:GetAbilitySpecial(attacker:IsIllusion() and "nia_chance_illusions" or "nia_chance") * (attacker:GetTalentSpecial("talent_hero_arthas_vsolyanova_bunus_chance", "chance_multiplier") or 1)
-			if not target:IsBoss() and RollPercentage(chance) then
+			if not target:IsBoss() and ability:RollPRD(chance) then
 				local duration = ability:GetLevelSpecialValueFor("roar_duration", ability:GetLevel() - 1)
 				target:EmitSound("Hero_SkeletonKing.CriticalStrike")
 				local pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", PATTACH_CUSTOMORIGIN, attacker)

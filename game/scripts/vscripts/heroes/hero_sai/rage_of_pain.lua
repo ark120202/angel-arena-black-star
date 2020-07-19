@@ -35,7 +35,7 @@ function modifier_sai_rage_of_pain:GetModifierPreAttack_CriticalStrike(keys)
 	local chance = ability:GetSpecialValueFor("crit_chance_pct") +
 		ability:GetSpecialValueFor("crit_chance_per_stack_pct") * stacks
 
-	if RollPercentage(chance) then
+	if ability:RollPRD(chance) then
 		return 100 + self:GetAbility():GetSpecialValueFor("crit_mult_pre_stack_pct") * stacks
 	end
 end

@@ -35,7 +35,7 @@ end
 
 function modifier_sara_fragment_of_hate:GetModifierPreAttack_CriticalStrike()
 	local ability = self:GetAbility()
-	if RollPercentage(ability:GetSpecialValueFor("crit_chance_pct")) then
+	if ability:RollPRD(ability:GetSpecialValueFor("crit_chance_pct")) then
 		return 100 + self:GetParent():GetMana() * ability:GetSpecialValueFor("energy_to_crit_pct") * 0.01
 	end
 end
