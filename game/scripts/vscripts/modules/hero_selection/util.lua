@@ -129,17 +129,17 @@ function TransformUnitClass(unit, classTable, skipAbilityRemap)
 				end
 			end)
 		elseif key == "AttributeBaseStrength" then
-			unit:SetBaseStrength(value)
+			unit:ModifyStrength(value - unit:GetKeyValue("AttributeBaseStrength", nil, true))
 		elseif key == "AttributeStrengthGain" then
 			unit.CustomGain_Strength = value
 			unit:SetNetworkableEntityInfo("AttributeStrengthGain", value)
 		elseif key == "AttributeBaseIntelligence" then
-			unit:SetBaseIntellect(value)
+			unit:ModifyIntellect(value - unit:GetKeyValue("AttributeBaseIntelligence", nil, true))
 		elseif key == "AttributeIntelligenceGain" then
 			unit.CustomGain_Intelligence = value
 			unit:SetNetworkableEntityInfo("AttributeIntelligenceGain", value)
 		elseif key == "AttributeBaseAgility" then
-			unit:SetBaseAgility(value)
+			unit:ModifyAgility(value - unit:GetKeyValue("AttributeBaseAgility", nil, true))
 		elseif key == "AttributeAgilityGain" then
 			unit.CustomGain_Agility = value
 			unit:SetNetworkableEntityInfo("AttributeAgilityGain", value)
